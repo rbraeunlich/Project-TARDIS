@@ -18,12 +18,14 @@
   <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/>     -->
 
   <!-- Other module inherits                                      -->
-
+  <inherits name="com.google.gwt.http.HTTP" />
   <!-- Specify the app entry point class.                         -->
   <entry-point class='kr.ac.kaist.se.tardis.client.SAMGWTPrototype'/>
 
   <!-- Specify the paths for translatable code                    -->
   <source path='client'/>
+  <source path='json'/>
+  
 
   <!-- allow Super Dev Mode -->
   <add-linker name="xsiframe"/>

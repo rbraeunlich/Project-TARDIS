@@ -21,7 +21,6 @@ public class SAMGWTPrototype implements EntryPoint {
 		final VerticalPanel mainPanel = new VerticalPanel();
 		mainPanel .add(login);
 		rootPanel.add(mainPanel);
-
 		History.addValueChangeHandler(new ValueChangeHandler<String>() {
 
 			@Override
