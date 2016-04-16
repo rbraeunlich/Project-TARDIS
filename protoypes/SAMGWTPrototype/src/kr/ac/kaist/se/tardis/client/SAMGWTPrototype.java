@@ -3,6 +3,7 @@ package kr.ac.kaist.se.tardis.client;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.event.logical.shared.ValueChangeEvent;
 import com.google.gwt.event.logical.shared.ValueChangeHandler;
+import com.google.gwt.user.client.Cookies;
 import com.google.gwt.user.client.History;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
@@ -12,14 +13,15 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  */
 public class SAMGWTPrototype implements EntryPoint {
 
-
 	@Override
 	public void onModuleLoad() {
 		RootPanel rootPanel = RootPanel.get("main");
-		Login login = new Login();
-		login.setVisible(true);
 		final VerticalPanel mainPanel = new VerticalPanel();
-		mainPanel .add(login);
+		if (Cookies.getCookie("sid") == null) {
+			showLogin(mainPanel);
+		} else {
+			showProjectsPanel(mainPanel);
+		}
 		rootPanel.add(mainPanel);
 		History.addValueChangeHandler(new ValueChangeHandler<String>() {
 
@@ -32,6 +34,15 @@ public class SAMGWTPrototype implements EntryPoint {
 				rootPanel.add(verticalPanel);
 			}
 		});
+	}
+
+	private void showProjectsPanel(VerticalPanel mainPanel) {
+		mainPanel.add(new Projects());
+	}
+
+	private void showLogin(VerticalPanel mainPanel) {
+		Login login = new Login();
+		mainPanel.add(login);
 	}
 
 }

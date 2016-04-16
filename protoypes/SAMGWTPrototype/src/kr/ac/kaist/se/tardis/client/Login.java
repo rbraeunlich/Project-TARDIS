@@ -1,7 +1,10 @@
 package kr.ac.kaist.se.tardis.client;
 
+import java.util.Date;
+
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.Cookies;
 import com.google.gwt.user.client.History;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Label;
@@ -38,6 +41,9 @@ public class Login extends SimpleContent {
 				if (mail.equals("admin") && password.equals("admin")) {
 					// this ways we change the URL in the browser
 					History.newItem("projects", true);
+					Long cookieValidity = 1000L * 60 * 1;
+					Cookies.setCookie("sid", String.valueOf(Math.random()),
+							new Date(System.currentTimeMillis() + cookieValidity), null, "/", false);
 				} else {
 					labelError.setText("Invalid username and/or password!");
 				}
