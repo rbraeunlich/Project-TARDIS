@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>kr.ac.kaist.se.tardis</groupId>
-	<artifactId>sam</artifactId>
+	<artifactId>web</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>sam</name>
-	<description>Demo project for Spring Boot</description>
+	<name>web</name>
+	<description>The web component of SAM</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -55,6 +55,11 @@
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>kr.ac.kaist.se.tardis</groupId>
+			<artifactId>project</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 
