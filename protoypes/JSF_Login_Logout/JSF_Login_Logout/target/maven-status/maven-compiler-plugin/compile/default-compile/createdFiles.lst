@@ -1,0 +1,4 @@
+com\journaldev\jsf\beans\SessionBean.class
+com\journaldev\jsf\filter\AuthorizationFilter.class
+com\journaldev\jsf\dao\LoginDAO.class
+com\journaldev\jsf\beans\Login.class
