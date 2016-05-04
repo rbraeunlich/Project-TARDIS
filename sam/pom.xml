@@ -20,4 +20,8 @@
 		<java.version>1.8</java.version>
 	</properties>
 
+	<modules>
+		<module>project</module>
+		<module>web</module>
+	</modules>
 </project>
