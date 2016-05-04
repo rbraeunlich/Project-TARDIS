@@ -5,6 +5,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-    <p th:text="'Hello, ' + ${name} + '!'" />
+	<h1>SAM - Simple Application for Management</h1>
+	<form action="#" th:action="@{/overview}" method="post">
+    <p>Username:<input name="username" type="text" /></p>
+    <p>Password:<input name="password" type="password" /></p>
+    <p><input type="submit" value="Login"/></p>
+    </form>
 </body>
 </html>
