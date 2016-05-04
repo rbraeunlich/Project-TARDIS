@@ -6,5 +6,10 @@
 </head>
 <body>
     <p th:text="'Hello, ' + ${name} + '!'" />
+    <form action="#" th:action="@{/index}" method="post">
+    <p>Username:<input name="username" type="text" /></p>
+    <p>Password:<input name="password" type="password" /></p>
+    <p><input type="submit" value="Login"/></p>
+    </form>
 </body>
 </html>
