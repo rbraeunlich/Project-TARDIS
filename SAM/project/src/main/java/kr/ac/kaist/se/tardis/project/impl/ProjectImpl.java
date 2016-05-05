@@ -3,7 +3,7 @@ package kr.ac.kaist.se.tardis.project.impl;
 import kr.ac.kaist.se.tardis.project.api.Project;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
 
-public class ProjectImpl implements Project {
+class ProjectImpl implements Project {
 
 	private final ProjectId id;
 	private String name;
