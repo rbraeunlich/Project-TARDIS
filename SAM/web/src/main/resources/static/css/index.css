@@ -16,6 +16,10 @@
 	width: 49%
 }
 
+#errorwrapper {
+	color: red;
+}
+
 #footer {
 	position: absolute;
 	bottom: 3%;
