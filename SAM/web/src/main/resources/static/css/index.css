@@ -1,0 +1,27 @@
+#heading {
+	text-align: center;
+	margin-top: 8%;
+	padding: 2%;
+}
+
+#form {
+	text-align: center;
+}
+
+#formcontentwrapper {
+	display: inline-block;
+}
+
+#formcontentwrapper .button {
+	width: 49%
+}
+
+#footer {
+	position: absolute;
+	bottom: 3%;
+	right: 3%;
+	float: right;
+	margin: 0px 50px 0px 0px;
+	text-align: right;
+	padding: 10px 30px;
+}
