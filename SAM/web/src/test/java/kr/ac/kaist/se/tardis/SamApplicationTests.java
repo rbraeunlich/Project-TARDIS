@@ -5,10 +5,17 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
 import java.net.URI;
+import java.sql.Driver;
 
+import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.boot.test.TestRestTemplate;
@@ -21,17 +28,31 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
+/**
+ * This test requires an installed Firefox browser on your PC!
+ *
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = SamApplication.class)
 @WebIntegrationTest
 public class SamApplicationTests {
 
-	private RestTemplate restTemplate = new TestRestTemplate(new HttpClientOption[0]);
+	private static WebDriver webDriver;
 
 	@Value("${local.server.port}")
 	private int port;
 
 	private String testUrl;
+
+	@BeforeClass
+	public static void setUpBeforeClass() {
+		webDriver = new FirefoxDriver();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() {
+		webDriver.quit();
+	}
 
 	@Before
 	public void setUp() {
@@ -39,20 +60,20 @@ public class SamApplicationTests {
 	}
 
 	@Test
-	public void contextLoads() {
-		ResponseEntity<String> responseEntity = restTemplate.getForEntity(testUrl, String.class);
-		assertThat(responseEntity.getStatusCode(), is(HttpStatus.OK));
-		assertThat(responseEntity.getBody(), containsString("username"));
-		assertThat(responseEntity.getBody(), containsString("password"));
-	}
+	public void succesfulLoginAfterRegistration() {
+		webDriver.get(testUrl);
+		// create account
+		webDriver.findElement(By.id("registerButton")).click();
+		webDriver.findElement(By.id("username")).sendKeys("foo");
+		webDriver.findElement(By.id("password")).sendKeys("bar");
+		webDriver.findElement(By.id("createButton")).click();
+		// login
+		webDriver.findElement(By.id("username")).sendKeys("foo");
+		webDriver.findElement(By.id("password")).sendKeys("bar");
+		webDriver.findElement(By.id("loginButton")).click();
 
-	@Test
-	public void succesfulLogin() {
-		MultiValueMap<String, String> request = new LinkedMultiValueMap<>();
-		request.add("username", "admin");
-		request.add("password", "admin");
-		URI location = restTemplate.postForLocation(testUrl + "/index", request);
-		assertThat(location.toString(), is(testUrl + "/overview"));
+		String currentUrl = webDriver.getCurrentUrl();
+		assertThat(currentUrl, containsString("overview"));
 	}
 
 }

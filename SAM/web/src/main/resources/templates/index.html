@@ -13,16 +13,18 @@
 	</div>
 	<div id="form">
 		<div id="formcontentwrapper">
-			<form action="#" th:action="@{/overview}" method="post">
+			<form action="#" th:action="@{/index}" th:object="${loginForm}" method="post">
 				<p>
-					Username:<input name="username" type="text" />
+					Username:<input id="username" name="username" type="text" th:field="*{username}"/>
+					<b th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Name Error</b>
 				</p>
 				<p>
-					Password:<input name="password" type="password" />
+					Password:<input id="password" name="password" type="password" th:field="*{password}"/>
+					<b th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</b>
 				</p>
 				<p>
-					<input class="button" type="button" value="Register now!" onclick="window.location.href='registration'"/> <input
-						class="button" type="submit" value="Login" />
+					<input id="registerButton" class="button" type="button" value="Register now!" onclick="window.location.href='registration'"/> <input
+						id="loginButton" class="button" type="submit" value="Login" />
 				</p>
 			</form>
 		</div>

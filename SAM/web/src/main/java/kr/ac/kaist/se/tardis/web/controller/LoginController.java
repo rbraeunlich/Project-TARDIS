@@ -1,16 +1,20 @@
 package kr.ac.kaist.se.tardis.web.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+
+import kr.ac.kaist.se.tardis.web.form.LoginForm;
 
 @Controller
 public class LoginController {
 
 	@RequestMapping(value = { "/index" }, method = RequestMethod.GET)
-	public String greeting(Model model) {
+	public String greeting(LoginForm loginForm) {
 		return "index";
 	}
 
@@ -20,8 +24,10 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = { "/index" }, method = RequestMethod.POST)
-	public String login(@RequestParam(value = "username", required = true) String username,
-			@RequestParam(value = "password", required = true) String password, Model model) {
+	public String login(@Valid LoginForm loginForm, BindingResult bindingResult) {
+		if(bindingResult.hasErrors()){
+			return "index";
+		}
 		return "redirect:overview";
 	}
 

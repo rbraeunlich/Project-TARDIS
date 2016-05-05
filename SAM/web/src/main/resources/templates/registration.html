@@ -1,10 +1,29 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Getting Started: Serving Web Content</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Register new SAM account</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-    <p th:text="'ToDo'" />
+	<p th:text="'ToDo'" />
+	<form action="#" th:action="@{/registration}" th:object="${loginForm}"
+		method="post">
+		<p>
+			Username:<input id="username" name="username" type="text"
+				th:field="*{username}" /> <b
+				th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Name
+				Error</b>
+		</p>
+		<p>
+			Password:<input id="password" name="password" type="password"
+				th:field="*{password}" /> <b
+				th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password
+				Error</b>
+		</p>
+		<p>
+			<input id="createButton" class="button" type="submit"
+				value="Create account" />
+		</p>
+	</form>
 </body>
 </html>
