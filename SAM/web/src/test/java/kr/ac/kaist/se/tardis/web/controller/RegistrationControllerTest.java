@@ -20,7 +20,7 @@ import kr.ac.kaist.se.tardis.SamApplication;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = SamApplication.class)
 @WebIntegrationTest
-public class LoginControllerTest {
+public class RegistrationControllerTest {
 
 	@Autowired
 	private WebApplicationContext wac;
@@ -33,36 +33,19 @@ public class LoginControllerTest {
 	}
 
 	@Test
-	public void verifyRedirect() throws Exception {
+	public void successfulRegistration() throws Exception {
 		mockMvc
-			.perform(get("/"))
+			.perform(post("/registration").param("username", "admin").param("password", "admin"))
 			.andExpect(status().isFound())
 			.andExpect(redirectedUrlPattern("**/index"));
 	}
 	
 	@Test
-	public void indexPageDisplayed() throws Exception {
-		mockMvc
-			.perform(get("/index"))
-			.andExpect(status().isOk())
-			.andExpect(content().string(containsString("username")))
-			.andExpect(content().string(containsString("password")));
-	}
-	
-	@Test
-	public void successfulLogin() throws Exception {
-		mockMvc
-			.perform(post("/index").param("username", "admin").param("password", "admin"))
-			.andExpect(status().isFound())
-			.andExpect(redirectedUrlPattern("**/overview"));
-	}
-	
-	@Test
 	public void invalidLogin() throws Exception {
 		mockMvc
-			.perform(post("/index").param("username", "").param("password", ""))
+			.perform(post("/registration").param("username", "").param("password", ""))
 			.andExpect(status().isOk())
-			.andExpect(view().name("index"))
+			.andExpect(view().name("registration"))
 			.andExpect(content().string(containsString("Username must contain at least one character")))
 			.andExpect(content().string(containsString("Password must contain at least one character")));
 	}

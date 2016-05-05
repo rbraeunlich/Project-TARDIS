@@ -6,11 +6,11 @@ import javax.validation.constraints.Size;
 public class LoginForm {
 
 	@NotNull
-	@Size(min=1)
+	@Size(min=1, message="Username must contain at least one character")
 	private String username;
 	
 	@NotNull
-	@Size(min=1)
+	@Size(min=1, message="Password must contain at least one character")
 	private String password;
 
 	public String getUsername() {
