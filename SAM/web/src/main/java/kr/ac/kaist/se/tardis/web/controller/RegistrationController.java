@@ -18,7 +18,7 @@ public class RegistrationController {
 	}
 
 	@RequestMapping(value = { "/registration" }, method = RequestMethod.POST)
-	public String login(@Valid LoginForm loginForm, BindingResult bindingResult) {
+	public String registration(@Valid LoginForm loginForm, BindingResult bindingResult) {
 		if (bindingResult.hasErrors()) {
 			return "registration";
 		}
