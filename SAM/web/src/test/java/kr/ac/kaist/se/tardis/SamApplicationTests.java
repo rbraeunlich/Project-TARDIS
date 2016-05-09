@@ -1,6 +1,8 @@
 package kr.ac.kaist.se.tardis;
 
 import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.notNullValue;
 import static org.junit.Assert.assertThat;
 
 import org.junit.AfterClass;
@@ -25,6 +27,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @WebIntegrationTest
 public class SamApplicationTests {
 
+	private static final String PASSWORD = "bar";
+
+	private static final String USERNAME = "foo";
+
 	private static WebDriver webDriver;
 
 	@Value("${local.server.port}")
@@ -48,16 +54,20 @@ public class SamApplicationTests {
 	}
 
 	@Test
-	public void succesfulLoginAfterRegistration() {
+	public void succesfulLoginAfterRegistration() throws InterruptedException {
 		webDriver.get(testUrl);
+		// try to log in without account
+		webDriver.findElement(By.id("loginButton")).click();
+		assertThat(webDriver.findElement(By.id("errorUsername")).getText(), is(notNullValue()));
+		assertThat(webDriver.findElement(By.id("errorPassword")).getText(), is(notNullValue()));
 		// create account
 		webDriver.findElement(By.id("registerButton")).click();
-		webDriver.findElement(By.id("username")).sendKeys("foo");
-		webDriver.findElement(By.id("password")).sendKeys("bar");
+		webDriver.findElement(By.id("username")).sendKeys(USERNAME);
+		webDriver.findElement(By.id("password")).sendKeys(PASSWORD);
 		webDriver.findElement(By.id("createButton")).click();
 		// login
-		webDriver.findElement(By.id("username")).sendKeys("foo");
-		webDriver.findElement(By.id("password")).sendKeys("bar");
+		webDriver.findElement(By.id("username")).sendKeys(USERNAME);
+		webDriver.findElement(By.id("password")).sendKeys(PASSWORD);
 		webDriver.findElement(By.id("loginButton")).click();
 
 		String currentUrl = webDriver.getCurrentUrl();

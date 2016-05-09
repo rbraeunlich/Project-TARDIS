@@ -26,8 +26,8 @@
 					</p>
 			</div>
 			<div id="errorwrapper">
-				<p th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Name Error</p>
-				<p th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</p>
+				<p id="errorUsername" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Name Error</p>
+				<p id="errorPassword" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</p>
 			</div>
 		</form>
 	</div>
