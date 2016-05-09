@@ -1,0 +1,96 @@
+div {
+}
+
+p {
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.box {
+	width: 80%;
+	margin: auto;
+}
+
+.overview {
+	border: 1px solid lightgrey;
+	width: 700px;
+	min-height: 400px;
+	margin: 23px;
+	background-color: lightgrey;
+}
+
+.entry {
+	width: 620px;
+	height: 150px;
+	margin: 25px;
+	padding-left: 5px;
+	padding-right: 15px;
+	border: 1px solid grey;
+	background-color: white;
+}
+
+.textBlock {
+	margin: 5px;
+	width: 250px;
+	height: 140px;
+	float: left;
+	padding: 0px;
+}
+
+.projectName {
+	width: 200px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.description {
+	width: 250px;
+	margin-left: 5px;
+	margin-top: 0px;
+}
+
+.projectTaskList {
+	width: 300px;
+	height: 100px;
+	float: left;
+	position: relative;
+	top: 25px;
+}
+
+.projectTaskBlock {
+	margin-left: 12px;
+	margin-top: 12px;
+	width: 75px;
+	height: 75px;
+	background-color: lightgrey;
+	float: left;
+}
+
+.taskName {
+	text-align: center;
+}
+
+.taskProgress {
+	margin-left:2px;
+	width: 70px;
+}
+
+#bar {
+	margin-top:30px;
+}
+
+#heading {
+	height: 150px;
+}
+
+#board {
+	display: table;
+	border: 1px solid grey;
+}
+
+#project {
+	float: left;
+}
+
+#task {
+	float: right;
+}

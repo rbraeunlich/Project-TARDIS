@@ -1,10 +1,112 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Getting Started: Serving Web Content</title>
+    <title>Project Overview</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" th:href="@{/css/base.css}" href="../static/css/base.css" />
 </head>
-<body>
-    <p th:text="'Hello!'" />
+<body onresize="resizeWindow()">
+
+<div id="bar" class="box">
+	<input id="accountpage" class="button" type="button" value="My Page" style="float:right;"/>
+	<input id="logout" class="button" type="button" value="Log Out" style="float:right;margin-right:10px;"/> <!-- Add onclick fuction -->
+</div>
+
+<div id="heading" class="box">
+	<img alt="SAM icon" src="../image/Clock.png" />
+	<img alt="Alarm icon" src="../image/bell.png" style="float:right;width:50px;height:50px;position:relative;top:80px;left:120px;"/>
+</div>
+
+<div id="board" class="box">
+	<div id="project" class="overview">
+	</div>
+	<div id="task" class="overview">
+	</div>	
+</div>
+
+<script>
+
+function showTask(project, task, progress) {
+	
+	var project_task = document.createElement("div");
+	project_task.className = "projectTaskBlock";
+	
+	<!-- name of task -->
+	var task_name = document.createElement("p");
+	task_name.className = "taskName";
+	var text = document.createTextNode(task);
+	task_name.appendChild(text);
+	project_task.appendChild(task_name);
+	
+	<!-- progress of task -->
+	var task_progress = document.createElement("progress");
+	task_progress.className = "taskProgress";
+	task_progress.max = "100";
+	task_progress.value = progress;
+	project_task.appendChild(task_progress);
+	
+	
+	var task_list = document.getElementById(project + "TaskList");
+	task_list.appendChild(project_task);
+}
+
+<!-- function add entry of project to project overview board -->
+function showProject(name, description) {
+	<!-- create entry block -->
+	var project_entry = document.createElement("div");
+	project_entry.className = "entry";
+	project_entry.id = name;
+	
+	<!-- block for texts -->
+	var text_block = document.createElement("div");
+	text_block.className = "textBlock";
+	
+	<!-- write project name in -->
+	var project_name = document.createElement("p");
+	project_name.className = "projectName";
+	var text = document.createTextNode(name);
+	project_name.appendChild(text);
+	text_block.appendChild(project_name);	
+	
+	<!-- write project description in -->
+	var project_description = document.createElement("p");
+	project_description.className = "description";
+	text = document.createTextNode(description);
+	project_description.appendChild(text);
+	text_block.appendChild(project_description);
+	
+	project_entry.appendChild(text_block);
+	
+	<!-- box to show tasks -->
+	var taskList = document.createElement("div");
+	taskList.className = "projectTaskList";
+	taskList.id = name + "TaskList";
+	project_entry.appendChild(taskList);
+	
+	var project_board = document.getElementById("project");
+	project_board.appendChild(project_entry);
+} 
+
+<!-- event handler on resize of window -->
+function resizeWindow() {
+	var size = document.getElementById("board").clientWidth;
+	
+	if (size>1500) {
+		document.getElementById("project").style = "float:left;";
+		document.getElementById("task").style = "float:right;";
+	} else {
+		document.getElementById("project").style = "float:none;margin:auto;margin-top:25px;";
+		document.getElementById("task").style = "float:none;margin:auto;margin-top:25px;";
+	}
+}
+
+showProject("Thymeleaf", "Thymeleaf is a modern server-side Java template engine for both web and standalone environments.");
+showTask("Thymeleaf", "task1", "23");
+showTask("Thymeleaf", "task2", "70");
+showTask("Thymeleaf", "task3", "99");
+showProject("SAM", "Project TARDIS");
+showProject("aaaa", "Aaaaa");
+</script>
+
 </body>
 </html>

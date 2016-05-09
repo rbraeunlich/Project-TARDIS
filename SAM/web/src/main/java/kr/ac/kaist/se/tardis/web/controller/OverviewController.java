@@ -14,7 +14,7 @@ public class OverviewController {
 	private ProjectService projectService;
 
 	@RequestMapping(value = { "/overview" })
-	public String greeting( Model model) {
+	public String overviewpage(Model model) {
 		return "overview";
 	}
 }
