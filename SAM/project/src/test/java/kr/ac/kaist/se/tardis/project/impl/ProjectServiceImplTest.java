@@ -46,7 +46,7 @@ public class ProjectServiceImplTest {
 	@Test
 	public void findExistingProjectByName() {
 		Project project = projectService.createProject();
-		String name = "Test";
+		String name = "foo";
 		project.setName(name);
 		projectService.saveProject(project);
 		Set<Project> projectByName = projectService.findProjectByName(name);
@@ -55,7 +55,7 @@ public class ProjectServiceImplTest {
 
 	@Test
 	public void findExistingProjectsByName() {
-		String name = "Test";
+		String name = "bar";
 		Project project = projectService.createProject();
 		project.setName(name);
 		projectService.saveProject(project);
