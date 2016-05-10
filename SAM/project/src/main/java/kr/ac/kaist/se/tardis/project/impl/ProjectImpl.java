@@ -1,5 +1,9 @@
 package kr.ac.kaist.se.tardis.project.impl;
 
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+
 import kr.ac.kaist.se.tardis.project.api.Project;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
 
@@ -7,16 +11,21 @@ class ProjectImpl implements Project {
 
 	private final ProjectId id;
 	private String name;
+	private final String owner;
+	private final Set<String> members;
+	private Date dueDate;
 
-	public ProjectImpl(ProjectId id) {
+	public ProjectImpl(ProjectId id, String projectOwner) {
 		this.id = id;
+		this.owner = projectOwner;
+		this.members = new HashSet<>();
 	}
 
 	@Override
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	@Override
 	public String getName() {
 		return name;
@@ -27,6 +36,36 @@ class ProjectImpl implements Project {
 		return id;
 	}
 
+	@Override
+	public Date getDueDate() {
+		return dueDate;
+	}
+
+	@Override
+	public void setDueDate(Date d) {
+		this.dueDate = d;
+	}
+
+	@Override
+	public void addProjectMember(String member) {
+		members.add(member);
+	}
+
+	@Override
+	public void removeProjectMember(String member) {
+		members.remove(member);
+	}
+
+	@Override
+	public Set<String> getProjectMembers() {
+		return members;
+	}
+
+	@Override
+	public String getProjectOwner() {
+		return owner;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -51,6 +90,4 @@ class ProjectImpl implements Project {
 			return false;
 		return true;
 	}
-
-
 }

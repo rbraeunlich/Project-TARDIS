@@ -21,7 +21,8 @@ public class ProjectServiceImpl implements ProjectService {
 	@Override
 	public Project createProject() {
 		ProjectId projectId = ProjectIdFactory.generateProjectId();
-		Project p = new ProjectImpl(projectId);
+		//FIXME gotta access the current user here
+		Project p = new ProjectImpl(projectId, null);
 		return p;
 	}
 
