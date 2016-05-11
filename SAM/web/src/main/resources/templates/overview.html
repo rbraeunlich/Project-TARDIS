@@ -5,16 +5,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" th:href="@{/css/base.css}" href="../static/css/base.css" />
 </head>
-<body onresize="resizeWindow()" onpageshow="resizeWindow()">
+<body onresize="resizeWindow()" onpageshow="resizeWindow()" onload="onload()">
 
-<div id="bar" class="box">
+<div id="bar" class="box">	
 	<input id="accountpage" class="button" type="button" value="My Page" style="float:right;"/>
 	<input id="logout" class="button" type="button" value="Log Out" style="float:right;margin-right:10px;" onclick="window.location.href='/'"/> <!-- Add onclick fuction -->
+	<p id = "username" style="float:right;margin:0px 20px" />
 </div>
 
 <div id="heading" class="box">
 	<img alt="SAM icon" src="../image/Clock.png" />
-	<img alt="Alarm icon" src="../image/bell.png" style="float:right;width:50px;height:50px;position:relative;top:80px;left:120px;"/>
+	<img alt="Alarm icon" src="../image/bell.png" style="float:right;width:50px;height:50px;position:relative;top:90px;right:10px;"/>
 </div>
 
 <div id="board" class="box">
@@ -101,6 +102,12 @@ function resizeWindow() {
 		document.getElementById("task").style = "float:none;margin:auto;margin-top:25px;";
 	}
 }
+
+function onload() {
+	var username = [[${username}]];
+	document.getElementById("username").innerHTML = "Hello, " + username;
+}
+
 var projectList = [[${projectList}]];
 showProject(projectList[0].name, projectList[0].description);
 showTask(projectList[0].name, "task1", "23");

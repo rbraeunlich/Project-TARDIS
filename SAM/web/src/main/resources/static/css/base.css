@@ -76,9 +76,11 @@ p {
 
 #bar {
 	margin-top:30px;
+	height: 20px;
 }
 
 #heading {
+	margin-top:10px;
 	height: 150px;
 }
 

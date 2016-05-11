@@ -27,6 +27,7 @@ public class OverviewController {
 		p.setDescription("Project TARDIS");
 		test.add(p);
 		
+		model.addAttribute("username", "Baek");
 		model.addAttribute("projectList", test);
 		return "overview";
 	}
