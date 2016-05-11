@@ -23,6 +23,7 @@
 	<modules>
 		<module>project</module>
 		<module>web</module>
+		<module>users</module>
 	</modules>
 
 	<dependencies>

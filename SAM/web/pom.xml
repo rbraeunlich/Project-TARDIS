@@ -65,6 +65,11 @@
 			<artifactId>htmlunit-driver</artifactId>
 			<version>2.20</version>
 		</dependency>
+		<dependency>
+			<groupId>kr.ac.kaist.se.tardis</groupId>
+			<artifactId>users</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>
