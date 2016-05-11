@@ -4,6 +4,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.empty;
+import static org.hamcrest.Matchers.hasItems;
 import static org.junit.Assert.assertThat;
 
 import java.util.Optional;
@@ -63,7 +64,7 @@ public class ProjectServiceImplTest {
 		project2.setName(name);
 		projectService.saveProject(project2);
 		Set<Project> projectByName = projectService.findProjectByName(name);
-		assertThat(projectByName, contains(project, project2));
+		assertThat(projectByName, hasItems(project, project2));
 	}
 
 	@Test
