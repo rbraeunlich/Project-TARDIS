@@ -90,4 +90,11 @@ class ProjectImpl implements Project {
 			return false;
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "ProjectImpl [id=" + id + ", name=" + name + ", owner=" + owner + ", members=" + members + ", dueDate="
+				+ dueDate + "]";
+	}
+	
 }
