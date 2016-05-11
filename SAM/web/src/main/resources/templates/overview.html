@@ -5,11 +5,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" th:href="@{/css/base.css}" href="../static/css/base.css" />
 </head>
-<body onresize="resizeWindow()">
+<body onresize="resizeWindow()" onpageshow="resizeWindow()">
 
 <div id="bar" class="box">
 	<input id="accountpage" class="button" type="button" value="My Page" style="float:right;"/>
-	<input id="logout" class="button" type="button" value="Log Out" style="float:right;margin-right:10px;"/> <!-- Add onclick fuction -->
+	<input id="logout" class="button" type="button" value="Log Out" style="float:right;margin-right:10px;" onclick="window.location.href='/'"/> <!-- Add onclick fuction -->
 </div>
 
 <div id="heading" class="box">
@@ -24,7 +24,10 @@
 	</div>	
 </div>
 
-<script>
+<div id="footer" class="box">2016 Project TARDIS</div>
+
+<script th:inline="javascript">
+/*<![CDATA[*/
 
 function showTask(project, task, progress) {
 	
@@ -44,8 +47,7 @@ function showTask(project, task, progress) {
 	task_progress.max = "100";
 	task_progress.value = progress;
 	project_task.appendChild(task_progress);
-	
-	
+		
 	var task_list = document.getElementById(project + "TaskList");
 	task_list.appendChild(project_task);
 }
@@ -99,13 +101,13 @@ function resizeWindow() {
 		document.getElementById("task").style = "float:none;margin:auto;margin-top:25px;";
 	}
 }
+var projectList = [[${projectList}]];
+showProject(projectList[0].name, projectList[0].description);
+showTask(projectList[0].name, "task1", "23");
+showTask(projectList[0].name, "task2", "70");
+showTask(projectList[0].name, "task3", "99");
 
-showProject("Thymeleaf", "Thymeleaf is a modern server-side Java template engine for both web and standalone environments.");
-showTask("Thymeleaf", "task1", "23");
-showTask("Thymeleaf", "task2", "70");
-showTask("Thymeleaf", "task3", "99");
-showProject("SAM", "Project TARDIS");
-showProject("aaaa", "Aaaaa");
+/*]]>*/
 </script>
 
 </body>

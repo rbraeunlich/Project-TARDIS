@@ -11,6 +11,7 @@ class ProjectImpl implements Project {
 
 	private final ProjectId id;
 	private String name;
+	private String description;
 	private final String owner;
 	private final Set<String> members;
 	private Date dueDate;
@@ -31,6 +32,16 @@ class ProjectImpl implements Project {
 		return name;
 	}
 
+	@Override
+	public void setDescription(String des) {
+		this.description = des;
+	}
+	
+	@Override
+	public String getDescription() {
+		return description;
+	}
+	
 	@Override
 	public ProjectId getId() {
 		return id;

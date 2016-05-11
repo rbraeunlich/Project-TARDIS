@@ -13,6 +13,10 @@ public interface Project {
 
 	String getName();
 	
+	void setDescription(String des);
+	
+	String getDescription();
+	
 	Date getDueDate();
 	
 	void setDueDate(Date d);
