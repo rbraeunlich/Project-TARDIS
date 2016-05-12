@@ -128,17 +128,20 @@ function onload() {
 
 <!-- show notifications on mouse over to icon -->
 function showNotification(e) {
-	var notification = document.createElement("div");
-	notification.id = "notification";
+	if (document.getElementById("notification") == null) {
 	
-	var size = document.getElementById("board").clientWidth;
-	var x = e.clientX - 150 - (size*1.125);
-	var y = e.clientY - 150;
-	
-	notification.style.left = x + "px";
-	notification.style.top = y + "px";
-	
-	document.getElementById("notificationBox").appendChild(notification);
+		var notification = document.createElement("div");
+		notification.id = "notification";
+		
+		var size = document.getElementById("board").clientWidth;
+		var x = e.clientX - 150 - (size*1.125);
+		var y = e.clientY - 150;
+		
+		notification.style.left = x + "px";
+		notification.style.top = y + "px";
+		
+		document.getElementById("notificationBox").appendChild(notification);
+	}
 }
 function closeNotification() {
 	document.getElementById("notificationBox").removeChild(document.getElementById("notification"));
