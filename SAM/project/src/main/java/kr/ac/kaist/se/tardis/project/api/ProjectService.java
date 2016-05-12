@@ -14,7 +14,7 @@ public interface ProjectService {
 	 * 
 	 * @return
 	 */
-	Project createProject();
+	Project createProject(String owner);
 
 	/**
 	 * Returns a set of projects for the specified user. If the user has no

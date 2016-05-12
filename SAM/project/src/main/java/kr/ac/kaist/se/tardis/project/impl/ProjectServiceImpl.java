@@ -19,22 +19,25 @@ public class ProjectServiceImpl implements ProjectService {
 	private Set<Project> projects = new HashSet<>();
 
 	@Override
-	public Project createProject() {
+	public Project createProject(String owner) {
 		ProjectId projectId = ProjectIdFactory.generateProjectId();
-		//FIXME gotta access the current user here
-		Project p = new ProjectImpl(projectId, null);
+		Project p = new ProjectImpl(projectId, owner);
 		return p;
 	}
 
 	@Override
 	public Set<Project> findProjectsForUser(String userId) {
-		// TODO
-		return null;
+		return projects
+				.stream()
+				.filter(p -> (p.getProjectOwner().equals(userId) || p
+						.getProjectMembers().contains(userId)))
+				.collect(Collectors.toSet());
 	}
 
 	@Override
 	public Set<Project> findProjectByName(String name) {
-		return projects.stream().filter(p -> name.equals(p.getName())).collect(Collectors.toSet());
+		return projects.stream().filter(p -> name.equals(p.getName()))
+				.collect(Collectors.toSet());
 	}
 
 	@Override

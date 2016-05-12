@@ -22,16 +22,19 @@
 
 <div id="board" class="box">
 	<div id="project" class="overview">
-		<form id="createProject">
+		<form id="createProject" action="#" th:action="@{/overview}" th:object="${createProjectForm}" method="post">
 			<img id="createProjectIcon" alt="Create icon" src="../image/create.png" onclick="showCreateProjectForm()"/>
 			<div id="createProjectFormWrapper">				
 				<p> 
-					Project Name:        <input id="projectname" class="createProjectInput"/>
+					Project Name:        <input id="projectname" class="createProjectInput" th:field="*{projectName}"/>
 				</p>
 				<p>
-					Project Description: <input id="description" class="createProjectInput"/>
+					Project Description: <input id="description" class="createProjectInput" th:field="*{description}"/>
 				</p>
 				<input id="createProjectButton" class="button" type="submit" value="Create Project" />
+			</div>
+			<div id="errorwrapper">
+				<p id="errorProjectName" th:if="${#fields.hasErrors('projectName')}" th:errors="*{projectName}">Name Error</p>
 			</div>
 		</form>
 	</div>

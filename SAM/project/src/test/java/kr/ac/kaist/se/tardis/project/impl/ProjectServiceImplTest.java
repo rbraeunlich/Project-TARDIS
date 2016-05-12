@@ -10,18 +10,17 @@ import static org.junit.Assert.assertThat;
 import java.util.Optional;
 import java.util.Set;
 
+import kr.ac.kaist.se.tardis.project.TestConfig;
+import kr.ac.kaist.se.tardis.project.api.Project;
+import kr.ac.kaist.se.tardis.project.api.ProjectService;
+import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
+
 import org.junit.After;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import kr.ac.kaist.se.tardis.project.TestConfig;
-import kr.ac.kaist.se.tardis.project.api.Project;
-import kr.ac.kaist.se.tardis.project.api.ProjectService;
-import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { TestConfig.class })
@@ -31,22 +30,22 @@ public class ProjectServiceImplTest {
 	private ProjectService projectService;
 
 	@After
-	public void tearDown(){
+	public void tearDown() {
 		Set<Project> allProjects = projectService.getAllProjects();
 		for (Project project : allProjects) {
 			projectService.deleteProject(project);
 		}
 	}
-	
+
 	@Test
 	public void createProject() {
-		Project project = projectService.createProject();
+		Project project = projectService.createProject("me");
 		assertThat(project, is(notNullValue()));
 	}
 
 	@Test
 	public void findExistingProjectByName() {
-		Project project = projectService.createProject();
+		Project project = projectService.createProject("me");
 		String name = "foo";
 		project.setName(name);
 		projectService.saveProject(project);
@@ -57,10 +56,10 @@ public class ProjectServiceImplTest {
 	@Test
 	public void findExistingProjectsByName() {
 		String name = "bar";
-		Project project = projectService.createProject();
+		Project project = projectService.createProject("me");
 		project.setName(name);
 		projectService.saveProject(project);
-		Project project2 = projectService.createProject();
+		Project project2 = projectService.createProject("me");
 		project2.setName(name);
 		projectService.saveProject(project2);
 		Set<Project> projectByName = projectService.findProjectByName(name);
@@ -75,47 +74,67 @@ public class ProjectServiceImplTest {
 
 	@Test
 	public void findExistingProjectById() {
-		Project project = projectService.createProject();
+		Project project = projectService.createProject("me");
 		projectService.saveProject(project);
-		Optional<Project> projectById = projectService.findProjectById(project.getId());
+		Optional<Project> projectById = projectService.findProjectById(project
+				.getId());
 		assertThat(projectById.get(), is(project));
 	}
 
 	@Test
 	public void findNonExistingProjectById() {
-		Optional<Project> projectById = projectService.findProjectById(ProjectIdFactory.generateProjectId());
+		Optional<Project> projectById = projectService
+				.findProjectById(ProjectIdFactory.generateProjectId());
 		assertThat(projectById.isPresent(), is(false));
 	}
 
 	@Test
 	public void safeProject() {
-		Project project = projectService.createProject();
+		Project project = projectService.createProject("me");
 		projectService.saveProject(project);
 		// FIXME we should look into the database here, so we should modify the
 		// test after persistence is complete
-		Optional<Project> projectById = projectService.findProjectById(project.getId());
+		Optional<Project> projectById = projectService.findProjectById(project
+				.getId());
 		assertThat(projectById.get(), is(project));
 	}
 
-	@Ignore
 	@Test
 	public void findExistingProjectForUser() {
-		// TODO
+		String user = "me";
+		Project project = projectService.createProject(user);
+		projectService.saveProject(project);
+		Set<Project> projectsForUser = projectService.findProjectsForUser(user);
+		assertThat(projectsForUser, contains(project));
 	}
-	
+
 	@Test
-	public void deleteSavedProject(){
-		Project project = projectService.createProject();
+	public void findExistingProjectForTwoUsers() {
+		String user = "me";
+		String user2 = "you";
+		Project project = projectService.createProject(user);
+		projectService.saveProject(project);
+		Project project2 = projectService.createProject(user2);
+		projectService.saveProject(project2);
+		assertThat(projectService.findProjectsForUser(user), contains(project));
+		assertThat(projectService.findProjectsForUser(user2),
+				contains(project2));
+	}
+
+	@Test
+	public void deleteSavedProject() {
+		Project project = projectService.createProject("me");
 		projectService.saveProject(project);
 		projectService.deleteProject(project);
-		Optional<Project> projectById = projectService.findProjectById(project.getId());
+		Optional<Project> projectById = projectService.findProjectById(project
+				.getId());
 		assertThat(projectById.isPresent(), is(false));
 	}
-	
+
 	@Test
-	public void deleteNotSavedProject(){
-		Project project = projectService.createProject();
+	public void deleteNotSavedProject() {
+		Project project = projectService.createProject("me");
 		projectService.deleteProject(project);
-		//just no error is fine
+		// just no error is fine
 	}
 }

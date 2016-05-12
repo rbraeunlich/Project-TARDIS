@@ -69,9 +69,23 @@ public class SamApplicationTests {
 		webDriver.findElement(By.id("username")).sendKeys(USERNAME);
 		webDriver.findElement(By.id("password")).sendKeys(PASSWORD);
 		webDriver.findElement(By.id("loginButton")).click();
-
+		//check redirect
 		String currentUrl = webDriver.getCurrentUrl();
 		assertThat(currentUrl, containsString("overview"));
+		// create project
+		webDriver.findElement(By.id("createProjectIcon")).click();
+		// first create an error
+		webDriver.findElement(By.id("createProjectButton")).click();
+		//check errormessage
+		assertThat(webDriver.findElement(By.id("errorProjectName")).getText(), is(notNullValue()));
+		//now really create a project
+		String projectName = "project";
+		webDriver.findElement(By.id("createProjectIcon")).click();
+		webDriver.findElement(By.id("projectname")).sendKeys(projectName);
+		webDriver.findElement(By.id("description")).sendKeys("An example project");
+		webDriver.findElement(By.id("createProjectButton")).click();
+		// check that project is being shown
+		webDriver.findElement(By.id(projectName)).click();
 	}
 
 }
