@@ -20,8 +20,13 @@
 
 <div id="board" class="box">
 	<div id="project" class="overview">
+		<form id="addProject">
+			<div id="addProjectFormWrapper">
+				<input id="addProjectButton" alt="Add icon" type="image" src="../image/add.png"/>
+			</div>
+		</form>
 	</div>
-	<div id="task" class="overview">
+	<div id="toDoList" class="overview">
 	</div>	
 </div>
 
@@ -86,20 +91,31 @@ function showProject(name, description) {
 	taskList.id = name + "TaskList";
 	project_entry.appendChild(taskList);
 	
+	<!-- setting button -->
+	var settingForm = document.createElement("form");
+	var settingButton = document.createElement("input");
+	settingButton.className = "settingButton";
+	settingButton.type = "image";
+	settingButton.id = name + "Setting";
+	settingButton.src = "../image/setting.png";
+	settingForm.appendChild(settingButton);
+	project_entry.appendChild(settingForm);
+	
 	var project_board = document.getElementById("project");
-	project_board.appendChild(project_entry);
+	project_board.insertBefore(project_entry, document.getElementById("addProject"));
 } 
 
 <!-- event handler on resize of window -->
 function resizeWindow() {
 	var size = document.getElementById("board").clientWidth;
 	
+	// Incase enough width, two column of project and personal to-do list
 	if (size>1500) {
 		document.getElementById("project").style = "float:left;";
-		document.getElementById("task").style = "float:right;";
+		document.getElementById("toDoList").style = "float:right;";
 	} else {
 		document.getElementById("project").style = "float:none;margin:auto;margin-top:25px;";
-		document.getElementById("task").style = "float:none;margin:auto;margin-top:25px;";
+		document.getElementById("toDoList").style = "float:none;margin:auto;margin-top:25px;margin-bottom:25px;";
 	}
 }
 
@@ -108,8 +124,14 @@ function onload() {
 	document.getElementById("username").innerHTML = "Hello, " + username;
 }
 
+<!-- loop showing project in model attribute projectList -->
 var projectList = [[${projectList}]];
-showProject(projectList[0].name, projectList[0].description);
+for (i = 0; i < projectList.length ; i++) {
+	var project = projectList[i];
+	showProject(project.name, project.description);
+}
+
+<!-- fix after task object developed -->
 showTask(projectList[0].name, "task1", "23");
 showTask(projectList[0].name, "task2", "70");
 showTask(projectList[0].name, "task3", "99");

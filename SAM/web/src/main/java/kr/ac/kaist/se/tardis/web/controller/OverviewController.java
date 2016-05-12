@@ -19,16 +19,19 @@ public class OverviewController {
 
 	@RequestMapping(value = { "/overview" })
 	public String overviewpage(Model model) {
-		List test = new ArrayList();
 		
-		ProjectService service = new ProjectServiceImpl();
-		Project p = service.createProject();
+		// list of project model attribute pass to overview page
+		List<Project> projectList = new ArrayList<>();
+
+		// sample project object
+		Project p = projectService.createProject();
 		p.setName("SAM");
 		p.setDescription("Project TARDIS");
-		test.add(p);
+		projectList.add(p);
 		
 		model.addAttribute("username", "Baek");
-		model.addAttribute("projectList", test);
+		model.addAttribute("projectList", projectList);
+		
 		return "overview";
 	}
 }
