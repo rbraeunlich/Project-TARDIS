@@ -17,6 +17,7 @@
 	<img alt="SAM icon" src="../image/Clock.png" />
 	<div id="notificationBox" onclick="showNotification(event)" onmouseleave="closeNotification()">
 		<img alt="Alarm icon" src="../image/bell.png" style="width:50px;height:50px;"/>
+		<div id="notification" style="display:none;"></div>
 	</div>	
 </div>
 
@@ -114,7 +115,7 @@ function showProject(name, description) {
 	project_entry.appendChild(settingForm);
 	
 	var project_board = document.getElementById("project");
-	project_board.insertBefore(project_entry, document.getElementById("addProject"));
+	project_board.insertBefore(project_entry, document.getElementById("createProject"));
 } 
 
 <!-- event handler on resize of window -->
@@ -138,23 +139,21 @@ function onload() {
 
 <!-- show notifications on mouse over to icon -->
 function showNotification(e) {
-	if (document.getElementById("notification") == null) {
 	
-		var notification = document.createElement("div");
-		notification.id = "notification";
-		
-		var size = document.getElementById("board").clientWidth;
-		var x = e.clientX - 150 - (size*1.125);
-		var y = e.clientY - 150;
-		
-		notification.style.left = x + "px";
-		notification.style.top = y + "px";
-		
-		document.getElementById("notificationBox").appendChild(notification);
+	var notification = document.getElementById("notification");
+	
+	var size = document.getElementById("board").clientWidth;
+	var x = e.clientX - 150 - (size*1.125);
+	var y = e.clientY - 150;	
+	notification.style.left = x + "px";
+	notification.style.top = y + "px";
+	
+	if (notification.style.display == "none") {		
+		notification.style.display = "block";
 	}
 }
 function closeNotification() {
-	document.getElementById("notificationBox").removeChild(document.getElementById("notification"));
+	document.getElementById("notification").style.display = "none";
 }
 
 <!-- project creation form appears after click on addProjectIcon -->
