@@ -22,9 +22,16 @@
 
 <div id="board" class="box">
 	<div id="project" class="overview">
-		<form id="addProject">
-			<div id="addProjectFormWrapper">
-				<input id="addProjectButton" alt="Add icon" type="image" src="../image/add.png"/>
+		<form id="createProject">
+			<img id="createProjectIcon" alt="Create icon" src="../image/create.png" onclick="showCreateProjectForm()"/>
+			<div id="createProjectFormWrapper">				
+				<p> 
+					Project Name:        <input id="projectname" class="createProjectInput"/>
+				</p>
+				<p>
+					Project Description: <input id="description" class="createProjectInput"/>
+				</p>
+				<input id="createProjectButton" class="button" type="submit" value="Create Project" />
 			</div>
 		</form>
 	</div>
@@ -73,14 +80,14 @@ function showProject(name, description) {
 	
 	<!-- write project name in -->
 	var project_name = document.createElement("p");
-	project_name.className = "projectName";
+	project_name.className = "projectNameText";
 	var text = document.createTextNode(name);
 	project_name.appendChild(text);
 	text_block.appendChild(project_name);	
 	
 	<!-- write project description in -->
 	var project_description = document.createElement("p");
-	project_description.className = "description";
+	project_description.className = "projectDescription";
 	text = document.createTextNode(description);
 	project_description.appendChild(text);
 	text_block.appendChild(project_description);
@@ -145,6 +152,12 @@ function showNotification(e) {
 }
 function closeNotification() {
 	document.getElementById("notificationBox").removeChild(document.getElementById("notification"));
+}
+
+<!-- project creation form appears after click on addProjectIcon -->
+function showCreateProjectForm() {
+	document.getElementById("createProjectFormWrapper").style.display = "block";
+	document.getElementById("createProjectIcon").style.display = "none";
 }
 
 <!-- loop showing project in model attribute projectList -->
