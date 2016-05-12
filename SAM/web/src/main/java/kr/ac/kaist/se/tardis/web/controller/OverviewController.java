@@ -24,10 +24,20 @@ public class OverviewController {
 		List<Project> projectList = new ArrayList<>();
 
 		// sample project object
-		Project p = projectService.createProject();
-		p.setName("SAM");
-		p.setDescription("Project TARDIS");
-		projectList.add(p);
+		Project p1 = projectService.createProject();
+		p1.setName("SAM");
+		p1.setDescription("Project TARDIS");
+		projectList.add(p1);
+		
+		Project p2 = projectService.createProject();
+		p2.setName("test2");
+		p2.setDescription("Project ");
+		projectList.add(p2);
+		
+		Project p3 = projectService.createProject();
+		p3.setName("test3");
+		p3.setDescription("Project ");
+		projectList.add(p3);
 		
 		model.addAttribute("username", "Baek");
 		model.addAttribute("projectList", projectList);

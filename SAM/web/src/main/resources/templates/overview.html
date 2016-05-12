@@ -8,14 +8,16 @@
 <body onresize="resizeWindow()" onpageshow="resizeWindow()" onload="onload()">
 
 <div id="bar" class="box">	
-	<input id="accountpage" class="button" type="button" value="My Page" style="float:right;"/>
-	<input id="logout" class="button" type="button" value="Log Out" style="float:right;margin-right:10px;" onclick="window.location.href='/'"/> <!-- Add onclick fuction -->
+	<input id="accountpage" class="button" type="button" value="My Page" style="float:right;"/> <!-- Add onclick fuction -->
+	<input id="logout" class="button" type="button" value="Log Out" style="float:right;margin-right:10px;" onclick="window.location.href='/'"/> 
 	<p id = "username" style="float:right;margin:0px 20px" />
 </div>
 
 <div id="heading" class="box">
 	<img alt="SAM icon" src="../image/Clock.png" />
-	<img alt="Alarm icon" src="../image/bell.png" style="float:right;width:50px;height:50px;position:relative;top:90px;right:10px;"/>
+	<div id="notificationBox" onclick="showNotification(event)" onmouseleave="closeNotification()">
+		<img alt="Alarm icon" src="../image/bell.png" style="width:50px;height:50px;"/>
+	</div>	
 </div>
 
 <div id="board" class="box">
@@ -114,8 +116,8 @@ function resizeWindow() {
 		document.getElementById("project").style = "float:left;";
 		document.getElementById("toDoList").style = "float:right;";
 	} else {
-		document.getElementById("project").style = "float:none;margin:auto;margin-top:25px;";
-		document.getElementById("toDoList").style = "float:none;margin:auto;margin-top:25px;margin-bottom:25px;";
+		document.getElementById("project").style = "float:none;margin:auto;margin-top:25px;width:80%;overflow:auto;";
+		document.getElementById("toDoList").style = "float:none;margin:auto;margin-top:25px;margin-bottom:25px;width:80%;overflow:auto;";
 	}
 }
 
@@ -124,17 +126,37 @@ function onload() {
 	document.getElementById("username").innerHTML = "Hello, " + username;
 }
 
+<!-- show notifications on mouse over to icon -->
+function showNotification(e) {
+	var notification = document.createElement("div");
+	notification.id = "notification";
+	
+	var size = document.getElementById("board").clientWidth;
+	var x = e.clientX - 150 - (size*1.125);
+	var y = e.clientY - 150;
+	
+	notification.style.left = x + "px";
+	notification.style.top = y + "px";
+	
+	document.getElementById("notificationBox").appendChild(notification);
+}
+function closeNotification() {
+	document.getElementById("notificationBox").removeChild(document.getElementById("notification"));
+}
+
 <!-- loop showing project in model attribute projectList -->
 var projectList = [[${projectList}]];
 for (i = 0; i < projectList.length ; i++) {
 	var project = projectList[i];
-	showProject(project.name, project.description);
+	showProject(project.name, project.description);	
 }
 
 <!-- fix after task object developed -->
 showTask(projectList[0].name, "task1", "23");
 showTask(projectList[0].name, "task2", "70");
 showTask(projectList[0].name, "task3", "99");
+showTask(projectList[0].name, "task4", "99");
+showTask(projectList[0].name, "task5", "99");
 
 /*]]>*/
 </script>

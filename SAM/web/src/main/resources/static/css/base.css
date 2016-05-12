@@ -12,14 +12,15 @@ p {
 
 .overview {
 	border: 1px solid lightgrey;
-	width: 700px;
+	width: 46%;
 	min-height: 400px;
 	margin: 23px;
 	background-color: lightgrey;
 }
 
 .entry {
-	width: 620px;
+	min-width: 620px;
+	width: 90%;
 	height: 150px;
 	margin: auto;
 	margin-top: 25px;
@@ -27,14 +28,17 @@ p {
 	padding-right: 15px;
 	border: 1px solid grey;
 	background-color: white;
+	overflow: auto;
 }
 
 .textBlock {
 	margin: 5px;
-	width: 250px;
+	min-width: 250px;
+	width: 30%;
 	height: 140px;
 	float: left;
 	padding: 0px;
+	overflow: auto;
 }
 
 .projectName {
@@ -44,22 +48,23 @@ p {
 }
 
 .description {
-	width: 250px;
+	width: 90%;
 	margin-left: 5px;
 	margin-top: 0px;
 }
 
 .projectTaskList {
-	width: 300px;
+	min-width: 300px;
+	width: 45%;
 	height: 100px;
 	float: left;
 	position: relative;
 	top: 25px;
+	overflow: auto;
 }
 
 .projectTaskBlock {
-	margin-left: 12px;
-	margin-top: 12px;
+	margin: 9px;
 	width: 75px;
 	height: 75px;
 	background-color: lightgrey;
@@ -85,7 +90,7 @@ p {
 
 #bar {
 	margin-top:30px;
-	height: 20px;
+	height: 21px;
 }
 
 #heading {
@@ -98,15 +103,68 @@ p {
 	border: 1px solid grey;
 }
 
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+#notification {
+	border: 1px solid grey;
+	width: 200px;
+	height: 300px;
+	background-color: lightgrey;
+	position: absolute;
+	z-index: 3;
+	
+	-webkit-animation: fadein 0.3s;
+	-moz-animation: fadein 0.3s;
+	-ms-animation: fadein 0.3s;
+	-o-animation: fadein 0.3s;
+	animation: fadein 0.3s;
+}
+
+#notificationBox {
+	height: auto;
+	width: auto;
+	margin: 0px;
+	float: right;
+	position: relative;
+	top: 90px;
+	right: 10px;
+}
+
 #project {
 	float: left;
 }
 
 #addProject {
-	width: 600px;
+	width: 70%;
 	height: 50px;
-	margin: auto;
-	margin-top: 25px;
+	margin: 25px auto 25px auto;
 	border: 1px solid grey;
 	background-color: white;
 	text-align: center;
@@ -132,3 +190,4 @@ p {
 	margin-bottom: 20px;
 	text-align: right;
 }
+
