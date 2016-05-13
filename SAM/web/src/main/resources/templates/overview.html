@@ -38,6 +38,8 @@
 				<p id="errorProjectName" th:if="${#fields.hasErrors('projectName')}" th:errors="*{projectName}">Name Error</p>
 			</div>
 		</form>
+		
+		<form id="managementForm" action="#" th:action="@{/projectManagement}" method="get"></form>
 	</div>
 	<div id="toDoList" class="overview">
 	</div>	
@@ -105,12 +107,13 @@ function showProject(name, description) {
 	project_entry.appendChild(taskList);
 	
 	<!-- setting button -->
-	var settingForm = document.createElement("form");
+	var settingForm = document.getElementById("managementForm");
 	var settingButton = document.createElement("input");
 	settingButton.className = "settingButton";
 	settingButton.type = "image";
 	settingButton.id = name + "Setting";
 	settingButton.src = "../image/setting.png";
+	
 	settingForm.appendChild(settingButton);
 	project_entry.appendChild(settingForm);
 		
@@ -161,7 +164,7 @@ function showCreateProjectForm() {
 	document.getElementById("createProjectFormWrapper").style.display = "block";
 	document.getElementById("createProjectIcon").style.display = "none";
 }
-           
+       
 <!-- loop showing project in model attribute projectList -->
 var projectList = [[${projectList}]];
 for (i = 0; i < projectList.length ; i++) {
