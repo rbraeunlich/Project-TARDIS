@@ -20,7 +20,7 @@ import kr.ac.kaist.se.tardis.SamApplication;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = SamApplication.class)
 @WebIntegrationTest
-public class RegistrationControllerTest {
+public class RegistrationControllerIntegrationTest {
 
 	@Autowired
 	private WebApplicationContext wac;
