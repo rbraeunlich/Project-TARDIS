@@ -1,4 +1,4 @@
-package kr.ac.kaist.se.tardis.users;
+package kr.ac.kaist.se.tardis.users.persistence;
 
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
@@ -16,7 +16,7 @@ import org.springframework.boot.test.IntegrationTest;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import kr.ac.kaist.se.tardis.users.UserDataSourceConfig;
+import kr.ac.kaist.se.tardis.users.persistence.UserDataSourceConfig;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @IntegrationTest

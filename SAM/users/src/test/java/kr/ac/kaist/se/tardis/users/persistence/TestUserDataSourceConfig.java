@@ -1,4 +1,4 @@
-package kr.ac.kaist.se.tardis.users;
+package kr.ac.kaist.se.tardis.users.persistence;
 
 import javax.sql.DataSource;
 
@@ -9,14 +9,14 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
 @Configuration
-public class UserDataSourceConfig {
+public class TestUserDataSourceConfig {
 
 	@Bean(name = "userDS")
 	public DataSource createUsersDataSource() {
 		EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
 		EmbeddedDatabase embeddedDatabase = builder.generateUniqueName(true).setType(EmbeddedDatabaseType.H2)
 				.setScriptEncoding("UTF-8")
-				// .addScript(script)
+				.addScript("kr/ac/kaist/se/tardis/users/sql/h2.user.sql")
 				.build();
 		return embeddedDatabase;
 	}
