@@ -5,45 +5,23 @@ import static org.hamcrest.Matchers.empty;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 import static org.junit.Assert.assertThat;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 
 import java.util.Set;
 
 import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.boot.test.WebIntegrationTest;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.context.WebApplicationContext;
 
-import kr.ac.kaist.se.tardis.SamApplication;
 import kr.ac.kaist.se.tardis.project.api.Project;
 import kr.ac.kaist.se.tardis.project.api.ProjectService;
 import kr.ac.kaist.se.tardis.web.form.CreateProjectForm;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = SamApplication.class)
-@WebIntegrationTest
-public class OverviewControllerIntegrationTest {
+public class OverviewControllerIntegrationTest extends AbstractControllerIntegrationTest {
 
 	@Autowired
-	private WebApplicationContext wac;
-	
-	@Autowired
 	private ProjectService projectService;
-	
-	private MockMvc mockMvc;
-	
-	@Before
-	public void setUp() {
-		mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
-	}
 	
 	@After
 	public void tearDown(){
