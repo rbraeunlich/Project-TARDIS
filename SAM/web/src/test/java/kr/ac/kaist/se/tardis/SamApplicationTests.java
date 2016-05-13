@@ -64,6 +64,8 @@ public class SamApplicationTests {
 		webDriver.findElement(By.id("registerButton")).click();
 		webDriver.findElement(By.id("username")).sendKeys(USERNAME);
 		webDriver.findElement(By.id("password")).sendKeys(PASSWORD);
+		webDriver.findElement(By.id("usernameRepeated")).sendKeys(USERNAME);
+		webDriver.findElement(By.id("passwordRepeated")).sendKeys(PASSWORD);
 		webDriver.findElement(By.id("createButton")).click();
 		// login
 		webDriver.findElement(By.id("username")).sendKeys(USERNAME);

@@ -9,24 +9,47 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import org.junit.Test;
 
+import kr.ac.kaist.se.tardis.web.form.RegistrationForm;
+
 public class RegistrationControllerIntegrationTest extends AbstractControllerIntegrationTest {
 
 	@Test
 	public void successfulRegistration() throws Exception {
 		mockMvc
-			.perform(post("/registration").param("username", "admin").param("password", "admin"))
+			.perform(post("/registration")
+						.param("username", "admin")
+						.param("password", "admin")
+						.param("usernameRepeated", "admin")
+						.param("passwordRepeated", "admin"))
 			.andExpect(status().isFound())
 			.andExpect(redirectedUrlPattern("**/index"));
 	}
 	
 	@Test
-	public void invalidLogin() throws Exception {
+	public void invalidLoginLength() throws Exception {
 		mockMvc
-			.perform(post("/registration").param("username", "").param("password", ""))
+		.perform(post("/registration")
+				.param("username", "")
+				.param("password", "")
+				.param("usernameRepeated", "")
+				.param("passwordRepeated", ""))
 			.andExpect(status().isOk())
 			.andExpect(view().name("registration"))
-			.andExpect(content().string(containsString("Username must contain at least one character")))
-			.andExpect(content().string(containsString("Password must contain at least one character")));
+			.andExpect(content().string(containsString(RegistrationForm.USERNAME_LENGTH_ERROR)))
+			.andExpect(content().string(containsString(RegistrationForm.PASSWORD_LENGTH_ERROR)));
 	}
 
+	@Test
+	public void invalidLoginEquality() throws Exception {
+		mockMvc
+		.perform(post("/registration")
+				.param("username", "admin")
+				.param("password", "admin")
+				.param("usernameRepeated", "admin1")
+				.param("passwordRepeated", "admin1"))
+			.andExpect(status().isOk())
+			.andExpect(view().name("registration"))
+			.andExpect(content().string(containsString(RegistrationForm.USERNAME_EQUAL_ERROR)))
+			.andExpect(content().string(containsString(RegistrationForm.PASSWORD_EQUAL_ERROR)));
+	}
 }

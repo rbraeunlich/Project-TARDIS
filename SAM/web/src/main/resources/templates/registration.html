@@ -6,18 +6,30 @@
 </head>
 <body>
 	<p th:text="'ToDo'" />
-	<form action="#" th:action="@{/registration}" th:object="${loginForm}"
+	<form action="#" th:action="@{/registration}" th:object="${registrationForm}"
 		method="post">
 		<p>
 			Username:<input id="username" name="username" type="text"
 				th:field="*{username}" /> <b
 				th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Name
 				Error</b>
+		</p>		
+		<p>
+			Repeat Username:<input id="usernameRepeated" name="usernameRepeated" type="text"
+				th:field="*{usernameRepeated}" /> <b
+				th:if="${#fields.hasErrors('usernameRepeated')}" th:errors="*{usernameRepeated}">Name
+				Error</b>
 		</p>
 		<p>
 			Password:<input id="password" name="password" type="password"
 				th:field="*{password}" /> <b
 				th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password
+				Error</b>
+		</p>
+		<p>
+			Repeat Password:<input id="passwordRepeated" name="passwordRepeated" type="password"
+				th:field="*{passwordRepeated}" /> <b
+				th:if="${#fields.hasErrors('passwordRepeated')}" th:errors="*{passwordRepeated}">Password
 				Error</b>
 		</p>
 		<p>
