@@ -1,0 +1,147 @@
+div {
+	-webkit-animation: fadein 0.3s;
+	-moz-animation: fadein 0.3s;
+	-ms-animation: fadein 0.3s;
+	-o-animation: fadein 0.3s;
+	animation: fadein 0.3s;
+}
+
+p {
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.box {
+	width: 80%;
+	margin: auto;
+}
+
+.kanban {
+	border: 1px solid lightgrey;
+	width: 23.25%;
+	min-height: 400px;
+	margin: 12px;
+	background-color: lightgrey;
+}
+
+.boardName {
+	text-align: center;
+	font-size: 120%;
+}
+
+.entry {
+	width: 90%;
+	height: 100px;
+	margin: auto;
+	margin-top: 25px;
+	padding-left: 5px;
+	padding-right: 15px;
+	border: 1px solid grey;
+	background-color: white;
+}
+
+.textBlock {
+	margin: 5px;
+	width: 30%;
+	height: 140px;
+	float: left;
+	padding: 0px;
+}
+
+.taskNameText {
+	width: 200px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.taskDescription {
+	width: 90%;
+	margin-left: 5px;
+	margin-top: 0px;
+}
+
+.settingButton {
+	width: 50px;
+	height: 50px;
+	float: right;
+	position: relative;
+	top: 25px;
+}
+
+.taskName {
+	text-align: center;
+}
+
+.taskProgress {
+	margin-left:2px;
+	width: 70px;
+}
+
+#bar {
+	margin-top:30px;
+	height: 21px;
+}
+
+#heading {
+	margin-top:10px;
+	height: 150px;
+}
+
+#board {
+	display: table;
+	border: 1px solid grey;
+	padding: 11px;
+}
+
+#notification {
+	border: 1px solid grey;
+	width: 200px;
+	height: 300px;
+	background-color: lightgrey;
+	position: absolute;
+	z-index: 3;
+}
+
+#notificationBox {
+	height: auto;
+	width: auto;
+	margin: 0px;
+	float: right;
+	position: relative;
+	top: 90px;
+	right: 10px;
+}
+
+#footer {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: right;
+}

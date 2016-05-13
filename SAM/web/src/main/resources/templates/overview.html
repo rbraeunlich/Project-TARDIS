@@ -3,7 +3,7 @@
 <head>
     <title>Project Overview</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link rel="stylesheet" th:href="@{/css/base.css}" href="../static/css/base.css" />
+	<link rel="stylesheet" th:href="@{/css/overview.css}" href="../static/css/overview.css" />
 </head>
 <body onresize="resizeWindow()" onpageshow="resizeWindow()" onload="onload()">
 
@@ -47,7 +47,7 @@
 
 <script th:inline="javascript">
 /*<![CDATA[*/
-
+           
 function showTask(project, task, progress) {
 	
 	var project_task = document.createElement("div");
@@ -113,7 +113,7 @@ function showProject(name, description) {
 	settingButton.src = "../image/setting.png";
 	settingForm.appendChild(settingButton);
 	project_entry.appendChild(settingForm);
-	
+		
 	var project_board = document.getElementById("project");
 	project_board.insertBefore(project_entry, document.getElementById("createProject"));
 } 
@@ -146,7 +146,7 @@ function showNotification(e) {
 	var x = e.clientX - 150 - (size*1.125);
 	var y = e.clientY - 150;	
 	notification.style.left = x + "px";
-	notification.style.top = y + "px";
+	notification.style.top = y + "px";  
 	
 	if (notification.style.display == "none") {		
 		notification.style.display = "block";
@@ -161,7 +161,7 @@ function showCreateProjectForm() {
 	document.getElementById("createProjectFormWrapper").style.display = "block";
 	document.getElementById("createProjectIcon").style.display = "none";
 }
-
+           
 <!-- loop showing project in model attribute projectList -->
 var projectList = [[${projectList}]];
 for (i = 0; i < projectList.length ; i++) {

@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Project Management</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" th:href="@{/css/projectManagement.css}" href="../static/css/projectManagement.css" />
+</head>
+<body onresize="resizeWindow()" onpageshow="resizeWindow()" onload="onload()">
+
+<div id="bar" class="box">	
+	<input id="accountpage" class="button" type="button" value="My Page" style="float:right;"/> <!-- Add onclick fuction -->
+	<input id="logout" class="button" type="button" value="Log Out" style="float:right;margin-right:10px;" onclick="window.location.href='/'"/> 
+	<p id = "username" style="float:right;margin:0px 20px" />
+</div>
+
+<div id="heading" class="box">
+	<img alt="SAM icon" src="../image/Clock.png" />
+	<div id="notificationBox" onclick="showNotification(event)" onmouseleave="closeNotification()">
+		<img alt="Alarm icon" src="../image/bell.png" style="width:50px;height:50px;"/>
+		<div id="notification" style="display:none;"></div>
+	</div>	
+</div>
+
+<div id="board" class="box">
+	<div id="ToDo" class="kanban" style="float:left;"><p class="boardName">ToDo</p></div>
+	<div id="In-Progress" class="kanban" style="float:left;"><p class="boardName">In-Progress</p></div>
+	<div id="Done" class="kanban" style="float:right;"><p class="boardName">Done</p></div>	
+	<div id="Review" class="kanban" style="float:right;"><p class="boardName">Review</p></div>	
+</div>
+
+<div id="footer" class="box">2016 Project TARDIS</div>
+
+<script th:inline="javascript">
+/*<![CDATA[*/
+           
+function showTask(state, name, description) {
+	<!-- create entry block -->
+	var task_entry = document.createElement("div");
+	task_entry.className = "entry";
+	task_entry.id = name;
+	
+	<!-- block for texts -->
+	var text_block = document.createElement("div");
+	text_block.className = "textBlock";
+	
+	<!-- write project name in -->
+	var task_name = document.createElement("p");
+	task_name.className = "taskNameText";
+	var text = document.createTextNode(name);
+	task_name.appendChild(text);
+	text_block.appendChild(task_name);	
+	
+	<!-- write project description in -->
+	var task_description = document.createElement("p");
+	task_description.className = "taskDescription";
+	text = document.createTextNode(description);
+	task_description.appendChild(text);
+	text_block.appendChild(task_description);
+	
+	task_entry.appendChild(text_block);
+	
+	<!-- setting button -->
+	var settingForm = document.createElement("form");
+	var settingButton = document.createElement("input");
+	settingButton.className = "settingButton";
+	settingButton.type = "image";
+	settingButton.id = name + "Setting";
+	settingButton.src = "../image/setting.png";
+	settingForm.appendChild(settingButton);
+	task_entry.appendChild(settingForm);
+		
+	var kanban_board = document.getElementById(state);
+	kanban_board.appendChild(task_entry);
+} 
+
+<!-- event handler on resize of window -->
+function resizeWindow() {
+	var size = document.getElementById("board").clientWidth;
+	
+	// Incase enough width, two column of project and personal to-do list
+	if (size>1500) {
+		document.getElementById("ToDo").style = "float:left;";
+		document.getElementById("In-Progress").style = "float:left;";
+		document.getElementById("Review").style = "float:right;";
+		document.getElementById("Done").style = "float:right;";
+	} else {
+		document.getElementById("ToDo").style = "float:left;width:47%;";
+		document.getElementById("In-Progress").style = "float:right;width:47%;";
+		document.getElementById("Done").style = "float:right;width:47%;";
+		document.getElementById("Review").style = "float:left;width:47%;";		
+	}
+}
+
+function onload() {
+	var username = [[${username}]];
+	document.getElementById("username").innerHTML = "Hello, " + username;
+}
+
+<!-- show notifications on mouse over to icon -->
+function showNotification(e) {
+	
+	var notification = document.getElementById("notification");
+	
+	var size = document.getElementById("board").clientWidth;
+	var x = e.clientX - 150 - (size*1.125);
+	var y = e.clientY - 150;	
+	notification.style.left = x + "px";
+	notification.style.top = y + "px";  
+	
+	if (notification.style.display == "none") {		
+		notification.style.display = "block";
+	}
+}
+function closeNotification() {
+	document.getElementById("notification").style.display = "none";
+}
+
+showTask("ToDo", "task1", "test");
+
+/*]]>*/
+</script>
+
+</body>
+</html>
