@@ -12,7 +12,9 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import kr.ac.kaist.se.tardis.users.api.User;
+import kr.ac.kaist.se.tardis.users.api.UserRepository;
 import kr.ac.kaist.se.tardis.users.impl.UserImpl;
+import kr.ac.kaist.se.tardis.users.impl.persistence.UserDbConfig;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @IntegrationTest
