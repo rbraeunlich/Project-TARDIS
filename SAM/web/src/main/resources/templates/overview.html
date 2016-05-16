@@ -74,7 +74,7 @@ function showTask(project, task, progress) {
 }
 
 <!-- function add entry of project to project overview board -->
-function showProject(name, description) {
+function showProject(name, description,id) {
 	<!-- create entry block -->
 	var project_entry = document.createElement("div");
 	project_entry.className = "entry";
@@ -117,10 +117,11 @@ function showProject(name, description) {
 	var hidden = document.createElement("input");
 	hidden.type = "hidden";
 	hidden.name="projectId";
-	hidden.value=name;
+	//hidden.value=name;
+	hidden.value=id;
 	settingForm.appendChild(hidden);
 	
-	settingForm.action = "/KanbanBoard?projectId=" + name;
+	settingForm.action = "/KanbanBoard?projectId=" + id;
 	settingForm.method="get";
 	
 	settingForm.appendChild(settingButton);
@@ -178,7 +179,7 @@ function showCreateProjectForm() {
 var projectList = [[${projectList}]];
 for (i = 0; i < projectList.length; i++) {
 	var project = projectList[i];
-	showProject(project.name, project.description);	
+	showProject(project.name, project.description,project.id.id);
 }
 
 <!-- fix after task object developed -->
