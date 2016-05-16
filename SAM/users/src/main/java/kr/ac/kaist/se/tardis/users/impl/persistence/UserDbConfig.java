@@ -13,7 +13,7 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import kr.ac.kaist.se.tardis.users.api.User;
+import kr.ac.kaist.se.tardis.users.impl.UserImpl;
 
 @Configuration
 @EnableTransactionManagement
@@ -28,7 +28,7 @@ public class UserDbConfig {
 	    HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 		LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
 		factory.setJpaVendorAdapter(vendorAdapter);
-		factory.setPackagesToScan(User.class.getPackage().getName());
+		factory.setPackagesToScan(UserImpl.class.getPackage().getName());
 		factory.setDataSource(userDataSource);
 		factory.afterPropertiesSet();
 

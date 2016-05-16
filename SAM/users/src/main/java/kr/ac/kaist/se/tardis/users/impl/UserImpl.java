@@ -7,7 +7,7 @@ import kr.ac.kaist.se.tardis.users.api.User;
 
 import org.springframework.security.crypto.password.StandardPasswordEncoder;
 
-@Entity
+@Entity(name="user")
 public class UserImpl implements User {
 
 	@Id
