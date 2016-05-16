@@ -17,7 +17,7 @@ import kr.ac.kaist.se.tardis.users.api.User;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = "kr.ac.kaist.se.tardis.users")
+@EnableJpaRepositories(basePackages = "kr.ac.kaist.se.tardis")
 public class UserDbConfig {
 
 	@Autowired
