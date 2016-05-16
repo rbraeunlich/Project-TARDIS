@@ -7,26 +7,29 @@ import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
 
+import kr.ac.kaist.se.tardis.users.impl.UserImpl;
+import kr.ac.kaist.se.tardis.users.api.User;
+
 public class UserTest {
 
 	@Test
 	public void passwordIsBeingEncrypted() {
 		String password = "admin";
-		User user = new User("admin", password);
+		User user = new UserImpl("admin", password);
 		assertThat(user.getPassword(), is(not(equalTo(password))));
 	}
 
 	@Test
 	public void passwordCorrectnessCheckValidPassword() {
 		String password = "admin";
-		User user = new User("admin", password);
+		User user = new UserImpl("admin", password);
 		assertThat(user.isPasswordCorrect(password), is(true));
 	}
 
 	@Test
 	public void passwordCorrectnessCheckInvalidPassword() {
 		String password = "admin";
-		User user = new User("admin", password);
+		User user = new UserImpl("admin", password);
 		assertThat(user.isPasswordCorrect("foo"), is(false));
 	}
 }

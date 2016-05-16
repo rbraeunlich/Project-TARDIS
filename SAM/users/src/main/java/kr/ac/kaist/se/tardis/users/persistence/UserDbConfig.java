@@ -13,7 +13,7 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import kr.ac.kaist.se.tardis.users.User;
+import kr.ac.kaist.se.tardis.users.api.User;
 
 @Configuration
 @EnableTransactionManagement
