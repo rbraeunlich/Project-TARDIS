@@ -1,7 +1,6 @@
 package kr.ac.kaist.se.tardis.task.api;
 
 import java.util.Date;
-import java.util.Optional;
 
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
 import kr.ac.kaist.se.tardis.task.impl.id.TaskId;
