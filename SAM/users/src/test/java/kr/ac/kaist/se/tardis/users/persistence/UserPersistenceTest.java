@@ -27,7 +27,7 @@ public class UserPersistenceTest {
 	@Test
 	public void persistUser() {
 		String name = "admin";
-		User user = new UserImpl(name, name);
+		UserImpl user = new UserImpl(name, name);
 		repo.save(user);
 		User findOne = repo.findOne(name);
 		assertThat(findOne, is(notNullValue()));
