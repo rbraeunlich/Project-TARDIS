@@ -39,7 +39,7 @@
 			</div>
 		</form>
 		
-		<form id="managementForm" action="#" th:action="@{/projectManagement}" method="get"></form>
+		<!-- <form id="managementForm" action="#" th:action="@{/KanbanBoard}" method="get"></form> -->
 	</div>
 	<div id="toDoList" class="overview">
 	</div>	
@@ -107,12 +107,21 @@ function showProject(name, description) {
 	project_entry.appendChild(taskList);
 	
 	<!-- setting button -->
-	var settingForm = document.getElementById("managementForm");
+	var settingForm = document.createElement("form");
 	var settingButton = document.createElement("input");
 	settingButton.className = "settingButton";
 	settingButton.type = "image";
 	settingButton.id = name + "Setting";
 	settingButton.src = "../image/setting.png";
+	
+	var hidden = document.createElement("input");
+	hidden.type = "hidden";
+	hidden.name="projectId";
+	hidden.value=name;
+	settingForm.appendChild(hidden);
+	
+	settingForm.action = "/KanbanBoard?projectId=" + name;
+	settingForm.method="get";
 	
 	settingForm.appendChild(settingButton);
 	project_entry.appendChild(settingForm);
@@ -167,7 +176,7 @@ function showCreateProjectForm() {
        
 <!-- loop showing project in model attribute projectList -->
 var projectList = [[${projectList}]];
-for (i = 0; i < projectList.length ; i++) {
+for (i = 0; i < projectList.length; i++) {
 	var project = projectList[i];
 	showProject(project.name, project.description);	
 }
@@ -176,8 +185,6 @@ for (i = 0; i < projectList.length ; i++) {
 showTask(projectList[0].name, "task1", "23");
 showTask(projectList[0].name, "task2", "70");
 showTask(projectList[0].name, "task3", "99");
-showTask(projectList[0].name, "task4", "99");
-showTask(projectList[0].name, "task5", "99");
 
 /*]]>*/
 </script>

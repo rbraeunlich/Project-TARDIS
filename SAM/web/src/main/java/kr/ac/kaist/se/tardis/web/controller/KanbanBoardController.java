@@ -14,14 +14,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class ProjectManagementController {
+public class KanbanBoardController {
 
 		@Autowired
 		private ProjectService projectService;
 
-		@RequestMapping(value = { "/projectManagement" }, method = RequestMethod.GET)
+		@RequestMapping(value = { "/KanbanBoard" }, method = RequestMethod.GET)
 		public String projectManagementpage(Model model) {
-			return "projectManagement";
+			return "KanbanBoard";
 		}
 	
 }

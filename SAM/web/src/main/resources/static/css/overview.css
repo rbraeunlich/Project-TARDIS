@@ -94,7 +94,6 @@ p {
 	float: left;
 	position: relative;
 	top: 25px;
-	overflow: auto;
 }
 
 .projectTaskBlock {
