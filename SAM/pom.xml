@@ -24,7 +24,8 @@
 		<module>web</module>
 		<module>users</module>
     <module>task</module>
-  </modules>
+    <module>persistence</module>
+	</modules>
 
 	<dependencies>
 		<dependency>

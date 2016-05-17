@@ -15,7 +15,6 @@ import org.springframework.boot.test.IntegrationTest;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import kr.ac.kaist.se.tardis.PrimaryDbConfig;
 import kr.ac.kaist.se.tardis.users.api.User;
 import kr.ac.kaist.se.tardis.users.api.UserRepository;
 import kr.ac.kaist.se.tardis.users.copy.UserWithoutPassword;

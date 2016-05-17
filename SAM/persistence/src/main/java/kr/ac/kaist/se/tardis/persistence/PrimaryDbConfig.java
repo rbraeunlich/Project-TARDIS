@@ -1,4 +1,4 @@
-package kr.ac.kaist.se.tardis;
+package kr.ac.kaist.se.tardis.persistence;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceContext;
@@ -23,7 +23,7 @@ import kr.ac.kaist.se.tardis.users.api.UserRepository;
 @EnableTransactionManagement
 @EnableJpaRepositories(
 		basePackages = "kr.ac.kaist.se.tardis", 
-		excludeFilters=@Filter(type=FilterType.ASSIGNABLE_TYPE,classes={UserRepository.class}))
+		excludeFilters=@Filter(type=FilterType.ASSIGNABLE_TYPE,value=UserRepository.class))
 public class PrimaryDbConfig {
 
 	@Autowired

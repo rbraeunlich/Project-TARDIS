@@ -1,4 +1,4 @@
-package kr.ac.kaist.se.tardis;
+package kr.ac.kaist.se.tardis.persistence;
 
 import javax.sql.DataSource;
 
