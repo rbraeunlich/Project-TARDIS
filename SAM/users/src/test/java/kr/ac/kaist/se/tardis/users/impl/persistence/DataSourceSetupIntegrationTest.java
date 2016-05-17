@@ -1,4 +1,4 @@
-package kr.ac.kaist.se.tardis.users.persistence;
+package kr.ac.kaist.se.tardis.users.impl.persistence;
 
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
