@@ -58,8 +58,7 @@ public class SamApplicationTests {
 		webDriver.get(testUrl);
 		// try to log in without account
 		webDriver.findElement(By.id("loginButton")).click();
-		assertThat(webDriver.findElement(By.id("errorUsername")).getText(), is(notNullValue()));
-		assertThat(webDriver.findElement(By.id("errorPassword")).getText(), is(notNullValue()));
+		assertThat(webDriver.findElement(By.id("errorLogin")).getText(), is(notNullValue()));
 		// create account
 		webDriver.findElement(By.id("registerButton")).click();
 		webDriver.findElement(By.id("username")).sendKeys(USERNAME);

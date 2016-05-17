@@ -3,9 +3,10 @@ package kr.ac.kaist.se.tardis.users.impl;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import kr.ac.kaist.se.tardis.users.api.User;
 
-import org.springframework.security.crypto.password.StandardPasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+import kr.ac.kaist.se.tardis.users.api.User;
 
 @Entity(name="user")
 public class UserImpl implements User {
@@ -23,7 +24,7 @@ public class UserImpl implements User {
 	
 	public UserImpl(String username, String password) {
 		this.username = username;
-		this.password = new StandardPasswordEncoder().encode(password);
+		this.password = new BCryptPasswordEncoder().encode(password);
 	}
 
 	@Override
@@ -42,7 +43,7 @@ public class UserImpl implements User {
 
 	@Override
 	public boolean isPasswordCorrect(String password){
-		return new StandardPasswordEncoder().matches(password, getPassword());
+		return new BCryptPasswordEncoder().matches(password, getPassword());
 	}
 	
 	@Override

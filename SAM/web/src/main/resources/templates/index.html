@@ -12,22 +12,22 @@
 		<img alt="SAM icon" src="../image/Clock.png" />
 	</div>
 	<div id="form">
-		<form action="#" th:action="@{/index}" th:object="${loginForm}" method="post">
+		<form action="#" th:action="@{/index}" method="post">
 			<div id="formcontentwrapper">
 					<p>
-						Username:<input id="username" name="username" type="text" th:field="*{username}"/>
+						Username:<input id="username" name="username" type="text"/>
 					</p>
 					<p>
-						Password:<input id="password" name="password" type="password" th:field="*{password}"/>
+						Password:<input id="password" name="password" type="password"/>
 					</p>
+						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 					<p>
 						<input id="registerButton" class="button" type="button" value="Register now!" onclick="window.location.href='registration'"/> <input
 							id="loginButton" class="button" type="submit" value="Login" />
 					</p>
 			</div>
 			<div id="errorwrapper">
-				<p id="errorUsername" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Name Error</p>
-				<p id="errorPassword" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</p>
+				<p id="errorLogin" th:if="${param.error}">Invalid username and password.</p>
 			</div>
 		</form>
 	</div>

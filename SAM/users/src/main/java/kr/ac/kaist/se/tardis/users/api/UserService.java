@@ -2,7 +2,12 @@ package kr.ac.kaist.se.tardis.users.api;
 
 public interface UserService {
 	
-	User createUser(String name, String password);
+	/**
+	 * Creates and persists a user.
+	 * @param name
+	 * @param password
+	 */
+	void createUser(String name, String password);
 	
 	User findUserByName(String name);
 	

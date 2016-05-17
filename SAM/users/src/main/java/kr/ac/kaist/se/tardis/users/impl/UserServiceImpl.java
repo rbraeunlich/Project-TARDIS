@@ -1,12 +1,15 @@
 package kr.ac.kaist.se.tardis.users.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import kr.ac.kaist.se.tardis.users.api.User;
 import kr.ac.kaist.se.tardis.users.api.UserRepository;
 import kr.ac.kaist.se.tardis.users.api.UserService;
+import kr.ac.kaist.se.tardis.users.copy.UserWithoutPassword;
 import kr.ac.kaist.se.tardis.users.copy.UserWithoutPasswordRepository;
 
+@Service
 public class UserServiceImpl implements UserService {
 	
 	@Autowired
@@ -16,9 +19,11 @@ public class UserServiceImpl implements UserService {
 	private UserWithoutPasswordRepository userWOPasswordRepo;
 
 	@Override
-	public User createUser(String name, String password) {
-		// TODO Auto-generated method stub
-		return null;
+	public void createUser(String name, String password) {
+		UserImpl userImpl = new UserImpl(name, password);
+		userRepo.save(userImpl);
+		UserWithoutPassword userWithoutPassword = new UserWithoutPassword(name);
+		userWOPasswordRepo.save(userWithoutPassword);
 	}
 
 	@Override
