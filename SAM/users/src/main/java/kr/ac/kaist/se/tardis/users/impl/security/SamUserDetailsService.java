@@ -2,6 +2,8 @@ package kr.ac.kaist.se.tardis.users.impl.security;
 
 import java.util.Collections;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.User;
@@ -33,16 +35,20 @@ public class SamUserDetailsService implements UserDetailsService {
 		return new User(username, foundUser.getPassword(), true, true, true, true, Collections.emptySet());
 	}
 	
-	public boolean isUserProjectOwner(Authentication auth, String projectId){
-		return false;
+	public boolean isUserProjectOwner(Authentication authentication, HttpServletRequest request){
+		return true;
 	}
 	
-	public boolean isUserProjectMember(Authentication auth, String projectId){
-		return false;
+	public boolean isUserProjectMember(Authentication authentication, HttpServletRequest request){
+		authentication.isAuthenticated();
+		return true;
 	}
 	
-	public boolean hasUserTask(Authentication auth, String taskId){
-		return false;
+	public boolean hasUserTask(Authentication authentication, HttpServletRequest request){
+		return true;
 	}
 
+	public boolean isUserAllowedToChangeTask(Authentication authentication, HttpServletRequest request){
+		return isUserProjectOwner(authentication, request) || hasUserTask(authentication, request);
+	}
 }

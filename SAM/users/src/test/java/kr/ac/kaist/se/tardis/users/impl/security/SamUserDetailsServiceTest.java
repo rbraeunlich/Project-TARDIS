@@ -89,7 +89,22 @@ public class SamUserDetailsServiceTest {
 	public void userDoesNotHaveTask(){
 		
 	}
-
+	
+	@Test
+	public void userIsNotAllowedToChangeTask(){
+		
+	}
+	
+	@Test
+	public void userIsAllowedToChangeTaskBecauseHeOwnsIt(){
+		
+	}
+	
+	@Test
+	public void userIsAllowedToChangeTaskBecauseHeOwnsTheProject(){
+		
+	}
+	
 	@ComponentScan(basePackages="kr.ac.kaist.se.tardis.users.impl.security")
 	public static class TestConfiguration{
 		
