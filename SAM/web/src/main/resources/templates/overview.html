@@ -31,9 +31,9 @@
 				<p class="projectNameText" th:text="${project.name}"/>
 				<p class="projectDescription" th:text="${project.description}"/>
 			</div>
-			<div class="projectTaskList" id="${project.name}TaskList"></div>
-			<form action="#" th:action="@{/KanbanBoard}" th:object="${project.name}">
-				<input class="settingButton" type="image" id="${project.name}Setting" src = "../image/setting.png"/>
+			<div class="projectTaskList" th:id="${project.name}+TaskList"></div>
+			<form action="#" th:action="@{/KanbanBoard}" th:object="${project}">
+				<input class="settingButton" type="image" th:id="${project.name}+Setting" src = "../image/detail.png"/>
 				<input type="hidden" name="projectId" th:value="${project.id.id}"/>
 			</form>
 		</div>

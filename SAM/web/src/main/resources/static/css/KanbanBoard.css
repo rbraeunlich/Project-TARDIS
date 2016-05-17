@@ -140,6 +140,13 @@ p {
 	right: 10px;
 }
 
+#projectBox {
+	height: auto;
+	border: 1px solid grey;
+	text-align: center;
+	padding: 10px;
+}
+
 #footer {
 	margin-top: 20px;
 	margin-bottom: 20px;
