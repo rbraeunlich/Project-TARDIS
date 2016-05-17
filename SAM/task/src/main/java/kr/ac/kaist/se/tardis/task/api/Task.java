@@ -8,21 +8,20 @@ import kr.ac.kaist.se.tardis.task.impl.state.TaskState;
 
 public interface Task {
 
+	String getName();
 	void setName(String name);
 
 	TaskId getId();
-	
+
 	ProjectId getProjectId();
 
-	String getName();
-	
-	void setDescription(String des);
-	
+
 	String getDescription();
-	
+	void setDescription(String des);
+
 	Date getDueDate();
-	
 	void setDueDate(Date d);
+
 	
 	void setOwner(String member);
 	

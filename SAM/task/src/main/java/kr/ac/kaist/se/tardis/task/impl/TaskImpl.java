@@ -17,9 +17,9 @@ class TaskImpl implements Task {
 	private ProjectId projectId;
 	private TaskState taskState;
 
-	public TaskImpl(TaskId id, ProjectId projectId, String TaskOwner) {
+	public TaskImpl(TaskId id, ProjectId projectId, String taskOwner) {
 		this.id = id;
-		this.owner = TaskOwner;
+		this.owner = taskOwner;
 		this.projectId = projectId;
 		this.taskState = TaskState.TODO;
 	}

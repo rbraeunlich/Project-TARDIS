@@ -9,4 +9,11 @@ public class TaskIdFactory {
 		return new TaskId(randomUUID.toString());
 	}
 
+	public static TaskId valueOf(String taskId){
+		//validate taskId
+		//UUID.fromString(taskId);
+		//translate string to TaskId
+		return new TaskId(taskId);
+	}
+
 }
