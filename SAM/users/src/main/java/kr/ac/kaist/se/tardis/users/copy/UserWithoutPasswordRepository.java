@@ -1,8 +1,6 @@
-package kr.ac.kaist.se.tardis.users.api;
+package kr.ac.kaist.se.tardis.users.copy;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import kr.ac.kaist.se.tardis.users.UserWithoutPassword;
 
 public interface UserWithoutPasswordRepository extends JpaRepository<UserWithoutPassword, String> {
 

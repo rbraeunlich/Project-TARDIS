@@ -1,4 +1,4 @@
-package kr.ac.kaist.se.tardis.users;
+package kr.ac.kaist.se.tardis.users.copy;
 
 import javax.persistence.Entity;
 import javax.persistence.EntityManager;

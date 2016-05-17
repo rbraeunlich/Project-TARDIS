@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import kr.ac.kaist.se.tardis.users.api.User;
 import kr.ac.kaist.se.tardis.users.api.UserRepository;
 import kr.ac.kaist.se.tardis.users.api.UserService;
-import kr.ac.kaist.se.tardis.users.api.UserWithoutPasswordRepository;
+import kr.ac.kaist.se.tardis.users.copy.UserWithoutPasswordRepository;
 
 public class UserServiceImpl implements UserService {
 	

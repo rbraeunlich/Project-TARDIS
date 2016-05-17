@@ -1,6 +1,7 @@
 package kr.ac.kaist.se.tardis;
 
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceContext;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,22 +21,27 @@ import kr.ac.kaist.se.tardis.users.api.UserRepository;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = "kr.ac.kaist.se.tardis", excludeFilters=@Filter(type=FilterType.ASSIGNABLE_TYPE,classes=UserRepository.class))
+@EnableJpaRepositories(
+		basePackages = "kr.ac.kaist.se.tardis", 
+		excludeFilters=@Filter(type=FilterType.ASSIGNABLE_TYPE,classes={UserRepository.class}))
 public class PrimaryDbConfig {
 
 	@Autowired
 	private DataSource primaryDataSource;
 
+	@PersistenceContext(name="primary")
 	@Bean
 	@Primary
 	public EntityManagerFactory entityManagerFactory() {
 	    HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 		LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
 		factory.setJpaVendorAdapter(vendorAdapter);
-		factory.setPackagesToScan(this.getClass().getPackage().getName());
+		//FIXME extend when new entities get added
+		factory.setPackagesToScan("kr.ac.kaist.se.tardis.users.copy");
 		factory.setDataSource(primaryDataSource);
+		factory.setPersistenceUnitName("primary");
+		
 		factory.afterPropertiesSet();
-
 		return factory.getObject();
 	}
 
