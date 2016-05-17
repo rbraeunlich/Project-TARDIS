@@ -25,6 +25,19 @@
 
 <div id="board" class="box">
 	<div id="project" class="overview">
+	
+		<div th:each="project : ${projectList}" class="entry" id="${project.name}">
+			<div class="textBlock">
+				<p class="projectNameText" th:text="${project.name}"/>
+				<p class="projectDescription" th:text="${project.description}"/>
+			</div>
+			<div class="projectTaskList" id="${project.name}TaskList"></div>
+			<form action="#" th:action="@{/KanbanBoard}" th:object="${project.name}">
+				<input class="settingButton" type="image" id="${project.name}Setting" src = "../image/setting.png"/>
+				<input type="hidden" name="projectId" th:value="${project.id.id}"/>
+			</form>
+		</div>
+	
 		<form id="createProject" action="#" th:action="@{/overview}" th:object="${createProjectForm}" method="post">
 			<img id="createProjectIcon" alt="Create icon" src="../image/create.png" onclick="showCreateProjectForm()"/>
 			<div id="createProjectFormWrapper">				
@@ -176,13 +189,8 @@ function showCreateProjectForm() {
 	document.getElementById("createProjectFormWrapper").style.display = "block";
 	document.getElementById("createProjectIcon").style.display = "none";
 }
-       
-<!-- loop showing project in model attribute projectList -->
+
 var projectList = [[${projectList}]];
-for (i = 0; i < projectList.length; i++) {
-	var project = projectList[i];
-	showProject(project.name, project.description,project.id.id);
-}
 
 <!-- fix after task object developed -->
 showTask(projectList[0].name, "task1", "23");
