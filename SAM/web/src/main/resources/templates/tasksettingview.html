@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Task Setting</title>
+</head>
+<body>
+    <H1>Task Setting</H1>
+    <form action="#" th:action="@{/taskchange}" th:object="${task}" method="post">
+        <p>Project Name: <!--<span th:txt="${project.name}"/>--><!--later added--></p>
+        <p>Task name: <input id="taskname" type="text" th:field="${task.name}"/></p>
+
+        <p>Task Assignee:<input id="username" type="text" th:field="${task.taskOwner}"/></p>
+        <!--<p>Due Date: <input id="duedate" type="text" th:field="${task.dueDate}"/></p>-->
+        <!--There is an error on Date-->
+        <p>Description: <input id="description" type="text" th:field="${task.description}"/> </p>
+        <p>
+            <button name="action" type="submit" value="submit">Submit</button>
+            <!--<button name="action" type="reset" value="reset">Reset</button>-->
+            <button name="action" type="submit" value="cancel">Cancel</button>
+        </p>
+    </form>
+</body>
+</html>
