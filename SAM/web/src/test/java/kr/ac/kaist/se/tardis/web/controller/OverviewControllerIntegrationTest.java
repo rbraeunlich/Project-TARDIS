@@ -13,6 +13,7 @@ import java.util.Set;
 import org.junit.After;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.test.context.support.WithMockUser;
 
 import kr.ac.kaist.se.tardis.project.api.Project;
 import kr.ac.kaist.se.tardis.project.api.ProjectService;
@@ -31,6 +32,7 @@ public class OverviewControllerIntegrationTest extends AbstractControllerIntegra
 		}
 	}
 
+	@WithMockUser
 	@Test
 	public void createNewProject() throws Exception{
 		mockMvc
@@ -40,7 +42,8 @@ public class OverviewControllerIntegrationTest extends AbstractControllerIntegra
 			.andExpect(content().string(containsString("ABC")));
 		assertThat(projectService.findProjectByName("ABC"), is(not(empty())));
 	}
-
+	
+	@WithMockUser
 	@Test
 	public void tryToCreateProjectWithoutName() throws Exception{
 		mockMvc
@@ -50,6 +53,7 @@ public class OverviewControllerIntegrationTest extends AbstractControllerIntegra
 		assertThat(projectService.findProjectByName("ABC"), is(empty()));
 	}
 	
+	@WithMockUser
 	@Test
 	public void tryToCreateProjectWithShortName() throws Exception{
 		mockMvc
@@ -60,6 +64,7 @@ public class OverviewControllerIntegrationTest extends AbstractControllerIntegra
 		assertThat(projectService.findProjectByName("ABC"), is(empty()));
 	}
 	
+	@WithMockUser
 	@Test
 	public void createProjectWithoutDescription() throws Exception{
 		mockMvc
