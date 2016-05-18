@@ -56,8 +56,6 @@ public class ProjectServiceImpl implements ProjectService {
 	}
 
 	@Override
-	public Set<Project> getAllProjects() {
-		return new HashSet<>(projects);
-	}
+	public Set<Project> getAllProjects() { return new HashSet<>(projects); }
 
 }

@@ -20,6 +20,8 @@ import kr.ac.kaist.se.tardis.project.api.ProjectService;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
 
+import java.util.Optional;
+
 @Controller
 public class KanbanBoardController {
 
@@ -27,7 +29,6 @@ public class KanbanBoardController {
 		private ProjectService projectService;
 		
 		@RequestMapping(value = { "/kanbanboard" }, method = RequestMethod.GET)
-
 		public String projectManagementpage(Model model, @RequestParam(name = "projectId", required = true) String projectId, @AuthenticationPrincipal UserDetails user) {
 			model.addAttribute("username", String.valueOf(user.getUsername()));
 			
@@ -36,5 +37,34 @@ public class KanbanBoardController {
 
 			return "KanbanBoard";
 		}
-	
+
+	@RequestMapping(value={"/projectview"}, method = RequestMethod.GET)
+	public String projectInfoView(Model model, @RequestParam(name = "projectId", required = true) String projectId){
+		// show project information on project setting page
+		ProjectId id = ProjectIdFactory.valueOf(projectId);
+		Optional<Project> optional = projectService.findProjectById(id);
+
+		if(optional.isPresent())
+		{// Project is present in optional
+			Project thisProject = optional.get();
+			//test line
+			thisProject.addProjectMember("member1");
+			thisProject.addProjectMember("member2");
+			//
+			model.addAttribute("project", thisProject);
+		}else{
+			//TODO error case
+
+		}
+		return "projectsettingview";
+	}
+
+	@RequestMapping(value={"/projectchange"}, method = RequestMethod.POST)
+	public String projectChange(Model model, Project project){
+		// Test lines
+
+		return "overview";
+	}
+
 }
+
