@@ -53,7 +53,7 @@ p {
 }
 
 .entry {
-	min-width: 620px;
+	min-width: 550px;
 	width: 90%;
 	height: 150px;
 	margin: auto;
@@ -62,22 +62,20 @@ p {
 	padding-right: 15px;
 	border: 1px solid grey;
 	background-color: white;
-	overflow: auto;
 }
 
 .textBlock {
 	margin: 5px;
-	min-width: 250px;
+	min-width: 230px;
 	width: 30%;
 	height: 140px;
 	float: left;
 	padding: 0px;
-	overflow: auto;
 	word-break:break-all;
 }
 
 .projectNameText {
-	width: 200px;
+	width: 90%;
 	margin-left: 5px;
 	margin-right: 5px;
 }
@@ -91,16 +89,16 @@ p {
 
 
 .projectTaskList {
-	min-width: 300px;
+	min-width: 260px;
 	width: 45%;
 	height: 100px;
 	float: left;
 	position: relative;
-	top: 25px;
+	top: 30px;
 }
 
 .projectTaskBlock {
-	margin: 9px;
+	margin: 5px;
 	width: 75px;
 	height: 75px;
 	background-color: lightgrey;
@@ -171,6 +169,7 @@ p {
 
 #project {
 	float: left;
+	margin-right: 5px;
 }
 
 #createProject {
@@ -194,6 +193,7 @@ p {
 
 #toDoList {
 	float: right;
+	margin-left: 5px;
 }
 
 #footer {

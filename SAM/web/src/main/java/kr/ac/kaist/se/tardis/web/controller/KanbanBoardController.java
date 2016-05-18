@@ -43,7 +43,6 @@ public class KanbanBoardController {
 
 		@RequestMapping(value = { "/kanbanboard" }, method = RequestMethod.GET)
 		public String projectManagementpage(Model model, CreateTaskForm form, @RequestParam(name = "projectId", required = true) String projectId, @AuthenticationPrincipal UserDetails user) {
-			System.out.println("aa");
 			ProjectId id = ProjectIdFactory.valueOf(projectId);
 			
 			fillModel(model, user, id);
@@ -55,11 +54,8 @@ public class KanbanBoardController {
 				BindingResult bindingResult, @RequestParam(name = "projectId", required = true) String projectId, @AuthenticationPrincipal UserDetails user) {
 			
 			ProjectId id = ProjectIdFactory.valueOf(projectId);
-			System.out.println(projectId);
-			if (!bindingResult.hasErrors()) {				
-				
-				System.out.println(form.getDueDate());
-				
+			System.out.println("-----------" + form.getDueDate());
+			if (!bindingResult.hasErrors()) {					
 				Task task = taskService.createTask(String.valueOf(user.getUsername()), projectService.findProjectById(id).get().getId());
 				task.setDescription(form.getDescription());
 				task.setName(form.getTaskName());

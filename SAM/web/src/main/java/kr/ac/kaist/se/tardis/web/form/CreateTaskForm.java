@@ -5,6 +5,8 @@ import java.util.Date;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class CreateTaskForm {
 	public static final String SHORT_TASK_NAME_ERROR = "Task name must contain at least three characters";
 	public static final String NO_TASK_NAME_ERROR = "Task must have a name";
@@ -19,7 +21,6 @@ public class CreateTaskForm {
 	private String taskName;
 
 	private String description;
-
 
 	private Date dueDate;
 	
