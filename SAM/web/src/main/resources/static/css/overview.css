@@ -86,8 +86,6 @@ p {
 	margin-top: 0px;
 }
 
-
-
 .projectTaskList {
 	min-width: 260px;
 	width: 45%;
@@ -146,7 +144,6 @@ p {
 	display: table;
 	border: 1px solid grey;
 }
-
 
 #notification {
 	border: 1px solid grey;

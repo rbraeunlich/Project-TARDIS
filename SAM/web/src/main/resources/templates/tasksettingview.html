@@ -3,10 +3,30 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Task Setting</title>
+    <link rel="stylesheet" th:href="@{/css/settingview.css}" href="../static/css/settingview.css" />
 </head>
 <body>
+<div id="bar" class="box">	
+	<input id="accountpage" class="button" type="button" value="My Page" style="float:right;"/>
+	<form th:action="@{/logout}" method="post">
+		<input id="logout" class="button" type="submit" value="Log Out" style="float:right;margin-right:10px;"/> 
+	</form>
+	<p id = "username" style="float:right;margin:0px 20px" th:text="'Hello, '+${username}"/>
+</div>
+
+<div id="heading" class="box">
+	<form action="#" th:action="@{/overview}" method="get" style="float:left;">
+		<input type="image" src="../image/Clock.png"/>
+	</form>
+	<div id="notificationBox" onclick="showNotification(event)" onmouseleave="closeNotification()">
+		<img alt="Alarm icon" src="../image/bell.png" style="width:50px;height:50px;"/>
+		<div id="notification" style="display:none;"></div>
+	</div>	
+</div>
+
+<div id="board" class="box">
     <H1>Task Setting</H1>
-    <form action="#" th:action="@{/taskchange}" th:object="${task}" method="post">
+    <form class="settingForm" action="#" th:action="@{/taskchange}" th:object="${task}" method="post">
         <p>Project Name: <!--<span th:txt="${project.name}"/>--><!--later added--></p>
         <p>Task name: <input id="taskname" type="text" th:field="${task.name}"/></p>
 
@@ -21,5 +41,29 @@
             <input id="cancel" type="button" value="cancel" onclick="window.location.href='KanbanBoard'"/>
         </p>
     </form>
+</div>
+    <div id="footer" class="box">2016 Project TARDIS</div>
+    
+<script th:inline="javascript">
+<!-- show notifications on mouse over to icon -->
+function showNotification(e) {
+	
+	var notification = document.getElementById("notification");
+	
+	var size = document.getElementById("board").clientWidth;
+	var x = e.clientX - 150 - (size*1.125);
+	var y = e.clientY - 150;	
+	notification.style.left = x + "px";
+	notification.style.top = y + "px";  
+	
+	if (notification.style.display == "none") {		
+		notification.style.display = "block";
+	}
+}
+function closeNotification() {
+	document.getElementById("notification").style.display = "none";
+}
+</script>  
+
 </body>
 </html>

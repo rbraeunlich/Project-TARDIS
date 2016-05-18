@@ -5,14 +5,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" th:href="@{/css/overview.css}" href="../static/css/overview.css" />
 </head>
-<body onresize="resizeWindow()" onpageshow="resizeWindow()" onload="onload()">
+<body onresize="resizeWindow()" onpageshow="resizeWindow()">
 
 <div id="bar" class="box">	
 	<input id="accountpage" class="button" type="button" value="My Page" style="float:right;"/>
 	<form th:action="@{/logout}" method="post">
 		<input id="logout" class="button" type="submit" value="Log Out" style="float:right;margin-right:10px;"/> 
 	</form>
-	<p id = "username" style="float:right;margin:0px 20px" />
+	<p id = "username" style="float:right;margin:0px 20px" th:text="'Hello, '+${username}"/>
 </div>
 
 <div id="heading" class="box">
@@ -172,11 +172,6 @@ function resizeWindow() {
 		document.getElementById("project").style = "float:none;margin:auto;margin-top:25px;width:80%;overflow:auto;";
 		document.getElementById("toDoList").style = "float:none;margin:auto;margin-top:25px;margin-bottom:25px;width:80%;overflow:auto;";
 	}
-}
-
-function onload() {
-	var username = [[${username}]];
-	document.getElementById("username").innerHTML = "Hello, " + username;
 }
 
 <!-- show notifications on mouse over to icon -->
