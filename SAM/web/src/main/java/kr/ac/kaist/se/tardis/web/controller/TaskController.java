@@ -27,10 +27,10 @@ public class TaskController {
 
     @RequestMapping(value = {"/taskview"}, method = RequestMethod.GET)
     public String taskInfoView(Model model, @RequestParam(name = "taskId", required = true) String taskId) {
-        // show task information on task view page
+        // show task information on task setting page
         TaskId id = TaskIdFactory.valueOf(taskId);
         Optional<Task> optional = taskService.findTaskById(id);
-        //**FAKETASK
+        //** Test lines
         Task fakeTask = taskService.createTask("Yurim Jeong", ProjectIdFactory.generateProjectId());
         fakeTask.setName("TestTask");
         fakeTask.setDescription("This is a testProject");
@@ -48,19 +48,14 @@ public class TaskController {
         return "tasksettingview";}
 
     @RequestMapping(value = {"/taskchange"}, method = RequestMethod.POST)
-    public String taskChange(@RequestParam(value="action", required=true)String action, Model model, Task task) {
-        if(action.equals("submit")) {
-            //Test line
-            System.out.println("Task name: " + task.getName());
-            System.out.println("Task owner: " + task.getTaskOwner());
-            System.out.println("Task description: " + task.getDescription());
+    public String taskChange(Model model, Task task) {
+        //Test line
+        System.out.println("Task name: " + task.getName());
+        System.out.println("Task owner: " + task.getTaskOwner());
+        System.out.println("Task description: " + task.getDescription());
+        //
+        //taskService.saveTask(task);
 
-        }
-        else
-        {//Cancel
-            //Test line
-            System.out.println("Hello Cancel");
-        }
         return "KanbanBoard";
     }
 

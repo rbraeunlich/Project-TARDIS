@@ -3,39 +3,47 @@
 <head>
 <title>Register new SAM account</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" th:href="@{/css/registration.css}" href="../static/css/registration.css" />
 </head>
 <body>
-	<p th:text="'ToDo'" />
-	<form action="#" th:action="@{/registration}" th:object="${registrationForm}"
-		method="post">
-		<p>
-			Username:<input id="username" name="username" type="text"
-				th:field="*{username}" /> <b
-				th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Name
-				Error</b>
-		</p>		
-		<p>
-			Repeat Username:<input id="usernameRepeated" name="usernameRepeated" type="text"
-				th:field="*{usernameRepeated}" /> <b
-				th:if="${#fields.hasErrors('usernameRepeated')}" th:errors="*{usernameRepeated}">Name
-				Error</b>
-		</p>
-		<p>
-			Password:<input id="password" name="password" type="password"
-				th:field="*{password}" /> <b
-				th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password
-				Error</b>
-		</p>
-		<p>
-			Repeat Password:<input id="passwordRepeated" name="passwordRepeated" type="password"
-				th:field="*{passwordRepeated}" /> <b
-				th:if="${#fields.hasErrors('passwordRepeated')}" th:errors="*{passwordRepeated}">Password
-				Error</b>
-		</p>
-		<p>
-			<input id="createButton" class="button" type="submit"
-				value="Create account" />
-		</p>
-	</form>
+	<div id="heading">
+		<h1>SAM - Simple Application for Management</h1>
+		<img alt="SAM icon" src="../image/Clock.png" />
+	</div>
+	<p style="text-align:center;font-size:20px;">Welcome!</p>
+	<div id="registrationBox">
+		<form id="registrationForm" action="#" th:action="@{/registration}" th:object="${registrationForm}"
+			method="post">
+			<p>
+				Username:<input class="textBox" id="username" name="username" type="text"
+					th:field="*{username}" /> <b
+					th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Name
+					Error</b>
+			</p>		
+			<p>
+				Repeat Username:<input class="textBox" id="usernameRepeated" name="usernameRepeated" type="text"
+					th:field="*{usernameRepeated}" /> <b
+					th:if="${#fields.hasErrors('usernameRepeated')}" th:errors="*{usernameRepeated}">Name
+					Error</b>
+			</p>
+			<p>
+				Password:<input class="textBox" id="password" name="password" type="password"
+					th:field="*{password}" /> <b
+					th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password
+					Error</b>
+			</p>
+			<p>
+				Repeat Password:<input class="textBox" id="passwordRepeated" name="passwordRepeated" type="password"
+					th:field="*{passwordRepeated}" /> <b
+					th:if="${#fields.hasErrors('passwordRepeated')}" th:errors="*{passwordRepeated}">Password
+					Error</b>
+			</p>
+			<p style="text-align:center;">
+				<input id="createButton" class="button" type="submit"
+					value="Create account" />
+			</p>
+		</form>
+	</div>
+	<div id="footer">2016 Project TARDIS</div>
 </body>
 </html>
