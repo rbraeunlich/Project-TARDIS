@@ -50,7 +50,7 @@ public class SamApplicationTests {
 
 	@Before
 	public void setUp() {
-		testUrl = "http://localhost:" + port;
+		testUrl = "https://localhost:" + port;
 	}
 
 	@Test
