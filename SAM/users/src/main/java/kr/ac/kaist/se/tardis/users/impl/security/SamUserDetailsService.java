@@ -105,6 +105,26 @@ public class SamUserDetailsService implements UserDetailsService {
 		boolean isUserProjectOwner = project.get().getProjectOwner().equals(authentication.getName());
 		return isUserProjectOwner || hasUserTask(authentication, request);
 	}
+	
+	public boolean isUserAllowedToSeeTask(Authentication authentication, HttpServletRequest request){
+		if (!authentication.isAuthenticated()) {
+			return false;
+		}
+		String taskIdParameter = request.getParameter("taskId");
+		Optional<Task> task = taskService.findTaskById(TaskIdFactory.valueOf(taskIdParameter));
+		if (!task.isPresent()) {
+			return false;
+		}
+		Optional<Project> project = projectService.findProjectById(task.get().getProjectId());
+		if (!project.isPresent()) {
+			// this actually shouldn't happen since a task without a project
+			// cannot exist
+			return false;
+		}
+		Set<String> projectMembers = project.get().getProjectMembers();
+		String projectOwner = project.get().getProjectOwner();
+		return projectMembers.contains(authentication.getName()) || projectOwner.equals(authentication.getName());
+	}
 
 	private Optional<Project> findProject(HttpServletRequest request) {
 		String projectIdParameter = request.getParameter("projectId");

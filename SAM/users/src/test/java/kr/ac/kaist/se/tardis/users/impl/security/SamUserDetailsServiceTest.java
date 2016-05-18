@@ -195,6 +195,36 @@ public class SamUserDetailsServiceTest {
 		boolean userAllowedToChangeTask = detailsService.isUserAllowedToChangeTask(authentication, request);
 		assertThat(userAllowedToChangeTask, is(true));
 	}
+	
+	@Test
+	public void projectMemberIsAllowedToSeeTask(){
+		Authentication authentication = new TestingAuthenticationToken(USERNAME_MEMBER, null);
+		authentication.setAuthenticated(true);
+		HttpServletRequest request = mock(HttpServletRequest.class);
+		when(request.getParameter("taskId")).thenReturn(TASK_ID.getId());
+		boolean userAllowedToSeeTask = detailsService.isUserAllowedToSeeTask(authentication, request);
+		assertThat(userAllowedToSeeTask, is(true));
+	}
+	
+	@Test
+	public void projectOwnerIsAllowedToSeeTask(){
+		Authentication authentication = new TestingAuthenticationToken(USERNAME_OWNER, null);
+		authentication.setAuthenticated(true);
+		HttpServletRequest request = mock(HttpServletRequest.class);
+		when(request.getParameter("taskId")).thenReturn(TASK_ID.getId());
+		boolean userAllowedToSeeTask = detailsService.isUserAllowedToSeeTask(authentication, request);
+		assertThat(userAllowedToSeeTask, is(true));
+	}
+	
+	@Test
+	public void userIsNotAllowedToSeeTask(){
+		Authentication authentication = new TestingAuthenticationToken(USERNAME_NO_PROJECT, null);
+		authentication.setAuthenticated(true);
+		HttpServletRequest request = mock(HttpServletRequest.class);
+		when(request.getParameter("taskId")).thenReturn(TASK_ID.getId());
+		boolean userAllowedToSeeTask = detailsService.isUserAllowedToSeeTask(authentication, request);
+		assertThat(userAllowedToSeeTask, is(false));
+	}
 
 	@ComponentScan(basePackages = "kr.ac.kaist.se.tardis.users.impl.security")
 	public static class TestConfiguration {
