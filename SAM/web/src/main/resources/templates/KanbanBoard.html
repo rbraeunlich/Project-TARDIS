@@ -16,7 +16,9 @@
 </div>
 
 <div id="heading" class="box">
-	<img alt="SAM icon" src="../image/Clock.png" />
+	<form action="#" th:action="@{/overview}" method="get" style="float:left;">
+		<input type="image" src="../image/Clock.png"/>
+	</form>
 	<div id="notificationBox" onclick="showNotification(event)" onmouseleave="closeNotification()">
 		<img alt="Alarm icon" src="../image/bell.png" style="width:50px;height:50px;"/>
 		<div id="notification" style="display:none;"></div>
@@ -54,7 +56,7 @@
 					<b th:if="${#fields.hasErrors('taskName')}" th:errors="*{taskName}">Task Name Error</b>
 				</p>
 				<p>
-					Task Description: 	<input id="description" class="createTaskInput" th:field="*{description}"/>
+					Description: 	<input id="description" class="createTaskInput" th:field="*{description}"/>
 					<b th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Task Description Error</b>
 				</p>
 				<p>
@@ -127,7 +129,7 @@ function resizeWindow() {
 	var size = document.getElementById("board").clientWidth;
 	
 	// Incase enough width, two column of project and personal to-do list
-	if (size>1000) {
+	if (size>1300) {
 		document.getElementById("ToDo").style = "float:left;";
 		document.getElementById("In-Progress").style = "float:left;";
 		document.getElementById("Review").style = "float:right;";
