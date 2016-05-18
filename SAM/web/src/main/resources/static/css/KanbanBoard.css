@@ -105,6 +105,10 @@ p {
 	width: 70px;
 }
 
+.createTaskInput {
+	width: 50%;
+}
+
 #bar {
 	margin-top:30px;
 	height: 21px;
@@ -144,6 +148,25 @@ p {
 	height: auto;
 	text-align: center;
 	padding: 10px;
+}
+
+#createTask {
+	width: 70%;
+	height: auto;
+	padding: 10px;
+	margin: 25px auto 25px auto;
+	border: 1px solid grey;
+	background-color: white;
+	text-align: center;
+}
+
+#createTaskFormWrapper {
+	display: none;
+}
+
+#createTaskIcon {
+	width: 30px;
+	height: 30px;
 }
 
 #footer {

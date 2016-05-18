@@ -25,14 +25,51 @@
 
 <div id="board" class="box">
 	<div id="projectBox" class="box">
-		<form action="#" th:action="@{/projectSetting}" method="get" style="margin:25px;height:60px;">
+		<form action="#" th:action="@{/projectview}" method="get" style="margin:25px;height:60px;">
 		<div th:text="${project.name}" style="font-size:40px;margin:15px;width:80%;float:left;position:relative;left:10%;"></div>
 		<input class = "settingButton" type="image" src = "../image/setting.png" style="float:right;"/>
 		</form>
 
 		<p th:text="${project.description}" style="font-size:25px;word-break:break-all;margin:30px;text-align:center;"/>
 	</div>
-	<div id="ToDo" class="kanban" style="float:left;"><p class="boardName">ToDo</p></div>
+	<div id="ToDo" class="kanban" style="float:left;"><p class="boardName">ToDo</p>
+		
+		<div class="entry" th:each="task : ${taskList}" id="${task.name}">
+			<div class="textBlock">
+				<p class="taskNameText" th:text="${task.name}" />
+				<p class="taskDescription" th:text="${task.description}" />
+				
+				<form>
+					<input class="settingButton" type="image" id="${task.name} + Setting" src="../image/setting.png" />
+				</form>
+			</div>
+		</div>
+		
+		<form id="createTask" action="#" th:action="@{/kanbanboard}" th:object="${createTaskForm}" method="post">
+			<img id="createTaskIcon" alt="Create icon" src="../image/create.png" onclick="showCreateTaskForm()"/>
+			<input type="hidden" name="projectId" th:value="${project.id.id}"/>
+			<div id="createTaskFormWrapper">				
+				<p> 
+					Task Name:        	<input id="taskName" class="createTaskInput" th:field="*{taskName}"/>
+					<b th:if="${#fields.hasErrors('taskName')}" th:errors="*{taskName}">Task Name Error</b>
+				</p>
+				<p>
+					Task Description: 	<input id="description" class="createTaskInput" th:field="*{description}"/>
+					<b th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Task Description Error</b>
+				</p>
+				<p>
+					Task Due:			<input id="dueDate" class="createTaskInput" type="Date" th:field="*{dueDate}"/>
+					<b th:if="${#fields.hasErrors('dueDate')}" th:errors="*{dueDate}">Due Date Error</b>
+				</p>
+				<p>
+					Task Owner:			<input id="taskOwner" class="createTaskInput" th:field="*{owner}"/>
+					<b th:if="${#fields.hasErrors('owner')}" th:errors="*{owner}">Owner Error</b>
+				</p>
+				<input id="createTaskButton" class="button" type="submit" value="Create Task" />
+			</div>			
+		</form>
+		
+	</div>
 	<div id="In-Progress" class="kanban" style="float:left;"><p class="boardName">In-Progress</p></div>
 	<div id="Done" class="kanban" style="float:right;"><p class="boardName">Done</p></div>	
 	<div id="Review" class="kanban" style="float:right;"><p class="boardName">Review</p></div>	
@@ -90,7 +127,7 @@ function resizeWindow() {
 	var size = document.getElementById("board").clientWidth;
 	
 	// Incase enough width, two column of project and personal to-do list
-	if (size>1500) {
+	if (size>1400) {
 		document.getElementById("ToDo").style = "float:left;";
 		document.getElementById("In-Progress").style = "float:left;";
 		document.getElementById("Review").style = "float:right;";
@@ -127,7 +164,11 @@ function closeNotification() {
 	document.getElementById("notification").style.display = "none";
 }
 
-showTask("ToDo", "task1", "test");
+function showCreateTaskForm() {
+	document.getElementById("createTaskFormWrapper").style.display = "block";
+	document.getElementById("createTaskIcon").style.display = "none";
+}
+
 
 /*]]>*/
 </script>

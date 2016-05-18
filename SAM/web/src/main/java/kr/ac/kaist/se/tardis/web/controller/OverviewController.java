@@ -39,7 +39,7 @@ public class OverviewController {
 		model.addAttribute("projectList",
 				projectService.findProjectsForUser(String.valueOf(user.getUsername())));
 	}
-
+	
 	@RequestMapping(value = { "/overview" }, method = RequestMethod.POST)
 	public String projectCreated(Model model, @Valid CreateProjectForm form,
 			BindingResult bindingResult, @AuthenticationPrincipal UserDetails user) {
