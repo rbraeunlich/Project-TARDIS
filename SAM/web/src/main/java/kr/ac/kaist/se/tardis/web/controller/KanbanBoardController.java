@@ -1,13 +1,11 @@
 package kr.ac.kaist.se.tardis.web.controller;
 
-
 import javax.validation.Valid;
 
 import kr.ac.kaist.se.tardis.project.api.Project;
 import kr.ac.kaist.se.tardis.project.impl.id.*;
 import kr.ac.kaist.se.tardis.project.api.ProjectService;
 import kr.ac.kaist.se.tardis.web.form.CreateProjectForm;
-
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -19,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.ac.kaist.se.tardis.project.api.ProjectService;
+import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
+import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
 
 @Controller
 public class KanbanBoardController {
@@ -29,7 +29,7 @@ public class KanbanBoardController {
 		@RequestMapping(value = { "/kanbanboard" }, method = RequestMethod.GET)
 
 		public String projectManagementpage(Model model, @RequestParam(name = "projectId", required = true) String projectId, @AuthenticationPrincipal UserDetails user) {
-			model.addAttribute("username", user.getUsername());
+			model.addAttribute("username", String.valueOf(user.getUsername()));
 			
 			ProjectId id = ProjectIdFactory.valueOf(projectId);
 			model.addAttribute("project", projectService.findProjectById(id).get());
