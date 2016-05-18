@@ -41,7 +41,7 @@ import kr.ac.kaist.se.tardis.users.impl.UserImpl;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = {SamApplication.class, SecurityIntegrationTest.TestUserServiceConfig.class})
 @WebAppConfiguration
-@ActiveProfiles("testSecurity")
+@ActiveProfiles({"testSecurity", "default"})
 public class SecurityIntegrationTest {
 
 	private static final String USERNAME = "foo";
