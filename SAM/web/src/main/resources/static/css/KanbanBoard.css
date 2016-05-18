@@ -71,7 +71,7 @@ p {
 .textBlock {
 	margin: 5px;
 	width: 30%;
-	height: 140px;
+	height: 100%;
 	float: left;
 	padding: 0px;
 }
@@ -88,7 +88,15 @@ p {
 	margin-top: 0px;
 }
 
-.settingButton {
+.projectSettingButton {
+	width: 50px;
+	height: 50px;
+	float: right;
+	position: relative;
+	top: 25px;
+}
+
+.taskSettingButton {
 	width: 50px;
 	height: 50px;
 	float: right;
@@ -103,6 +111,10 @@ p {
 .taskProgress {
 	margin-left:2px;
 	width: 70px;
+}
+
+.createTaskInput {
+	width: 50%;
 }
 
 #bar {
@@ -144,6 +156,25 @@ p {
 	height: auto;
 	text-align: center;
 	padding: 10px;
+}
+
+#createTask {
+	width: 70%;
+	height: auto;
+	padding: 10px;
+	margin: 25px auto 25px auto;
+	border: 1px solid grey;
+	background-color: white;
+	text-align: center;
+}
+
+#createTaskFormWrapper {
+	display: none;
+}
+
+#createTaskIcon {
+	width: 30px;
+	height: 30px;
 }
 
 #footer {

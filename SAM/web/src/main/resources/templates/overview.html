@@ -32,7 +32,7 @@
 				<p class="projectDescription" th:text="${project.description}"/>
 			</div>
 			<div class="projectTaskList" th:id="${project.name}+TaskList"></div>
-			<form action="#" th:action="@{/kanbanboard}" th:object="${project}">
+			<form action="#" th:action="@{/kanbanboard}" method="get">
 				<input class="kanbanButton" type="image" th:id="${project.name}+Kanban" src = "../image/detail.png"/>
 				<input type="hidden" name="projectId" th:value="${project.id.id}"/>
 			</form>
@@ -163,7 +163,7 @@ function resizeWindow() {
 	var size = document.getElementById("board").clientWidth;
 	
 	// Incase enough width, two column of project and personal to-do list
-	if (size>1500) {
+	if (size>1400) {
 		document.getElementById("project").style = "float:left;";
 		document.getElementById("toDoList").style = "float:right;";
 	} else {
