@@ -73,6 +73,7 @@ p {
 	float: left;
 	padding: 0px;
 	overflow: auto;
+	word-break:break-all;
 }
 
 .projectNameText {
