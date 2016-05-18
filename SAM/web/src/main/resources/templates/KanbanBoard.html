@@ -8,8 +8,10 @@
 <body onresize="resizeWindow()" onpageshow="resizeWindow()" onload="onload()">
 
 <div id="bar" class="box">	
-	<input id="accountpage" class="button" type="button" value="My Page" style="float:right;"/> <!-- Add onclick fuction -->
-	<input id="logout" class="button" type="button" value="Log Out" style="float:right;margin-right:10px;" onclick="window.location.href='/'"/> 
+	<input id="accountpage" class="button" type="button" value="My Page" style="float:right;"/>
+		<form th:action="@{/logout}" method="post">
+		<input id="logout" class="button" type="submit" value="Log Out" style="float:right;margin-right:10px;"/> 
+	</form>
 	<p id = "username" style="float:right;margin:0px 20px" />
 </div>
 

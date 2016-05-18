@@ -8,6 +8,8 @@ import kr.ac.kaist.se.tardis.web.form.CreateProjectForm;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -22,7 +24,8 @@ public class KanbanBoardController {
 		private ProjectService projectService;
 		
 		@RequestMapping(value = { "/kanbanboard" }, method = RequestMethod.GET)
-		public String projectManagementpage(Model model) {
+		public String projectManagementpage(Model model, @AuthenticationPrincipal UserDetails user) {
+			model.addAttribute("username", user.getUsername());
 			return "KanbanBoard";
 		}
 	
