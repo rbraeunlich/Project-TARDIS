@@ -18,7 +18,9 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Profile;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
@@ -39,6 +41,7 @@ import kr.ac.kaist.se.tardis.users.impl.UserImpl;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = {SamApplication.class, SecurityIntegrationTest.TestUserServiceConfig.class})
 @WebAppConfiguration
+@ActiveProfiles("testSecurity")
 public class SecurityIntegrationTest {
 
 	private static final String USERNAME = "foo";
@@ -103,6 +106,7 @@ public class SecurityIntegrationTest {
 	}
 	
 	@Configuration
+	@Profile("testSecurity")
 	public static class TestUserServiceConfig{
 		
 
