@@ -12,7 +12,6 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import kr.ac.kaist.se.tardis.project.api.Project;
@@ -38,11 +37,6 @@ public class SamUserDetailsService implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		// FIXME
-		if (username.equals("admin")) {
-			return new User("admin", new BCryptPasswordEncoder().encode("admin"), true, true, true, true,
-					Collections.emptySet());
-		}
 		UserImpl foundUser = userRepo.findOne(username);
 		if (foundUser == null) {
 			return new User("unknown", "", false, false, false, false, Collections.emptySet());

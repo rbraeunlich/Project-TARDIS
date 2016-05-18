@@ -35,16 +35,16 @@ public class OverviewController {
 	}
 
 	private void fillModel(Model model, UserDetails user) {
-		model.addAttribute("username", user.getUsername());
+		model.addAttribute("username", String.valueOf(user.getUsername()));
 		model.addAttribute("projectList",
-				projectService.findProjectsForUser(user.getUsername()));
+				projectService.findProjectsForUser(String.valueOf(user.getUsername())));
 	}
 
 	@RequestMapping(value = { "/overview" }, method = RequestMethod.POST)
 	public String projectCreated(Model model, @Valid CreateProjectForm form,
 			BindingResult bindingResult, @AuthenticationPrincipal UserDetails user) {
 		if (!bindingResult.hasErrors()) {
-			Project project = projectService.createProject(user.getUsername());
+			Project project = projectService.createProject(String.valueOf(user.getUsername()));
 			project.setDescription(form.getDescription());
 			project.setName(form.getProjectName());
 			projectService.saveProject(project);

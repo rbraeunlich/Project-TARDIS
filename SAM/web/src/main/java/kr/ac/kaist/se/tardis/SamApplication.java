@@ -8,7 +8,10 @@ import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurat
 import org.springframework.boot.devtools.autoconfigure.DevToolsDataSourceAutoConfiguration;
 
 @SpringBootApplication
-@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class, DevToolsDataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
+@EnableAutoConfiguration(exclude={
+		DataSourceAutoConfiguration.class, 
+		DevToolsDataSourceAutoConfiguration.class, 
+		HibernateJpaAutoConfiguration.class})
 public class SamApplication {
 
 	public static void main(String[] args) {
