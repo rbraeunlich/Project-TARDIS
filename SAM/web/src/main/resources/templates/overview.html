@@ -57,6 +57,18 @@
 		<!-- <form id="managementForm" action="#" th:action="@{/kanbanboard}" method="get"></form> -->
 	</div>
 	<div id="toDoList" class="overview">
+			<div th:each="task : ${taskList}" class="entry" id="${task.name}">
+			<div class="textBlock">			
+				<p class="taskState" th:text="${task.taskState}"/>
+				<p class="taskNameText" th:text="${task.name}"/>
+				<p class="taskDescription" th:text="${task.description}"/>
+			</div>
+			<form action="#" th:action="@{/tasksettingview}" th:object="${task}">
+				<input class="taskButton" type="image" th:id="${task.name}+Task" src = "../image/setting.png"/>
+				<input type="hidden" name="taskId" th:value="${task.id.id}"/>
+			</form>
+			</div>
+			
 	</div>	
 </div>
 

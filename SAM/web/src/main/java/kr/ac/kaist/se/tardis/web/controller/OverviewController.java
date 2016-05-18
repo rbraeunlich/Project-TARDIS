@@ -4,6 +4,13 @@ import javax.validation.Valid;
 
 import kr.ac.kaist.se.tardis.project.api.Project;
 import kr.ac.kaist.se.tardis.project.api.ProjectService;
+
+import kr.ac.kaist.se.tardis.task.api.Task;
+import kr.ac.kaist.se.tardis.task.api.TaskService;
+import kr.ac.kaist.se.tardis.task.impl.TaskServiceImpl;
+import kr.ac.kaist.se.tardis.task.impl.id.TaskId;
+import kr.ac.kaist.se.tardis.task.impl.id.TaskIdFactory;
+
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
 import kr.ac.kaist.se.tardis.web.form.CreateProjectForm;
@@ -27,6 +34,8 @@ public class OverviewController {
 
 	@Autowired
 	private ProjectService projectService;
+	@Autowired
+	private TaskService taskService;
 
 	@RequestMapping(value = { "/overview" }, method = RequestMethod.GET)
 	public String overviewpage(Model model, CreateProjectForm form, @AuthenticationPrincipal UserDetails user) {
@@ -38,6 +47,17 @@ public class OverviewController {
 		model.addAttribute("username", String.valueOf(user.getUsername()));
 		model.addAttribute("projectList",
 				projectService.findProjectsForUser(String.valueOf(user.getUsername())));
+		
+		////// Personal todo list testing...
+//		Task asdf = taskService.createTask(user.getUsername(), ProjectIdFactory.generateProjectId() );
+//		asdf.setName("eeeee");
+//		asdf.setDescription("aee333");
+//		taskService.saveTask(asdf);		
+//		System.out.println(taskService.findTasksForUser(String.valueOf(user.getUsername())));
+		//////
+		
+		model.addAttribute("taskList",
+				taskService.findTasksForUser(String.valueOf(user.getUsername())));
 	}
 
 	@RequestMapping(value = { "/overview" }, method = RequestMethod.POST)
