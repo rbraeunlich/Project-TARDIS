@@ -25,10 +25,12 @@
 
 <div id="board" class="box">
 	<div id="projectBox" class="box">
+		<form action="#" th:action="@{/projectSetting}" method="get">
+		<div th:text="projectName" style="font-size:40px;margin:15px;width:80%;float:left;position:relative;left:10%;"></div>
+		<input class = "settingButton" type="image" src = "../image/setting.png" style="float:right;"/>
+		</form>
 
-		<p th:text="projectName" style="font-size:40px;margin:15px auto 15px auto;"/>
-
-		<p th:text="projectDescriptionaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" style="font-size:25px;word-break:break-all;"/>
+		<p th:text="projectDescriptionaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" style="font-size:25px;word-break:break-all;float:left;"/>
 
 	</div>
 	<div id="ToDo" class="kanban" style="float:left;"><p class="boardName">ToDo</p></div>

@@ -33,7 +33,7 @@
 			</div>
 			<div class="projectTaskList" th:id="${project.name}+TaskList"></div>
 			<form action="#" th:action="@{/kanbanboard}" th:object="${project}">
-				<input class="settingButton" type="image" th:id="${project.name}+Setting" src = "../image/detail.png"/>
+				<input class="kanbanButton" type="image" th:id="${project.name}+Kanban" src = "../image/detail.png"/>
 				<input type="hidden" name="projectId" th:value="${project.id.id}"/>
 			</form>
 		</div>
