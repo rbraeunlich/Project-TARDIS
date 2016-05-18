@@ -52,40 +52,4 @@ public class OverviewController {
 		fillModel(model, user);
 		return "overview";
 	}
-
-	@RequestMapping(value={"/projectview"}, method = RequestMethod.GET)
-	//@ModelAttribute("allMembers")
-	public String projectInfoView(Model model, @RequestParam(name = "projectId", required = true) String projectId){
-		// show project information on project setting page
-		ProjectId id = ProjectIdFactory.valueOf(projectId);
-		Optional<Project> optional = projectService.findProjectById(id);
-		//** Test lines
-//		Project fakeProject = projectService.createProject("admin");
-//		fakeProject.setName("Test Project");
-//		fakeProject.setDescription("This is fake description");
-//		fakeProject.setDueDate(new Date());
-//		fakeProject.addProjectMember("member1");
-//		fakeProject.addProjectMember("member2");
-//		fakeProject.addProjectMember("member3");
-//		fakeProject.addProjectMember("member4");
-//		fakeProject.addProjectMember("member5");
-//		model.addAttribute("project", fakeProject);
-		//**
-		if(optional.isPresent())
-		{// Project is present in optional
-			model.addAttribute("project", optional.get());
-		}else{
-			//TODO error case
-
-		}
-		return "projectsettingview";
-	}
-
-	@RequestMapping(value={"/projectchange"}, method = RequestMethod.POST)
-	public String projectChange(Model model, Project project){
-		// Test lines
-
-		return "overview";
-	}
-	
 }

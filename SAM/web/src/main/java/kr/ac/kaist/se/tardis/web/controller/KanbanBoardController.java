@@ -22,6 +22,8 @@ import kr.ac.kaist.se.tardis.task.api.*;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
 
+import java.util.Optional;
+
 @Controller
 public class KanbanBoardController {
 
@@ -32,12 +34,13 @@ public class KanbanBoardController {
 		private TaskService taskService;
 		
 		private void fillModel(Model model, UserDetails user, ProjectId projectId) {
+			
 			model.addAttribute("username", String.valueOf(user.getUsername()));
 			model.addAttribute("taskList",
 					taskService.findTaskByProjectId(projectId));
 			model.addAttribute("project", projectService.findProjectById(projectId).get());
 		}
-		
+
 		@RequestMapping(value = { "/kanbanboard" }, method = RequestMethod.GET)
 		public String projectManagementpage(Model model, CreateTaskForm form, @RequestParam(name = "projectId", required = true) String projectId, @AuthenticationPrincipal UserDetails user) {
 			
@@ -46,6 +49,7 @@ public class KanbanBoardController {
 			fillModel(model, user, id);
 			return "KanbanBoard";
 		}
+
 	
 		@RequestMapping(value = { "/kanbanboard" }, method = RequestMethod.POST)
 		public String taskCreated(Model model, @Valid CreateTaskForm form,
@@ -63,5 +67,33 @@ public class KanbanBoardController {
 			fillModel(model, user, id);
 			return "KanbanBoard";
 		}
-		
+
+	@RequestMapping(value={"/projectview"}, method = RequestMethod.GET)
+	public String projectInfoView(Model model, @RequestParam(name = "projectId", required = true) String projectId){
+		// show project information on project setting page
+		ProjectId id = ProjectIdFactory.valueOf(projectId);
+		Optional<Project> optional = projectService.findProjectById(id);
+
+		if(optional.isPresent())
+		{// Project is present in optional
+			Project thisProject = optional.get();
+			//test line
+			thisProject.addProjectMember("member1");
+			thisProject.addProjectMember("member2");
+			//
+			model.addAttribute("project", thisProject);
+		}else{
+			//TODO error case
+
+		}
+		return "projectsettingview";
+	}
+
+	@RequestMapping(value={"/projectchange"}, method = RequestMethod.POST)
+	public String projectChange(Model model, Project project){
+		// Test lines
+
+		return "overview";
+	}
 }
+
