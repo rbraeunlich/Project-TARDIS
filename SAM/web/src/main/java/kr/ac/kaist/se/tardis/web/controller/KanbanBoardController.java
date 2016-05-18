@@ -3,6 +3,7 @@ package kr.ac.kaist.se.tardis.web.controller;
 import javax.validation.Valid;
 
 import kr.ac.kaist.se.tardis.project.api.Project;
+import kr.ac.kaist.se.tardis.project.impl.id.*;
 import kr.ac.kaist.se.tardis.project.api.ProjectService;
 import kr.ac.kaist.se.tardis.web.form.CreateProjectForm;
 
@@ -24,8 +25,11 @@ public class KanbanBoardController {
 		private ProjectService projectService;
 		
 		@RequestMapping(value = { "/kanbanboard" }, method = RequestMethod.GET)
-		public String projectManagementpage(Model model, @AuthenticationPrincipal UserDetails user) {
+		public String projectManagementpage(Model model, @RequestParam(name = "projectId", required = true) String projectId, @AuthenticationPrincipal UserDetails user) {
 			model.addAttribute("username", user.getUsername());
+			
+			ProjectId id = ProjectIdFactory.valueOf(projectId);
+			model.addAttribute("project", projectService.findProjectById(id).get());
 			return "KanbanBoard";
 		}
 	
