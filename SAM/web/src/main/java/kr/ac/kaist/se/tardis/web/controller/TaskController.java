@@ -30,13 +30,7 @@ public class TaskController {
         // show task information on task setting page
         TaskId id = TaskIdFactory.valueOf(taskId);
         Optional<Task> optional = taskService.findTaskById(id);
-        //** Test lines
-        Task fakeTask = taskService.createTask("Yurim Jeong", ProjectIdFactory.generateProjectId());
-        fakeTask.setName("TestTask");
-        fakeTask.setDescription("This is a testProject");
-        fakeTask.setDueDate(new Date());
-        model.addAttribute("task", fakeTask);
-        //**
+
         if(optional.isPresent())
         {// Task is present in optional
             model.addAttribute("task", optional.get());
@@ -48,13 +42,9 @@ public class TaskController {
         return "tasksettingview";}
 
     @RequestMapping(value = {"/taskchange"}, method = RequestMethod.POST)
-    public String taskChange(Model model, Task task) {
-        //Test line
-        System.out.println("Task name: " + task.getName());
-        System.out.println("Task owner: " + task.getTaskOwner());
-        System.out.println("Task description: " + task.getDescription());
-        //
-        //taskService.saveTask(task);
+    public String taskChange(Task task) {
+
+        taskService.saveTask(task);
 
         return "KanbanBoard";
     }

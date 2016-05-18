@@ -24,9 +24,10 @@
 	</div>	
 </div>
 
-<div id="board" class="box">
+<div id="board" class="box">1
     <H1>Project Setting</H1>
-    <form class="settingForm" action="#" th:action="@{/projectchange}" th:object="${project}" method="post">
+    <form class="settingForm" action="#" th:action="@{/projectchange}" th:object="${project}" method="get">
+        <input type="hidden" name="projectId" th:value ="*{id}"/>
         <p>Project name: <input id="projectname" type="text" th:field="*{name}"/></p>
         <p>Project owner:<input id="username" type="text" th:field="*{projectOwner}"/></p>
         <!--<p>Due Date: <input id="duedate" type="text" th:field="${task.dueDate}"/></p>-->

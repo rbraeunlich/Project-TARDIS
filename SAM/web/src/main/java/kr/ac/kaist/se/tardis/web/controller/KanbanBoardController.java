@@ -76,9 +76,10 @@ public class KanbanBoardController {
 		if(optional.isPresent())
 		{// Project is present in optional
 			Project thisProject = optional.get();
-			//test line
+			//test line for memebers
 			thisProject.addProjectMember("member1");
 			thisProject.addProjectMember("member2");
+			System.out.println(thisProject.getId());
 			//
 			model.addAttribute("project", thisProject);
 		}else{
@@ -88,11 +89,22 @@ public class KanbanBoardController {
 		return "projectsettingview";
 	}
 
-	@RequestMapping(value={"/projectchange"}, method = RequestMethod.POST)
-	public String projectChange(Model model, Project project){
-		// Test lines
+	@RequestMapping(value={"/projectchange"}, method = RequestMethod.GET)
+	public String projectChange(Model model, CreateTaskForm form, @RequestParam(name = "projectId", required = true)String projectId, @AuthenticationPrincipal UserDetails user, Project project){
+		ProjectId id = ProjectIdFactory.valueOf(projectId);
+		Optional<Project> optional = projectService.findProjectById(id);
 
-		return "overview";
+		if(optional.isPresent()){
+			//TODO update features
+			Project changedProject = optional.get();
+			changedProject.setName(project.getName());
+			changedProject.setDescription(project.getDescription());
+			projectService.saveProject(changedProject);
+			fillModel(model, user, id);
+		}else{
+			//TODO error case
+		}
+		return "KanbanBoard";
 	}
 }
 

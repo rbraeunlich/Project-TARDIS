@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.boot.autoconfigure.web.ErrorController;
 import org.springframework.http.HttpStatus;
 
-@Controller
+//@Controller
 public class ExceptionHandlingController implements ErrorController {
 
 	@ResponseStatus(code=HttpStatus.NOT_FOUND)
