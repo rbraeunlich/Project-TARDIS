@@ -23,7 +23,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 				.antMatchers("/registration", "/", "/image/**", "/css/**").permitAll()
 				.antMatchers("/KanbanBoard").access("@samUserDetailsService.isUserProjectMember(authentication,request)")
 				.antMatchers("/taskview").access("@samUserDetailsService.isUserProjectMember(authentication,request)")
-				.antMatchers("/taskchange").access("@samUserDetailsService.hasUserTask(authentication,request)")
+				.antMatchers("/taskchange").access("@samUserDetailsService.isUserAllowedToChangeTask(authentication,request)")
 				.antMatchers("/projectchange").access("@samUserDetailsService.isUserProjectOwner(authentication,request)")
 				//TODO check if all those URLs match
 				.anyRequest().authenticated()

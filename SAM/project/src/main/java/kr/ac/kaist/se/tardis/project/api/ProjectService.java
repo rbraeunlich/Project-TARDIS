@@ -20,10 +20,10 @@ public interface ProjectService {
 	 * Returns a set of projects for the specified user. If the user has no
 	 * projects an empty set is being returned.
 	 * 
-	 * @param userId
+	 * @param username
 	 * @return
 	 */
-	Set<Project> findProjectsForUser(String userId);
+	Set<Project> findProjectsForUser(String username);
 
 	/**
 	 * Finds projects that <b>exactly</b> match the given name.

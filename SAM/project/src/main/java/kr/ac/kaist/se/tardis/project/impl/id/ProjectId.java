@@ -13,6 +13,11 @@ public class ProjectId implements Comparable<ProjectId>{
 	}
 
 	@Override
+	public String toString() {
+		return id;
+	}
+	
+	@Override
 	public int compareTo(ProjectId o) {
 		return this.id.compareTo(o.getId());
 	}

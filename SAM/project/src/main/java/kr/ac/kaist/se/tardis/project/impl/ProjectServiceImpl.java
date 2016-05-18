@@ -26,11 +26,11 @@ public class ProjectServiceImpl implements ProjectService {
 	}
 
 	@Override
-	public Set<Project> findProjectsForUser(String userId) {
+	public Set<Project> findProjectsForUser(String username) {
 		return projects
 				.stream()
-				.filter(p -> (p.getProjectOwner().equals(userId) || p
-						.getProjectMembers().contains(userId)))
+				.filter(p -> (p.getProjectOwner().equals(username) || p
+						.getProjectMembers().contains(username)))
 				.collect(Collectors.toSet());
 	}
 

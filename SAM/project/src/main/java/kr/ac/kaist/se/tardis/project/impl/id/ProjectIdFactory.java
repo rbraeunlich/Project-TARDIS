@@ -9,4 +9,10 @@ public class ProjectIdFactory {
 		return new ProjectId(randomUUID.toString());
 	}
 
+	public static ProjectId valueOf(String projectIdParameter) {
+		//validation
+		UUID.fromString(projectIdParameter);
+		return new ProjectId(projectIdParameter);
+	}
+
 }
