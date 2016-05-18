@@ -26,6 +26,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 				.regexMatchers("/taskview", "/taskview\\?.*").access("@samUserDetailsService.isUserAllowedToSeeTask(authentication,request)")
 				.regexMatchers("/taskchange", "/taskchange\\?.*").access("@samUserDetailsService.isUserAllowedToChangeTask(authentication,request)")
 				.regexMatchers("/projectchange", "/projectchange\\?.*").access("@samUserDetailsService.isUserProjectOwner(authentication,request)")
+				.regexMatchers("/projectview", "/projectview\\?.*").access("@samUserDetailsService.isUserProjectOwner(authentication,request)")
 				//TODO check if all those URLs match
 				.anyRequest().authenticated()
 			.and()

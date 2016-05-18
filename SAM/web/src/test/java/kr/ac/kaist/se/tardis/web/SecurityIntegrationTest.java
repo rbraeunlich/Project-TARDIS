@@ -104,6 +104,13 @@ public class SecurityIntegrationTest {
 		.perform(get("/projectchange?projectId=" + ProjectIdFactory.generateProjectId()).with(user(USERNAME).password(PASSWORD)).with(csrf()))
 		.andExpect(status().isForbidden());
 	}
+
+	@Test
+	public void notAllowedToViewProjectSettings() throws Exception{
+		mvc
+		.perform(get("/projectview?projectId=" + ProjectIdFactory.generateProjectId()).with(user(USERNAME).password(PASSWORD)).with(csrf()))
+		.andExpect(status().isForbidden());
+	}
 	
 	@Configuration
 	@Profile("testSecurity")
