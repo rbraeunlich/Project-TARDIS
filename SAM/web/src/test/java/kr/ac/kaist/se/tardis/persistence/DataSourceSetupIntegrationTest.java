@@ -1,4 +1,4 @@
-package kr.ac.kaist.se.tardis.web.controller;
+package kr.ac.kaist.se.tardis.persistence;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
