@@ -21,7 +21,7 @@ public class KanbanBoardController {
 		@Autowired
 		private ProjectService projectService;
 		
-		@RequestMapping(value = { "/KanbanBoard" }, method = RequestMethod.GET)
+		@RequestMapping(value = { "/kanbanboard" }, method = RequestMethod.GET)
 		public String projectManagementpage(Model model) {
 			return "KanbanBoard";
 		}

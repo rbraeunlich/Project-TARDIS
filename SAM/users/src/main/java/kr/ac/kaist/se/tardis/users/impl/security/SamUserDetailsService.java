@@ -62,7 +62,7 @@ public class SamUserDetailsService implements UserDetailsService {
 		return projectOwner.equals(authentication.getName());
 	}
 
-	public boolean isUserProjectMember(Authentication authentication, HttpServletRequest request) {
+	public boolean isUserPartOfProject(Authentication authentication, HttpServletRequest request) {
 		if (!authentication.isAuthenticated()) {
 			return false;
 		}
@@ -71,7 +71,8 @@ public class SamUserDetailsService implements UserDetailsService {
 			return false;
 		}
 		Set<String> projectMembers = project.get().getProjectMembers();
-		return projectMembers.contains(authentication.getName());
+		String projectOwner = project.get().getProjectOwner();
+		return projectMembers.contains(authentication.getName()) || projectOwner.equals(authentication.getName());
 	}
 
 	public boolean hasUserTask(Authentication authentication, HttpServletRequest request) {

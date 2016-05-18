@@ -90,7 +90,7 @@ public class SamUserDetailsServiceTest {
 		assertThat(hasUserTask, is(false));
 		boolean userAllowedToChangeTask = detailsService.isUserAllowedToChangeTask(authentication, request);
 		assertThat(userAllowedToChangeTask, is(false));
-		boolean userProjectMember = detailsService.isUserProjectMember(authentication, request);
+		boolean userProjectMember = detailsService.isUserPartOfProject(authentication, request);
 		assertThat(userProjectMember, is(false));
 		boolean userProjectOwner = detailsService.isUserProjectOwner(authentication, request);
 		assertThat(userProjectOwner, is(false));
@@ -117,32 +117,32 @@ public class SamUserDetailsServiceTest {
 	}
 
 	@Test
-	public void userIsProjectMember() {
+	public void userIsPartOfProject() {
 		Authentication authentication = new TestingAuthenticationToken(USERNAME_MEMBER, null);
 		authentication.setAuthenticated(true);
 		HttpServletRequest request = mock(HttpServletRequest.class);
 		when(request.getParameter("projectId")).thenReturn(PROJECT_ID.getId());
-		boolean userProjectMember = detailsService.isUserProjectMember(authentication, request);
+		boolean userProjectMember = detailsService.isUserPartOfProject(authentication, request);
 		assertThat(userProjectMember, is(true));
 	}
 
 	@Test
-	public void userIsNotProjectMember() {
+	public void userIsNotPartOfProject() {
 		Authentication authentication = new TestingAuthenticationToken(USERNAME_NO_PROJECT, null);
 		authentication.setAuthenticated(true);
 		HttpServletRequest request = mock(HttpServletRequest.class);
 		when(request.getParameter("projectId")).thenReturn(PROJECT_ID.getId());
-		boolean userProjectMember = detailsService.isUserProjectMember(authentication, request);
+		boolean userProjectMember = detailsService.isUserPartOfProject(authentication, request);
 		assertThat(userProjectMember, is(false));
 	}
 
 	@Test
-	public void projectOwnerIsProjectMember() {
+	public void projectOwnerIsPartOfProject() {
 		Authentication authentication = new TestingAuthenticationToken(USERNAME_OWNER, null);
 		authentication.setAuthenticated(true);
 		HttpServletRequest request = mock(HttpServletRequest.class);
 		when(request.getParameter("projectId")).thenReturn(PROJECT_ID.getId());
-		boolean userProjectMember = detailsService.isUserProjectMember(authentication, request);
+		boolean userProjectMember = detailsService.isUserPartOfProject(authentication, request);
 		assertThat(userProjectMember, is(true));
 	}
 
@@ -214,7 +214,7 @@ public class SamUserDetailsServiceTest {
 		public ProjectService createMockProjectService() {
 			ProjectService service = mock(ProjectService.class);
 			Project project = mock(Project.class);
-			when(project.getProjectMembers()).thenReturn(new HashSet<>(Arrays.asList(USERNAME_MEMBER, USERNAME_OWNER)));
+			when(project.getProjectMembers()).thenReturn(new HashSet<>(Arrays.asList(USERNAME_MEMBER)));
 			when(project.getProjectOwner()).thenReturn(USERNAME_OWNER);
 			when(service.findProjectById(PROJECT_ID)).thenReturn(Optional.of(project));
 			return service;

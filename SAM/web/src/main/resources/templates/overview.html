@@ -32,7 +32,7 @@
 				<p class="projectDescription" th:text="${project.description}"/>
 			</div>
 			<div class="projectTaskList" th:id="${project.name}+TaskList"></div>
-			<form action="#" th:action="@{/KanbanBoard}" th:object="${project}">
+			<form action="#" th:action="@{/kanbanboard}" th:object="${project}">
 				<input class="settingButton" type="image" th:id="${project.name}+Setting" src = "../image/detail.png"/>
 				<input type="hidden" name="projectId" th:value="${project.id.id}"/>
 			</form>
@@ -54,7 +54,7 @@
 			</div>
 		</form>
 		
-		<!-- <form id="managementForm" action="#" th:action="@{/KanbanBoard}" method="get"></form> -->
+		<!-- <form id="managementForm" action="#" th:action="@{/kanbanboard}" method="get"></form> -->
 	</div>
 	<div id="toDoList" class="overview">
 	</div>	
@@ -136,7 +136,7 @@ function showProject(name, description,id) {
 	hidden.value=id;
 	settingForm.appendChild(hidden);
 	
-	settingForm.action = "/KanbanBoard?projectId=" + id;
+	settingForm.action = "/kanbanboard?projectId=" + id;
 	settingForm.method="get";
 	
 	settingForm.appendChild(settingButton);
