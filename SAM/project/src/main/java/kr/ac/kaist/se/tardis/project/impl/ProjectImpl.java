@@ -6,6 +6,7 @@ import java.util.Set;
 
 import kr.ac.kaist.se.tardis.project.api.Project;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 class ProjectImpl implements Project {
 
