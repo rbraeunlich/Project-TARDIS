@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User findUserByName(String name) {
 		// TODO Auto-generated method stub
-		return null;
+		return userRepo.findByUsername(name).get(0);
 	}
 
 	@Override

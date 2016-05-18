@@ -4,7 +4,6 @@ import java.util.Date;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import kr.ac.kaist.se.tardis.users.api.User;
 
 public class CreateTaskForm {
 	public static final String SHORT_TASK_NAME_ERROR = "Task name must contain at least three characters";
@@ -12,17 +11,20 @@ public class CreateTaskForm {
 	public static final String NO_DUE_DATE_ERROR = "Task must set due date";
 	public static final String NO_OWNER_ERROR = "Task must assigned to owner";
 
+	@NotNull
+	private String projectId;
+	
 	@NotNull(message= NO_TASK_NAME_ERROR)
 	@Size(min = 3, message = SHORT_TASK_NAME_ERROR)
 	private String taskName;
 
 	private String description;
 
-	@NotNull(message= NO_DUE_DATE_ERROR)
+
 	private Date dueDate;
 	
 	@NotNull(message= NO_OWNER_ERROR)
-	private User owner;
+	private String owner;
 
 	public String getTaskName() {
 		return taskName;
@@ -48,12 +50,20 @@ public class CreateTaskForm {
 		this.dueDate = dueDate;
 	}
 
-	public User getOwner() {
+	public String getOwner() {
 		return owner;
 	}
 
-	public void setOwner(User owner) {
+	public void setOwner(String owner) {
 		this.owner = owner;
+	}
+
+	public String getProjectId() {
+		return projectId;
+	}
+
+	public void setProjectId(String projectId) {
+		this.projectId = projectId;
 	}
 
 }

@@ -26,8 +26,8 @@
 <div id="board" class="box">
 	<div id="projectBox" class="box">
 		<form action="#" th:action="@{/projectview}" th:object="${project}" method="get" style="margin:25px;height:60px;">
-			<div th:text="${project.name}" style="font-size:40px;margin:15px;width:80%;float:left;position:relative;left:10%;"></div>
-			<input class = "settingButton" type="image" src = "../image/setting.png" style="float:right;"/>
+			<div th:text="'Project: '+ ${project.name}" style="font-size:40px;margin:15px;width:80%;float:left;position:relative;left:10%;"></div>
+			<input class = "projectSettingButton" type="image" src = "../image/setting.png" style="float:right;"/>
 			<input type = "hidden" name = "projectId" th:value ="${project.Id}"/>
 		</form>
 
@@ -35,20 +35,19 @@
 	</div>
 	<div id="ToDo" class="kanban" style="float:left;"><p class="boardName">ToDo</p>
 		
-		<div class="entry" th:each="task : ${taskList}" th:if="${task.taskState} = TODO" id="${task.name}">		
+		<div class="entry" th:each="task : ${taskList}" id="${task.name}">		
 			<div class="textBlock">
 				<p class="taskNameText" th:text="${task.name}" />
-				<p class="taskDescription" th:text="${task.description}" />
-				
-				<form>
-					<input class="settingButton" type="image" id="${task.name} + Setting" src="../image/setting.png" />
-				</form>
+				<p class="taskDescription" th:text="${task.description}" />				
 			</div>
+			<form>
+					<input class="taskSettingButton" type="image" id="${task.name} + Setting" src="../image/setting.png" />
+			</form>
 		</div>
 		
 		<form id="createTask" action="#" th:action="@{/kanbanboard}" th:object="${createTaskForm}" method="post">
 			<img id="createTaskIcon" alt="Create icon" src="../image/create.png" onclick="showCreateTaskForm()"/>
-			<input type="hidden" name="projectId" th:value="${project.id.id}"/>
+			<input type="hidden" name="projectId" th:field="*{projectId}" th:value="${project.id.id}"/>
 			<div id="createTaskFormWrapper">				
 				<p> 
 					Task Name:        	<input id="taskName" class="createTaskInput" th:field="*{taskName}"/>
