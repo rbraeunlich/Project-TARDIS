@@ -27,6 +27,7 @@
 
 <div id="board" class="box">
 	<div id="project" class="overview">	
+		<p class="boardName">My Projects</p>
 		<div th:each="project : ${projectList}" class="entry" id="${project.name}">
 			<div class="textBlock">
 				<p class="projectNameText" th:text="${project.name}"/>
@@ -63,6 +64,7 @@
 		<!-- <form id="managementForm" action="#" th:action="@{/kanbanboard}" method="get"></form> -->
 	</div>
 	<div id="toDoList" class="overview">
+		<p class="boardName">My Tasks</p>
 			<div th:each="task : ${taskList}" class="entry" id="${task.name}">
 			<div class="textBlock">			
 				<p class="taskState" th:text="${task.taskState}"/>
@@ -83,29 +85,6 @@
 <script th:inline="javascript">
 /*<![CDATA[*/
            
-function showTask(project, task, progress) {
-	
-	var project_task = document.createElement("div");
-	project_task.className = "projectTaskBlock";
-	
-	<!-- name of task -->
-	var task_name = document.createElement("p");
-	task_name.className = "taskName";
-	var text = document.createTextNode(task);
-	task_name.appendChild(text);
-	project_task.appendChild(task_name);
-	
-	<!-- progress of task -->
-	var task_progress = document.createElement("progress");
-	task_progress.className = "taskProgress";
-	task_progress.max = "100";
-	task_progress.value = progress;
-	project_task.appendChild(task_progress);
-		
-	var task_list = document.getElementById(project + "TaskList");
-	task_list.appendChild(project_task);
-}
-
 <!-- event handler on resize of window -->
 function resizeWindow() {
 	var size = document.getElementById("board").clientWidth;
@@ -115,8 +94,8 @@ function resizeWindow() {
 		document.getElementById("project").style = "float:left;";
 		document.getElementById("toDoList").style = "float:right;";
 	} else {
-		document.getElementById("project").style = "float:none;margin:auto;margin-top:25px;width:80%;overflow:auto;";
-		document.getElementById("toDoList").style = "float:none;margin:auto;margin-top:25px;margin-bottom:25px;width:80%;overflow:auto;";
+		document.getElementById("project").style = "float:none;margin:25px auto 25px auto;width:80%;padding-top:1px;";
+		document.getElementById("toDoList").style = "float:none;margin:25px auto 25px auto;width:80%;padding-top:1px;";
 	}
 }
 
@@ -144,8 +123,6 @@ function showCreateProjectForm() {
 	document.getElementById("createProjectFormWrapper").style.display = "block";
 	document.getElementById("createProjectIcon").style.display = "none";
 }
-
-var projectList = [[${projectList}]];
 
 /*]]>*/
 </script>
