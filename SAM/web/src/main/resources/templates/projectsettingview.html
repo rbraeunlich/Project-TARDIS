@@ -26,7 +26,7 @@
 
 <div id="board" class="box">
     <H1>Project Setting</H1>
-    <form class="settingForm" action="#" th:action="@{/projectchange}" th:object="${project}" method="get">
+    <form action="#" th:action="@{/projectchange}" th:object="${project}" method="get">
         <input type="hidden" name="projectId" th:value ="*{id}"/>
         <p>Project name: <input id="projectname" type="text" th:field="*{name}"/></p>
         <p>Project owner:<input id="username" type="text" th:field="*{projectOwner}"/></p>

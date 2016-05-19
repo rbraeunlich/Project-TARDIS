@@ -76,12 +76,11 @@ public class KanbanBoardController {
 		Optional<Project> optional = projectService.findProjectById(id);
 
 		if(optional.isPresent())
-		{// Project is present in optional
+		{
 			Project thisProject = optional.get();
 			//test line for memebers
 			thisProject.addProjectMember("member1");
 			thisProject.addProjectMember("member2");
-			System.out.println(thisProject.getId());
 			//
 			model.addAttribute("project", thisProject);
 		}else{
@@ -102,6 +101,7 @@ public class KanbanBoardController {
 			changedProject.setName(project.getName());
 			changedProject.setDescription(project.getDescription());
 			projectService.saveProject(changedProject);
+
 			fillModel(model, user, id);
 		}else{
 			//TODO error case

@@ -26,8 +26,9 @@
 
 <div id="board" class="box">
     <H1>Task Setting</H1>
-    <form class="settingForm" action="#" th:action="@{/taskchange}" th:object="${task}" method="post">
-        <p>Project Name: <!--<span th:txt="${project.name}"/>--><!--later added--></p>
+    <form class="settingForm" action="#" th:action="@{/taskchange}" th:object="${task}" method="get">
+        <!--<p>Project Name: <span th:value="${task.projectId}"></p>-->
+		<input type="hidden" name="taskId" th:value ="${task.id}"/>
         <p>Task name: <input id="taskname" type="text" th:field="${task.name}"/></p>
 
         <p>Task Assignee:<input id="username" type="text" th:field="${task.taskOwner}"/></p>

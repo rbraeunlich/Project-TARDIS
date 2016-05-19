@@ -11,7 +11,7 @@ public class ProjectIdFactory {
 
 	public static ProjectId valueOf(String projectIdParameter) {
 		//validation
-		//UUID.fromString(projectIdParameter);
+		UUID.fromString(projectIdParameter);
 		return new ProjectId(projectIdParameter);
 	}
 
