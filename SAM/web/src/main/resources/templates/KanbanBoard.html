@@ -54,15 +54,15 @@
 			<div id="createTaskFormWrapper">				
 				<p> 
 					Task Name:        	<input id="taskName" class="createTaskInput" th:field="*{taskName}"/>
-					<b th:if="${#fields.hasErrors('taskName')}" th:errors="*{taskName}">Task Name Error</b>
+					<b th:if="${#fields.hasErrors('taskName')}" th:errors="*{taskName}"></b>
 				</p>
 				<p>
 					Description: 	<input id="description" class="createTaskInput" th:field="*{description}"/>
-					<b th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Task Description Error</b>
+					<b th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></b>
 				</p>
 				<p>
-					Task Due:			<input id="dueDate" class="createTaskInput" type="Date" th:field="*{dueDate}"/>
-					<b th:if="${#fields.hasErrors('dueDate')}" th:errors="*{dueDate}">Due Date Error</b>
+					Task Due:			<input type="Date" th:pattern="yyyy-MM-dd" id="dueDate" class="createTaskInput" th:field="*{dueDate}" />
+					<b th:if="${#fields.hasErrors('dueDate')}" th:errors="*{dueDate}"></b>
 				</p>
 				<p>
 					Task Owner:			
@@ -71,7 +71,7 @@
                         		th:value="${member}"
                         		th:text="${member}"></option>
             		</select>
-					<b th:if="${#fields.hasErrors('owner')}" th:errors="*{owner}">Owner Error</b>
+					<b th:if="${#fields.hasErrors('owner')}" th:errors="*{owner}"></b>
 				</p>
 				<input id="createTaskButton" class="button" type="submit" value="Create Task" />
 			</div>			
@@ -141,10 +141,10 @@ function resizeWindow() {
 		document.getElementById("Review").style = "float:right;";
 		document.getElementById("Done").style = "float:right;";
 	} else {
-		document.getElementById("ToDo").style = "float:left;width:47%;";
-		document.getElementById("In-Progress").style = "float:right;width:47%;";
-		document.getElementById("Done").style = "float:right;width:47%;";
-		document.getElementById("Review").style = "float:left;width:47%;";		
+		document.getElementById("ToDo").style = "float:left;width:48%;";
+		document.getElementById("In-Progress").style = "float:right;width:48%;";
+		document.getElementById("Done").style = "float:right;width:48%;";
+		document.getElementById("Review").style = "float:left;width:48%;";		
 	}
 }
 

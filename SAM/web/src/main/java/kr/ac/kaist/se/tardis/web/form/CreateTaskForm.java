@@ -23,6 +23,8 @@ public class CreateTaskForm {
 
 	private String description;
 
+	// NotNull(message= NO_DUE_DATE_ERROR)
+	@DateTimeFormat (pattern="yyyy-MM-dd") 
 	private Date dueDate;
 	
 	@NotNull(message= NO_OWNER_ERROR)
@@ -44,14 +46,6 @@ public class CreateTaskForm {
 		this.description = description;
 	}
 
-	public Date getDueDate() {
-		return dueDate;
-	}
-
-	public void setDueDate(Date dueDate) {
-		this.dueDate = dueDate;
-	}
-
 	public String getOwner() {
 		return owner;
 	}
@@ -67,5 +61,14 @@ public class CreateTaskForm {
 	public void setProjectId(String projectId) {
 		this.projectId = projectId;
 	}
+
+	public Date getDueDate() {
+		return dueDate;
+	}
+
+	public void setDueDate(Date dueDate) {
+		this.dueDate = dueDate;
+	}
+
 
 }

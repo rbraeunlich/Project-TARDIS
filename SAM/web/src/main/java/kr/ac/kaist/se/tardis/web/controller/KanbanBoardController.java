@@ -39,7 +39,6 @@ public class KanbanBoardController {
 			model.addAttribute("taskList",
 					taskService.findTaskByProjectId(projectId));
 			model.addAttribute("project", projectService.findProjectById(projectId).get());
-			System.out.println("project " + projectService.findProjectById(projectId).get());
 		}
 
 		@RequestMapping(value = { "/kanbanboard" }, method = RequestMethod.GET)
@@ -55,12 +54,12 @@ public class KanbanBoardController {
 				BindingResult bindingResult, @AuthenticationPrincipal UserDetails user) {
 			
 			ProjectId id = ProjectIdFactory.valueOf(form.getProjectId());
+
 			if (!bindingResult.hasErrors()) {					
 				
 				Task task = taskService.createTask(String.valueOf(user.getUsername()), id);
 				task.setDescription(form.getDescription());
 				task.setName(form.getTaskName());
-				task.setDueDate(form.getDueDate());
 				task.setOwner(form.getOwner());
 				taskService.saveTask(task);
 			}

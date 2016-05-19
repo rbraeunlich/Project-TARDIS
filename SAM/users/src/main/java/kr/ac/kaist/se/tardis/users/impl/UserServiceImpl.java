@@ -33,9 +33,9 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void deleterUser(UserImpl u) {
+	public void deleterUser(User u) {
 		// TODO Auto-generated method stub
-		userRepo.delete(u);
+		userRepo.delete((UserImpl) u);
 	}
 
 }

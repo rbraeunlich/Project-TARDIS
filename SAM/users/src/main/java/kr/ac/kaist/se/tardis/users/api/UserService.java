@@ -13,6 +13,6 @@ public interface UserService {
 	
 	User findUserByName(String name);
 	
-	void deleterUser(UserImpl u);
+	void deleterUser(User u);
 	
 }
