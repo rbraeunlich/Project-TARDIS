@@ -21,6 +21,7 @@ class ProjectImpl implements Project {
 		this.id = id;
 		this.owner = projectOwner;
 		this.members = new HashSet<>();
+		addProjectMember(owner);
 	}
 
 	@Override

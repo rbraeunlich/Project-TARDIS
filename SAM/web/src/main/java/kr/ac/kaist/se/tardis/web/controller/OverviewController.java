@@ -49,13 +49,7 @@ public class OverviewController {
 		model.addAttribute("projectList",
 				projectService.findProjectsForUser(String.valueOf(user.getUsername())));
 		
-		////// Personal todo list testing...
-//		Task asdf = taskService.createTask(user.getUsername(), ProjectIdFactory.generateProjectId() );
-//		asdf.setName("eeeee");
-//		asdf.setDescription("aee333");
-//		taskService.saveTask(asdf);		
-//		System.out.println(taskService.findTasksForUser(String.valueOf(user.getUsername())));
-		//////
+
 		
 		model.addAttribute("taskList",
 				taskService.findTasksForUser(String.valueOf(user.getUsername())));

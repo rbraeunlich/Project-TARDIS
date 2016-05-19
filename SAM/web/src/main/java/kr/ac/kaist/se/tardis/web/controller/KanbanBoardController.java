@@ -6,6 +6,9 @@ import kr.ac.kaist.se.tardis.project.api.Project;
 import kr.ac.kaist.se.tardis.project.impl.id.*;
 import kr.ac.kaist.se.tardis.project.api.ProjectService;
 import kr.ac.kaist.se.tardis.web.form.CreateTaskForm;
+import kr.ac.kaist.se.tardis.web.form.SetProjectForm;
+import kr.ac.kaist.se.tardis.web.validator.SetProjectFormValidator;
+import kr.ac.kaist.se.tardis.web.validator.UsernameAndPasswordRepititionValidator;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -26,7 +29,8 @@ import java.util.Optional;
 
 @Controller
 public class KanbanBoardController {
-
+		@Autowired
+		private SetProjectFormValidator validator;
 		@Autowired
 		private ProjectService projectService;
 		
@@ -69,44 +73,6 @@ public class KanbanBoardController {
 			return "KanbanBoard";
 		}
 
-	@RequestMapping(value={"/projectview"}, method = RequestMethod.GET)
-	public String projectInfoView(Model model, @RequestParam(name = "projectId", required = true) String projectId){
-		// show project information on project setting page
-		ProjectId id = ProjectIdFactory.valueOf(projectId);
-		Optional<Project> optional = projectService.findProjectById(id);
 
-		if(optional.isPresent())
-		{
-			Project thisProject = optional.get();
-			//test line for memebers
-			thisProject.addProjectMember("member1");
-			thisProject.addProjectMember("member2");
-			//
-			model.addAttribute("project", thisProject);
-		}else{
-			//TODO error case
-
-		}
-		return "projectsettingview";
-	}
-
-	@RequestMapping(value={"/projectchange"}, method = RequestMethod.GET)
-	public String projectChange(Model model, CreateTaskForm form, @RequestParam(name = "projectId", required = true)String projectId, @AuthenticationPrincipal UserDetails user, Project project){
-		ProjectId id = ProjectIdFactory.valueOf(projectId);
-		Optional<Project> optional = projectService.findProjectById(id);
-
-		if(optional.isPresent()){
-			//TODO update features
-			Project changedProject = optional.get();
-			changedProject.setName(project.getName());
-			changedProject.setDescription(project.getDescription());
-			projectService.saveProject(changedProject);
-
-			fillModel(model, user, id);
-		}else{
-			//TODO error case
-		}
-		return "KanbanBoard";
-	}
 }
 

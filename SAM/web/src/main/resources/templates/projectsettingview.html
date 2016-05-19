@@ -1,63 +1,85 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Project Setting</title>
-    <link rel="stylesheet" th:href="@{/css/settingview.css}" href="../static/css/settingview.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Project Setting</title>
+<link rel="stylesheet" th:href="@{/css/settingview.css}"
+	href="../static/css/settingview.css" />
 </head>
 <body>
 
-<div th:replace="overview :: bar"></div>
+	<div th:replace="overview :: bar"></div>
 
-<div th:replace="overview :: heading"></div>
+	<div th:replace="overview :: heading"></div>
 
-<div id="board" class="box">
-    <H1>Project Setting</H1>
-    <form action="#" th:action="@{/projectchange}" th:object="${project}" method="get">
-        <input type="hidden" name="projectId" th:value ="*{id}"/>
-        <p>Project name: <input id="projectname" type="text" th:field="*{name}"/></p>
-        <p>Project owner:<input id="username" type="text" th:field="*{projectOwner}"/></p>
-        <!--<p>Due Date: <input id="duedate" type="text" th:field="${task.dueDate}"/></p>-->
-        <!--There is an error on Date-->
-        <p>Project members:
-            <select>
-                <option th:each="m : *{projectMembers}"
-                        th:value="${m}"
-                        th:text="${m}">Members</option>
-            </select>
-        </p>
-        <p>Description: <input id="description" type="text" th:field="*{description}"/> </p>
-        <p>
-            <button name="action" type="submit" value="submit">Submit</button>
-            <!--<button name="action" type="reset" value="reset">Reset</button>-->
-            <!--<button name="action" type="submit" value="cancel">Cancel</button>-->
-            <input id="cancel" type="button" value="cancel" onclick="window.location.href='kanbanboard'"/>
-        </p>
-    </form>
-</div>   
+	<div id="board" class="box">
+		<H1>Project Setting</H1>
+		<div th:text="'Project owner: '+ ${project.projectOwner}"></div>
+		<div th:text="'Project name: '+ ${project.name}"></div>
+		<div th:text="'Project Description: '+ ${project.description}"></div>
+		<br />
+		<div>Project Member</div>
+		<div th:each="m : ${project.projectMembers}" th:value="${m}"
+			th:text="${m}"></div>
 
-<div th:replace="overview :: footer"></div>
-    
-<script th:inline="javascript">
-<!-- show notifications on mouse over to icon -->
-function showNotification(e) {
-	
-	var notification = document.getElementById("notification");
-	
-	var size = document.getElementById("board").clientWidth;
-	var x = e.clientX - 150 - (size*1.125);
-	var y = e.clientY - 150;	
-	notification.style.left = x + "px";
-	notification.style.top = y + "px";  
-	
-	if (notification.style.display == "none") {		
-		notification.style.display = "block";
-	}
-}
-function closeNotification() {
-	document.getElementById("notification").style.display = "none";
-}
-</script>    
-    
+
+		<form action="#" th:action="@{/projectchange}"
+			th:object="${setProjectForm}" method="post">
+			<input type="hidden" name="projectId" th:value="${project.id.id}" />
+			<p>
+				New Project name: <input id="projectName" type="text"
+					th:field="*{projectName}" /> <b
+					th:if="${#fields.hasErrors('projectName')}"
+					th:errors="*{projectName}">Project name error</b>
+			</p>
+			<p>
+				New Description: <input id="description" type="text"
+					th:field="*{description}" />
+			</p>
+			<p>
+				New Member: <input id="newMember" type="text"
+					th:field="*{newMember}" /> <b
+					th:if="${#fields.hasErrors('newMember')}" th:errors="*{newMember}">Member
+					error</b>
+			</p>
+			<p>
+				<button name="action" type="submit" value="submit">Submit</button>
+			</p>
+
+		</form>
+
+
+
+			<form action="#" th:action="@{/kanbanboard}" method="get">
+				<button name="action" type="submit" value="submit">Cancel</button>
+				<input type="hidden" name="projectId" th:value="${project.id.id}"/>
+			</form>
+
+
+	</div>
+
+	<div th:replace="overview :: footer"></div>
+
+	<script th:inline="javascript">
+	<!-- show notifications on mouse over to icon -->
+		function showNotification(e) {
+
+			var notification = document.getElementById("notification");
+
+			var size = document.getElementById("board").clientWidth;
+			var x = e.clientX - 150 - (size * 1.125);
+			var y = e.clientY - 150;
+			notification.style.left = x + "px";
+			notification.style.top = y + "px";
+
+			if (notification.style.display == "none") {
+				notification.style.display = "block";
+			}
+		}
+		function closeNotification() {
+			document.getElementById("notification").style.display = "none";
+		}
+	</script>
+
 </body>
 </html>
