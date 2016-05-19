@@ -51,7 +51,7 @@ p {
 
 .overview {
 	width: 46%;
-	height: auto;
+	min-height: 400px;
 	margin: 23px;
 	background-color: LightBlue;
 	padding-bottom: 25px;
