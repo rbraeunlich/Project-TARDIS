@@ -1,7 +1,5 @@
 package kr.ac.kaist.se.tardis.users.api;
 
-import kr.ac.kaist.se.tardis.users.impl.UserImpl;
-
 public interface UserService {
 	
 	/**
