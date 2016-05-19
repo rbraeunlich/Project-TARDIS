@@ -12,7 +12,7 @@ class TaskImpl implements Task {
 	private final TaskId id;
 	private String name;
 	private String description;
-	private final String owner;
+	private  String owner;
 	private Date dueDate;
 	private ProjectId projectId;
 	private TaskState taskState;
@@ -126,6 +126,12 @@ class TaskImpl implements Task {
 	@Override
 	public void setTaskProgress(int taskProgress) {
 		this.taskProgress = taskProgress;
+	}
+
+	@Override
+	public void setOwner(String owner) {
+		// TODO Auto-generated method stub
+		this.owner = owner;
 	}
 
 

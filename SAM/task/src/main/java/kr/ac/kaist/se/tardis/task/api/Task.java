@@ -25,7 +25,7 @@ public interface Task {
 	
 	
 	String getOwner();
-	
+	void setOwner(String owner);
 	
 	TaskState getTaskState();
 	void setTaskState(TaskState taskState);
