@@ -21,7 +21,7 @@ public class CreateTaskForm {
 	@Size(min = 3, message = SHORT_TASK_NAME_ERROR)
 	private String taskName;
 
-	private String description;
+	private String taskDescription;
 
 	// NotNull(message= NO_DUE_DATE_ERROR)
 	@DateTimeFormat (pattern="yyyy-MM-dd") 
@@ -38,12 +38,12 @@ public class CreateTaskForm {
 		this.taskName = taskName;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getTaskDescription() {
+		return taskDescription;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setTaskDescription(String taskDescription) {
+		this.taskDescription = taskDescription;
 	}
 
 	public String getOwner() {

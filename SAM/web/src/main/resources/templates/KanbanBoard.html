@@ -57,8 +57,8 @@
 					<b th:if="${#fields.hasErrors('taskName')}" th:errors="*{taskName}"></b>
 				</p>
 				<p>
-					Description: 	<input id="description" class="createTaskInput" th:field="*{description}"/>
-					<b th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></b>
+					Description: 	<input id="taskDescription" class="createTaskInput" th:field="*{taskDescription}"/>
+					<b th:if="${#fields.hasErrors('taskDescription')}" th:errors="*{taskDescription}"></b>
 				</p>
 				<p>
 					Task Due:			<input type="Date" th:pattern="yyyy-MM-dd" id="dueDate" class="createTaskInput" th:field="*{dueDate}" />

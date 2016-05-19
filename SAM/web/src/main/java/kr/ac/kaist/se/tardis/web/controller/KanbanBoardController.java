@@ -58,7 +58,7 @@ public class KanbanBoardController {
 			if (!bindingResult.hasErrors()) {					
 				
 				Task task = taskService.createTask(String.valueOf(user.getUsername()), id);
-				task.setDescription(form.getDescription());
+				task.setDescription(form.getTaskDescription());
 				task.setName(form.getTaskName());
 				task.setOwner(form.getOwner());
 				taskService.saveTask(task);
