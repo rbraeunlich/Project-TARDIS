@@ -26,8 +26,7 @@
 </div>
 
 <div id="board" class="box">
-	<div id="project" class="overview">
-	
+	<div id="project" class="overview">	
 		<div th:each="project : ${projectList}" class="entry" id="${project.name}">
 			<div class="textBlock">
 				<p class="projectNameText" th:text="${project.name}"/>

@@ -48,7 +48,7 @@ p {
 	border: 1px solid lightgrey;
 	width: 23.25%;
 	min-height: 400px;
-	margin: 0.5%;
+	margin: 1% 0.5% 2% 0.5%;
 	background-color: lightgrey;
 }
 
@@ -129,7 +129,6 @@ p {
 #board {
 	display: table;
 	border: 1px solid grey;
-	padding: 11px;
 }
 
 #notification {

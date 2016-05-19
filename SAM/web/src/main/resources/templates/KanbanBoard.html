@@ -28,7 +28,7 @@
 <div id="board" class="box">
 	<div id="projectBox" class="box">
 		<form action="#" th:action="@{/projectview}" th:object="${project}" method="get" style="margin:25px;height:60px;">
-			<div th:text="'Project: '+ ${project.name}" style="font-size:40px;margin:15px;width:80%;float:left;position:relative;left:10%;"></div>
+			<div th:text="'Project '+ ${project.name}" style="font-size:40px;margin:15px;width:80%;float:left;position:relative;left:10%;"></div>
 			<input class = "projectSettingButton" type="image" src = "../image/setting.png" style="float:right;"/>
 			<input type = "hidden" name = "projectId" th:value ="${project.Id}"/>
 		</form>
@@ -50,7 +50,7 @@
 		
 		<form id="createTask" action="#" th:action="@{/kanbanboard}" th:object="${createTaskForm}" method="post">
 			<img id="createTaskIcon" alt="Create icon" src="../image/create.png" onclick="showCreateTaskForm()"/>
-			<input type="hidden" name="projectId" th:field="*{projectId}" th:value="${project.id.id}"/>
+			<input type="hidden" th:field="*{projectId}" th:value="${project.id.id}"/>
 			<div id="createTaskFormWrapper">				
 				<p> 
 					Task Name:        	<input id="taskName" class="createTaskInput" th:field="*{taskName}"/>
@@ -65,7 +65,12 @@
 					<b th:if="${#fields.hasErrors('dueDate')}" th:errors="*{dueDate}">Due Date Error</b>
 				</p>
 				<p>
-					Task Owner:			<input id="taskOwner" class="createTaskInput" th:field="*{owner}"/>
+					Task Owner:			
+					<select class="createTaskInput" th:field="*{owner}">
+                		<option th:each="member : ${project.projectMembers}"
+                        		th:value="${member}"
+                        		th:text="${member}"></option>
+            		</select>
 					<b th:if="${#fields.hasErrors('owner')}" th:errors="*{owner}">Owner Error</b>
 				</p>
 				<input id="createTaskButton" class="button" type="submit" value="Create Task" />

@@ -29,13 +29,13 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User findUserByName(String name) {
 		// TODO Auto-generated method stub
-		return userRepo.findByUsername(name).get(0);
+		return  userRepo.findOne(name);
 	}
 
 	@Override
-	public void deleterUser(User u) {
+	public void deleterUser(UserImpl u) {
 		// TODO Auto-generated method stub
-
+		userRepo.delete(u);
 	}
 
 }
