@@ -18,7 +18,7 @@
 		<input type="hidden" name="taskId" th:value ="${task.id.id}"/>
         <p>Task name: <input id="taskname" type="text" th:field="${task.name}"/></p>
 
-        <p>Task Assignee:<input id="username" type="text" th:field="${task.taskOwner}"/></p>
+        <p>Task Assignee:<input id="username" type="text" th:field="${task.owner}"/></p>
         <!--<p>Due Date: <input id="duedate" type="text" th:field="${task.dueDate}"/></p>-->
         <!--There is an error on Date-->
         <p>Description: <input id="description" type="text" th:field="${task.description}"/> </p>
