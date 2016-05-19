@@ -7,7 +7,7 @@
 	href="../css/index.css" />
 </head>
 <body>
-	<div id="heading">
+	<div id="heading" th:fragment="indexheading" style="text-align: center;margin-top: 8%;padding: 2%;">
 		<h1>SAM - Simple Application for Management</h1>
 		<img alt="SAM icon" src="../image/Clock.png" />
 	</div>
@@ -32,6 +32,7 @@
 			<div id="logoutInfo" th:if="${param.logout}">You have been logged out.</div>
 		</form>
 	</div>
-	<div id="footer">2016 Project TARDIS</div>
+	<div th:fragment="indexfooter" id="footer" 
+		style="position:absolute;bottom:3%;right:3%;float:right;margin:0px 50px 0px 0px;text-align:right;padding:10px 30px;">2016 Project TARDIS</div>
 </body>
 </html>

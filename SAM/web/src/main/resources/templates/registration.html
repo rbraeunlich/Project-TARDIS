@@ -6,10 +6,8 @@
 <link rel="stylesheet" th:href="@{/css/registration.css}" href="../static/css/registration.css" />
 </head>
 <body>
-	<div id="heading">
-		<h1>SAM - Simple Application for Management</h1>
-		<img alt="SAM icon" src="../image/Clock.png" />
-	</div>
+	<div th:replace="index :: indexheading"></div>
+	
 	<p style="text-align:center;font-size:20px;">Welcome!</p>
 	<div id="registrationBox">
 		<form id="registrationForm" action="#" th:action="@{/registration}" th:object="${registrationForm}"
@@ -44,6 +42,7 @@
 			</p>
 		</form>
 	</div>
-	<div id="footer">2016 Project TARDIS</div>
+	
+	<div th:replace="index :: indexfooter"></div>
 </body>
 </html>

@@ -1,29 +1,15 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Project Management</title>
+    <title>Kanban Board</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" th:href="@{/css/KanbanBoard.css}" href="../static/css/KanbanBoard.css" />
 </head>
 <body onresize="resizeWindow()" onpageshow="resizeWindow()">
 
-<div id="bar" class="box">	
-	<input id="accountpage" class="button" type="button" value="My Page" style="float:right;"/>
-		<form th:action="@{/logout}" method="post">
-		<input id="logout" class="button" type="submit" value="Log Out" style="float:right;margin-right:10px;"/> 
-	</form>
-	<p id = "username" style="float:right;margin:0px 20px" th:text="'Hello, '+${username}"/>
-</div>
+<div th:replace="overview :: bar"></div>
 
-<div id="heading" class="box">
-	<form action="#" th:action="@{/overview}" method="get" style="float:left;">
-		<input type="image" src="../image/Clock.png"/>
-	</form>
-	<div id="notificationBox" onclick="showNotification(event)" onmouseleave="closeNotification()">
-		<img alt="Alarm icon" src="../image/bell.png" style="width:50px;height:50px;"/>
-		<div id="notification" style="display:none;"></div>
-	</div>	
-</div>
+<div th:replace="overview :: heading"></div>
 
 <div id="board" class="box">
 	<div id="projectBox" class="box">
@@ -83,7 +69,7 @@
 	<div id="Review" class="kanban" style="float:right;"><p class="boardName">Review</p></div>	
 </div>
 
-<div id="footer" class="box">2016 Project TARDIS</div>
+<div th:replace="overview :: footer"></div>
 
 <script th:inline="javascript">
 /*<![CDATA[*/

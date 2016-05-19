@@ -133,38 +133,9 @@ p {
 	width: 50%;
 }
 
-#bar {
-	margin-top:30px;
-	height: 21px;
-}
-
-#heading {
-	margin-top:10px;
-	height: 150px;
-}
-
 #board {
 	display: table;
 	border: 1px solid grey;
-}
-
-#notification {
-	border: 1px solid grey;
-	width: 200px;
-	height: 300px;
-	background-color: #b3e4ff;
-	position: absolute;
-	z-index: 3;
-}
-
-#notificationBox {
-	height: auto;
-	width: auto;
-	margin: 0px;
-	float: right;
-	position: relative;
-	top: 90px;
-	right: 10px;
 }
 
 #project {
@@ -197,9 +168,6 @@ p {
 }
 
 #footer {
-	margin-top: 20px;
-	margin-bottom: 20px;
-	text-align: right;
 }
 
 #errorwrapper {
