@@ -60,11 +60,6 @@ class TaskImpl implements Task {
 		this.dueDate = d;
 	}
 
-	@Override
-	public String getProjectOwner() {
-		return owner;
-	}	
-	
 	
 	@Override
 	public ProjectId getProjectId() {
@@ -72,14 +67,10 @@ class TaskImpl implements Task {
 		return projectId;
 	}
 
-	@Override
-	public void setOwner(String member) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 	@Override
-	public String getTaskOwner() {
+	public String getOwner() {
 		// TODO Auto-generated method stub
 		return owner;
 	}
