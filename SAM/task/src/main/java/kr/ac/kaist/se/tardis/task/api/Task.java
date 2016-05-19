@@ -23,9 +23,11 @@ public interface Task {
 	void setDueDate(Date d);
 
 	
+	void setOwner(String member);
 	
-	String getOwner();
-	void setOwner(String owner);
+	String getTaskOwner();
+	
+	String getProjectOwner();
 	
 	TaskState getTaskState();
 	void setTaskState(TaskState taskState);

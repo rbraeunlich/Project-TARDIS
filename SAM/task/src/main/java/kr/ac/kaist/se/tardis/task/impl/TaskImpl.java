@@ -12,7 +12,7 @@ class TaskImpl implements Task {
 	private final TaskId id;
 	private String name;
 	private String description;
-	private  String owner;
+	private final String owner;
 	private Date dueDate;
 	private ProjectId projectId;
 	private TaskState taskState;
@@ -60,6 +60,11 @@ class TaskImpl implements Task {
 		this.dueDate = d;
 	}
 
+	@Override
+	public String getProjectOwner() {
+		return owner;
+	}	
+	
 	
 	@Override
 	public ProjectId getProjectId() {
@@ -67,10 +72,14 @@ class TaskImpl implements Task {
 		return projectId;
 	}
 
-	
+	@Override
+	public void setOwner(String member) {
+		// TODO Auto-generated method stub
+		
+	}
 
 	@Override
-	public String getOwner() {
+	public String getTaskOwner() {
 		// TODO Auto-generated method stub
 		return owner;
 	}
@@ -126,12 +135,6 @@ class TaskImpl implements Task {
 	@Override
 	public void setTaskProgress(int taskProgress) {
 		this.taskProgress = taskProgress;
-	}
-
-	@Override
-	public void setOwner(String owner) {
-		// TODO Auto-generated method stub
-		this.owner = owner;
 	}
 
 
