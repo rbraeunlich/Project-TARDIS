@@ -45,7 +45,6 @@ public class TaskController {
     @RequestMapping(value = {"/taskview"}, method = RequestMethod.GET)
     public String taskInfoView(Model model, @RequestParam(name = "taskId", required = true) String taskId) {
         // show task information on task setting page
-        System.out.println("TaskId Test: "+taskId);
         TaskId id = TaskIdFactory.valueOf(taskId);
         Optional<Task> optional = taskService.findTaskById(id);
 

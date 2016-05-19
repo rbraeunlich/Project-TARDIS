@@ -16,7 +16,7 @@
 		<form action="#" th:action="@{/projectview}" th:object="${project}" method="get" style="margin:25px;height:60px;">
 			<div th:text="'Project '+ ${project.name}" style="font-size:40px;margin:15px;width:80%;float:left;position:relative;left:10%;"></div>
 			<input class = "projectSettingButton" type="image" src = "../image/setting.png" style="float:right;"/>
-			<input type = "hidden" name = "projectId" th:value ="${project.id}"/>
+			<input type = "hidden" name = "projectId" th:value ="${project.id.id}"/>
 		</form>
 
 		<p th:text="${project.description}" style="font-size:25px;word-break:break-all;margin:30px;text-align:center;"/>
