@@ -45,6 +45,7 @@ public class OverviewController {
 
 	private void fillModel(Model model, UserDetails user) {
 		model.addAttribute("username", String.valueOf(user.getUsername()));
+		model.addAttribute("allTaskList", taskService.getAllTasks());
 		model.addAttribute("projectList",
 				projectService.findProjectsForUser(String.valueOf(user.getUsername())));
 		

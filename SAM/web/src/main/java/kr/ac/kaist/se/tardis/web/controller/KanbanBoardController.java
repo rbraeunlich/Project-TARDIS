@@ -61,6 +61,7 @@ public class KanbanBoardController {
 				task.setDescription(form.getTaskDescription());
 				task.setName(form.getTaskName());
 				task.setOwner(form.getOwner());
+				task.setTaskProgress(0);
 				taskService.saveTask(task);
 			}
 			

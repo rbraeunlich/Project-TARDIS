@@ -87,49 +87,7 @@
 
 <script th:inline="javascript">
 /*<![CDATA[*/
-           
-function showTask(state, name, description) {
-	<!-- create entry block -->
-	var task_entry = document.createElement("div");
-	task_entry.className = "entry";
-	task_entry.id = name;
-	
-	<!-- block for texts -->
-	var text_block = document.createElement("div");
-	text_block.className = "textBlock";
-	
-	<!-- write project name in -->
-	var task_name = document.createElement("p");
-	task_name.className = "taskNameText";
-	var text = document.createTextNode(name);
-	task_name.appendChild(text);
-	text_block.appendChild(task_name);	
-	
-	<!-- write project description in -->
-	var task_description = document.createElement("p");
-	task_description.className = "taskDescription";
-	text = document.createTextNode(description);
-	task_description.appendChild(text);
-	text_block.appendChild(task_description);
-	
-	task_entry.appendChild(text_block);
-	
-	<!-- setting button -->
-	var settingForm = document.createElement("form");
-	var settingButton = document.createElement("input");
-	settingButton.className = "settingButton";
-	settingButton.type = "image";
-	settingButton.id = name + "Setting";
-	settingButton.src = "../image/setting.png";
-	settingForm.appendChild(settingButton);
-	task_entry.appendChild(settingForm);
-		
-	var kanban_board = document.getElementById(state);
-	kanban_board.appendChild(task_entry);
-}
-
-
-
+ 
 <!-- event handler on resize of window -->
 function resizeWindow() {
 	var size = document.getElementById("board").clientWidth;

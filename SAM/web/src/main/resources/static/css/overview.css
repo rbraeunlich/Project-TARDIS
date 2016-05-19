@@ -84,7 +84,7 @@ p {
 }
 
 .projectTaskList {
-	height: 100px;
+	height: 80px;
 	width: 40%;
 	float: left;
 	position: relative;
@@ -98,6 +98,7 @@ p {
 	max-height: 75px;
 	background-color: lightgrey;
 	float: left;
+	text-align: center;
 }
 
 .kanbanButton {
@@ -119,8 +120,7 @@ p {
 }
 
 .taskProgress {
-	margin-left:2px;
-	width: 80%;
+	width: 90%;
 }
 
 .createProjectInput {

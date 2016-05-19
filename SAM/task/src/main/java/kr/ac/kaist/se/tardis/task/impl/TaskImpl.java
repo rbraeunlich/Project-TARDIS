@@ -16,6 +16,7 @@ class TaskImpl implements Task {
 	private Date dueDate;
 	private ProjectId projectId;
 	private TaskState taskState;
+	private int taskProgress;
 
 	public TaskImpl(TaskId id, ProjectId projectId, String taskOwner) {
 		this.id = id;
@@ -124,6 +125,16 @@ class TaskImpl implements Task {
 	public void setTaskState(TaskState taskState) {
 		this.taskState = taskState;
 		
+	}
+	
+	@Override
+	public int getTaskProgress() {
+		return taskProgress;
+	}
+
+	@Override
+	public void setTaskProgress(int taskProgress) {
+		this.taskProgress = taskProgress;
 	}
 
 

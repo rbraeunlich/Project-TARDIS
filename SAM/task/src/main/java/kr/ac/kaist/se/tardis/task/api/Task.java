@@ -31,5 +31,9 @@ public interface Task {
 	
 	TaskState getTaskState();
 	void setTaskState(TaskState taskState);
+	
+	public int getTaskProgress();
+
+	public void setTaskProgress(int taskProgress);
 
 }
