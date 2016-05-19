@@ -71,7 +71,7 @@ public class TaskController {
             // TODO update features
             changedTask.setName(task.getName());
             changedTask.setDescription(task.getDescription());
-            changedTask.setOwner(task.getTaskOwner());
+            changedTask.setOwner(task.getOwner());
             taskService.saveTask(task);
             fillModel(model, user, changedTask.getProjectId());
         }else{

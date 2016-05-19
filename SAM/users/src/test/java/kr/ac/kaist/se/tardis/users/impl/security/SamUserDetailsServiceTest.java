@@ -233,8 +233,7 @@ public class SamUserDetailsServiceTest {
 		public TaskService createMockTaskService() {
 			TaskService taskService = mock(TaskService.class);
 			Task task = mock(Task.class);
-			when(task.getTaskOwner()).thenReturn(USERNAME_MEMBER);
-			when(task.getProjectOwner()).thenReturn(USERNAME_OWNER);
+			when(task.getOwner()).thenReturn(USERNAME_MEMBER);
 			when(task.getProjectId()).thenReturn(PROJECT_ID);
 			when(taskService.findTaskById(TASK_ID)).thenReturn(Optional.of(task));
 			return taskService;

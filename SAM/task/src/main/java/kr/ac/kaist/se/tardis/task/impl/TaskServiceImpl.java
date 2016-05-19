@@ -32,7 +32,7 @@ public class TaskServiceImpl implements TaskService {
 	public Set<Task> findTasksForUser(String userId) {
 		return tasks
 				.stream()
-				.filter(p -> ( p.getTaskOwner().equals(userId) )  )
+				.filter(p -> ( p.getOwner().equals(userId) )  )
 				.collect(Collectors.toSet());
 	}
 

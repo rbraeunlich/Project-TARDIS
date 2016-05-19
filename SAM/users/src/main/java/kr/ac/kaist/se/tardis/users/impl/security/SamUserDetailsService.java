@@ -78,7 +78,7 @@ public class SamUserDetailsService implements UserDetailsService {
 		if (!task.isPresent()) {
 			return false;
 		}
-		return task.get().getTaskOwner().equals(authentication.getName());
+		return task.get().getOwner().equals(authentication.getName());
 	}
 
 	public boolean isUserAllowedToChangeTask(Authentication authentication, HttpServletRequest request) {
