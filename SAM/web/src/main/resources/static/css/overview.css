@@ -45,11 +45,10 @@ p {
 }
 
 .overview {
-	border: 1px solid lightgrey;
 	width: 46%;
 	min-height: 400px;
 	margin: 23px;
-	background-color: lightgrey;
+	background-color: LightBlue;
 }
 
 .entry {
@@ -59,7 +58,7 @@ p {
 	margin-top: 25px;
 	padding-left: 5px;
 	padding-right: 15px;
-	border: 1px solid grey;
+	border: 1px solid lightgrey;
 	background-color: white;
 }
 
@@ -172,7 +171,7 @@ p {
 	height: auto;
 	padding: 10px;
 	margin: 25px auto 25px auto;
-	border: 1px solid grey;
+	border: 1px solid lightgrey;
 	background-color: white;
 	text-align: center;
 }
