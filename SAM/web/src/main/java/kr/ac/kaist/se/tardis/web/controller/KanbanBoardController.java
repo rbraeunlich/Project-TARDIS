@@ -60,7 +60,7 @@ public class KanbanBoardController {
 	
 		@RequestMapping(value = { "/kanbanboard" }, method = RequestMethod.POST)
 		public String taskCreated(Model model, @Valid CreateTaskForm form,
-				BindingResult bindingResult, @AuthenticationPrincipal UserDetails user, @DateTimeFormat (pattern="yyyy-MM-dd")  Date dueDate) {
+				BindingResult bindingResult, @AuthenticationPrincipal UserDetails user) {
 			
 			ProjectId id = ProjectIdFactory.valueOf(form.getProjectId());
 			
@@ -73,11 +73,11 @@ public class KanbanBoardController {
 				task.setName(form.getTaskName());
 				task.setOwner(form.getOwner());
 				task.setTaskProgress(0);
-				System.out.println(form.getDueDate());
 				SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 				
-				Date tmp;
+				
 				try {
+					Date tmp;
 					tmp = format.parse(form.getDueDate());
 					task.setDueDate(tmp);
 				} catch (ParseException e) {

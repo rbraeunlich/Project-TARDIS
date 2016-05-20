@@ -27,9 +27,11 @@ public class CreateTaskForm {
 	private String taskDescription;
 
 	@NotNull(message= NO_DUE_DATE_ERROR)
+	@Size(min = 10, message = NO_DUE_DATE_ERROR)
 	private String dueDate;
 	
 	@NotNull(message= NO_OWNER_ERROR)
+	
 	private String owner;
 
 	public String getTaskName() {
