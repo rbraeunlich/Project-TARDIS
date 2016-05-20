@@ -112,7 +112,7 @@ public class SamApplicationTests {
 		String newProjectName = "f";
 		webDriver.findElement(By.id("projectName")).sendKeys(newProjectName);
 		webDriver.findElement(By.id("projectSettingSubmit")).click();
-		assertThat(webDriver.findElement(By.id("projectName")).getText(), containsString("Project name must contain at least three characters"));
+		assertThat(webDriver.findElement(By.id("projectNameError")).getText(), containsString("Project name must contain at least three characters"));
 		// change project name with more than 3 characters
 		newProjectName = "new name";
 		webDriver.findElement(By.id("projectName")).sendKeys(newProjectName);
@@ -132,7 +132,7 @@ public class SamApplicationTests {
 		String newMemberName = "fake";
 		webDriver.findElement(By.id("newMember")).sendKeys(newMemberName);
 		webDriver.findElement(By.id("projectSettingSubmit")).click();
-		assertThat(webDriver.findElement(By.id("newMember")).getText(), containsString("No Existing User"));
+		assertThat(webDriver.findElement(By.id("newMemberError")).getText(), containsString("No Existing User"));
 		// add proper user
 		newMemberName = "User1";
 		webDriver.findElement(By.id("newMember")).sendKeys(newMemberName);

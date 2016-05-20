@@ -28,7 +28,7 @@
 			<input type="hidden" name="projectId" th:value="${project.id.id}" />
 			<p>
 				New Project name: <input id="projectName" type="text"
-					th:field="*{projectName}" /> <b
+					th:field="*{projectName}" /> <b id="projectNameError"
 					th:if="${#fields.hasErrors('projectName')}"
 					th:errors="*{projectName}">Project name error</b>
 			</p>
@@ -38,7 +38,7 @@
 			</p>
 			<p>
 				New Member: <input id="newMember" type="text"
-					th:field="*{newMember}" /> <b
+					th:field="*{newMember}" /> <b id="newMemeberError"
 					th:if="${#fields.hasErrors('newMember')}" th:errors="*{newMember}">Member
 					error</b>
 			</p>
