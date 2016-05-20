@@ -23,7 +23,7 @@
 	</div>
 	<div id="ToDo" class="kanban" style="float:left;"><p class="boardName">ToDo</p>
 		
-		<div class="entry" th:each="task : ${taskList}" id="${task.name}">
+		<div class="entry" th:each="task : ${taskList}" id="${task.name}" draggable="true" ondragstart="drag(event)">
 			<div class="textBlock">
 				<p class="taskNameText" th:text="${task.name}" />
 				<p class="taskDescription" th:text="${task.description}" />				
@@ -69,9 +69,9 @@
 		</form>
 		
 	</div>
-	<div id="In-Progress" class="kanban" style="float:left;"><p class="boardName">In-Progress</p></div>
-	<div id="Done" class="kanban" style="float:right;"><p class="boardName">Done</p></div>	
-	<div id="Review" class="kanban" style="float:right;"><p class="boardName">Review</p></div>	
+	<div id="In-Progress" class="kanban" style="float:left;" ondrop="dropInProgress(event)" ondragover="allowDrop(event)"><p class="boardName">In-Progress</p></div>
+	<div id="Done" class="kanban" style="float:right;" ondrop="dropReview(event)" ondragover="allowDrop(event)"><p class="boardName">Done</p></div>	
+	<div id="Review" class="kanban" style="float:right;" ondrop="dropDone(event)" ondragover="allowDrop(event)"><p class="boardName">Review</p></div>	
 </div>
 
 <div th:replace="overview :: footer"></div>
@@ -121,6 +121,32 @@ function showCreateTaskForm() {
 	document.getElementById("createTaskIcon").style.display = "none";
 }
 
+<!-- drag and drop function -->
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function dropInProgress(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+
+function dropReview(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+
+function dropDone(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
 
 /*]]>*/
 </script>
