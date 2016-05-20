@@ -4,8 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.Id;
 
-import kr.ac.kaist.se.tardis.users.api.User;
-
 /**
  * Copy class of the {@link User} class to be used within the insecure database.
  * The class should <b>NOT</b> be placed within the same directory as the

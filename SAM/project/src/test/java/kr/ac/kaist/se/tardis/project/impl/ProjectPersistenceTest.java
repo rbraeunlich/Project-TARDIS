@@ -21,13 +21,14 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import kr.ac.kaist.se.tardis.persistence.PrimaryDbConfig;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
 
 @Ignore
 @RunWith(SpringJUnit4ClassRunner.class)
 @IntegrationTest
-@SpringApplicationConfiguration(value={ProjectPersistenceTest.TestDataSourceConfiguration.class})
+@SpringApplicationConfiguration(value={ProjectPersistenceTest.TestDataSourceConfiguration.class, PrimaryDbConfig.class})
 public class ProjectPersistenceTest {
 	
 	//FIXME replace with concrete type
@@ -47,7 +48,7 @@ public class ProjectPersistenceTest {
 
 	@Configuration
 	@ComponentScan
-	public class TestDataSourceConfiguration {
+	public static class TestDataSourceConfiguration {
 		
 		@Bean
 		public DataSource createUsersDataSource() {

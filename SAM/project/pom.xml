@@ -41,5 +41,11 @@
 			<artifactId>spring-data-jpa</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>kr.ac.kaist.se.tardis</groupId>
+			<artifactId>persistence</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 </project>

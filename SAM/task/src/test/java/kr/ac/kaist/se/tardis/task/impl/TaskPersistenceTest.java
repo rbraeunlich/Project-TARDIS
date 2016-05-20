@@ -21,6 +21,7 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import kr.ac.kaist.se.tardis.persistence.PrimaryDbConfig;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
 import kr.ac.kaist.se.tardis.task.impl.id.TaskId;
 import kr.ac.kaist.se.tardis.task.impl.id.TaskIdFactory;
@@ -28,7 +29,7 @@ import kr.ac.kaist.se.tardis.task.impl.id.TaskIdFactory;
 @Ignore
 @RunWith(SpringJUnit4ClassRunner.class)
 @IntegrationTest
-@SpringApplicationConfiguration(value={TaskPersistenceTest.TestDataSourceConfiguration.class})
+@SpringApplicationConfiguration(value={TaskPersistenceTest.TestDataSourceConfiguration.class, PrimaryDbConfig.class})
 public class TaskPersistenceTest {
 	
 	//FIXME replace with concrete type
@@ -48,7 +49,7 @@ public class TaskPersistenceTest {
 
 	@Configuration
 	@ComponentScan
-	public class TestDataSourceConfiguration {
+	public static class TestDataSourceConfiguration {
 		
 		@Bean
 		public DataSource createUsersDataSource() {
