@@ -34,6 +34,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void deleterUser(User u) {
 		userRepo.delete((UserImpl) u);
+		userWOPasswordRepo.delete((UserWithoutPassword) u);
 	}
 
 }

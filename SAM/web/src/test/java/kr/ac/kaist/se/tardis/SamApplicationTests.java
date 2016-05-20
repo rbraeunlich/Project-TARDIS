@@ -119,7 +119,7 @@ public class SamApplicationTests {
 		webDriver.findElement(By.id("projectSettingSubmit")).click();
 		// check url
 		currentUrl = webDriver.getCurrentUrl();
-		assertThat(currentUrl, containsString("kanbanboard"));
+		assertThat(currentUrl, containsString("projectchange"));
 		// check new project name
 		assertThat(webDriver.findElement(By.id("projectName")).getText(), containsString(newProjectName));
 		// project setting - 2. add new member
@@ -139,7 +139,7 @@ public class SamApplicationTests {
 		webDriver.findElement(By.id("projectSettingSubmit")).click();
 		// check url
 		currentUrl = webDriver.getCurrentUrl();
-		assertThat(currentUrl, containsString("kanbanboard"));
+		assertThat(currentUrl, containsString("projectchange"));
 	}
 
 }
