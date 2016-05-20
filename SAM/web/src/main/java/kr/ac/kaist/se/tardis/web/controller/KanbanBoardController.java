@@ -12,6 +12,7 @@ import kr.ac.kaist.se.tardis.web.validator.TaskFormValidator;
 import kr.ac.kaist.se.tardis.web.validator.UsernameAndPasswordRepititionValidator;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
@@ -26,6 +27,9 @@ import kr.ac.kaist.se.tardis.task.api.*;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Optional;
 
 @Controller
@@ -56,7 +60,7 @@ public class KanbanBoardController {
 	
 		@RequestMapping(value = { "/kanbanboard" }, method = RequestMethod.POST)
 		public String taskCreated(Model model, @Valid CreateTaskForm form,
-				BindingResult bindingResult, @AuthenticationPrincipal UserDetails user) {
+				BindingResult bindingResult, @AuthenticationPrincipal UserDetails user, @DateTimeFormat (pattern="yyyy-MM-dd")  Date dueDate) {
 			
 			ProjectId id = ProjectIdFactory.valueOf(form.getProjectId());
 			
@@ -70,7 +74,15 @@ public class KanbanBoardController {
 				task.setOwner(form.getOwner());
 				task.setTaskProgress(0);
 				System.out.println(form.getDueDate());
-				task.setDueDate(form.getDueDate());
+				SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+				
+				Date tmp;
+				try {
+					tmp = format.parse(form.getDueDate());
+					task.setDueDate(tmp);
+				} catch (ParseException e) {
+				}
+				
 				taskService.saveTask(task);
 			}
 			

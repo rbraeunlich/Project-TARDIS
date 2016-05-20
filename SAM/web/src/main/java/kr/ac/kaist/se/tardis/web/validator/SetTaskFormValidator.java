@@ -1,5 +1,7 @@
 package kr.ac.kaist.se.tardis.web.validator;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,6 +72,18 @@ public class SetTaskFormValidator implements Validator {
 
 			if (!find) {
 				errors.rejectValue("owner", "error.Member.notExisting", SetTaskForm.NO_EXISITING_MEMBER);
+			}
+		}
+		if(setTaskForm.getDueDate().length()!=0){
+			if(Character.isLetter(setTaskForm.getDueDate().charAt(0))){
+				errors.rejectValue("dueDate", "error.dueDate.WrongType", SetTaskForm.WRONG_DUE_DATE_ERROR);
+			}else{
+			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+			try {
+				format.parse(setTaskForm.getDueDate());
+			} catch (ParseException e) {
+				errors.rejectValue("dueDate", "error.dueDate.WrongType", SetTaskForm.WRONG_DUE_DATE_ERROR);
+			}
 			}
 		}
 	}

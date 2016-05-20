@@ -25,6 +25,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Optional;
 
@@ -55,7 +58,7 @@ public class TaskController {
         // show task information on task setting page
 
         
-		if(setTaskForm.getTaskName()!=null || setTaskForm.getOwner() != null)
+		if(setTaskForm.getTaskName()!=null || setTaskForm.getOwner() != null || setTaskForm.getDueDate() !=null)
 			validator.validate(setTaskForm, bindingResult);
     	
         TaskId id = TaskIdFactory.valueOf(taskId);
@@ -104,8 +107,16 @@ public class TaskController {
 				changedTask.setDescription(setTaskForm.getTaskDescription());
 			if (setTaskForm.getOwner().length() != 0)
 				changedTask.setOwner(setTaskForm.getOwner());
-			if (setTaskForm.getDueDate() != null)
-				changedTask.setDueDate(setTaskForm.getDueDate());
+			if (setTaskForm.getDueDate().length() !=0){
+				Date tmp;
+				try {
+					SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");					
+					tmp = format.parse(form.getDueDate());
+					changedTask.setDueDate(tmp);
+				} catch (ParseException e) {
+				}
+				
+			}
 
 			taskService.saveTask(changedTask);
 

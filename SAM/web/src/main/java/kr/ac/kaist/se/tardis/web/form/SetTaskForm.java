@@ -15,6 +15,7 @@ public class SetTaskForm {
 	public static final String NO_OWNER_ERROR = "Task must assigned to owner";
 	public static final String OWNER_NOT_EXIST_ERROR = "Owner is not registered user";
 	public static final String NO_EXISITING_MEMBER = "No Existing Member";
+	public static final String WRONG_DUE_DATE_ERROR = "yyyy-MM-dd";
 	
 	@NotNull
 	private String projectId;
@@ -23,9 +24,7 @@ public class SetTaskForm {
 
 	private String taskDescription;
 
-	// NotNull(message= NO_DUE_DATE_ERROR)
-	@DateTimeFormat (pattern="yyyy-MM-dd") 
-	private Date dueDate;
+	private String dueDate;
 	
 	private String owner;
 
@@ -61,11 +60,11 @@ public class SetTaskForm {
 		this.projectId = projectId;
 	}
 
-	public Date getDueDate() {
+	public String getDueDate() {
 		return dueDate;
 	}
 
-	public void setDueDate(Date dueDate) {
+	public void setDueDate(String dueDate) {
 		this.dueDate = dueDate;
 	}
 
