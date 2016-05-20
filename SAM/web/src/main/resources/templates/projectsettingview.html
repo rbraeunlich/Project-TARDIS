@@ -5,6 +5,7 @@
 <title>Project Setting</title>
 <link rel="stylesheet" th:href="@{/css/settingview.css}"
 	href="../static/css/settingview.css" />
+	<link rel="stylesheet" th:href="@{/css/base.css}" href="../static/css/base.css" />
 </head>
 <body>
 
@@ -38,7 +39,7 @@
 			</p>
 			<p>
 				New Member: <input id="newMember" type="text"
-					th:field="*{newMember}" /> <b id="newMemeberError"
+					th:field="*{newMember}" /> <b id="newMemberError"
 					th:if="${#fields.hasErrors('newMember')}" th:errors="*{newMember}">Member
 					error</b>
 			</p>

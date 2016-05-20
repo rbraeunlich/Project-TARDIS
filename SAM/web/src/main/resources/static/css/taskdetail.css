@@ -1,0 +1,18 @@
+.taskInfo {
+	width: 90%;
+	min-height: 150px;
+	margin: auto;
+	padding-left: 5px;
+	padding-right: 15px;
+	border: 1px solid lightgrey;
+	background-color: white;
+	display: table;
+}
+
+#taskDetailBox {
+	width: 90%;
+	min-height: 400px;
+	margin: auto;
+	background-color: #b3e4ff;
+	padding: 1.5%;
+}

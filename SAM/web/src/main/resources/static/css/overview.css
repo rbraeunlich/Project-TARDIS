@@ -1,49 +1,3 @@
-div {
-	-webkit-animation: fadein 0.3s;
-	-moz-animation: fadein 0.3s;
-	-ms-animation: fadein 0.3s;
-	-o-animation: fadein 0.3s;
-	animation: fadein 0.3s;
-}
-
-p {
-	font-family: "Trebuchet MS", Helvetica, sans-serif;
-}
-
-@keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-/* Firefox < 16 */
-@-moz-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-/* Safari, Chrome and Opera > 12.1 */
-@-webkit-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-/* Internet Explorer */
-@-ms-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-/* Opera < 12.1 */
-@-o-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-.box {
-	width: 80%;
-	margin: auto;
-}
-
 .boardName {
 	text-align: center;
 	font-size: 150%;
@@ -52,41 +6,19 @@ p {
 .overview {
 	width: 46%;
 	min-height: 400px;
-	margin: 23px;
+	margin: 1.5%;
 	background-color: #b3e4ff;
 	padding-bottom: 25px;
 }
 
-.entry {
-	width: 90%;
-	height: 150px;
-	margin: auto;
-	margin-top: 25px;
-	padding-left: 5px;
-	padding-right: 15px;
-	border: 1px solid lightgrey;
-	background-color: white;
-}
-
-.textBlock {
+.projectTextBlock {
 	margin: 5px;
 	width: 40%;
 	height: 140px;
 	float: left;
 	padding: 0px;
 	word-break:break-all;
-}
-
-.projectNameText {
-	width: 90%;
-	margin-left: 5px;
-	margin-right: 5px;
-}
-
-.projectDescription {
-	width: 90%;
-	margin-left: 5px;
-	margin-top: 0px;
+	display: table;
 }
 
 .projectTaskList {
@@ -107,20 +39,6 @@ p {
 	text-align: center;
 }
 
-.kanbanButton {
-	width: 50px;
-	height: 50px;
-	float: right;
-	position: relative;
-	top: 50px;
-}
-.taskButton {
-	width: 50px;
-	height: 50px;
-	float: right;
-	position: relative;
-	top: 50px;
-}
 .taskName {
 	text-align: center;
 }
@@ -131,11 +49,6 @@ p {
 
 .createProjectInput {
 	width: 50%;
-}
-
-#board {
-	display: table;
-	border: 1px solid grey;
 }
 
 #project {
@@ -165,9 +78,6 @@ p {
 #toDoList {
 	float: right;
 	margin-left: 5px;
-}
-
-#footer {
 }
 
 #errorwrapper {

@@ -4,10 +4,11 @@
     <title>Project Overview</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" th:href="@{/css/overview.css}" href="../static/css/overview.css" />
+	<link rel="stylesheet" th:href="@{/css/base.css}" href="../static/css/base.css" />
 </head>
 <body onresize="resizeWindow()" onpageshow="resizeWindow()">
 
-<div th:fragment="bar" class="box" style="margin-top:30px;height: 21px;">	
+<div th:fragment="bar" id="bar" class="box">	
 	<input id="accountpage" class="button" type="button" value="My Page" style="float:right;"/>
 	<form th:action="@{/logout}" method="post">
 		<input id="logout" class="button" type="submit" value="Log Out" style="float:right;margin-right:10px;"/> 
@@ -15,15 +16,13 @@
 	<p id = "username" style="float:right;margin:0px 20px" th:text="'Hello, '+${username}"/>
 </div>
 
-<div th:fragment="heading" class="box" style="margin-top:10px;height: 150px;">
+<div th:fragment="heading" id="heading" class="box">
 	<form action="#" th:action="@{/overview}" method="get" style="float:left;">
 		<input type="image" src="../image/Clock.png"/>
 	</form>
-	<div onclick="showNotification(event)" onmouseleave="closeNotification()" 
-			style="height: auto;width: auto;margin: 0px;float: right;position: relative;top: 90px;right: 10px;">
+	<div id="notificationBox" onclick="showNotification(event)" onmouseleave="closeNotification()">
 		<img alt="Alarm icon" src="../image/bell.png" style="width:50px;height:50px;"/>
-		<div id="notification" 
-			style="border: 1px solid grey;width: 200px;height: 300px;background-color: #b3e4ff;position: absolute;z-index: 3;display:none;"></div>
+		<div id="notification" style="display:none;"></div>
 	</div>	
 </div>
 
@@ -31,7 +30,7 @@
 	<div id="project" class="overview">	
 		<p class="boardName">My Projects</p>
 		<div th:each="project : ${projectList}" class="entry" id="${project.name}">
-			<div class="textBlock">
+			<div class="projectTextBlock">
 				<p class="projectNameText" th:text="${project.name}"/>
 				<p class="projectDescription" th:text="${project.description}"/>
 			</div>
@@ -42,7 +41,7 @@
 				</div>
 			</div>
 			<form action="#" th:action="@{/kanbanboard}" method="get">
-				<input class="kanbanButton" type="image" th:id="${project.name}+Kanban" src = "../image/detail.png"/>
+				<input class="settingButton" type="image" th:id="${project.name}+Kanban" src = "../image/detail.png"/>
 				<input type="hidden" name="projectId" th:value="${project.id.id}"/>
 			</form>
 		</div>
@@ -75,8 +74,8 @@
 				<p class="taskDescription" th:text="${task.description}"/>
 				
 			</div>
-			<form action="#" th:action="@{/taskview}" th:object="${task}" method="get">
-				<input class="taskButton" type="image" th:id="${task.name}+Task" src = "../image/setting.png"/>
+			<form action="#" th:action="@{/taskdetail}" th:object="${task}" method="get">
+				<input class="settingButton" type="image" th:id="${task.name}+Task" src = "../image/detail.png"/>
 				<input type="hidden" name="taskId" th:value="${task.id.id}"/>
 			</form>
 			</div>
@@ -84,7 +83,7 @@
 	</div>	
 </div>
 
-<div th:fragment="footer" class="box" style="margin-top: 20px;margin-bottom: 20px;text-align: right;">2016 Project TARDIS</div>
+<div th:fragment="footer" id="footer" class="box">2016 Project TARDIS</div>
 
 <script th:inline="javascript">
 /*<![CDATA[*/

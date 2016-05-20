@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Task Detail</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" th:href="@{/css/taskdetail.css}" href="../static/css/taskdetail.css" />
+	<link rel="stylesheet" th:href="@{/css/base.css}" href="../static/css/base.css" />
+</head>
+<body onresize="resizeWindow()" onpageshow="resizeWindow()">
+
+<div th:replace="overview :: bar"></div>
+
+<div th:replace="overview :: heading"></div>
+
+<div id="board" class="box">
+	<div id="taskDetailBox">
+		<div class="entry" id="${task.name}">
+			<div class="textBlock">
+			<p class="projectName" th:text="${task.projectName}"/>			
+				<p class="taskState" th:text="${task.taskState}"/>
+				<p class="taskNameText" th:text="${task.name}"/>
+				<p class="taskDescription" th:text="${task.description}"/>
+				
+			</div>
+			<form action="#" th:action="@{/taskview}" th:object="${task}" method="post">
+				<input class="settingButton" type="image" th:id="${task.name}+Task" src = "../image/setting.png"/>
+				<input type="hidden" name="taskId" th:value="${task.id.id}"/>
+			</form>
+			</div>
+	</div>
+</div>
+
+<div th:replace="overview :: footer"></div>
+	
+<script th:inline="javascript">
+ 
+<!-- event handler on resize of window -->
+function resizeWindow() {
+	var size = document.getElementById("board").clientWidth;
+	
+	// Incase enough width, two column of project and personal to-do list
+	if (size>1300) {
+	} else {		
+	}
+}
+
+<!-- show notifications on mouse over to icon -->
+function showNotification(e) {
+	
+	var notification = document.getElementById("notification");
+	
+	var size = document.getElementById("board").clientWidth;
+	var x = e.clientX - 150 - (size*1.125);
+	var y = e.clientY - 150;	
+	notification.style.left = x + "px";
+	notification.style.top = y + "px";  
+	
+	if (notification.style.display == "none") {		
+		notification.style.display = "block";
+	}
+}
+function closeNotification() {
+	document.getElementById("notification").style.display = "none";
+}
+
+function showCreateTaskForm() {
+	document.getElementById("createTaskFormWrapper").style.display = "block";
+	document.getElementById("createTaskIcon").style.display = "none";
+}
+
+</script>
+</body>
+</html>

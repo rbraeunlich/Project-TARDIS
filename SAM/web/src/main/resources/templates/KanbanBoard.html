@@ -4,6 +4,7 @@
     <title>Kanban Board</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" th:href="@{/css/KanbanBoard.css}" href="../static/css/KanbanBoard.css" />
+	<link rel="stylesheet" th:href="@{/css/base.css}" href="../static/css/base.css" />
 </head>
 <body onresize="resizeWindow()" onpageshow="resizeWindow()">
 
@@ -15,7 +16,7 @@
 	<div id="projectBox" class="box">
 		<form action="#" th:action="@{/projectsettingview}" th:object="${project}" method="post" style="margin:25px;height:60px;">
 			<div th:text="'Project '+ ${project.name}" id="projectName" style="font-size:40px;margin:15px;width:80%;float:left;position:relative;left:10%;"></div>
-			<input id="projectSetting" class = "projectSettingButton" type="image" src = "../image/setting.png" style="float:right;"/>
+			<input id="projectSetting" class = "settingButton" type="image" src = "../image/setting.png" style="float:right;"/>
 			<input type = "hidden" name = "projectId" th:value ="${project.id.id}"/>
 		</form>
 
@@ -25,11 +26,11 @@
 		
 		<div class="entry" th:each="task : ${taskList}" id="${task.name}" draggable="true" ondragstart="drag(event)">
 			<div class="textBlock">
-				<p class="taskNameText" th:text="${task.name}" />
-				<p class="taskDescription" th:text="${task.description}" />				
+				<p class="nameText" th:text="${task.name}" />
+				<p class="descriptionText" th:text="${task.description}" />				
 			</div>
-			<form action="#" th:action="@{/taskview}" th:object="${task}" method="post">
-					<input class="taskSettingButton" type="image" id="${task.name} + Setting" src="../image/setting.png" />
+			<form action="#" th:action="@{/taskdetail}" th:object="${task}" method="get">
+					<input class="settingButton" type="image" id="${task.name} + Detail" src="../image/detail.png" />
 					<input type = "hidden" name="taskId" th:value="${task.id.id}" />
 			</form>
 		</div>
