@@ -14,6 +14,7 @@ import kr.ac.kaist.se.tardis.task.impl.id.TaskIdFactory;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
 import kr.ac.kaist.se.tardis.web.form.CreateProjectForm;
+import kr.ac.kaist.se.tardis.web.form.CreateTaskForm;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -28,6 +29,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Date;
 import java.util.Optional;
+import java.util.Set;
 
 @Controller
 public class OverviewController {
@@ -50,9 +52,13 @@ public class OverviewController {
 				projectService.findProjectsForUser(String.valueOf(user.getUsername())));
 		
 
+
+		Set<Task> tasks = taskService.findTasksForUser(String.valueOf(user.getUsername()));		
+		for (Task t : tasks) {
+			t.setProjectName(projectService.findProjectById(t.getProjectId()).get().getName());			
+		}
 		
-		model.addAttribute("taskList",
-				taskService.findTasksForUser(String.valueOf(user.getUsername())));
+		model.addAttribute("taskList", tasks	);
 	}
 	
 	@RequestMapping(value = { "/overview" }, method = RequestMethod.POST)

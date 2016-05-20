@@ -17,14 +17,21 @@ class TaskImpl implements Task {
 	private ProjectId projectId;
 	private TaskState taskState;
 	private int taskProgress;
+	private String projectName;
 
 	public TaskImpl(TaskId id, ProjectId projectId, String taskOwner) {
 		this.id = id;
 		this.owner = taskOwner;
 		this.projectId = projectId;
 		this.taskState = TaskState.TODO;
+		projectName = "";
 	}
-
+	public String getProjectName(){
+		return projectName;
+	}
+	public void setProjectName(String projectName){
+		this.projectName = projectName;
+	}
 	@Override
 	public void setName(String name) {
 		this.name = name;

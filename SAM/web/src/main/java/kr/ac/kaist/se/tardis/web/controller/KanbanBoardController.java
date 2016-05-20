@@ -8,6 +8,7 @@ import kr.ac.kaist.se.tardis.project.api.ProjectService;
 import kr.ac.kaist.se.tardis.web.form.CreateTaskForm;
 import kr.ac.kaist.se.tardis.web.form.SetProjectForm;
 import kr.ac.kaist.se.tardis.web.validator.SetProjectFormValidator;
+import kr.ac.kaist.se.tardis.web.validator.TaskFormValidator;
 import kr.ac.kaist.se.tardis.web.validator.UsernameAndPasswordRepititionValidator;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +31,7 @@ import java.util.Optional;
 @Controller
 public class KanbanBoardController {
 		@Autowired
-		private SetProjectFormValidator validator;
+		private TaskFormValidator validator;
 		@Autowired
 		private ProjectService projectService;
 		
@@ -58,7 +59,9 @@ public class KanbanBoardController {
 				BindingResult bindingResult, @AuthenticationPrincipal UserDetails user) {
 			
 			ProjectId id = ProjectIdFactory.valueOf(form.getProjectId());
-
+			
+			validator.validate(form, bindingResult);
+			
 			if (!bindingResult.hasErrors()) {					
 				
 				Task task = taskService.createTask(String.valueOf(user.getUsername()), id);

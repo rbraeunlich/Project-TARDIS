@@ -7,7 +7,11 @@ import kr.ac.kaist.se.tardis.task.impl.id.TaskId;
 import kr.ac.kaist.se.tardis.task.impl.state.TaskState;
 
 public interface Task {
-
+	
+	//Temporarily for Personal ToDo List
+	String getProjectName();
+	void setProjectName(String projectName);
+	
 	String getName();
 	void setName(String name);
 

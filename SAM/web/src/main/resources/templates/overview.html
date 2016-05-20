@@ -68,10 +68,12 @@
 	<div id="toDoList" class="overview">
 		<p class="boardName">My Tasks</p>
 			<div th:each="task : ${taskList}" class="entry" id="${task.name}">
-			<div class="textBlock">			
+			<div class="textBlock">
+			<p class="projectName" th:text="${task.projectName}"/>			
 				<p class="taskState" th:text="${task.taskState}"/>
 				<p class="taskNameText" th:text="${task.name}"/>
 				<p class="taskDescription" th:text="${task.description}"/>
+				
 			</div>
 			<form action="#" th:action="@{/taskview}" th:object="${task}" method="get">
 				<input class="taskButton" type="image" th:id="${task.name}+Task" src = "../image/setting.png"/>

@@ -40,15 +40,15 @@
 			<div id="createTaskFormWrapper">				
 				<p> 
 					Task Name:        	<input id="taskName" class="createTaskInput" th:field="*{taskName}"/>
-					<b th:if="${#fields.hasErrors('taskName')}" th:errors="*{taskName}"></b>
+					
 				</p>
 				<p>
 					Description: 	<input id="taskDescription" class="createTaskInput" th:field="*{taskDescription}"/>
-					<b th:if="${#fields.hasErrors('taskDescription')}" th:errors="*{taskDescription}"></b>
+					
 				</p>
 				<p>
 					Task Due:			<input type="Date" th:pattern="yyyy-MM-dd" id="dueDate" class="createTaskInput" th:field="*{dueDate}" />
-					<b th:if="${#fields.hasErrors('dueDate')}" th:errors="*{dueDate}"></b>
+					
 				</p>
 				<p>
 					Task Owner:			
@@ -60,6 +60,11 @@
 					<b th:if="${#fields.hasErrors('owner')}" th:errors="*{owner}"></b>
 				</p>
 				<input id="createTaskButton" class="button" type="submit" value="Create Task" />
+			</div>
+			<div id="errorwrapper">
+			<p><b th:if="${#fields.hasErrors('taskName')}" th:errors="*{taskName}"></b></p>
+			<p><b th:if="${#fields.hasErrors('taskDescription')}" th:errors="*{taskDescription}"></b></p>  
+			<p><b th:if="${#fields.hasErrors('dueDate')}" th:errors="*{dueDate}"></b></p>
 			</div>			
 		</form>
 		

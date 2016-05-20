@@ -11,6 +11,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class CreateTaskForm {
 	public static final String SHORT_TASK_NAME_ERROR = "Task name must contain at least three characters";
 	public static final String NO_TASK_NAME_ERROR = "Task must have a name";
+	public static final String DUP_TASK_NAME_ERROR = "Task must have a unique name";
 	public static final String NO_DUE_DATE_ERROR = "Task must set due date";
 	public static final String NO_OWNER_ERROR = "Task must assigned to owner";
 	public static final String OWNER_NOT_EXIST_ERROR = "Owner is not registered user";
