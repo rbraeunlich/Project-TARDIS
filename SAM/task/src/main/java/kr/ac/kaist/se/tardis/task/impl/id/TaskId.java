@@ -1,8 +1,10 @@
 package kr.ac.kaist.se.tardis.task.impl.id;
 
+import java.io.Serializable;
 
-public class TaskId implements Comparable<TaskId>{
+public class TaskId implements Comparable<TaskId>, Serializable{
 
+	private static final long serialVersionUID = 1L;
 	private final String id;
 	
 	TaskId(String id){

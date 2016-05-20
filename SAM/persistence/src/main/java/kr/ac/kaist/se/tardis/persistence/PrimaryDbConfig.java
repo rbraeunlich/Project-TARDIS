@@ -17,13 +17,11 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import kr.ac.kaist.se.tardis.users.api.UserRepository;
-
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
 		basePackages = "kr.ac.kaist.se.tardis", 
-		excludeFilters=@Filter(type=FilterType.ASSIGNABLE_TYPE,value=UserRepository.class))
+		excludeFilters=@Filter(type=FilterType.ANNOTATION,value=NotPrimaryDataSource.class))
 public class PrimaryDbConfig {
 
 	@Autowired

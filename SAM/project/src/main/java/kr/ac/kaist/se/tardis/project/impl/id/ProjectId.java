@@ -1,7 +1,10 @@
 package kr.ac.kaist.se.tardis.project.impl.id;
 
-public class ProjectId implements Comparable<ProjectId>{
+import java.io.Serializable;
 
+public class ProjectId implements Comparable<ProjectId>, Serializable{
+
+	private static final long serialVersionUID = 1L;
 	private final String id;
 	
 	ProjectId(String id){
