@@ -66,6 +66,13 @@ public class SamApplicationTests {
 		webDriver.findElement(By.id("usernameRepeated")).sendKeys(USERNAME);
 		webDriver.findElement(By.id("passwordRepeated")).sendKeys(PASSWORD);
 		webDriver.findElement(By.id("createButton")).click();
+		// create another account
+		webDriver.findElement(By.id("registerButton")).click();
+		webDriver.findElement(By.id("username")).sendKeys("User1");
+		webDriver.findElement(By.id("password")).sendKeys("dummy");
+		webDriver.findElement(By.id("usernameRepeated")).sendKeys("User1");
+		webDriver.findElement(By.id("passwordRepeated")).sendKeys("dummy");
+		webDriver.findElement(By.id("createButton")).click();
 		// login
 		webDriver.findElement(By.id("username")).sendKeys(USERNAME);
 		webDriver.findElement(By.id("password")).sendKeys(PASSWORD);
@@ -87,6 +94,52 @@ public class SamApplicationTests {
 		webDriver.findElement(By.id("createProjectButton")).click();
 		// check that project is being shown
 		webDriver.findElement(By.id(projectName)).click();
+		// go into Kanban Board
+		webDriver.findElement(By.id(projectName + "Kanban")).click();
+		// check url
+		currentUrl = webDriver.getCurrentUrl();
+		assertThat(currentUrl, containsString("kanbanboard"));
+		assertThat(currentUrl, containsString("projectId="));
+		// check elements in Kanban Board
+		assertThat(webDriver.findElement(By.id("projectName")).getText(), containsString(projectName));
+		// project setting - 1. change project name
+		// go into project setting
+		webDriver.findElement(By.id("projectSetting")).click();
+		// check url
+		currentUrl = webDriver.getCurrentUrl();
+		assertThat(currentUrl, containsString("projectsettingview"));
+		// try to rename project with 1 characters
+		String newProjectName = "f";
+		webDriver.findElement(By.id("projectName")).sendKeys(newProjectName);
+		webDriver.findElement(By.id("projectSettingSubmit")).click();
+		assertThat(webDriver.findElement(By.id("projectName")).getText(), containsString("Project name must contain at least three characters"));
+		// change project name with more than 3 characters
+		newProjectName = "new name";
+		webDriver.findElement(By.id("projectName")).sendKeys(newProjectName);
+		webDriver.findElement(By.id("projectSettingSubmit")).click();
+		// check url
+		currentUrl = webDriver.getCurrentUrl();
+		assertThat(currentUrl, containsString("kanbanboard"));
+		// check new project name
+		assertThat(webDriver.findElement(By.id("projectName")).getText(), containsString(newProjectName));
+		// project setting - 2. add new member
+		// go into project setting
+		webDriver.findElement(By.id("projectSetting")).click();
+		// check url
+		currentUrl = webDriver.getCurrentUrl();
+		assertThat(currentUrl, containsString("projectsettingview"));
+		// add un-exist user
+		String newMemberName = "fake";
+		webDriver.findElement(By.id("newMember")).sendKeys(newMemberName);
+		webDriver.findElement(By.id("projectSettingSubmit")).click();
+		assertThat(webDriver.findElement(By.id("newMember")).getText(), containsString("No Existing User"));
+		// add proper user
+		newMemberName = "User1";
+		webDriver.findElement(By.id("newMember")).sendKeys(newMemberName);
+		webDriver.findElement(By.id("projectSettingSubmit")).click();
+		// check url
+		currentUrl = webDriver.getCurrentUrl();
+		assertThat(currentUrl, containsString("kanbanboard"));
 	}
 
 }
