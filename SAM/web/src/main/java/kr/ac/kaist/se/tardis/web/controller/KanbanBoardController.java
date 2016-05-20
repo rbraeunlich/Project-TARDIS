@@ -69,6 +69,8 @@ public class KanbanBoardController {
 				task.setName(form.getTaskName());
 				task.setOwner(form.getOwner());
 				task.setTaskProgress(0);
+				System.out.println(form.getDueDate());
+				task.setDueDate(form.getDueDate());
 				taskService.saveTask(task);
 			}
 			

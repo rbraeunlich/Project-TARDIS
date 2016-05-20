@@ -28,7 +28,7 @@
 				<p class="taskNameText" th:text="${task.name}" />
 				<p class="taskDescription" th:text="${task.description}" />				
 			</div>
-			<form action="#" th:action="@{/taskview}" th:object="${task}" method="get">
+			<form action="#" th:action="@{/taskview}" th:object="${task}" method="post">
 					<input class="taskSettingButton" type="image" id="${task.name} + Setting" src="../image/setting.png" />
 					<input type = "hidden" name="taskId" th:value="${task.id.id}" />
 			</form>
