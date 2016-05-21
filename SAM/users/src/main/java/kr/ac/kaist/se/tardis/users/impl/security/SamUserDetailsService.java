@@ -6,6 +6,14 @@ import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 
+import kr.ac.kaist.se.tardis.project.api.Project;
+import kr.ac.kaist.se.tardis.project.api.ProjectService;
+import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
+import kr.ac.kaist.se.tardis.task.api.Task;
+import kr.ac.kaist.se.tardis.task.api.TaskService;
+import kr.ac.kaist.se.tardis.task.impl.id.TaskIdFactory;
+import kr.ac.kaist.se.tardis.users.api.UserService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.User;
@@ -14,20 +22,11 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
-import kr.ac.kaist.se.tardis.project.api.Project;
-import kr.ac.kaist.se.tardis.project.api.ProjectService;
-import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
-import kr.ac.kaist.se.tardis.task.api.Task;
-import kr.ac.kaist.se.tardis.task.api.TaskService;
-import kr.ac.kaist.se.tardis.task.impl.id.TaskIdFactory;
-import kr.ac.kaist.se.tardis.users.api.UserRepository;
-import kr.ac.kaist.se.tardis.users.impl.UserImpl;
-
 @Component
 public class SamUserDetailsService implements UserDetailsService {
 
 	@Autowired
-	private UserRepository userRepo;
+	private UserService userService;
 
 	@Autowired
 	private ProjectService projectService;
@@ -37,7 +36,7 @@ public class SamUserDetailsService implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		UserImpl foundUser = userRepo.findOne(username);
+		kr.ac.kaist.se.tardis.users.api.User foundUser = userService.findUserByName(username);
 		if (foundUser == null) {
 			return new User("unknown", "", false, false, false, false, Collections.emptySet());
 		}

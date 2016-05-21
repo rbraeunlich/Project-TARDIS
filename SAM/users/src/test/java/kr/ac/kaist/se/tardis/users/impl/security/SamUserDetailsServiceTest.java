@@ -12,6 +12,17 @@ import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
 
+import kr.ac.kaist.se.tardis.project.api.Project;
+import kr.ac.kaist.se.tardis.project.api.ProjectService;
+import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
+import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
+import kr.ac.kaist.se.tardis.task.api.Task;
+import kr.ac.kaist.se.tardis.task.api.TaskService;
+import kr.ac.kaist.se.tardis.task.impl.id.TaskId;
+import kr.ac.kaist.se.tardis.task.impl.id.TaskIdFactory;
+import kr.ac.kaist.se.tardis.users.api.UserService;
+import kr.ac.kaist.se.tardis.users.impl.UserImpl;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,17 +34,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import kr.ac.kaist.se.tardis.project.api.Project;
-import kr.ac.kaist.se.tardis.project.api.ProjectService;
-import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
-import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
-import kr.ac.kaist.se.tardis.task.api.Task;
-import kr.ac.kaist.se.tardis.task.api.TaskService;
-import kr.ac.kaist.se.tardis.task.impl.id.TaskId;
-import kr.ac.kaist.se.tardis.task.impl.id.TaskIdFactory;
-import kr.ac.kaist.se.tardis.users.api.UserRepository;
-import kr.ac.kaist.se.tardis.users.impl.UserImpl;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = SamUserDetailsServiceTest.TestConfiguration.class)
@@ -250,11 +250,11 @@ public class SamUserDetailsServiceTest {
 		}
 
 		@Bean
-		public UserRepository createMockRepository() {
-			UserRepository mock = mock(UserRepository.class);
-			when(mock.findOne(USERNAME_OWNER)).thenReturn(PROJECT_OWNER);
-			when(mock.findOne(USERNAME_NO_PROJECT)).thenReturn(null);
-			when(mock.findOne(USERNAME_MEMBER)).thenReturn(PROJECT_MEMBER);
+		public UserService createMockUserService() {
+			UserService mock = mock(UserService.class);
+			when(mock.findUserByName(USERNAME_OWNER)).thenReturn(PROJECT_OWNER);
+			when(mock.findUserByName(USERNAME_NO_PROJECT)).thenReturn(null);
+			when(mock.findUserByName(USERNAME_MEMBER)).thenReturn(PROJECT_MEMBER);
 			return mock;
 		}
 
