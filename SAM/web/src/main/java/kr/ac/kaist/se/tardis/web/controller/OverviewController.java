@@ -10,6 +10,7 @@ import kr.ac.kaist.se.tardis.task.api.TaskService;
 import kr.ac.kaist.se.tardis.task.impl.TaskServiceImpl;
 import kr.ac.kaist.se.tardis.task.impl.id.TaskId;
 import kr.ac.kaist.se.tardis.task.impl.id.TaskIdFactory;
+import kr.ac.kaist.se.tardis.notification.api.NotificationService;
 
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
@@ -38,6 +39,8 @@ public class OverviewController {
 	private ProjectService projectService;
 	@Autowired
 	private TaskService taskService;
+	@Autowired
+	private NotificationService notificationService;
 
 	@RequestMapping(value = { "/overview" }, method = RequestMethod.GET)
 	public String overviewpage(Model model, CreateProjectForm form, @AuthenticationPrincipal UserDetails user) {
@@ -51,14 +54,13 @@ public class OverviewController {
 		model.addAttribute("projectList",
 				projectService.findProjectsForUser(String.valueOf(user.getUsername())));
 		
-
-
 		Set<Task> tasks = taskService.findTasksForUser(String.valueOf(user.getUsername()));		
 		for (Task t : tasks) {
 			t.setProjectName(projectService.findProjectById(t.getProjectId()).get().getName());			
 		}
 		
 		model.addAttribute("taskList", tasks	);
+		model.addAttribute("notificationList", notificationService.getNotificationsForUser(user.getUsername()));
 	}
 	
 	@RequestMapping(value = { "/overview" }, method = RequestMethod.POST)

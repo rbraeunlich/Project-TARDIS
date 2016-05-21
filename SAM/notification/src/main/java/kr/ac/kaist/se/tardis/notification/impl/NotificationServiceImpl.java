@@ -4,11 +4,13 @@ import java.util.Date;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import kr.ac.kaist.se.tardis.notification.api.Notification;
 import kr.ac.kaist.se.tardis.notification.api.NotificationService;
 import kr.ac.kaist.se.tardis.notification.impl.persistence.NotificationRepository;
 
+@Service
 public class NotificationServiceImpl implements NotificationService {
 
 	@Autowired
