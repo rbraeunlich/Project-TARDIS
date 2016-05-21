@@ -19,6 +19,7 @@ public class PrimaryDataSourceConfig {
 		EmbeddedDatabase embeddedDatabase = builder.generateUniqueName(true).setType(EmbeddedDatabaseType.H2)
 				.setScriptEncoding("UTF-8")
 				 .addScript("kr/ac/kaist/se/tardis/persistence/sql/h2.userwithoutpwd.sql")
+				 .addScript("kr/ac/kaist/se/tardis/persistence/sql/h2.quartz.sql")
 				.build();
 		return embeddedDatabase;
 	}

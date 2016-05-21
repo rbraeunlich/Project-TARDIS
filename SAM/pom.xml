@@ -26,6 +26,7 @@
 		<module>users</module>
 		<module>task</module>
 		<module>persistence</module>
+		<module>scheduler</module>
 	</modules>
 
 	<dependencies>
