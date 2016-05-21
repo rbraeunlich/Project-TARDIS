@@ -17,6 +17,7 @@ import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.context.annotation.Scope;
 
 @Configuration
@@ -34,6 +35,7 @@ public class SchedulerConfig {
 
 	@Bean
 	@Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
+	@DependsOn("createAppContextProvider")
 	public Scheduler createScheduler() throws SchedulerException {
 		Properties props = new Properties();
 		props.put(StdSchedulerFactory.PROP_DATASOURCE_PREFIX + ".default."
