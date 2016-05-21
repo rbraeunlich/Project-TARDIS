@@ -39,11 +39,15 @@ public class StandardNotificationBuilderImplTest {
 	public void createThreeDaysJob() {
 		Date now = new Date();
 		Date threeDaysAgo = new Date(now.getTime() - TimeUnit.DAYS.toMillis(3L));
-		JobInfo jobInfo = service.createNotificationBuilder().forProject("123")
+		String id = "123";
+		JobInfo jobInfo = service.createNotificationBuilder().forProject(id)
 				.threeDays(now).submit();
 
 		JobDetail job = TestConfig.jobDetailCaptor.getValue();
 		assertThat(job, is(notNullValue()));
+		assertThat(job.getJobDataMap().get(NotificationJob.KEY_DUE_DATE), is(now.getTime()));
+		assertThat(job.getJobDataMap().get(NotificationJob.KEY_ID), is(id));
+		assertThat(job.getJobDataMap().get(NotificationJob.KEY_TYPE), is(NotificationJob.VALUE_PROJECT));
 		Trigger trigger = TestConfig.triggerCaptor.getValue();
 		assertThat(trigger, is(notNullValue()));
 		assertThat(trigger.getFinalFireTime(), is(equalTo(threeDaysAgo)));
@@ -57,11 +61,15 @@ public class StandardNotificationBuilderImplTest {
 	public void createSevenDaysJob() {
 		Date now = new Date();
 		Date sevenDaysAgo = new Date(now.getTime() - TimeUnit.DAYS.toMillis(7L));
-		JobInfo jobInfo = service.createNotificationBuilder().forProject("123")
+		String id = "123";
+		JobInfo jobInfo = service.createNotificationBuilder().forTask(id)
 				.sevenDays(now).submit();
 
 		JobDetail job = TestConfig.jobDetailCaptor.getValue();
 		assertThat(job, is(notNullValue()));
+		assertThat(job.getJobDataMap().get(NotificationJob.KEY_DUE_DATE), is(now.getTime()));
+		assertThat(job.getJobDataMap().get(NotificationJob.KEY_ID), is(id));
+		assertThat(job.getJobDataMap().get(NotificationJob.KEY_TYPE), is(NotificationJob.VALUE_TASK));
 		Trigger trigger = TestConfig.triggerCaptor.getValue();
 		assertThat(trigger, is(notNullValue()));
 		assertThat(trigger.getFinalFireTime(), is(equalTo(sevenDaysAgo)));
@@ -74,11 +82,15 @@ public class StandardNotificationBuilderImplTest {
 	public void createFourteenDaysJob() {
 		Date now = new Date();
 		Date fourteenDaysAgo = new Date(now.getTime() - TimeUnit.DAYS.toMillis(14L));
-		JobInfo jobInfo = service.createNotificationBuilder().forProject("123")
+		String id = "123";
+		JobInfo jobInfo = service.createNotificationBuilder().forProject(id)
 				.fourteenDays(now).submit();
 
 		JobDetail job = TestConfig.jobDetailCaptor.getValue();
 		assertThat(job, is(notNullValue()));
+		assertThat(job.getJobDataMap().get(NotificationJob.KEY_DUE_DATE), is(now.getTime()));
+		assertThat(job.getJobDataMap().get(NotificationJob.KEY_ID), is(id));
+		assertThat(job.getJobDataMap().get(NotificationJob.KEY_TYPE), is(NotificationJob.VALUE_PROJECT));
 		Trigger trigger = TestConfig.triggerCaptor.getValue();
 		assertThat(trigger, is(notNullValue()));
 		assertThat(trigger.getFinalFireTime(), is(equalTo(fourteenDaysAgo)));

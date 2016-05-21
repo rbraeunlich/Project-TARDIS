@@ -27,6 +27,7 @@
 		<module>task</module>
 		<module>persistence</module>
 		<module>scheduler</module>
+		<module>notification</module>
 	</modules>
 
 	<dependencies>

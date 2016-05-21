@@ -59,10 +59,18 @@ public class SchedulerServiceImpl implements SchedulerService {
 
 		@Override
 		public JobInfo submit() {
+			Date dateForJob = threeDays;
+			if (threeDays == null && sevenDays == null) {
+				dateForJob = fourteenDays;
+			} else if (sevenDays != null) {
+				dateForJob = sevenDays;
+			}
 			JobDetail jobDetail = JobBuilder
 					.newJob(NotificationJob.class)
 					.usingJobData(NotificationJob.KEY_ID,
 							taskId == null ? projectId : taskId)
+					.usingJobData(NotificationJob.KEY_DUE_DATE,
+							dateForJob.getTime())
 					.usingJobData(
 							NotificationJob.KEY_TYPE,
 							taskId == null ? NotificationJob.VALUE_PROJECT
