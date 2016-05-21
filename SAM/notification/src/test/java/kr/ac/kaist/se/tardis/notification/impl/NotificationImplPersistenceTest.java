@@ -85,7 +85,7 @@ public class NotificationImplPersistenceTest {
 					.addScript(
 							"kr/ac/kaist/se/tardis/persistence/sql/h2.userwithoutpwd.sql")
 					.addScript(
-							"kr/ac/kaist/se/tardis/notification/sql/h2.notification.sql")
+							"kr/ac/kaist/se/tardis/persistence/sql/h2.notification.sql")
 					.build();
 			return embeddedDatabase;
 		}

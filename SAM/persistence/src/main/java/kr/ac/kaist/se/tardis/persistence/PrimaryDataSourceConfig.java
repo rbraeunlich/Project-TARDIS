@@ -20,7 +20,7 @@ public class PrimaryDataSourceConfig {
 				.setScriptEncoding("UTF-8")
 				 .addScript("kr/ac/kaist/se/tardis/persistence/sql/h2.userwithoutpwd.sql")
 				 .addScript("kr/ac/kaist/se/tardis/persistence/sql/h2.quartz.sql")
-				 .addScript("kr/ac/kaist/se/tardis/notification/sql/h2.notification.sql")
+				 .addScript("kr/ac/kaist/se/tardis/persistence/sql/h2.notification.sql")
 				.build();
 		return embeddedDatabase;
 	}
