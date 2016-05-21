@@ -35,7 +35,7 @@ public class PrimaryDbConfig {
 		LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
 		factory.setJpaVendorAdapter(vendorAdapter);
 		//FIXME extend when new entities get added
-		factory.setPackagesToScan("kr.ac.kaist.se.tardis.users.copy");
+		factory.setPackagesToScan("kr.ac.kaist.se.tardis.users.copy", "kr.ac.kaist.se.tardis.notification.impl");
 		factory.setDataSource(primaryDataSource);
 		factory.setPersistenceUnitName("primary");
 		
