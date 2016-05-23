@@ -59,10 +59,6 @@ public class ProjectController {
 
 		if (optional.isPresent()) {
 			Project thisProject = optional.get();
-			// //test line for memebers
-			// thisProject.addProjectMember("member1");
-			// thisProject.addProjectMember("member2");
-			// //
 			model.addAttribute("project", thisProject);
 		} else {
 			// TODO error case
