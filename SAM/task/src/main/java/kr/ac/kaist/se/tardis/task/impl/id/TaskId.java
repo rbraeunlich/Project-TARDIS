@@ -14,6 +14,11 @@ public class TaskId implements Comparable<TaskId>, Serializable{
 	public String getId() {
 		return id;
 	}
+	
+	@Override
+	public String toString(){
+		return id;
+	}
 
 	@Override
 	public int compareTo(TaskId o) {
