@@ -9,7 +9,9 @@
 <body onresize="resizeWindow()" onpageshow="resizeWindow()">
 
 <div th:fragment="bar" id="bar" class="box">	
-	<input id="accountpage" class="button" type="button" value="My Page" style="float:right;"/>
+	<form th:action="@{/mypage}" method="post">
+		<input id="mypage" class="button" type="submit" value="My Page" style="float:right;"/>
+	</form>
 	<form th:action="@{/logout}" method="post">
 		<input id="logout" class="button" type="submit" value="Log Out" style="float:right;margin-right:10px;"/> 
 	</form>
