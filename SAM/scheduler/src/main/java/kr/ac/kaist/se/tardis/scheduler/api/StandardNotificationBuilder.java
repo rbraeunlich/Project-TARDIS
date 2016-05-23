@@ -12,7 +12,7 @@ public interface StandardNotificationBuilder {
 
 	StandardNotificationBuilder sevenDays(Date endDate);
 	
-	StandardNotificationBuilder fourteenDays(Date endDate);
+	StandardNotificationBuilder oneDay(Date endDate);
 	
 	JobInfo submit();
 }

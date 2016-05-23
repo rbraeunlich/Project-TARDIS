@@ -49,9 +49,9 @@ public class SchedulerServiceImpl implements SchedulerService {
 		private JobInfo jobInfo;
 		private String taskId;
 		private String projectId;
+		private Date oneDay;
 		private Date threeDays;
 		private Date sevenDays;
-		private Date fourteenDays;
 
 		public StandardNotificationBuilderImpl() {
 			jobInfo = new JobInfo();
@@ -61,7 +61,7 @@ public class SchedulerServiceImpl implements SchedulerService {
 		public JobInfo submit() {
 			Date dateForJob = threeDays;
 			if (threeDays == null && sevenDays == null) {
-				dateForJob = fourteenDays;
+				dateForJob = oneDay;
 			} else if (sevenDays != null) {
 				dateForJob = sevenDays;
 			}
@@ -75,6 +75,15 @@ public class SchedulerServiceImpl implements SchedulerService {
 							NotificationJob.KEY_TYPE,
 							taskId == null ? NotificationJob.VALUE_PROJECT
 									: NotificationJob.VALUE_TASK).build();
+			if (oneDay != null) {
+				Trigger trigger = TriggerBuilder
+						.newTrigger()
+						.forJob(jobDetail)
+						.startAt(
+								new Date(oneDay.getTime()
+										- TimeUnit.DAYS.toMillis(1L))).build();
+				SchedulerServiceImpl.this.submitJob(jobDetail, trigger);
+			}
 			if (threeDays != null) {
 				Trigger trigger = TriggerBuilder
 						.newTrigger()
@@ -91,15 +100,6 @@ public class SchedulerServiceImpl implements SchedulerService {
 						.startAt(
 								new Date(sevenDays.getTime()
 										- TimeUnit.DAYS.toMillis(7L))).build();
-				SchedulerServiceImpl.this.submitJob(jobDetail, trigger);
-			}
-			if (fourteenDays != null) {
-				Trigger trigger = TriggerBuilder
-						.newTrigger()
-						.forJob(jobDetail)
-						.startAt(
-								new Date(fourteenDays.getTime()
-										- TimeUnit.DAYS.toMillis(14L))).build();
 				SchedulerServiceImpl.this.submitJob(jobDetail, trigger);
 			}
 			return jobInfo;
@@ -127,7 +127,7 @@ public class SchedulerServiceImpl implements SchedulerService {
 
 		@Override
 		public StandardNotificationBuilder threeDays(Date endDate) {
-			if (sevenDays != null || fourteenDays != null) {
+			if (sevenDays != null || oneDay != null) {
 				throw new IllegalArgumentException(EXCEPTION_TEXT_DAYS);
 			}
 			jobInfo.setJobType(JobType.THREE_DAYS);
@@ -137,7 +137,7 @@ public class SchedulerServiceImpl implements SchedulerService {
 
 		@Override
 		public StandardNotificationBuilder sevenDays(Date endDate) {
-			if (threeDays != null || fourteenDays != null) {
+			if (threeDays != null || oneDay != null) {
 				throw new IllegalArgumentException(EXCEPTION_TEXT_DAYS);
 			}
 			jobInfo.setJobType(JobType.SEVEN_DAYS);
@@ -146,12 +146,12 @@ public class SchedulerServiceImpl implements SchedulerService {
 		}
 
 		@Override
-		public StandardNotificationBuilder fourteenDays(Date endDate) {
+		public StandardNotificationBuilder oneDay(Date endDate) {
 			if (sevenDays != null || threeDays != null) {
 				throw new IllegalArgumentException(EXCEPTION_TEXT_DAYS);
 			}
-			jobInfo.setJobType(JobType.FOURTEEN_DAYS);
-			fourteenDays = endDate;
+			jobInfo.setJobType(JobType.ONE_DAY);
+			oneDay = endDate;
 			return this;
 		}
 	}

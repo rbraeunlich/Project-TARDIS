@@ -79,12 +79,12 @@ public class StandardNotificationBuilderImplTest {
 	}
 	
 	@Test
-	public void createFourteenDaysJob() {
+	public void createOneDayJob() {
 		Date now = new Date();
-		Date fourteenDaysAgo = new Date(now.getTime() - TimeUnit.DAYS.toMillis(14L));
+		Date oneDayAgo = new Date(now.getTime() - TimeUnit.DAYS.toMillis(1L));
 		String id = "123";
 		JobInfo jobInfo = service.createNotificationBuilder().forProject(id)
-				.fourteenDays(now).submit();
+				.oneDay(now).submit();
 
 		JobDetail job = TestConfig.jobDetailCaptor.getValue();
 		assertThat(job, is(notNullValue()));
@@ -93,10 +93,10 @@ public class StandardNotificationBuilderImplTest {
 		assertThat(job.getJobDataMap().get(NotificationJob.KEY_TYPE), is(NotificationJob.VALUE_PROJECT));
 		Trigger trigger = TestConfig.triggerCaptor.getValue();
 		assertThat(trigger, is(notNullValue()));
-		assertThat(trigger.getFinalFireTime(), is(equalTo(fourteenDaysAgo)));
+		assertThat(trigger.getFinalFireTime(), is(equalTo(oneDayAgo)));
 
 		assertThat(jobInfo.getId(), is(notNullValue()));
-		assertThat(jobInfo.getJobType(), is(JobType.FOURTEEN_DAYS));
+		assertThat(jobInfo.getJobType(), is(JobType.ONE_DAY));
 	}
 	
 	@Test(expected=IllegalArgumentException.class)
@@ -106,7 +106,7 @@ public class StandardNotificationBuilderImplTest {
 	
 	@Test(expected=IllegalArgumentException.class)
 	public void onlyOneDateAtOnce(){
-		service.createNotificationBuilder().sevenDays(new Date()).fourteenDays(new Date());
+		service.createNotificationBuilder().sevenDays(new Date()).oneDay(new Date());
 	}
 
 	@Configuration
