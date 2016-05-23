@@ -32,6 +32,7 @@ public class NotificationImpl implements Notification {
 	public NotificationImpl() {
 	}
 
+	@Override
 	public Long getId() {
 		return id;
 	}
@@ -40,6 +41,7 @@ public class NotificationImpl implements Notification {
 		this.id = id;
 	}
 
+	@Override
 	public String getUsername() {
 		return username;
 	}
@@ -48,6 +50,7 @@ public class NotificationImpl implements Notification {
 		this.username = username;
 	}
 
+	@Override
 	public String getText() {
 		return text;
 	}
@@ -56,6 +59,7 @@ public class NotificationImpl implements Notification {
 		this.text = text;
 	}
 
+	@Override
 	public Date getNotificationDate() {
 		return notificationDate;
 	}
