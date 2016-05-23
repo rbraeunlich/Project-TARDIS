@@ -11,7 +11,7 @@ public class TaskIdFactory {
 
 	public static TaskId valueOf(String taskId){
 		//validate taskId
-		//UUID.fromString(taskId);
+		UUID.fromString(taskId);
 		//translate string to TaskId
 		return new TaskId(taskId);
 	}
