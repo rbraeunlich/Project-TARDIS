@@ -158,5 +158,11 @@ public class SchedulerServiceImpl implements SchedulerService {
 
 	private class GitHubJobBuilderImpl implements GitHubJobBuilder {
 
+		@Override
+		public JobInfo submit() {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
 	}
 }
