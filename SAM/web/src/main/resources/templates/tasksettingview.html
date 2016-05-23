@@ -15,37 +15,32 @@
 	
 <div id="board" class="box">
     <H1>Task Setting</H1>
-    <div th:text="'Task owner: '+ ${task.owner}"></div>
-	<div th:text="'Task name: '+ ${task.name}"></div>
-	<div th:text="'Task Description: '+ ${task.description}"></div>
-
-	<div th:text="'Task Date: '+ ${task.dueDate}" ></div>
 	
     <form class="settingForm" action="#" th:action="@{/taskchange}" th:object="${setTaskForm}" method="post">
 
 		<input type="hidden" name="taskId" th:value ="${task.id.id}"/>
 		<input type="hidden" name="projectId" th:value="${project.id.id}"/>
 		<p>
-				New Task name: <input id="taskName" type="text"
-					th:field="*{taskName}" /> <b
+				Task name: <input id="taskName" name="taskName" type="text"
+					th:value="${task.name}" /> <b
 					th:if="${#fields.hasErrors('taskName')}"
 					th:errors="*{taskName}">Task name error</b>
 		</p>
 		<p>
-			New Task Assignee: <input id="owner" type="text"
-				th:field="*{owner}" /> <b
+			Task Assignee: <input id="owner" name="owner" type="text"
+				th:value="${task.owner}" /> <b
 				th:if="${#fields.hasErrors('owner')}" th:errors="*{owner}">Member
 				error</b>
 		</p>
 		<p>
-			New Task Due Date: <input id="dueDate" type="text"
-				th:field="*{dueDate}" /> <b
+			Task Due Date: <input id="dueDate" name="dueDate" type="text"
+				th:value="${#dates.format(task.dueDate,'yyyy-MM-dd')}" /> <b
 				th:if="${#fields.hasErrors('dueDate')}" th:errors="*{dueDate}">Due Date
 				error</b>
 		</p>
 			<p>
-				New Description: <input id="description" type="text"
-					th:field="*{taskDescription}" />
+				Description: <input id="description" name="description" type="text"
+					th:value="${task.description}" />
 			</p>		
 		
         <!--<p>Due Date: <input id="duedate" type="text" th:field="${task.dueDate}"/></p>-->
