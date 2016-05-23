@@ -1,12 +1,7 @@
 package kr.ac.kaist.se.tardis.web.form;
 
-import java.util.Date;
-
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Null;
 import javax.validation.constraints.Size;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 public class CreateTaskForm {
 	public static final String SHORT_TASK_NAME_ERROR = "Task name must contain at least three characters";

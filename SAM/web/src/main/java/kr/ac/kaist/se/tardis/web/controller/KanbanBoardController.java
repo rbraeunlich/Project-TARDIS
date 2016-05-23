@@ -2,17 +2,10 @@ package kr.ac.kaist.se.tardis.web.controller;
 
 import javax.validation.Valid;
 
-import kr.ac.kaist.se.tardis.project.api.Project;
-import kr.ac.kaist.se.tardis.project.impl.id.*;
 import kr.ac.kaist.se.tardis.project.api.ProjectService;
 import kr.ac.kaist.se.tardis.web.form.CreateTaskForm;
-import kr.ac.kaist.se.tardis.web.form.SetProjectForm;
-import kr.ac.kaist.se.tardis.web.validator.SetProjectFormValidator;
 import kr.ac.kaist.se.tardis.web.validator.TaskFormValidator;
-import kr.ac.kaist.se.tardis.web.validator.UsernameAndPasswordRepititionValidator;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
@@ -22,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import kr.ac.kaist.se.tardis.project.api.ProjectService;
 import kr.ac.kaist.se.tardis.task.api.*;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
@@ -30,7 +22,6 @@ import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Optional;
 
 @Controller
 public class KanbanBoardController {

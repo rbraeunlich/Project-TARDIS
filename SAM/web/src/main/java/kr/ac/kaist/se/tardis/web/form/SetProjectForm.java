@@ -1,8 +1,5 @@
 package kr.ac.kaist.se.tardis.web.form;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-
 public class SetProjectForm {
 	
 	
