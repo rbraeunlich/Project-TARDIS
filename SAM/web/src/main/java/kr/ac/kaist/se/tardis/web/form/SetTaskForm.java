@@ -1,6 +1,8 @@
 package kr.ac.kaist.se.tardis.web.form;
 
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 public class SetTaskForm {
 	public static final String SHORT_TASK_NAME_ERROR = "Task name must contain at least three characters";
@@ -11,16 +13,22 @@ public class SetTaskForm {
 	public static final String OWNER_NOT_EXIST_ERROR = "Owner is not registered user";
 	public static final String NO_EXISITING_MEMBER = "No Existing Member";
 	public static final String WRONG_DUE_DATE_ERROR = "yyyy-MM-dd";
-	
+
 	@NotNull
 	private String projectId;
-	
+
+	@NotNull
+	@Size(min = 3, message = SHORT_TASK_NAME_ERROR)
 	private String taskName;
 
 	private String taskDescription;
 
+	@NotNull
+	@Pattern(regexp = "^\\d{4}\\-(0?[1-9]|1[012])\\-(0?[1-9]|[12][0-9]|3[01])$", message = WRONG_DUE_DATE_ERROR)
 	private String dueDate;
-	
+
+	@NotNull
+	@Size(min = 1, message = NO_OWNER_ERROR)
 	private String owner;
 
 	public String getTaskName() {

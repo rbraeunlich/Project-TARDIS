@@ -11,8 +11,8 @@ import kr.ac.kaist.se.tardis.users.copy.UserWithoutPassword;
 import kr.ac.kaist.se.tardis.users.copy.UserWithoutPasswordRepository;
 
 @Service
-@Profile("default")
-public class UserServiceImpl implements UserService {
+@Profile("dev")
+public class DevUserServiceImpl implements UserService {
 	
 	@Autowired
 	private UserRepository userRepo;
@@ -30,6 +30,9 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User findUserByName(String name) {
+		if("null".equals(name)){
+			return new UserImpl(name, "");
+		}
 		return  userRepo.findOne(name);
 	}
 

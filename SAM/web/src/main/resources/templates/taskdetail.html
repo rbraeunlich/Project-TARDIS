@@ -1,10 +1,13 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:margin="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:margin="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Task Detail</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link rel="stylesheet" th:href="@{/css/taskdetail.css}" href="../static/css/taskdetail.css" />
-	<link rel="stylesheet" th:href="@{/css/base.css}" href="../static/css/base.css" />
+<title>Task Detail</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" th:href="@{/css/taskdetail.css}"
+	href="../static/css/taskdetail.css" />
+<link rel="stylesheet" th:href="@{/css/base.css}"
+	href="../static/css/base.css" />
 </head>
 <body onresize="resizeWindow()" onpageshow="resizeWindow()">
 
@@ -12,19 +15,21 @@
 
 	<div th:replace="overview :: heading"></div>
 
-		<div id="board" class="box">
+	<div id="board" class="box">
 		<div id="taskDetailBox">
-			<H1>Task Note</H1>
 			<div class="entry" id="${task.name}">
 				<div class="textBlock">
-					<p class="projectName" th:text="${task.projectName}"/>
-					<p class="taskState" th:text="${task.taskState}"/>
-					<p class="taskNameText" th:text="${task.name}"/>
-					<p class="taskDescription" th:text="${task.description}"/>
+					<p class="projectName" th:text="${task.projectName}" />
+					<p class="taskState" th:text="${task.taskState}" />
+					<p class="taskNameText" th:text="${task.name}" />
+					<p class="taskDescription" th:text="${task.description}" />
+
 				</div>
-				<form action="#" th:action="@{/taskview}" th:object="${task}" method="post">
-					<input class="settingButton" type="image" th:id="${task.name}+Task" src = "../image/setting.png"/>
-					<input type="hidden" name="taskId" th:value="${task.id.id}"/>
+				<form action="#" th:action="@{/taskview}" th:object="${task}"
+					method="get">
+					<input class="settingButton" type="image" th:id="${task.name}+Task"
+						src="../image/setting.png" /> <input type="hidden" name="taskId"
+						th:value="${task.id.id}" />
 				</form>
 			</div>
 		</div>

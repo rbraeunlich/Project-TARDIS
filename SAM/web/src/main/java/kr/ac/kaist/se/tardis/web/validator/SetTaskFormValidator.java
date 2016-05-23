@@ -1,7 +1,6 @@
 package kr.ac.kaist.se.tardis.web.validator;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.util.Optional;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,6 @@ import org.springframework.validation.Validator;
 import kr.ac.kaist.se.tardis.project.api.ProjectService;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
-import kr.ac.kaist.se.tardis.task.api.Task;
 import kr.ac.kaist.se.tardis.task.api.TaskService;
 import kr.ac.kaist.se.tardis.users.api.UserService;
 import kr.ac.kaist.se.tardis.web.form.SetTaskForm;
@@ -25,7 +23,7 @@ public class SetTaskFormValidator implements Validator {
 	@Autowired
 	TaskService taskService;
 	@Autowired
-	ProjectService proejctService;
+	ProjectService projectService;
 
 	@Override
 	public boolean supports(Class<?> clazz) {
@@ -37,49 +35,14 @@ public class SetTaskFormValidator implements Validator {
 	public void validate(Object target, Errors errors) {
 		// TODO Auto-generated method stub
 		SetTaskForm setTaskForm = (SetTaskForm) target;
-
-		if (setTaskForm.getTaskName().length() != 0 && setTaskForm.getTaskName().length() > 3) {
-			Set<Task> tasks = taskService.findTaskByName(setTaskForm.getTaskName());
-
-			for (Task t : tasks) {
-				if (t.getProjectId().getId().equals(setTaskForm.getProjectId())) {
-					errors.rejectValue("taskName", "error.taskName.dup", SetTaskForm.DUP_TASK_NAME_ERROR);
-					break;
-				}
-			}
-		}else{
-			if(setTaskForm.getTaskName().length() != 0)
-				errors.rejectValue("taskName", "error.taskName.short", SetTaskForm.SHORT_TASK_NAME_ERROR);
-		}
-
-		if (setTaskForm.getOwner().length() != 0) {
-			System.out.println("@@@@@@"+setTaskForm.getProjectId()+"@@@@@@");
+		if (setTaskForm.getOwner() != null) {
 			ProjectId id = ProjectIdFactory.valueOf(setTaskForm.getProjectId());
 
-			Set<String> projectMembers = proejctService.findProjectById(id).get().getProjectMembers();
-			boolean find = false;
+			Set<String> projectMembers = projectService.findProjectById(id).get().getProjectMembers();
+			Optional<String> findAny = projectMembers.stream().filter(s -> s.equals(setTaskForm.getOwner())).findAny();
 
-			for (String m : projectMembers) {
-				if (m.equals(setTaskForm.getOwner())) {
-					find = true;
-					break;
-				}
-			}
-
-			if (!find) {
+			if (!findAny.isPresent()) {
 				errors.rejectValue("owner", "error.Member.notExisting", SetTaskForm.NO_EXISITING_MEMBER);
-			}
-		}
-		if(setTaskForm.getDueDate().length()!=0){
-			if(Character.isLetter(setTaskForm.getDueDate().charAt(0))){
-				errors.rejectValue("dueDate", "error.dueDate.WrongType", SetTaskForm.WRONG_DUE_DATE_ERROR);
-			}else{
-			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-			try {
-				format.parse(setTaskForm.getDueDate());
-			} catch (ParseException e) {
-				errors.rejectValue("dueDate", "error.dueDate.WrongType", SetTaskForm.WRONG_DUE_DATE_ERROR);
-			}
 			}
 		}
 	}
