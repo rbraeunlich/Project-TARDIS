@@ -1,5 +1,8 @@
 package kr.ac.kaist.se.tardis.web.form;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class SetProjectForm {
 	
 	
@@ -7,6 +10,8 @@ public class SetProjectForm {
 	public static final String SHORT_PROJECT_NAME_ERROR = "Project name must contain at least three characters";
 	public static final String NO_EXISITING_USER = "No Existing User";
 	
+	@NotNull(message=SHORT_PROJECT_NAME_ERROR)
+	@Size(min=3, message=SHORT_PROJECT_NAME_ERROR)
 	private String projectName;
 	private String description;
 	private String newMember;

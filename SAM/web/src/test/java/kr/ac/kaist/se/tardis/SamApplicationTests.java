@@ -110,6 +110,7 @@ public class SamApplicationTests {
 		assertThat(currentUrl, containsString("projectsettingview"));
 		// try to rename project with 1 characters
 		String newProjectName = "f";
+		webDriver.findElement(By.id("projectName")).clear();
 		webDriver.findElement(By.id("projectName")).sendKeys(newProjectName);
 		webDriver.findElement(By.id("projectSettingSubmit")).click();
 		assertThat(webDriver.findElement(By.id("projectNameError")).getText(), containsString("Project name must contain at least three characters"));

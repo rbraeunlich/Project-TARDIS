@@ -16,19 +16,14 @@ public class SetProjectFormValidator implements Validator {
 	
 	@Override
 	public boolean supports(Class<?> clazz) {
-		// TODO Auto-generated method stub
 		return SetProjectForm.class.isAssignableFrom(clazz);
 	}
 
 	@Override
 	public void validate(Object target, Errors errors) {
-		// TODO Auto-generated method stub
 		SetProjectForm setProjectForm = (SetProjectForm) target;
 		if (setProjectForm.getNewMember().length()!=0 && userService.findUserByName(setProjectForm.getNewMember()) == null) {
 			errors.rejectValue("newMember", "error.newMember.notExisting", SetProjectForm.NO_EXISITING_USER );
-		}
-		if (setProjectForm.getProjectName().length()!=0&& setProjectForm.getProjectName().length()< 3 ) {
-			errors.rejectValue("projectName", "error.newMember.short", SetProjectForm.SHORT_PROJECT_NAME_ERROR );
 		}
 	}
 

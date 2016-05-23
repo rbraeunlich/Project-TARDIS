@@ -28,7 +28,7 @@
 				New Project name: <input id="projectName" name="projectName" type="text"
 					th:value="${project.name}" /> <b id="projectNameError"
 					th:if="${#fields.hasErrors('projectName')}"
-					th:errors="${project.name}">Project name error</b>
+					th:errors="*{projectName}">Project name error</b>
 			</p>
 			<p>
 				New Description: <input id="description" name="description" type="text"
