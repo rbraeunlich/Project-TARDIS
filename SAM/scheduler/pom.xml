@@ -49,5 +49,10 @@
 			<artifactId>notification</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>kr.ac.kaist.se.tardis</groupId>
+			<artifactId>scheduler-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 </project>

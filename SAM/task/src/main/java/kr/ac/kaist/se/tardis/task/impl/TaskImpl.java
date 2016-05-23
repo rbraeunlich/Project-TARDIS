@@ -1,8 +1,11 @@
 package kr.ac.kaist.se.tardis.task.impl;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
+import kr.ac.kaist.se.tardis.scheduler.api.JobInfo;
 import kr.ac.kaist.se.tardis.task.api.Task;
 import kr.ac.kaist.se.tardis.task.impl.id.TaskId;
 import kr.ac.kaist.se.tardis.task.impl.state.TaskState;
@@ -18,6 +21,7 @@ class TaskImpl implements Task {
 	private TaskState taskState;
 	private int taskProgress;
 	private String projectName;
+	private Set<JobInfo> jobInfos = new HashSet<>();
 
 	public TaskImpl(TaskId id, ProjectId projectId, String taskOwner) {
 		this.id = id;
@@ -26,12 +30,15 @@ class TaskImpl implements Task {
 		this.taskState = TaskState.TODO;
 		projectName = "";
 	}
-	public String getProjectName(){
+
+	public String getProjectName() {
 		return projectName;
 	}
-	public void setProjectName(String projectName){
+
+	public void setProjectName(String projectName) {
 		this.projectName = projectName;
 	}
+
 	@Override
 	public void setName(String name) {
 		this.name = name;
@@ -46,12 +53,12 @@ class TaskImpl implements Task {
 	public void setDescription(String des) {
 		this.description = des;
 	}
-	
+
 	@Override
 	public String getDescription() {
 		return description;
 	}
-	
+
 	@Override
 	public TaskId getId() {
 		return id;
@@ -67,26 +74,57 @@ class TaskImpl implements Task {
 		this.dueDate = d;
 	}
 
-	
 	@Override
 	public ProjectId getProjectId() {
-		// TODO Auto-generated method stub
 		return projectId;
 	}
 
 	@Override
 	public void setOwner(String member) {
-		// TODO Auto-generated method stub
 		owner = member;
 	}
 
 	@Override
 	public String getOwner() {
-		// TODO Auto-generated method stub
 		return owner;
 	}
-	
-	
+
+	@Override
+	public TaskState getTaskState() {
+		return taskState;
+	}
+
+	@Override
+	public void setTaskState(TaskState taskState) {
+		this.taskState = taskState;
+
+	}
+
+	@Override
+	public int getTaskProgress() {
+		return taskProgress;
+	}
+
+	@Override
+	public void setTaskProgress(int taskProgress) {
+		this.taskProgress = taskProgress;
+	}
+
+	@Override
+	public Set<JobInfo> getAllJobInfos() {
+		return jobInfos;
+	}
+
+	@Override
+	public void removeJobInfo(JobInfo jobInfo) {
+		jobInfos.remove(jobInfo);
+	}
+
+	@Override
+	public void addJobInfo(JobInfo jobInfo) {
+		jobInfos.add(jobInfo);
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -115,29 +153,6 @@ class TaskImpl implements Task {
 	@Override
 	public String toString() {
 		return "TaskImpl [id=" + id + ",project id=" + projectId + ", name=" + name + ", owner=" + owner + ", dueDate="
-				+ dueDate + ", state="+taskState+"]";
+				+ dueDate + ", state=" + taskState + "]";
 	}
-
-	@Override
-	public TaskState getTaskState() {
-		return taskState;
-	}
-
-	@Override
-	public void setTaskState(TaskState taskState) {
-		this.taskState = taskState;
-		
-	}
-	
-	@Override
-	public int getTaskProgress() {
-		return taskProgress;
-	}
-
-	@Override
-	public void setTaskProgress(int taskProgress) {
-		this.taskProgress = taskProgress;
-	}
-
-
 }

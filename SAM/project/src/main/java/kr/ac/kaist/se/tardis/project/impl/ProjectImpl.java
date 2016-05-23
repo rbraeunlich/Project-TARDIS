@@ -6,7 +6,7 @@ import java.util.Set;
 
 import kr.ac.kaist.se.tardis.project.api.Project;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import kr.ac.kaist.se.tardis.scheduler.api.JobInfo;
 
 class ProjectImpl implements Project {
 
@@ -16,6 +16,7 @@ class ProjectImpl implements Project {
 	private final String owner;
 	private final Set<String> members;
 	private Date dueDate;
+	private Set<JobInfo> jobInfos = new HashSet<>();
 
 	public ProjectImpl(ProjectId id, String projectOwner) {
 		this.id = id;
@@ -77,6 +78,21 @@ class ProjectImpl implements Project {
 	@Override
 	public String getProjectOwner() {
 		return owner;
+	}
+
+	@Override
+	public Set<JobInfo> getAllJobInfos() {
+		return jobInfos;
+	}
+
+	@Override
+	public void removeJobInfo(JobInfo jobInfo) {
+		jobInfos.remove(jobInfo);
+	}
+
+	@Override
+	public void addJobInfo(JobInfo jobInfo) {
+		jobInfos.add(jobInfo);
 	}
 	
 	@Override

@@ -4,8 +4,9 @@ import java.util.Date;
 import java.util.Set;
 
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
+import kr.ac.kaist.se.tardis.scheduler.api.JobOwner;
 
-public interface Project {
+public interface Project extends JobOwner {
 
 	void setName(String name);
 
