@@ -15,31 +15,28 @@
 
 	<div id="board" class="box">
 		<H1>Project Setting</H1>
-		<div th:text="'Project owner: '+ ${project.projectOwner}"></div>
-		<div th:text="'Project name: '+ ${project.name}"></div>
-		<div th:text="'Project Description: '+ ${project.description}"></div>
-		<br />
-		<div>Project Member</div>
-		<div th:each="m : ${project.projectMembers}" th:value="${m}"
-			th:text="${m}"></div>
+			<!-- for now, I make this line as a comment. I did not decide yet to delete.
+			<div>Project Member</div>
+			<div th:each="m : ${project.projectMembers}" th:value="${m}"
+				th:text="${m}"></div>
+			-->
 
 
-		<form action="#" th:action="@{/projectchange}"
-			th:object="${setProjectForm}" method="post">
+		<form action="#" th:action="@{/projectchange}" th:object="${setProjectForm}" method="post">
 			<input type="hidden" name="projectId" th:value="${project.id.id}" />
 			<p>
-				New Project name: <input id="projectName" type="text"
-					th:field="${project.name}" /> <b id="projectNameError"
+				New Project name: <input id="projectName" name="projectName" type="text"
+					th:value="${project.name}" /> <b id="projectNameError"
 					th:if="${#fields.hasErrors('projectName')}"
 					th:errors="${project.name}">Project name error</b>
 			</p>
 			<p>
-				New Description: <input id="description" type="text"
-					th:field="${project.description}" />
+				New Description: <input id="description" name="description" type="text"
+					th:value="${project.description}" />
 			</p>
 			<p>
-				New Member: <input id="newMember" type="text"
-					th:field="*{newMember}" /> <b id="newMemberError"
+				New Member: <input id="newMember" name="newMember" type="text"
+					th:value="*{newMember}" /> <b id="newMemberError"
 					th:if="${#fields.hasErrors('newMember')}" th:errors="*{newMember}">Member
 					error</b>
 			</p>

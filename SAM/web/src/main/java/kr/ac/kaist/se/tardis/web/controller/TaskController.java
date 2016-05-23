@@ -61,9 +61,6 @@ public class TaskController {
 
         fillModel(model,user,id, taskService.findTaskById(id).get().getProjectId());
         
-
-        System.out.println("asdf"+taskService.findTaskById(id).get().getProjectId()+"asdf");
-        
         Optional<Task> optional = taskService.findTaskById(id);
 
         if(optional.isPresent())
@@ -88,7 +85,6 @@ public class TaskController {
 		if (bindingResult.hasErrors()) {			
 			return "forward:taskview";
 		}
-		
 
         Optional<Task> optional = taskService.findTaskById(id);
         

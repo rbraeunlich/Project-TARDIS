@@ -27,7 +27,7 @@ public class TaskDetailController {
 	}
 	
 	@RequestMapping(value = { "/taskdetail" }, method = RequestMethod.GET)
-	public String projectManagementpage(Model model, CreateTaskForm form, @RequestParam(name = "taskId", required = true) String taskId, @AuthenticationPrincipal UserDetails user) {
+	public String taskNotePage(Model model, CreateTaskForm form, @RequestParam(name = "taskId", required = true) String taskId, @AuthenticationPrincipal UserDetails user) {
 		TaskId id = TaskIdFactory.valueOf(taskId);
 		
 		fillModel(model, user, id);
