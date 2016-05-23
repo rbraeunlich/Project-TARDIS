@@ -5,9 +5,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
-import kr.ac.kaist.se.tardis.project.api.ProjectService;
-import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
-import kr.ac.kaist.se.tardis.task.impl.id.TaskIdFactory;
 import kr.ac.kaist.se.tardis.users.api.UserService;
 import kr.ac.kaist.se.tardis.web.form.SetProjectForm;
 
@@ -16,8 +13,6 @@ public class SetProjectFormValidator implements Validator {
 
 	@Autowired
 	UserService userService;
-	@Autowired
-	ProjectService projectService;
 	
 	@Override
 	public boolean supports(Class<?> clazz) {
