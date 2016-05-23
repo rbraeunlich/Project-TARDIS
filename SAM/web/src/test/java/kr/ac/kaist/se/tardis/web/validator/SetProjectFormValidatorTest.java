@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.validation.Errors;
@@ -25,7 +26,7 @@ import kr.ac.kaist.se.tardis.web.form.SetProjectForm;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes=SetProjectFormValidatorTest.TestConfig.class)
-@Profile("SetProjectFormValidatorTest")
+@ActiveProfiles(profiles={"SetProjectFormValidatorTest", "default"})
 public class SetProjectFormValidatorTest {
 	
 	@Autowired
