@@ -40,8 +40,9 @@ public class ProjectController {
 	}
 
 	@RequestMapping(value = { "/projectsettingview" }, method = RequestMethod.POST)
-	public String projectInfoView(Model model, @RequestParam(name = "projectId", required = true) String projectId,
-			@AuthenticationPrincipal UserDetails user, @Valid SetProjectForm setProjectForm, BindingResult bindingResult) {
+	public String projectInfoView(Model model,
+								  @RequestParam(name = "projectId", required = true) String projectId,
+									@AuthenticationPrincipal UserDetails user, @Valid SetProjectForm setProjectForm, BindingResult bindingResult) {
 		// show project information on project setting page
 		
 		if(setProjectForm.getProjectName()!=null || setProjectForm.getNewMember()!=null)

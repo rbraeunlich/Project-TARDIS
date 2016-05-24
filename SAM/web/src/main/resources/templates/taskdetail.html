@@ -1,6 +1,5 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org"
-	xmlns:margin="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>Task Detail</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -17,20 +16,34 @@
 
 	<div id="board" class="box">
 		<div id="taskDetailBox">
-			<div class="entry" id="${task.name}">
-				<div class="textBlock">
-					<p class="projectName" th:text="${task.projectName}" />
-					<p class="taskState" th:text="${task.taskState}" />
-					<p class="taskNameText" th:text="${task.name}" />
-					<p class="taskDescription" th:text="${task.description}" />
-
-				</div>
-				<form action="#" th:action="@{/taskview}" th:object="${task}"
-					method="get">
+			<H1>Task Note</H1>
+				<form action="#" th:action="@{/taskview}" th:object="${task}" method="get">
 					<input class="settingButton" type="image" th:id="${task.name}+Task"
-						src="../image/setting.png" /> <input type="hidden" name="taskId"
-						th:value="${task.id.id}" />
+						   src="../image/setting.png" /> <input type="hidden" name="taskId"
+																th:value="${task.id.id}" />
 				</form>
+			<div class="entry" id="${task.name}">
+				<nav>
+					<div class="taskInfo">
+						<p>Project Name :<span class="projectName" th:text="${task.projectName}" /></p>
+						<p>Task State: <span style="font-weight:bold" class="taskState" th:text="${task.taskState}" /></p>
+						<p>Task Name: <span class="taskNameText" th:text="${task.name}" /></p>
+						<p>Task Description: <span class="taskDescription" th:text="${task.description}" /></p>
+
+
+					</div>
+				</nav>
+				<section>
+					<div class="statusInfo">
+						<p>This is part of contribution and status input box</p>
+
+					</div>
+				</section>
+			</div>
+
+			<p></p><p>Comments</p><p></p>
+			<div id="commentbox">
+				<p>Hello this is comment</p>
 			</div>
 		</div>
 	</div>
