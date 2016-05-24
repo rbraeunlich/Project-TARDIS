@@ -29,6 +29,8 @@
 		<module>scheduler</module>
 		<module>notification</module>
 		<module>scheduler-api</module>
+		<module>github-connector-api</module>
+		<module>github-connector</module>
 	</modules>
 
 	<dependencies>
