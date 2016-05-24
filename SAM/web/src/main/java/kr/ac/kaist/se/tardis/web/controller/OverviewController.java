@@ -39,28 +39,30 @@ public class OverviewController {
 	private void fillModel(Model model, UserDetails user) {
 		model.addAttribute("username", String.valueOf(user.getUsername()));
 		model.addAttribute("allTaskList", taskService.getAllTasks());
-		model.addAttribute("projectList",
-				projectService.findProjectsForUser(String.valueOf(user.getUsername())));
-		
-		Set<Task> tasks = taskService.findTasksForUser(String.valueOf(user.getUsername()));		
+		model.addAttribute("projectList", projectService.findProjectsForUser(String.valueOf(user.getUsername())));
+
+		Set<Task> tasks = taskService.findTasksForUser(String.valueOf(user.getUsername()));
 		for (Task t : tasks) {
-			t.setProjectName(projectService.findProjectById(t.getProjectId()).get().getName());			
+			t.setProjectName(projectService.findProjectById(t.getProjectId()).get().getName());
 		}
-		
+
 		model.addAttribute("taskList", tasks);
 		model.addAttribute("notificationList", notificationService.getNotificationsForUser(user.getUsername()));
 	}
-	
+
 	@RequestMapping(value = { "/overview" }, method = RequestMethod.POST)
-	public String projectCreated(Model model, @Valid CreateProjectForm form,
-			BindingResult bindingResult, @AuthenticationPrincipal UserDetails user) {
+	public String projectCreated(Model model, @Valid CreateProjectForm form, BindingResult bindingResult,
+			@AuthenticationPrincipal UserDetails user) {
 		if (!bindingResult.hasErrors()) {
 			Project project = projectService.createProject(String.valueOf(user.getUsername()));
 			project.setDescription(form.getDescription());
 			project.setName(form.getProjectName());
 			projectService.saveProject(project);
+			fillModel(model, user);
+			return "redirect:overview";
+		} else {
+			fillModel(model, user);
+			return "overview";
 		}
-		fillModel(model, user);
-		return "redirect:overview";
 	}
 }

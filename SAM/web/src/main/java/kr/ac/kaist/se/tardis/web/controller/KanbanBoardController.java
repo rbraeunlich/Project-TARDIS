@@ -89,11 +89,14 @@ public class KanbanBoardController {
 			}
 
 			taskService.saveTask(task);
+			fillModel(model, user, id);
+			redirectAttributes.addAttribute("projectId", form.getProjectId());
+			return "redirect:kanbanboard";
+		} else {
+			fillModel(model, user, id);
+			return "kanbanboard";
 		}
 
-		fillModel(model, user, id);
-		redirectAttributes.addAttribute("projectId", form.getProjectId());
-		return "redirect:kanbanboard";
 	}
 
 	@RequestMapping(value = { "/updatestaskstatus" }, method = RequestMethod.POST)
