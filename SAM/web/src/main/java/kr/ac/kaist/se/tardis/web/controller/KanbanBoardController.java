@@ -66,7 +66,7 @@ public class KanbanBoardController {
 
 	@RequestMapping(value = { "/kanbanboard" }, method = RequestMethod.POST)
 	public String taskCreated(Model model, @Valid CreateTaskForm form, BindingResult bindingResult,
-			@AuthenticationPrincipal UserDetails user) {
+			@AuthenticationPrincipal UserDetails user, RedirectAttributes redirectAttributes) {
 
 		ProjectId id = ProjectIdFactory.valueOf(form.getProjectId());
 
@@ -92,7 +92,8 @@ public class KanbanBoardController {
 		}
 
 		fillModel(model, user, id);
-		return "KanbanBoard";
+		redirectAttributes.addAttribute("projectId", form.getProjectId());
+		return "redirect:kanbanboard";
 	}
 
 	@RequestMapping(value = { "/updatestaskstatus" }, method = RequestMethod.POST)
