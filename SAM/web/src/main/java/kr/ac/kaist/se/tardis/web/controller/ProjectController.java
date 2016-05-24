@@ -18,6 +18,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 import java.util.Optional;
@@ -40,14 +41,14 @@ public class ProjectController {
 	}
 
 	@RequestMapping(value = { "/projectsettingview" }, method = RequestMethod.POST)
-	public String projectInfoView(Model model,
-								  @RequestParam(name = "projectId", required = true) String projectId,
-									@AuthenticationPrincipal UserDetails user, @Valid SetProjectForm setProjectForm, BindingResult bindingResult) {
+	public String projectInfoView(Model model, @RequestParam(name = "projectId", required = true) String projectId,
+			@AuthenticationPrincipal UserDetails user, @Valid SetProjectForm setProjectForm,
+			BindingResult bindingResult) {
 		// show project information on project setting page
-		
-		if(setProjectForm.getProjectName()!=null || setProjectForm.getNewMember()!=null)
+
+		if (setProjectForm.getProjectName() != null || setProjectForm.getNewMember() != null)
 			validator.validate(setProjectForm, bindingResult);
-		
+
 		ProjectId id = ProjectIdFactory.valueOf(projectId);
 		fillModel(model, user, id);
 
@@ -62,20 +63,19 @@ public class ProjectController {
 		}
 		return "projectsettingview";
 	}
-	
-
 
 	@RequestMapping(value = { "/projectchange" }, method = RequestMethod.POST)
 	public String projectChange(Model model, CreateTaskForm form,
 			@RequestParam(name = "projectId", required = true) String projectId,
-			@AuthenticationPrincipal UserDetails user, @Valid SetProjectForm setProjectForm, BindingResult bindingResult) {
+			@AuthenticationPrincipal UserDetails user, @Valid SetProjectForm setProjectForm,
+			BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
 		ProjectId id = ProjectIdFactory.valueOf(projectId);
 
 		validator.validate(setProjectForm, bindingResult);
-		
+
 		if (bindingResult.hasErrors()) {
-			
+
 			return "forward:projectsettingview";
 		}
 
@@ -97,7 +97,8 @@ public class ProjectController {
 		} else {
 			// TODO error case
 		}
-		return "KanbanBoard";
+		redirectAttributes.addAttribute("projectId", form.getProjectId());
+		return "redirect:kanbanboard";
 	}
 
 }

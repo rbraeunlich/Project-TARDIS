@@ -5,14 +5,21 @@ import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.junit.Assert.assertThat;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.boot.test.WebIntegrationTest;
@@ -54,7 +61,7 @@ public class SamApplicationTests {
 	}
 
 	@Test
-	public void succesfulLoginAfterRegistration() throws InterruptedException {
+	public void succesfulLoginAfterRegistration() throws InterruptedException, Exception {
 		webDriver.get(testUrl);
 		// try to log in without account
 		webDriver.findElement(By.id("loginButton")).click();
@@ -77,16 +84,16 @@ public class SamApplicationTests {
 		webDriver.findElement(By.id("username")).sendKeys(USERNAME);
 		webDriver.findElement(By.id("password")).sendKeys(PASSWORD);
 		webDriver.findElement(By.id("loginButton")).click();
-		//check redirect
+		// check redirect
 		String currentUrl = webDriver.getCurrentUrl();
 		assertThat(currentUrl, containsString("overview"));
 		// create project
 		webDriver.findElement(By.id("createProjectIcon")).click();
 		// first create an error
 		webDriver.findElement(By.id("createProjectButton")).click();
-		//check errormessage
+		// check errormessage
 		assertThat(webDriver.findElement(By.id("errorProjectName")).getText(), is(notNullValue()));
-		//now really create a project
+		// now really create a project
 		String projectName = "project";
 		webDriver.findElement(By.id("createProjectIcon")).click();
 		webDriver.findElement(By.id("projectname")).sendKeys(projectName);
@@ -113,14 +120,15 @@ public class SamApplicationTests {
 		webDriver.findElement(By.id("projectName")).clear();
 		webDriver.findElement(By.id("projectName")).sendKeys(newProjectName);
 		webDriver.findElement(By.id("projectSettingSubmit")).click();
-		assertThat(webDriver.findElement(By.id("projectNameError")).getText(), containsString("Project name must contain at least three characters"));
+		assertThat(webDriver.findElement(By.id("projectNameError")).getText(),
+				containsString("Project name must contain at least three characters"));
 		// change project name with more than 3 characters
 		newProjectName = "new name";
 		webDriver.findElement(By.id("projectName")).sendKeys(newProjectName);
 		webDriver.findElement(By.id("projectSettingSubmit")).click();
 		// check url
 		currentUrl = webDriver.getCurrentUrl();
-		assertThat(currentUrl, containsString("projectchange"));
+		assertThat(currentUrl, containsString("kanbanboard"));
 		// check new project name
 		assertThat(webDriver.findElement(By.id("projectName")).getText(), containsString(newProjectName));
 		// project setting - 2. add new member
@@ -136,11 +144,31 @@ public class SamApplicationTests {
 		assertThat(webDriver.findElement(By.id("newMemberError")).getText(), containsString("No Existing User"));
 		// add proper user
 		newMemberName = "User1";
+		webDriver.findElement(By.id("newMember")).clear();
 		webDriver.findElement(By.id("newMember")).sendKeys(newMemberName);
 		webDriver.findElement(By.id("projectSettingSubmit")).click();
 		// check url
 		currentUrl = webDriver.getCurrentUrl();
-		assertThat(currentUrl, containsString("projectchange"));
+		assertThat(currentUrl, containsString("kanbanboard"));
+		// try to create a task
+		webDriver.findElement(By.id("createTaskIcon")).click();
+		webDriver.findElement(By.id("createTaskButton")).click();
+		// check error
+		WebElement errorWrapper = webDriver.findElement(By.id("errorwrapper"));
+		assertThat(errorWrapper.getText(), containsString("Task name must contain at least three characters"));
+		assertThat(errorWrapper.getText(), containsString("Task must set due date"));
+		// now really create one
+		webDriver.findElement(By.id("createTaskIcon")).click();
+		String taskName = "task name";
+		webDriver.findElement(By.id("taskName")).sendKeys(taskName);
+		String taskDescription = "task description";
+		webDriver.findElement(By.id("taskDescription")).sendKeys(taskDescription);
+		webDriver.findElement(By.id("dueDate")).sendKeys("2016-01-01");
+		webDriver.findElement(By.id("createTaskButton")).click();
+		// check new task present
+		assertThat(webDriver.findElement(By.id("ToDo")).getText(), containsString(taskName));
+		assertThat(webDriver.findElement(By.id("ToDo")).getText(), containsString(taskDescription));
+		// HTML 5 drag and drop cannot be tested by Selenium
 	}
 
 }
