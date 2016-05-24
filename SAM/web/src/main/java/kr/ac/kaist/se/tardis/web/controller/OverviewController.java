@@ -47,7 +47,7 @@ public class OverviewController {
 			t.setProjectName(projectService.findProjectById(t.getProjectId()).get().getName());			
 		}
 		
-		model.addAttribute("taskList", tasks	);
+		model.addAttribute("taskList", tasks);
 		model.addAttribute("notificationList", notificationService.getNotificationsForUser(user.getUsername()));
 	}
 	
@@ -61,6 +61,6 @@ public class OverviewController {
 			projectService.saveProject(project);
 		}
 		fillModel(model, user);
-		return "overview";
+		return "redirect:overview";
 	}
 }
