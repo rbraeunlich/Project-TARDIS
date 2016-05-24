@@ -24,13 +24,18 @@
 	</div>
 	<div id="ToDo" class="kanban" style="float:left;"><p class="boardName">ToDo</p>
 		
-		<div class="entry" th:each="task : ${taskList}" id="${task.name}" draggable="true" ondragstart="drag(event)">
+		<div class="entry" th:each="task : ${todoTasks}" th:id="${task.id}" draggable="true" ondragstart="drag(event)">
+			<form th:id="'form'+${task.id}" class="textBlock" th:action="@{/updatestaskstatus}" method="post">
 			<div class="textBlock">
-				<p class="nameText" th:text="${task.name}" />
-				<p class="descriptionText" th:text="${task.description}" />				
-			</div>
+					<p class="nameText" th:text="${task.name}" />
+					<p class="descriptionText" th:text="${task.description}" />				
+				</div>
+				<input type="hidden" name="taskId" th:value="${task.id}"/>
+				<input type="hidden" th:id="'status'+${task.id}" name="status" th:value="${task.taskState}"/>
+				<input type="hidden" name="projectId" th:value="${task.projectId}"/>
+			</form>
 			<form action="#" th:action="@{/taskdetail}" th:object="${task}" method="get">
-					<input class="settingButton" type="image" id="${task.name} + Detail" src="../image/detail.png" />
+					<input class="settingButton" type="image" id="${task.id} + Detail" src="../image/detail.png" />
 					<input type = "hidden" name="taskId" th:value="${task.id.id}" />
 			</form>
 		</div>
@@ -70,9 +75,60 @@
 		</form>
 		
 	</div>
-	<div id="In-Progress" class="kanban" style="float:left;" ondrop="dropInProgress(event)" ondragover="allowDrop(event)"><p class="boardName">In-Progress</p></div>
-	<div id="Done" class="kanban" style="float:right;" ondrop="dropReview(event)" ondragover="allowDrop(event)"><p class="boardName">Done</p></div>	
-	<div id="Review" class="kanban" style="float:right;" ondrop="dropDone(event)" ondragover="allowDrop(event)"><p class="boardName">Review</p></div>	
+	<div id="In-Progress" class="kanban" style="float:left;" ondrop="dropInProgress(event)" ondragover="allowDrop(event)">
+		<p class="boardName">In-Progress</p>
+		<div class="entry" th:each="task : ${inProgressTasks}" th:id="${task.id}" draggable="true" ondragstart="drag(event)">
+			<form th:id="'form'+${task.id}" class="textBlock" th:action="@{/updatestaskstatus}" method="post">
+			<div class="textBlock">
+					<p class="nameText" th:text="${task.name}" />
+					<p class="descriptionText" th:text="${task.description}" />				
+				</div>
+				<input type="hidden" name="taskId" th:value="${task.id}"/>
+				<input type="hidden" th:id="'status'+${task.id}" name="status" th:value="${task.taskState}"/>
+				<input type="hidden" name="projectId" th:value="${task.projectId}"/>
+			</form>
+			<form action="#" th:action="@{/taskdetail}" th:object="${task}" method="get">
+					<input class="settingButton" type="image" id="${task.id} + Detail" src="../image/detail.png" />
+					<input type = "hidden" name="taskId" th:value="${task.id.id}" />
+			</form>
+		</div>
+	</div>
+	<div id="Done" class="kanban" style="float:right;" ondrop="dropDone(event)" ondragover="allowDrop(event)">
+		<p class="boardName">Done</p>
+		<div class="entry" th:each="task : ${doneTasks}" th:id="${task.id}" draggable="true" ondragstart="drag(event)">
+			<form th:id="'form'+${task.id}" class="textBlock" th:action="@{/updatestaskstatus}" method="post">
+			<div class="textBlock">
+					<p class="nameText" th:text="${task.name}" />
+					<p class="descriptionText" th:text="${task.description}" />				
+				</div>
+				<input type="hidden" name="taskId" th:value="${task.id}"/>
+				<input type="hidden" th:id="'status'+${task.id}" name="status" th:value="${task.taskState}"/>
+				<input type="hidden" name="projectId" th:value="${task.projectId}"/>
+			</form>
+			<form action="#" th:action="@{/taskdetail}" th:object="${task}" method="get">
+					<input class="settingButton" type="image" id="${task.id} + Detail" src="../image/detail.png" />
+					<input type = "hidden" name="taskId" th:value="${task.id.id}" />
+			</form>
+		</div>	
+	</div>	
+	<div id="Review" class="kanban" style="float:right;" ondrop="dropReview(event)" ondragover="allowDrop(event)">
+		<p class="boardName">Review</p>
+		<div class="entry" th:each="task : ${reviewTasks}" th:id="${task.id}" draggable="true" ondragstart="drag(event)">
+			<form th:id="'form'+${task.id}" class="textBlock" th:action="@{/updatestaskstatus}" method="post">
+			<div class="textBlock">
+					<p class="nameText" th:text="${task.name}" />
+					<p class="descriptionText" th:text="${task.description}" />				
+				</div>
+				<input type="hidden" name="taskId" th:value="${task.id}"/>
+				<input type="hidden" th:id="'status'+${task.id}" name="status" th:value="${task.taskState}"/>
+				<input type="hidden" name="projectId" th:value="${task.projectId}"/>
+			</form>
+			<form action="#" th:action="@{/taskdetail}" th:object="${task}" method="get">
+					<input class="settingButton" type="image" id="${task.id} + Detail" src="../image/detail.png" />
+					<input type = "hidden" name="taskId" th:value="${task.id.id}" />
+			</form>
+		</div>
+	</div>	
 </div>
 
 <div th:replace="overview :: footer"></div>
@@ -115,19 +171,34 @@ function drag(ev) {
 function dropInProgress(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
+    var elem = document.getElementById(data);
+    var formId = "form"+data;
+    var statusInputId = "status"+data;
+    document.getElementById(statusInputId).value="INPROGRESS";
+    ev.target.appendChild(elem);
+    document.forms[formId].submit();
 }
 
 function dropReview(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
+    var elem = document.getElementById(data);
+    var formId = "form"+data;
+    var statusInputId = "status"+data;
+    document.getElementById(statusInputId).value="REVIEW";
+    ev.target.appendChild(elem);
+    document.forms[formId].submit();
 }
 
 function dropDone(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
+    var elem = document.getElementById(data);
+    var formId = "form"+data;
+    var statusInputId = "status"+data;
+    document.getElementById(statusInputId).value="DONE";
+    ev.target.appendChild(elem);
+    document.forms[formId].submit();
 }
 
 </script>
