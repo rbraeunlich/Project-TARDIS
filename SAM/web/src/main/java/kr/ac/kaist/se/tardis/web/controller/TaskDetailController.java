@@ -31,9 +31,9 @@ public class TaskDetailController {
 	private ProjectService projectService;
 	@Autowired
 	private NotificationService notificationService;
-//	@Autowired
-//	private TaskNoteService taskNoteService;
-//	
+	@Autowired
+	private TaskNoteService taskNoteService;
+	
 	private void fillModel(Model model, UserDetails user, TaskId id) {
 		Task task = null;
 		Set<Task> tasks = taskService.findTasksForUser(String.valueOf(user.getUsername()));

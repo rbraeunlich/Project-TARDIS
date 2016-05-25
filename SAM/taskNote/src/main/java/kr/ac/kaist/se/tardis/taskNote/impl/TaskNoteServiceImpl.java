@@ -6,12 +6,14 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import org.springframework.stereotype.Service;
+
 import kr.ac.kaist.se.tardis.task.impl.id.TaskId;
 import kr.ac.kaist.se.tardis.taskNote.api.TaskNote;
 import kr.ac.kaist.se.tardis.taskNote.api.TaskNoteService;
 import kr.ac.kaist.se.tardis.taskNote.impl.id.TaskNoteId;
 import kr.ac.kaist.se.tardis.taskNote.impl.id.TaskNoteIdFactory;
-
+@Service
 public class TaskNoteServiceImpl implements TaskNoteService {
 	
 	// FIXME replace this set with a DTO later
