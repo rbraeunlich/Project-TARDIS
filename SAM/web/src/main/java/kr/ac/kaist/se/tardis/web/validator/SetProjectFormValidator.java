@@ -24,12 +24,16 @@ public class SetProjectFormValidator implements Validator {
 	public void validate(Object target, Errors errors) {
 		// TODO Auto-generated method stub
 		SetProjectForm setProjectForm = (SetProjectForm) target;
-		if (setProjectForm.getNewMember().length()!=0 && userService.findUserByName(setProjectForm.getNewMember()) == null) {
+		if (setProjectForm.getNewMember() != null && setProjectForm.getNewMember().length()!=0 && userService.findUserByName(setProjectForm.getNewMember()) == null) {
 			errors.rejectValue("newMember", "error.newMember.notExisting", SetProjectForm.NO_EXISITING_USER );
 		}
-		if (setProjectForm.getProjectName().length()!=0&& setProjectForm.getProjectName().length()< 3 ) {
+		if(setProjectForm.getProjectName() == null){
 			errors.rejectValue("projectName", "error.newMember.short", SetProjectForm.SHORT_PROJECT_NAME_ERROR );
 		}
+		else if (setProjectForm.getProjectName().length()< 3 ) {
+			errors.rejectValue("projectName", "error.newMember.short", SetProjectForm.SHORT_PROJECT_NAME_ERROR );
+		}
+
 	}
 
 }

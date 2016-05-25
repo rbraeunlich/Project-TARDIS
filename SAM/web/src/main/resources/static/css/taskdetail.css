@@ -9,28 +9,6 @@
 	text-align: left;
 }
 
-#taskInfo {
-	width: 45%;
-	min-height: 200px;
-	border: 1px solid red;
-	background-color: white;
-	display: table;
-	text-align :left;
-	float: left;
-	padding: 1%;
-	margin: 1%;
-}
-
-#statusInfo {
-	width: 45%;
-	min-height: 200px;
-	border: 1px solid blue;
-	background-color: white;
-	float: right;
-	text-align : center;
-	padding: 1%;
-	margin: 1%;
-}
 
 #taskBox {
 	height: auto;
@@ -45,4 +23,29 @@
 	background-color: #b3e4ff;
 	padding: 1.5%;
 	text-align: center;
+}
+
+.createTaskNoteInput {
+	width: 50%;
+}
+
+
+
+#createTaskNote {
+	width: 80%;
+	height: auto;
+	padding: 10px;
+	margin: 25px auto 25px auto;
+	border: 1px solid lightgrey;
+	background-color: white;
+	text-align: center;
+}
+
+#createTaskNoteFormWrapper {
+	display: none;
+}
+
+#createTaskNoteIcon {
+	width: 30px;
+	height: 30px;
 }

@@ -56,6 +56,11 @@
 			<artifactId>task</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>kr.ac.kaist.se.tardis</groupId>
+			<artifactId>taskNote</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 			<dependency>
 				<groupId>kr.ac.kaist.se.tardis</groupId>
 				<artifactId>persistence</artifactId>

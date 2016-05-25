@@ -31,21 +31,58 @@
 					<p th:text="'Task Name: ' + ${task.name}" />
 					<p th:text="'Task Description : ' + ${task.description}" />
 				</div>
-				<div id="statusInfo">
-					<p>This is part of contribution and status input box</p>
-
-				</div>
 			</div>
 		<p>Comments</p><p></p>
 			<div class="commentbox">
+			<div>
 				<p>Hello this is comment</p>
 			</div>
+			
+				<form id="createTaskNote" action="#" th:action="@{/addtask}" th:object="${createTaskNoteForm}" method="post">
+			<img id="createTaskNoteIcon" alt="Create icon" src="../image/create.png" onclick="showCreateTaskNoteForm()"/>
+			<input type="hidden" th:field="*{taskId}" th:value="${task.id.id}"/>
+			<div id="createTaskNoteFormWrapper">				
+				<p> 
+					Comment:        	<input id="comment" class="createTaskNoteInput" th:field="*{comment}"/>
+					
+				</p>
+				<p>
+					Progress(0~100)[%]: 	<input id="progress" class="createTaskNoteInput" th:field="*{progress}"/>
+					
+				</p>
+				<p>
+					Contribution[Hour]:			<input id="contribution" class="createTaskNoteInput" th:field="*{contribution}" />
+					
+				</p>
+				<input id="createTaskNoteButton" class="button" type="submit" value="Create TaskNote" />
+			</div>
+			
+			<div id="errorwrapper">
+			<p><b th:if="${#fields.hasErrors('comment')}" th:errors="*{comment}"></b></p>
+			<p><b th:if="${#fields.hasErrors('progress')}" th:errors="*{progress}"></b></p>  
+			<p><b th:if="${#fields.hasErrors('contribution')}" th:errors="*{contribution}"></b></p>
+			</div>			
+		</form>
+		
+			</div>
+			
+		
+		
+			
 		</div>
 	</div>
 
 	<div th:replace="overview :: footer"></div>
 
 	<script th:inline="javascript" th:src="@{js/base.js}"></script>
+	<script th:inline="javascript">
+	
 
+	function showCreateTaskNoteForm() {
+		document.getElementById("createTaskNoteFormWrapper").style.display = "block";
+		document.getElementById("createTaskNoteIcon").style.display = "none";
+	}
+
+	</script>
 </body>
 </html>

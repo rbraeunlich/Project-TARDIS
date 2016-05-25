@@ -18,7 +18,7 @@
     <form class="settingForm" action="#" th:action="@{/taskchange}" th:object="${setTaskForm}" method="post">
 
 		<input type="hidden" name="taskId" th:value ="${task.id.id}"/>
-		<input type="hidden" name="projectId" th:value="${project.id.id}"/>
+		<input type="hidden" name="projectId" th:value="${task.projectId.id}"/>
 		<p>
 				Task name: <input id="taskName" name="taskName" type="text"
 					th:value="${task.name}" /> <b

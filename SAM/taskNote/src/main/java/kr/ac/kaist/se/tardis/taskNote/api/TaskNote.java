@@ -1,8 +1,6 @@
 package kr.ac.kaist.se.tardis.taskNote.api;
 
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 import kr.ac.kaist.se.tardis.task.impl.id.TaskId;
 import kr.ac.kaist.se.tardis.taskNote.impl.Comment;
