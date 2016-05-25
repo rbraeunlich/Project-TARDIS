@@ -5,6 +5,7 @@ public class JobInfo {
 	private String taskId;
 	private String projectId;
 	private JobType jobType;
+	private String githubUrl;
 
 	public String getId() {
 		return taskId == null ? projectId : taskId;
@@ -24,6 +25,14 @@ public class JobInfo {
 
 	public void setJobType(JobType jobType) {
 		this.jobType = jobType;
+	}
+
+	public String getGithubUrl() {
+		return githubUrl;
+	}
+
+	public void setGithubUrl(String githubUrl) {
+		this.githubUrl = githubUrl;
 	}
 
 	@Override

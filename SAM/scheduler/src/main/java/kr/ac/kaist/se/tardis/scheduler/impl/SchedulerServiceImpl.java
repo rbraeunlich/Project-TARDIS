@@ -158,11 +158,49 @@ public class SchedulerServiceImpl implements SchedulerService {
 
 	private class GitHubJobBuilderImpl implements GitHubJobBuilder {
 
+		private JobInfo jobInfo; 
+		private String projectId;
+		private String githubUrl;
+		
+		public GitHubJobBuilderImpl() {
+			jobInfo = new JobInfo();
+		}
+		
+		@Override
+		public GitHubJobBuilder forRepository(String url) {
+			jobInfo.setJobType(JobType.GITHUB);
+			this.githubUrl = url;
+			return this;
+		}
+
+		@Override
+		public GitHubJobBuilder forProject(String id) {
+			jobInfo.setJobType(JobType.GITHUB);
+			this.projectId = id;
+			return this;
+		}
+
 		@Override
 		public JobInfo submit() {
-			// TODO Auto-generated method stub
-			return null;
+			JobDetail jobDetail = JobBuilder
+					.newJob(GitHubJob.class)
+					.usingJobData(GitHubJob.KEY_PROJECT_ID,
+							this.projectId)
+					.usingJobData(GitHubJob.KEY_GITHUB_URL,
+							this.githubUrl).build();
+			
+			Trigger trigger = TriggerBuilder
+					.newTrigger()
+					.forJob(jobDetail)
+					.startAt(
+							new Date()).build();
+			SchedulerServiceImpl.this.submitJob(jobDetail, trigger);
+			
+			return jobInfo;
 		}
+
+
+
 
 	}
 }
