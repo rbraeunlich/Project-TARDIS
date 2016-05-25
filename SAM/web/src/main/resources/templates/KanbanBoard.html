@@ -22,8 +22,8 @@
 
 		<p th:text="${project.description}" id="projectDescription" style="font-size:25px;word-break:break-all;margin:30px;text-align:center;"/>
 	</div>
-	<div id="ToDo" class="kanban" style="float:left;"><p class="boardName">ToDo</p>
-		
+	<div id="ToDo" class="kanban" style="float:left;"  ondrop="dropInToDo(event)" ondragover="allowDrop(event)">
+		<p class="boardName">ToDo</p>		
 		<div class="entry" th:each="task : ${todoTasks}" th:id="${task.id}" draggable="true" ondragstart="drag(event)">
 			<form th:id="'form'+${task.id}" class="textBlock" th:action="@{/updatestaskstatus}" method="post">
 			<div class="textBlock">
@@ -166,6 +166,17 @@ function allowDrop(ev) {
 
 function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function dropInToDo(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    var elem = document.getElementById(data);
+    var formId = "form"+data;
+    var statusInputId = "status"+data;
+    document.getElementById(statusInputId).value="TODO";
+    ev.target.insertBefore(elem, ev.target.childNodes[0]);
+    document.forms[formId].submit();
 }
 
 function dropInProgress(ev) {
