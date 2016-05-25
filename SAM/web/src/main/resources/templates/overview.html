@@ -44,7 +44,7 @@
 					<progress class="taskProgress" max="100" th:value="${task.taskProgress}"></progress>
 				</div>
 			</div>
-			<form action="#" th:action="@{/kanbanboard}" method="get">
+			<form class="settingForm" action="#" th:action="@{/kanbanboard}" method="get">
 				<input class="settingButton" type="image" th:id="${project.name}+Kanban" src = "../image/detail.png"/>
 				<input type="hidden" name="projectId" th:value="${project.id.id}"/>
 			</form>
@@ -78,7 +78,7 @@
 				<p class="taskDescription" th:text="${task.description}"/>
 				
 			</div>
-			<form action="#" th:action="@{/taskdetail}" th:object="${task}" method="get">
+			<form class="settingForm" action="#" th:action="@{/taskdetail}" th:object="${task}" method="get">
 				<input class="settingButton" type="image" th:id="${task.name}+Task" src = "../image/detail.png"/>
 				<input type="hidden" name="taskId" th:value="${task.id.id}"/>
 			</form>

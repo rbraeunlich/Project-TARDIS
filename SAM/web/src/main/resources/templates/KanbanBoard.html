@@ -34,7 +34,7 @@
 				<input type="hidden" th:id="'status'+${task.id}" name="status" th:value="${task.taskState}"/>
 				<input type="hidden" name="projectId" th:value="${task.projectId}"/>
 			</form>
-			<form action="#" th:action="@{/taskdetail}" th:object="${task}" method="get">
+			<form class="settingForm" action="#" th:action="@{/taskdetail}" th:object="${task}" method="get">
 					<input class="settingButton" type="image" id="${task.id} + Detail" src="../image/detail.png" />
 					<input type = "hidden" name="taskId" th:value="${task.id.id}" />
 			</form>
@@ -87,7 +87,7 @@
 				<input type="hidden" th:id="'status'+${task.id}" name="status" th:value="${task.taskState}"/>
 				<input type="hidden" name="projectId" th:value="${task.projectId}"/>
 			</form>
-			<form action="#" th:action="@{/taskdetail}" th:object="${task}" method="get">
+			<form class="settingForm" action="#" th:action="@{/taskdetail}" th:object="${task}" method="get">
 					<input class="settingButton" type="image" id="${task.id} + Detail" src="../image/detail.png" />
 					<input type = "hidden" name="taskId" th:value="${task.id.id}" />
 			</form>
@@ -105,7 +105,7 @@
 				<input type="hidden" th:id="'status'+${task.id}" name="status" th:value="${task.taskState}"/>
 				<input type="hidden" name="projectId" th:value="${task.projectId}"/>
 			</form>
-			<form action="#" th:action="@{/taskdetail}" th:object="${task}" method="get">
+			<form class="settingForm" action="#" th:action="@{/taskdetail}" th:object="${task}" method="get">
 					<input class="settingButton" type="image" id="${task.id} + Detail" src="../image/detail.png" />
 					<input type = "hidden" name="taskId" th:value="${task.id.id}" />
 			</form>
@@ -123,7 +123,7 @@
 				<input type="hidden" th:id="'status'+${task.id}" name="status" th:value="${task.taskState}"/>
 				<input type="hidden" name="projectId" th:value="${task.projectId}"/>
 			</form>
-			<form action="#" th:action="@{/taskdetail}" th:object="${task}" method="get">
+			<form class="settingForm" action="#" th:action="@{/taskdetail}" th:object="${task}" method="get">
 					<input class="settingButton" type="image" id="${task.id} + Detail" src="../image/detail.png" />
 					<input type = "hidden" name="taskId" th:value="${task.id.id}" />
 			</form>

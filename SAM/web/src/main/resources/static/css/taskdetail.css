@@ -1,26 +1,41 @@
-.taskInfo {
-	width: 390px;
+.commentbox {
+	width: 90%;
+	margin: auto;
+	min-height: 100px;
+	border: 1px solid lightgrey;
+	background-color: white;
+	display: table;
+	padding: 1%;
+	text-align: left;
+}
+
+#taskInfo {
+	width: 45%;
 	min-height: 200px;
 	border: 1px solid red;
 	background-color: white;
 	display: table;
 	text-align :left;
+	float: left;
+	padding: 1%;
+	margin: 1%;
 }
-.statusInfo {
-	width: 390px;
+
+#statusInfo {
+	width: 45%;
 	min-height: 200px;
 	border: 1px solid blue;
 	background-color: white;
-	float: bottom;
+	float: right;
 	text-align : center;
+	padding: 1%;
+	margin: 1%;
 }
-nav{
-	position: absolute;
-	margin-left: 5px;
-}
-section {
-	position: relative;
-	margin-left: 50%;
+
+#taskBox {
+	height: auto;
+	text-align: center;
+	padding: 10px;
 }
 
 #taskDetailBox {
@@ -30,15 +45,4 @@ section {
 	background-color: #b3e4ff;
 	padding: 1.5%;
 	text-align: center;
-}
-
-#commentbox {
-	width: 90%;
-	margin: auto;
-	min-height: 100px;
-	border: 1px solid grey;
-	background-color: white;
-	display: table;
-	padding-left: 2%;
-	text-align: left;
 }

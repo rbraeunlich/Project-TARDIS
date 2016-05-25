@@ -8,41 +8,36 @@
 <link rel="stylesheet" th:href="@{/css/base.css}"
 	href="../static/css/base.css" />
 </head>
-<body onresize="resizeWindow()" onpageshow="resizeWindow()">
+<body>
 
 	<div th:replace="overview :: bar"></div>
 
 	<div th:replace="overview :: heading"></div>
 
 	<div id="board" class="box">
+	
+	<div id="taskBox" class="box">
+		<form action="#" th:action="@{/taskview}" th:object="${task}" method="get" style="margin:25px;height:60px;">
+			<div th:text="'Task ' + ${task.name}" id="taskNote" style="font-size:40px;margin:15px;width:80%;float:left;position:relative;left:10%;"></div>
+			<input id="taskSetting" class = "settingButton" type="image" src = "../image/setting.png" style="float:right;"/>
+			<input type = "hidden" name = "taskId" th:value ="${task.id.id}"/>
+		</form>
+	</div>	
 		<div id="taskDetailBox">
-			<H1>Task Note</H1>
-				<form action="#" th:action="@{/taskview}" th:object="${task}" method="get">
-					<input class="settingButton" type="image" th:id="${task.name}+Task"
-						   src="../image/setting.png" /> <input type="hidden" name="taskId"
-																th:value="${task.id.id}" />
-				</form>
 			<div class="entry" id="${task.name}">
-				<nav>
-					<div class="taskInfo">
-						<p>Project Name :<span class="projectName" th:text="${task.projectName}" /></p>
-						<p>Task State: <span style="font-weight:bold" class="taskState" th:text="${task.taskState}" /></p>
-						<p>Task Name: <span class="taskNameText" th:text="${task.name}" /></p>
-						<p>Task Description: <span class="taskDescription" th:text="${task.description}" /></p>
+				<div id="taskInfo">
+					<p th:text="'Project Name : ' + ${task.projectName}"/>
+					<p th:text="'Task State : ' + ${task.taskState}" />
+					<p th:text="'Task Name: ' + ${task.name}" />
+					<p th:text="'Task Description : ' + ${task.description}" />
+				</div>
+				<div id="statusInfo">
+					<p>This is part of contribution and status input box</p>
 
-
-					</div>
-				</nav>
-				<section>
-					<div class="statusInfo">
-						<p>This is part of contribution and status input box</p>
-
-					</div>
-				</section>
+				</div>
 			</div>
-
-			<p></p><p>Comments</p><p></p>
-			<div id="commentbox">
+		<p>Comments</p><p></p>
+			<div class="commentbox">
 				<p>Hello this is comment</p>
 			</div>
 		</div>
