@@ -1,5 +1,6 @@
 package kr.ac.kaist.se.tardis.web.controller;
 
+import kr.ac.kaist.se.tardis.notification.api.NotificationService;
 import kr.ac.kaist.se.tardis.project.api.ProjectService;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
 import kr.ac.kaist.se.tardis.task.api.Task;
@@ -34,18 +35,20 @@ import java.util.Optional;
 public class TaskController {
 	@Autowired
 	private TaskService taskService;
-
 	@Autowired
 	private ProjectService projectService;
 	@Autowired
 	private SetTaskFormValidator validator;
-
+	@Autowired
+	private NotificationService notificationService;
+	
 	private void fillModel(Model model, UserDetails user, TaskId taskId, ProjectId projectId) {
 
 		model.addAttribute("username", String.valueOf(user.getUsername()));
 		model.addAttribute("task", taskService.findTaskById(taskId).get());
 		model.addAttribute("project", projectService.findProjectById(projectId).get());
 		model.addAttribute("taskList", taskService.findTaskByProjectId(projectId));
+		model.addAttribute("notificationList", notificationService.getNotificationsForUser(user.getUsername()));
 	}
 
 	@RequestMapping(value = { "/taskview" }, method = RequestMethod.GET)

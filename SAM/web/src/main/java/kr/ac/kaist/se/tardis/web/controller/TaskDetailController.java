@@ -1,9 +1,8 @@
 package kr.ac.kaist.se.tardis.web.controller;
 
-import kr.ac.kaist.se.tardis.project.api.Project;
+import kr.ac.kaist.se.tardis.notification.api.NotificationService;
 import kr.ac.kaist.se.tardis.project.api.ProjectService;
 import kr.ac.kaist.se.tardis.task.api.Task;
-import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -18,7 +17,6 @@ import kr.ac.kaist.se.tardis.task.impl.id.TaskId;
 import kr.ac.kaist.se.tardis.task.impl.id.TaskIdFactory;
 import kr.ac.kaist.se.tardis.web.form.CreateTaskForm;
 
-import java.util.Optional;
 import java.util.Set;
 
 @Controller
@@ -28,6 +26,8 @@ public class TaskDetailController {
 	private TaskService taskService;
 	@Autowired
 	private ProjectService projectService;
+	@Autowired
+	private NotificationService notificationService;
 	
 	private void fillModel(Model model, UserDetails user, TaskId id) {
 		Task task = null;
@@ -42,6 +42,7 @@ public class TaskDetailController {
 		}
 		model.addAttribute("username", String.valueOf(user.getUsername()));
 		model.addAttribute("task", task);
+		model.addAttribute("notificationList", notificationService.getNotificationsForUser(user.getUsername()));
 	}
 	
 	@RequestMapping(value = { "/taskdetail" }, method = RequestMethod.GET)

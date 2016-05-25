@@ -1,5 +1,6 @@
 package kr.ac.kaist.se.tardis.web.controller;
 
+import kr.ac.kaist.se.tardis.notification.api.NotificationService;
 import kr.ac.kaist.se.tardis.project.api.Project;
 import kr.ac.kaist.se.tardis.project.api.ProjectService;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
@@ -29,6 +30,8 @@ public class ProjectController {
 	private SetProjectFormValidator validator;
 	@Autowired
 	private ProjectService projectService;
+	@Autowired
+	private NotificationService notificationService;
 
 	@Autowired
 	private TaskService taskService;
@@ -38,6 +41,7 @@ public class ProjectController {
 		model.addAttribute("username", String.valueOf(user.getUsername()));
 		model.addAttribute("taskList", taskService.findTaskByProjectId(projectId));
 		model.addAttribute("project", projectService.findProjectById(projectId).get());
+		model.addAttribute("notificationList", notificationService.getNotificationsForUser(user.getUsername()));
 	}
 
 	@RequestMapping(value = { "/projectsettingview" }, method = RequestMethod.POST)

@@ -2,6 +2,7 @@ package kr.ac.kaist.se.tardis.web.controller;
 
 import javax.validation.Valid;
 
+import kr.ac.kaist.se.tardis.notification.api.NotificationService;
 import kr.ac.kaist.se.tardis.project.api.ProjectService;
 import kr.ac.kaist.se.tardis.web.form.CreateTaskForm;
 import kr.ac.kaist.se.tardis.web.validator.TaskFormValidator;
@@ -35,9 +36,10 @@ public class KanbanBoardController {
 	private TaskFormValidator validator;
 	@Autowired
 	private ProjectService projectService;
-
 	@Autowired
 	private TaskService taskService;
+	@Autowired
+	private NotificationService notificationService;
 
 	private void fillModel(Model model, UserDetails user, ProjectId projectId) {
 
@@ -52,6 +54,7 @@ public class KanbanBoardController {
 		model.addAttribute("doneTasks",
 				allTasks.stream().filter(t -> TaskState.DONE.equals(t.getTaskState())).collect(Collectors.toSet()));
 		model.addAttribute("project", projectService.findProjectById(projectId).get());
+		model.addAttribute("notificationList", notificationService.getNotificationsForUser(user.getUsername()));
 	}
 
 	@RequestMapping(value = { "/kanbanboard" }, method = RequestMethod.GET)
