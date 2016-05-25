@@ -33,7 +33,7 @@ public abstract class TaskNote {
 	}
 
 
-	public String gettaskNoteOwner() {
+	public String getTaskNoteOwner() {
 		return taskNoteOwner;
 	}
 

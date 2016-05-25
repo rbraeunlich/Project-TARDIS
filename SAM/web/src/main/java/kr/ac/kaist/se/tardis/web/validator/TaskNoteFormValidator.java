@@ -42,10 +42,11 @@ public class TaskNoteFormValidator implements Validator {
 		if(!emptyProgress && emptyContribution ){
 			errors.rejectValue("contribution", "error.contribution.empty", CreateTaskNoteForm.EMPTY_PROGRESS_OR_CONTRIBUTION);			
 		}
+		
 		if(!emptyProgress){
 			try {
 				int a = Integer.parseInt( taskForm.getProgress());
-				if (a>100 && a<0){
+				if (a>100 || a<0){
 					errors.rejectValue("progress", "error.progress.isnotnumber", CreateTaskNoteForm.PROGRESS_MUST_NUMBER);		
 				}
 			} catch (NumberFormatException e) {

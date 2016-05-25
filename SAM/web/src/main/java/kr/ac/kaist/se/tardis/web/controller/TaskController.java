@@ -20,6 +20,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 
@@ -94,7 +95,8 @@ public class TaskController {
 	public String taskChange(Model model, CreateTaskForm form,
 			@RequestParam(name = "taskId", required = true) String taskId, @AuthenticationPrincipal UserDetails user,
 			@Valid SetTaskForm setTaskForm, BindingResult bindingResult,
-			@RequestParam(name = "projectId", required = true) String projectId) {
+			@RequestParam(name = "projectId", required = true) String projectId,
+			RedirectAttributes redirectAttributes) {
 		TaskId id = TaskIdFactory.valueOf(taskId);
 		setTaskForm.setProjectId(projectId);
 
@@ -127,7 +129,9 @@ public class TaskController {
 			} else {
 				// TODO error case
 			}
-		return "kanbanBoard";
+			
+		redirectAttributes.addAttribute("taskId", taskId);
+		return "redirect:taskDetail";
 	}
 
 }
