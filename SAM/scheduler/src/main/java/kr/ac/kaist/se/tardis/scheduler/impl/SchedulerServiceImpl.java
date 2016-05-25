@@ -12,6 +12,7 @@ import kr.ac.kaist.se.tardis.scheduler.api.StandardNotificationBuilder;
 import org.quartz.JobBuilder;
 import org.quartz.JobDetail;
 import org.quartz.SchedulerException;
+import org.quartz.SimpleScheduleBuilder;
 import org.quartz.Trigger;
 import org.quartz.TriggerBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -192,8 +193,11 @@ public class SchedulerServiceImpl implements SchedulerService {
 			Trigger trigger = TriggerBuilder
 					.newTrigger()
 					.forJob(jobDetail)
-					.startAt(
-							new Date()).build();
+					.withSchedule(SimpleScheduleBuilder
+							.simpleSchedule()
+							.withIntervalInHours(2)
+							.repeatForever())
+					.build();
 			SchedulerServiceImpl.this.submitJob(jobDetail, trigger);
 			
 			return jobInfo;

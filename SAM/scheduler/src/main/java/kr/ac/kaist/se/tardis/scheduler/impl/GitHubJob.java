@@ -6,7 +6,9 @@ import java.net.URL;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
+import org.springframework.context.ApplicationContext;
 
+import kr.ac.kaist.se.tardis.connector.github.api.GitHubService;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
 
@@ -29,7 +31,12 @@ public class GitHubJob implements Job {
 	}
 
 	private void addNotificationToGitHub(ProjectId projectId, URL gitHubUrl) {
-		// TODO with GitHub Service
+		ApplicationContext applicationContext = ApplicationContextProvider
+				.getApplicationContext();
+		GitHubService githubService = applicationContext
+				.getBean(GitHubService.class);
+		
+		githubService.checkCommits(gitHubUrl, projectId);
 	}
 	
 }
