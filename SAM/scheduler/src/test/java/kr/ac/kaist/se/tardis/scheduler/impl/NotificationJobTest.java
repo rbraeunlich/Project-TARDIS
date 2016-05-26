@@ -25,7 +25,9 @@ import org.quartz.SchedulerException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.FilterType;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -113,7 +115,7 @@ public class NotificationJobTest {
 	}
 
 	@Configuration
-	@ComponentScan
+	@ComponentScan(excludeFilters=@Filter(type=FilterType.ASSIGNABLE_TYPE, classes={GitHubJob.class, StandardNotificationBuilderImplTest.TestConfig.class}))
 	public static class TestConfig {
 
 		private static NotificationService notificationService;
