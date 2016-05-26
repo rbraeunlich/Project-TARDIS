@@ -153,7 +153,7 @@ public class SamApplicationTests {
 		// try to create a task
 		webDriver.findElement(By.id("createTaskIcon")).click();
 		webDriver.findElement(By.id("createTaskButton")).click();
-		new WebDriverWait(webDriver, 10L).until(ExpectedConditions.presenceOfElementLocated(By.id("errorwrapper")));
+		new WebDriverWait(webDriver, 20L).until(ExpectedConditions.presenceOfElementLocated(By.id("errorwrapper")));
 		// check error
 		WebElement errorWrapper = webDriver.findElement(By.id("errorwrapper"));
 		assertThat(errorWrapper.getText(), containsString("Task name must contain at least three characters"));
