@@ -86,27 +86,9 @@ public class SetProjectFormValidatorTest {
 		verify(mockErrors).rejectValue(eq("newMember"), eq("error.newMember.notExisting"), eq(SetProjectForm.NO_EXISITING_USER));
 	}
 	
-	@Test
-	public void cannotSetNullAsProjectMember(){
-		SetProjectForm form = new SetProjectForm();
-		form.setProjectName("123");
-		form.setNewMember(null);
-		Errors mockErrors = mock(Errors.class);
-		validator.validate(form, mockErrors);
-		
-		verify(mockErrors).rejectValue(eq("newMember"), eq("error.newMember.notExisting"), eq(SetProjectForm.NO_EXISITING_USER));
-	}
+
 	
-	@Test
-	public void cannotSetEmptyStringAsProjectMember(){
-		SetProjectForm form = new SetProjectForm();
-		form.setProjectName("123");
-		form.setNewMember("");
-		Errors mockErrors = mock(Errors.class);
-		validator.validate(form, mockErrors);
-		
-		verify(mockErrors).rejectValue(eq("newMember"), eq("error.newMember.notExisting"), eq(SetProjectForm.NO_EXISITING_USER));
-	}
+
 	
 	@Test
 	public void canSetExistingUserAsProjectMember(){

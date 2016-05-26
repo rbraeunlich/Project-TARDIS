@@ -7,7 +7,6 @@ import kr.ac.kaist.se.tardis.project.api.ProjectService;
 
 import kr.ac.kaist.se.tardis.task.api.Task;
 import kr.ac.kaist.se.tardis.task.api.TaskService;
-import kr.ac.kaist.se.tardis.taskNote.api.TaskNote;
 import kr.ac.kaist.se.tardis.notification.api.NotificationService;
 
 import kr.ac.kaist.se.tardis.web.form.CreateProjectForm;
