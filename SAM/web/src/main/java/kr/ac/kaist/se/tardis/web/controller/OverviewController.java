@@ -47,9 +47,6 @@ public class OverviewController {
 		model.addAttribute("projectList", projectService.findProjectsForUser(String.valueOf(user.getUsername())));
 
 		Set<Task> tasks = taskService.findTasksForUser(String.valueOf(user.getUsername()));
-		for (Task t : tasks) {
-			t.setProjectName(projectService.findProjectById(t.getProjectId()).get().getName());
-		}
 
 		
 		List<Task> taskList =new ArrayList<Task>(tasks);

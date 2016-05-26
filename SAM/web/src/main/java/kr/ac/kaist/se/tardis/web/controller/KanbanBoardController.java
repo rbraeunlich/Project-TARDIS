@@ -90,7 +90,7 @@ public class KanbanBoardController {
 				task.setDueDate(tmp);
 			} catch (ParseException e) {
 			}
-
+			task.setProjectName(projectService.findProjectById(task.getProjectId()).get().getName());
 			taskService.saveTask(task);
 			fillModel(model, user, id);
 			redirectAttributes.addAttribute("projectId", form.getProjectId());
