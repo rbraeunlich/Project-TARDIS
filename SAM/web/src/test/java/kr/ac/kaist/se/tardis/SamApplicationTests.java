@@ -155,7 +155,7 @@ public class SamApplicationTests {
 		webDriver.findElement(By.id("createTaskIcon")).click();
 		webDriver.findElement(By.id("createTaskButton")).click();
 		assertThat( webDriver.getCurrentUrl(), containsString("kanbanboard"));
-		new WebDriverWait(webDriver, 60L).until(ExpectedConditions.presenceOfElementLocated(By.id("errorwrapper")));
+		new WebDriverWait(webDriver, 10L).until(ExpectedConditions.presenceOfElementLocated(By.id("errorwrapper")));
 	    // check error
 		WebElement errorWrapper = webDriver.findElement(By.id("errorwrapper"));
 		assertThat(errorWrapper.getText(), containsString("Task name must contain at least three characters"));

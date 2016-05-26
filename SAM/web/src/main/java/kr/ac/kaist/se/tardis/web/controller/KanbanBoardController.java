@@ -64,7 +64,7 @@ public class KanbanBoardController {
 		ProjectId id = ProjectIdFactory.valueOf(projectId);
 
 		fillModel(model, user, id);
-		return "KanbanBoard";
+		return "kanbanboard";
 	}
 
 	@RequestMapping(value = { "/kanbanboard" }, method = RequestMethod.POST)
