@@ -7,6 +7,7 @@ import static org.hamcrest.Matchers.not;
 import static org.junit.Assert.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
 
 import java.util.Set;
 
@@ -39,7 +40,8 @@ public class OverviewControllerIntegrationTest extends AbstractControllerIntegra
 			.perform(post("/overview")
 					.param("projectName", "ABC")
 					.param("description", "A neat little project"))
-			.andExpect(content().string(containsString("ABC")));
+					.andExpect(redirectedUrl("overview"))
+					.andReturn();
 		assertThat(projectService.findProjectByName("ABC"), is(not(empty())));
 	}
 	
@@ -70,7 +72,7 @@ public class OverviewControllerIntegrationTest extends AbstractControllerIntegra
 		mockMvc
 			.perform(post("/overview")
 					.param("projectName", "ABC"))
-			.andExpect(content().string(containsString("ABC")));
+			.andExpect(redirectedUrl("overview"));
 		assertThat(projectService.findProjectByName("ABC"), is(not(empty())));
 	}
 }
