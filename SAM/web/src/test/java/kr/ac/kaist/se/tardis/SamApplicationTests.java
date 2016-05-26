@@ -14,6 +14,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.boot.test.WebIntegrationTest;
@@ -102,6 +104,7 @@ public class SamApplicationTests {
 		assertThat(currentUrl, containsString("kanbanboard"));
 		assertThat(currentUrl, containsString("projectId="));
 		// check elements in Kanban Board
+		new WebDriverWait(webDriver, 10L).until(ExpectedConditions.presenceOfElementLocated(By.id("projectName")));
 		assertThat(webDriver.findElement(By.id("projectName")).getText(), containsString(projectName));
 		// project setting - 1. change project name
 		// go into project setting
@@ -114,7 +117,7 @@ public class SamApplicationTests {
 		webDriver.findElement(By.id("projectName")).clear();
 		webDriver.findElement(By.id("projectName")).sendKeys(newProjectName);
 		webDriver.findElement(By.id("projectSettingSubmit")).click();
-		Thread.sleep(50); //give it a little time to load
+		new WebDriverWait(webDriver, 10L).until(ExpectedConditions.presenceOfElementLocated(By.id("projectNameError")));
 		assertThat(webDriver.findElement(By.id("projectNameError")).getText(),
 				containsString("Project name must contain at least three characters"));
 		// change project name with more than 3 characters
@@ -137,7 +140,7 @@ public class SamApplicationTests {
 		String newMemberName = "fake";
 		webDriver.findElement(By.id("newMember")).sendKeys(newMemberName);
 		webDriver.findElement(By.id("projectSettingSubmit")).click();
-		Thread.sleep(50); //give it a little time to load
+		new WebDriverWait(webDriver, 10L).until(ExpectedConditions.presenceOfElementLocated(By.id("newMemberError")));
 		assertThat(webDriver.findElement(By.id("newMemberError")).getText(), containsString("No Existing User"));
 		// add proper user
 		newMemberName = "User1";
@@ -150,7 +153,7 @@ public class SamApplicationTests {
 		// try to create a task
 		webDriver.findElement(By.id("createTaskIcon")).click();
 		webDriver.findElement(By.id("createTaskButton")).click();
-		Thread.sleep(100); //give it a little time to load
+		new WebDriverWait(webDriver, 10L).until(ExpectedConditions.presenceOfElementLocated(By.id("errorwrapper")));
 		// check error
 		WebElement errorWrapper = webDriver.findElement(By.id("errorwrapper"));
 		assertThat(errorWrapper.getText(), containsString("Task name must contain at least three characters"));
@@ -164,7 +167,7 @@ public class SamApplicationTests {
 		webDriver.findElement(By.id("dueDate")).sendKeys("2016-01-01");
 		webDriver.findElement(By.id("createTaskButton")).click();
 		// check new task present
-		Thread.sleep(50); //give it a little time to load
+		new WebDriverWait(webDriver, 10L).until(ExpectedConditions.presenceOfElementLocated(By.id("ToDo")));
 		assertThat(webDriver.findElement(By.id("ToDo")).getText(), containsString(taskName));
 		assertThat(webDriver.findElement(By.id("ToDo")).getText(), containsString(taskDescription));
 		// HTML 5 drag and drop cannot be tested by Selenium
