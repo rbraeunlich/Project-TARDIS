@@ -5,21 +5,15 @@ import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.junit.Assert.assertThat;
 
-import java.awt.AWTException;
-import java.awt.Robot;
-
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.interactions.Action;
-import org.openqa.selenium.interactions.Actions;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.boot.test.WebIntegrationTest;
@@ -129,6 +123,7 @@ public class SamApplicationTests {
 		// check url
 		currentUrl = webDriver.getCurrentUrl();
 		assertThat(currentUrl, containsString("kanbanboard"));
+		Thread.sleep(50); //give it a little time to load
 		// check new project name
 		assertThat(webDriver.findElement(By.id("projectName")).getText(), containsString(newProjectName));
 		// project setting - 2. add new member
@@ -153,6 +148,7 @@ public class SamApplicationTests {
 		// try to create a task
 		webDriver.findElement(By.id("createTaskIcon")).click();
 		webDriver.findElement(By.id("createTaskButton")).click();
+		Thread.sleep(50); //give it a little time to load
 		// check error
 		WebElement errorWrapper = webDriver.findElement(By.id("errorwrapper"));
 		assertThat(errorWrapper.getText(), containsString("Task name must contain at least three characters"));
