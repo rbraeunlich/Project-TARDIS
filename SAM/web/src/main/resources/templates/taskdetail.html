@@ -33,18 +33,12 @@
 				</div>
 			</div>
 		<p>Comments</p><p></p>
-			<div class="commentbox">
-		
-			
-			
-		<div th:each="taskNote : ${taskNoteList}" class="entry" id="${taskNote.name}">
-			<div class="taskNoteTextBlock">
-				<p class="taskNoteDate" th:text="${#dates.format(taskNote.writeDate,'yyyy-MM-dd hh-mm-ss')}"/>
-				<p class="taskNoteOwner" th:text="${taskNote.taskNoteOwner}"/>
-				<p class="taskNoteContent" th:text="${taskNote.content}"/>
+		<div class="commentbox">
+			<div th:each="taskNote : ${taskNoteList}" class="taskNoteTextBlock" id="${taskNote.name}">
+				<p class="taskNoteDate" th:text="${#dates.format(taskNote.writeDate,'yyyy-MM-dd hh:mm:ss')}"/>
+				<p><span class="taskNoteOwner" th:text="${taskNote.taskNoteOwner}"/> <i><b>said&nbsp;&nbsp;&nbsp;&nbsp;</b></i><span class="taskNoteContent" th:text="${taskNote.content}"/></p>
+
 			</div>
-		</div>
-			
 				<form id="createTaskNote" action="#" th:action="@{/addtask}" th:object="${createTaskNoteForm}" method="post">
 			<img id="createTaskNoteIcon" alt="Create icon" src="../image/create.png" onclick="showCreateTaskNoteForm()"/>
 			<input type="hidden" th:field="*{taskId}" th:value="${task.id.id}"/>
