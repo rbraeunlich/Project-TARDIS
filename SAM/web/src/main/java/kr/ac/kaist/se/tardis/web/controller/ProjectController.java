@@ -99,16 +99,22 @@ public class ProjectController {
 			Project changedProject = optional.get();
 			changedProject.setName(setProjectForm.getProjectName());
 			changedProject.setDescription(setProjectForm.getDescription());
-			changedProject.addProjectMember(setProjectForm.getNewMember());
+			String newMember = setProjectForm.getNewMember();
+			if (newMember != null && !newMember.trim().isEmpty()) {
+				changedProject.addProjectMember(newMember);
+			}
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 			Date projectDueDate = null;
 			try {
-				projectDueDate = dateFormat.parse(setProjectForm.getDueDate());
-				changedProject.setDueDate(projectDueDate);
+				String dueDate = setProjectForm.getDueDate();
+				if (dueDate != null && !dueDate.trim().isEmpty()) {
+					projectDueDate = dateFormat.parse(dueDate);
+					changedProject.setDueDate(projectDueDate);
+					changedProject = createAndDeleteJobsForProject(changedProject, setProjectForm, projectDueDate);
+				}
 			} catch (ParseException e) {
 				throw new RuntimeException(e);
 			}
-			changedProject = createAndDeleteJobsForProject(changedProject, setProjectForm, projectDueDate);
 			projectService.saveProject(changedProject);
 
 			fillModel(model, user, id);
@@ -125,11 +131,13 @@ public class ProjectController {
 	 * 
 	 * @param changedProject
 	 * @param setProjectForm
-	 * @param projectDueDate 
-	 * @return 
+	 * @param projectDueDate
+	 * @return
 	 */
-	private Project createAndDeleteJobsForProject(Project changedProject, FormWithNotification setProjectForm, Date projectDueDate) {
-		return JobHelper.createAndDeleteJobsForProject(schedulerService, changedProject, setProjectForm, projectDueDate);
+	private Project createAndDeleteJobsForProject(Project changedProject, FormWithNotification setProjectForm,
+			Date projectDueDate) {
+		return JobHelper.createAndDeleteJobsForProject(schedulerService, changedProject, setProjectForm,
+				projectDueDate);
 	}
 
 }

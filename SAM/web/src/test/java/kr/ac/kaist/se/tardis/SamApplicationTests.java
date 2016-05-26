@@ -114,6 +114,7 @@ public class SamApplicationTests {
 		webDriver.findElement(By.id("projectName")).clear();
 		webDriver.findElement(By.id("projectName")).sendKeys(newProjectName);
 		webDriver.findElement(By.id("projectSettingSubmit")).click();
+		Thread.sleep(50); //give it a little time to load
 		assertThat(webDriver.findElement(By.id("projectNameError")).getText(),
 				containsString("Project name must contain at least three characters"));
 		// change project name with more than 3 characters
@@ -136,6 +137,7 @@ public class SamApplicationTests {
 		String newMemberName = "fake";
 		webDriver.findElement(By.id("newMember")).sendKeys(newMemberName);
 		webDriver.findElement(By.id("projectSettingSubmit")).click();
+		Thread.sleep(50); //give it a little time to load
 		assertThat(webDriver.findElement(By.id("newMemberError")).getText(), containsString("No Existing User"));
 		// add proper user
 		newMemberName = "User1";
@@ -162,6 +164,7 @@ public class SamApplicationTests {
 		webDriver.findElement(By.id("dueDate")).sendKeys("2016-01-01");
 		webDriver.findElement(By.id("createTaskButton")).click();
 		// check new task present
+		Thread.sleep(50); //give it a little time to load
 		assertThat(webDriver.findElement(By.id("ToDo")).getText(), containsString(taskName));
 		assertThat(webDriver.findElement(By.id("ToDo")).getText(), containsString(taskDescription));
 		// HTML 5 drag and drop cannot be tested by Selenium
