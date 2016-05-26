@@ -107,7 +107,8 @@ public class TaskDetailController {
 		fillModel(model, user, id);
 
 		if (bindingResult.hasErrors()) {
-			return "forward:taskDetail";
+			//return "forward:taskDetail";
+			return "taskDetail";
 		}
 		TaskId taskid = TaskIdFactory.valueOf(taskId);
 		if (createTaskNoteForm.getComment() != null &&createTaskNoteForm.getComment().length()!=0) {
