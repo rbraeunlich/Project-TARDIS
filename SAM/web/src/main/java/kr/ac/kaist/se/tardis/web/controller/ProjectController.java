@@ -1,14 +1,11 @@
 package kr.ac.kaist.se.tardis.web.controller;
 
-import kr.ac.kaist.se.tardis.notification.api.NotificationService;
-import kr.ac.kaist.se.tardis.project.api.Project;
-import kr.ac.kaist.se.tardis.project.api.ProjectService;
-import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
-import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
-import kr.ac.kaist.se.tardis.task.api.TaskService;
-import kr.ac.kaist.se.tardis.web.form.CreateTaskForm;
-import kr.ac.kaist.se.tardis.web.form.SetProjectForm;
-import kr.ac.kaist.se.tardis.web.validator.SetProjectFormValidator;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Optional;
+
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -21,8 +18,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.validation.Valid;
-import java.util.Optional;
+import kr.ac.kaist.se.tardis.notification.api.NotificationService;
+import kr.ac.kaist.se.tardis.project.api.Project;
+import kr.ac.kaist.se.tardis.project.api.ProjectService;
+import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
+import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
+import kr.ac.kaist.se.tardis.scheduler.api.SchedulerService;
+import kr.ac.kaist.se.tardis.task.api.TaskService;
+import kr.ac.kaist.se.tardis.web.form.CreateTaskForm;
+import kr.ac.kaist.se.tardis.web.form.FormWithNotification;
+import kr.ac.kaist.se.tardis.web.form.SetProjectForm;
+import kr.ac.kaist.se.tardis.web.validator.SetProjectFormValidator;
 
 @Controller
 public class ProjectController {
@@ -35,6 +41,9 @@ public class ProjectController {
 
 	@Autowired
 	private TaskService taskService;
+
+	@Autowired
+	private SchedulerService schedulerService;
 
 	private void fillModel(Model model, UserDetails user, ProjectId projectId) {
 
@@ -88,13 +97,18 @@ public class ProjectController {
 		if (optional.isPresent()) {
 			// TODO update features
 			Project changedProject = optional.get();
-			if (setProjectForm.getProjectName().length() != 0)
-				changedProject.setName(setProjectForm.getProjectName());
-			if (setProjectForm.getDescription().length() != 0)
-				changedProject.setDescription(setProjectForm.getDescription());
-			if (setProjectForm.getNewMember().length() != 0)
-				changedProject.addProjectMember(setProjectForm.getNewMember());
-
+			changedProject.setName(setProjectForm.getProjectName());
+			changedProject.setDescription(setProjectForm.getDescription());
+			changedProject.addProjectMember(setProjectForm.getNewMember());
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+			Date projectDueDate = null;
+			try {
+				projectDueDate = dateFormat.parse(setProjectForm.getDueDate());
+				changedProject.setDueDate(projectDueDate);
+			} catch (ParseException e) {
+				throw new RuntimeException(e);
+			}
+			changedProject = createAndDeleteJobsForProject(changedProject, setProjectForm, projectDueDate);
 			projectService.saveProject(changedProject);
 
 			fillModel(model, user, id);
@@ -103,6 +117,19 @@ public class ProjectController {
 		}
 		redirectAttributes.addAttribute("projectId", form.getProjectId());
 		return "redirect:kanbanboard";
+	}
+
+	/**
+	 * Depending on how the checkboxes were changed, the notifications for a
+	 * project must either be added or removed.
+	 * 
+	 * @param changedProject
+	 * @param setProjectForm
+	 * @param projectDueDate 
+	 * @return 
+	 */
+	private Project createAndDeleteJobsForProject(Project changedProject, FormWithNotification setProjectForm, Date projectDueDate) {
+		return JobHelper.createAndDeleteJobsForProject(schedulerService, changedProject, setProjectForm, projectDueDate);
 	}
 
 }

@@ -15,6 +15,7 @@ import org.quartz.SchedulerException;
 import org.quartz.SimpleScheduleBuilder;
 import org.quartz.Trigger;
 import org.quartz.TriggerBuilder;
+import org.quartz.TriggerKey;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -42,6 +43,18 @@ public class SchedulerServiceImpl implements SchedulerService {
 		}
 	}
 
+	@Override
+	public void deleteJob(JobInfo jobInfo) {
+		String[] split = jobInfo.getTriggerId().split(".");
+		String group = split[0];
+		String name = split[1];
+		try {
+			schedulerWrapper.getScheduler().unscheduleJob(TriggerKey.triggerKey(name, group));
+		} catch (SchedulerException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
 	private class StandardNotificationBuilderImpl implements
 			StandardNotificationBuilder {
 
@@ -207,4 +220,5 @@ public class SchedulerServiceImpl implements SchedulerService {
 
 
 	}
+
 }

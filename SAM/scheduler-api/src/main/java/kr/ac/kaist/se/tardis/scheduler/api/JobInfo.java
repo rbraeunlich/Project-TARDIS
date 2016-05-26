@@ -6,6 +6,10 @@ public class JobInfo {
 	private String projectId;
 	private JobType jobType;
 	private String githubUrl;
+	/**
+	 * The id Quartz gave the trigger of this job this info represents;
+	 */
+	private String triggerId;
 
 	public String getId() {
 		return taskId == null ? projectId : taskId;
@@ -35,6 +39,14 @@ public class JobInfo {
 		this.githubUrl = githubUrl;
 	}
 
+	public void setTriggerId(String id){
+		this.triggerId = id;
+	}
+	
+	public String getTriggerId(){
+		return triggerId;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

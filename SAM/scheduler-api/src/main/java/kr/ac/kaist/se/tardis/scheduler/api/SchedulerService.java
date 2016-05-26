@@ -5,5 +5,7 @@ public interface SchedulerService {
 	GitHubJobBuilder createGitHubJobBuilder();
 	
 	StandardNotificationBuilder createNotificationBuilder();
+
+	void deleteJob(JobInfo jobInfo);
 	
 }
