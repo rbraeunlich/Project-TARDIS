@@ -14,6 +14,21 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Optional;
 
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.ArgumentCaptor;
+import org.quartz.JobExecutionContext;
+import org.quartz.JobExecutionException;
+import org.quartz.Scheduler;
+import org.quartz.SchedulerContext;
+import org.quartz.SchedulerException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
 import kr.ac.kaist.se.tardis.notification.api.NotificationService;
 import kr.ac.kaist.se.tardis.project.api.Project;
 import kr.ac.kaist.se.tardis.project.api.ProjectService;
@@ -21,19 +36,6 @@ import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
 import kr.ac.kaist.se.tardis.task.api.Task;
 import kr.ac.kaist.se.tardis.task.api.TaskService;
 import kr.ac.kaist.se.tardis.task.impl.id.TaskIdFactory;
-
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.ArgumentCaptor;
-import org.quartz.JobExecutionContext;
-import org.quartz.JobExecutionException;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = NotificationJobTest.TestConfig.class)
@@ -58,11 +60,16 @@ public class NotificationJobTest {
 	private static final String PROJECT_MEMBER_1 = "Bob";
 
 	private static final String PROJECT_MEMBER_2 = "Dave";
+	
+	@Autowired
+	private Scheduler scheduler;
+	
+	@Autowired
+	private NotificationJob notificationJob;
 
 	@Test
 	public void jobShouldCreateNotificationForTaskOwner()
 			throws JobExecutionException {
-		NotificationJob notificationJob = new NotificationJob();
 		JobExecutionContext jobExecutionContext = mock(JobExecutionContext.class);
 		when(jobExecutionContext.get(NotificationJob.KEY_ID)).thenReturn(
 				TASK_ID);
@@ -70,6 +77,7 @@ public class NotificationJobTest {
 				NotificationJob.VALUE_TASK);
 		when(jobExecutionContext.get(NotificationJob.KEY_DUE_DATE)).thenReturn(
 				DUE_DATE.getTime());
+		when(jobExecutionContext.getScheduler()).thenReturn(scheduler);
 		notificationJob.execute(jobExecutionContext);
 		
 		verify(TestConfig.notificationService, atLeastOnce()).createNotification(TestConfig.usernameCaptor.capture(),
@@ -84,7 +92,6 @@ public class NotificationJobTest {
 	@Test
 	public void jobShouldCreateNotificationForAllProjectMembers()
 			throws JobExecutionException {
-		NotificationJob notificationJob = new NotificationJob();
 		JobExecutionContext jobExecutionContext = mock(JobExecutionContext.class);
 		when(jobExecutionContext.get(NotificationJob.KEY_ID)).thenReturn(
 				PROJECT_ID);
@@ -92,6 +99,7 @@ public class NotificationJobTest {
 				NotificationJob.VALUE_PROJECT);
 		when(jobExecutionContext.get(NotificationJob.KEY_DUE_DATE)).thenReturn(
 				DUE_DATE.getTime());
+		when(jobExecutionContext.getScheduler()).thenReturn(scheduler);
 		notificationJob.execute(jobExecutionContext);
 
 		verify(TestConfig.notificationService, atLeastOnce()).createNotification(TestConfig.usernameCaptor.capture(),
@@ -109,9 +117,6 @@ public class NotificationJobTest {
 	public static class TestConfig {
 
 		private static NotificationService notificationService;
-
-		@Autowired
-		private ApplicationContext appContext;
 		
 		private static ArgumentCaptor<String> usernameCaptor;
 
@@ -157,10 +162,14 @@ public class NotificationJobTest {
 		}
 		
 		@Bean
-		public ApplicationContextProvider createAppContextProvider(){
-			ApplicationContextProvider applicationContextProvider = new ApplicationContextProvider();
-			applicationContextProvider.setApplicationContext(appContext);
-			return applicationContextProvider;
+		public Scheduler createMockScheduler(){
+			Scheduler schedulerMock = mock(Scheduler.class);
+			try {
+				when(schedulerMock.getContext()).thenReturn(new SchedulerContext());
+			} catch (SchedulerException e) {
+				e.printStackTrace();
+			}
+			return schedulerMock;
 		}
 	}
 

@@ -11,6 +11,7 @@ import kr.ac.kaist.se.tardis.scheduler.api.StandardNotificationBuilder;
 
 import org.quartz.JobBuilder;
 import org.quartz.JobDetail;
+import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
 import org.quartz.SimpleScheduleBuilder;
 import org.quartz.Trigger;
@@ -23,7 +24,7 @@ import org.springframework.stereotype.Service;
 public class SchedulerServiceImpl implements SchedulerService {
 
 	@Autowired
-	private SchedulerWrapper schedulerWrapper;
+	private Scheduler scheduler;
 
 	@Override
 	public GitHubJobBuilder createGitHubJobBuilder() {
@@ -37,7 +38,7 @@ public class SchedulerServiceImpl implements SchedulerService {
 
 	private void submitJob(JobDetail jobDetail, Trigger trigger) {
 		try {
-			schedulerWrapper.getScheduler().scheduleJob(jobDetail, trigger);
+			scheduler.scheduleJob(jobDetail, trigger);
 		} catch (SchedulerException e) {
 			throw new RuntimeException(e);
 		}
@@ -49,7 +50,7 @@ public class SchedulerServiceImpl implements SchedulerService {
 		String group = split[0];
 		String name = split[1];
 		try {
-			schedulerWrapper.getScheduler().unscheduleJob(TriggerKey.triggerKey(name, group));
+			scheduler.unscheduleJob(TriggerKey.triggerKey(name, group));
 		} catch (SchedulerException e) {
 			throw new RuntimeException(e);
 		}

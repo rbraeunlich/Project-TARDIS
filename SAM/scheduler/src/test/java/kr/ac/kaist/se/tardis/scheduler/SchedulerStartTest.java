@@ -5,10 +5,9 @@ import static org.junit.Assert.assertThat;
 
 import javax.sql.DataSource;
 
-import kr.ac.kaist.se.tardis.scheduler.impl.SchedulerWrapper;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -24,11 +23,11 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class SchedulerStartTest {
 	
 	@Autowired
-	private SchedulerWrapper wrapper;
+	private Scheduler scheduler;
 	
 	@Test
 	public void schedulerHasBeenStarted() throws SchedulerException{
-		assertThat(wrapper.getScheduler().isStarted(), is(true));
+		assertThat(scheduler.isStarted(), is(true));
 	}
 	
 	@Configuration
