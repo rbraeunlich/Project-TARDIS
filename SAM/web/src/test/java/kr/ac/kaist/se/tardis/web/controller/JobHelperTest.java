@@ -81,6 +81,7 @@ public class JobHelperTest {
 	public void doNotDeleteExistingJob(){
 		SchedulerService schedulerService = mock(SchedulerService.class);
 		FormWithNotification form = new FormWithNotification();
+		form.setOneDayNotification(true);
 		Project projectMock = mock(Project.class);
 		JobInfo jobInfo = new JobInfo();
 		jobInfo.setJobType(JobType.ONE_DAY);
