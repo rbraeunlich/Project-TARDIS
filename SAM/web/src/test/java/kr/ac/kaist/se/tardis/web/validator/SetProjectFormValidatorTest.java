@@ -86,10 +86,6 @@ public class SetProjectFormValidatorTest {
 		verify(mockErrors).rejectValue(eq("newMember"), eq("error.newMember.notExisting"), eq(SetProjectForm.NO_EXISITING_USER));
 	}
 	
-
-	
-
-	
 	@Test
 	public void canSetExistingUserAsProjectMember(){
 		SetProjectForm form = new SetProjectForm();

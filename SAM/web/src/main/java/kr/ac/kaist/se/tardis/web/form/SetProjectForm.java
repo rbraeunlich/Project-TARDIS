@@ -6,6 +6,7 @@ public class SetProjectForm extends FormWithNotification {
 
 	public static final String SHORT_PROJECT_NAME_ERROR = "Project name must contain at least three characters";
 	public static final String NO_EXISITING_USER = "No Existing User";
+	public static final String NOTIFICATION_WITHOUT_DUE_DATE = "To set notifications, a due date must be picked";
 	
 	private String projectName;
 	private String description;
