@@ -21,6 +21,7 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.boot.test.WebIntegrationTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+
 /**
  * This test requires an installed Firefox browser on your PC!
  *
@@ -154,8 +155,8 @@ public class SamApplicationTests {
 		webDriver.findElement(By.id("createTaskIcon")).click();
 		webDriver.findElement(By.id("createTaskButton")).click();
 		assertThat( webDriver.getCurrentUrl(), containsString("kanbanboard"));
-		new WebDriverWait(webDriver, 10L).until(ExpectedConditions.presenceOfElementLocated(By.id("errorwrapper")));
-		// check error
+		new WebDriverWait(webDriver, 60L).until(ExpectedConditions.presenceOfElementLocated(By.id("errorwrapper")));
+	    // check error
 		WebElement errorWrapper = webDriver.findElement(By.id("errorwrapper"));
 		assertThat(errorWrapper.getText(), containsString("Task name must contain at least three characters"));
 		assertThat(errorWrapper.getText(), containsString("Task must set due date"));
