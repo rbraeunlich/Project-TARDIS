@@ -153,6 +153,7 @@ public class SamApplicationTests {
 		// try to create a task
 		webDriver.findElement(By.id("createTaskIcon")).click();
 		webDriver.findElement(By.id("createTaskButton")).click();
+		assertThat( webDriver.getCurrentUrl(), containsString("kanbanboard"));
 		new WebDriverWait(webDriver, 10L).until(ExpectedConditions.presenceOfElementLocated(By.id("errorwrapper")));
 		// check error
 		WebElement errorWrapper = webDriver.findElement(By.id("errorwrapper"));
