@@ -6,6 +6,14 @@
 <link rel="stylesheet" th:href="@{/css/settingview.css}"
 	href="../static/css/settingview.css" />
 	<link rel="stylesheet" th:href="@{/css/base.css}" href="../static/css/base.css" />
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"/>
+  	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+ 	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+ 	<script type="text/javascript">
+ 	$(function() {
+    	$( "#projectDueDate" ).datepicker({ dateFormat: "yy-mm-dd" }).val();
+  	});
+ 	</script>
 </head>
 <body>
 	<div th:replace="overview :: bar"></div>
@@ -21,22 +29,33 @@
 
 	<form action="#" th:action="@{/projectchange}" th:object="${setProjectForm}" method="post">
 		<input type="hidden" name="projectId" th:value="${project.id.id}" />
-		<p>
-			New Project name: <input id="projectName" name="projectName" type="text"
-				th:value="${project.name}" /> <b id="projectNameError"
-				th:if="${#fields.hasErrors('projectName')}"
-				th:errors="*{projectName}">Project name error</b>
-		</p>
-		<p>
-			New Description: <input id="description" name="description" type="text"
-				th:value="${project.description}" />
-		</p>
-		<p>
-			New Member: <input id="newMember" name="newMember" type="text"
-				th:value="*{newMember}" /> <b id="newMemberError"
-				th:if="${#fields.hasErrors('newMember')}" th:errors="*{newMember}">Member
-				error</b>
-		</p>
+		<div id="infos">
+			<p>
+				New Project name: <input id="projectName" class="infoInput" name="projectName" type="text"
+					th:value="${project.name}" /> <b id="projectNameError"
+					th:if="${#fields.hasErrors('projectName')}"
+					th:errors="*{projectName}">Project name error</b>
+			</p>
+			<p>
+				New Description: <input id="description" class="infoInput" name="description" type="text"
+					th:value="${project.description}" />
+			</p>
+			<p>
+				New Member: <input id="newMember" class="infoInput" name="newMember" type="text"
+					th:value="*{newMember}" /> <b id="newMemberError"
+					th:if="${#fields.hasErrors('newMember')}" th:errors="*{newMember}">Member
+					error</b>
+			</p>
+		</div>
+		<div id="notifications">
+			Project due date:
+			<input type="text" id="projectDueDate" name="projectDueDate" th:value="${project.dueDate}"/>
+			<b th:if="${#fields.hasErrors('projectDueDate')}" th:errors="*{projectDueDate}"></b>
+			Notifications:
+			<input type="checkbox" id="oneDayNotification" name="oneDayNotification"/>One day earlier
+			<input type="checkbox" id="threeDayNotification" name="threeDayNotification"/>Three days earlier
+			<input type="checkbox" id="sevenDayNotification" name="sevenDayNotification"/>Seven days earlier
+		</div>
 		<p>
 			<button id="projectSettingSubmit" name="action" type="submit" value="submit">Submit</button>
 		</p>

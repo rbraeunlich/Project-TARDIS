@@ -10,3 +10,16 @@
 	border: 1px solid grey;
 	text-align: center;
 }
+
+#infos {
+	width: 30%;
+}
+
+.infoInput {
+	text-align: right;
+}
+
+#notifications {
+	text-align: right;
+	width: 50%;
+}
