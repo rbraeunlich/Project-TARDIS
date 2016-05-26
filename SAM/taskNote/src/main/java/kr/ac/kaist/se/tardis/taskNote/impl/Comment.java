@@ -9,8 +9,8 @@ import kr.ac.kaist.se.tardis.taskNote.impl.id.TaskNoteId;
 public class Comment extends TaskNote {
 	String comment;
 
-	public Comment(TaskNoteId id, TaskId taskId, String taskNoteOwner, Date writeDate,String comment) {
-		super(id, taskId, taskNoteOwner, writeDate);
+	public Comment(TaskNoteId id, TaskId taskId, String author, Date writeDate,String comment) {
+		super(id, taskId, author, writeDate);
 		this.comment = comment;
 	}
 	public String getContent(){

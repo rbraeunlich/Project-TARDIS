@@ -10,8 +10,8 @@ public class Contribution extends TaskNote {
 	int progress;
 	int contribution;
 
-	public Contribution(TaskNoteId id, TaskId taskId, String taskNoteOwner, Date writeDate,int progress, int contributioin) {
-		super(id, taskId, taskNoteOwner, writeDate);
+	public Contribution(TaskNoteId id, TaskId taskId, String author, Date writeDate,int progress, int contributioin) {
+		super(id, taskId, author, writeDate);
 		this.progress=progress;
 		this.contribution=contributioin;
 	}
