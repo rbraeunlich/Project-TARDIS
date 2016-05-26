@@ -20,17 +20,17 @@ public class TaskNoteServiceImpl implements TaskNoteService {
 	private Set<TaskNote> taskNotes = new HashSet<>();
 	
 	@Override
-	public TaskNote createComment(TaskId taskId, String taskNoteOwner, Date writeDate, String comment) {
+	public TaskNote createComment(TaskId taskId, String author, Date writeDate, String comment) {
 		TaskNoteId taskNoteId = TaskNoteIdFactory.generateTaskNoteId();
-		TaskNote t = new Comment(taskNoteId, taskId, taskNoteOwner, writeDate, comment);
+		TaskNote t = new Comment(taskNoteId, taskId, author, writeDate, comment);
 		return t;
 	}
 
 	@Override
-	public TaskNote createContribution(TaskId taskId, String taskNoteOwner, Date writeDate, int progress,
+	public TaskNote createContribution(TaskId taskId, String author, Date writeDate, int progress,
 			int contributioin) {
 		TaskNoteId taskNoteId = TaskNoteIdFactory.generateTaskNoteId();
-		TaskNote t = new Contribution(taskNoteId, taskId, taskNoteOwner, writeDate, progress, contributioin);
+		TaskNote t = new Contribution(taskNoteId, taskId, author, writeDate, progress, contributioin);
 		return t;
 	}
 

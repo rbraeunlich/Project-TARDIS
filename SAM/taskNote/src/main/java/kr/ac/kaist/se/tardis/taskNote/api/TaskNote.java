@@ -11,13 +11,13 @@ public abstract class TaskNote {
 	
 	private TaskNoteId id;
 	private TaskId taskId;
-	private String taskNoteOwner;
+	private String author;
 	private Date writeDate;
 	
-	protected TaskNote(TaskNoteId id,TaskId taskId, String taskNoteOwner, Date writeDate){
+	protected TaskNote(TaskNoteId id,TaskId taskId, String author, Date writeDate){
 		this.id =id;
 		this.taskId = taskId;
-		this.taskNoteOwner = taskNoteOwner;
+		this.author = author;
 		this.writeDate = writeDate;
 	}
 
@@ -33,8 +33,8 @@ public abstract class TaskNote {
 	}
 
 
-	public String getTaskNoteOwner() {
-		return taskNoteOwner;
+	public String getAuthor() {
+		return author;
 	}
 
 	public Date getWriteDate() {
@@ -74,7 +74,7 @@ public abstract class TaskNote {
 		else if(this instanceof Contribution)
 			type = "Contribution";
 		
-		return "TaskNote [id=" + id + ",type=" + type +",task id=" + taskId +  ", owner=" + taskNoteOwner + ", writeDate="
+		return "TaskNote [id=" + id + ",type=" + type +",task id=" + taskId +  ", owner=" + author + ", writeDate="
 				+ writeDate + ", content=" + getContent() + "]";
 	}
 
