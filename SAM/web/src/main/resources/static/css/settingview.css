@@ -3,6 +3,15 @@
 	margin: auto;
 }
 
+.infoInput {
+	text-align: right;
+}
+
+.configurationButton {
+	float: bottom;
+	clear: right;
+}
+
 #board {
 	width: 78%;
 	padding: 1%;
@@ -11,15 +20,19 @@
 	text-align: center;
 }
 
-#infos {
-	width: 30%;
+#configurations {
+	width: 70%;
+	overflow: hidden;
+	height: auto;
+	margin: 2% auto 1% auto;
 }
 
-.infoInput {
-	text-align: right;
+#infos {
+	width: 49%;
+	float: left;
 }
 
 #notifications {
-	text-align: right;
-	width: 50%;
+	float: right;
+	width: 49%;
 }

@@ -20,50 +20,54 @@
 
 	<div th:replace="overview :: heading"></div>
 <div id="board" class="box">
-	<H1>Project Setting</H1>
-		<!-- for now, I make this line as a comment. I did not decide yet to delete.
-		<div>Project Member</div>
-		<div th:each="m : ${project.projectMembers}" th:value="${m}"
-			th:text="${m}"></div>
-		-->
-
 	<form action="#" th:action="@{/projectchange}" th:object="${setProjectForm}" method="post">
-		<input type="hidden" name="projectId" th:value="${project.id.id}" />
-		<div id="infos">
-			<p>
-				New Project name: <input id="projectName" class="infoInput" name="projectName" type="text"
-					th:value="${project.name}" /> <b id="projectNameError"
-					th:if="${#fields.hasErrors('projectName')}"
-					th:errors="*{projectName}">Project name error</b>
-			</p>
-			<p>
-				New Description: <input id="description" class="infoInput" name="description" type="text"
-					th:value="${project.description}" />
-			</p>
-			<p>
-				New Member: <input id="newMember" class="infoInput" name="newMember" type="text"
-					th:value="*{newMember}" /> <b id="newMemberError"
-					th:if="${#fields.hasErrors('newMember')}" th:errors="*{newMember}">Member
-					error</b>
-			</p>
+		<div style="text-align:center;">
+			<H1>Project Setting</H1>
 		</div>
-		<div id="notifications">
-			Project due date:
-			<input type="text" id="projectDueDate" name="projectDueDate" th:value="${project.dueDate}"/>
-			<b th:if="${#fields.hasErrors('projectDueDate')}" th:errors="*{projectDueDate}"></b>
-			Notifications:
-			<input type="checkbox" id="oneDayNotification" name="oneDayNotification"/>One day earlier
-			<input type="checkbox" id="threeDayNotification" name="threeDayNotification"/>Three days earlier
-			<input type="checkbox" id="sevenDayNotification" name="sevenDayNotification"/>Seven days earlier
+			<!-- for now, I make this line as a comment. I did not decide yet to delete.
+			<div>Project Member</div>
+			<div th:each="m : ${project.projectMembers}" th:value="${m}"
+				th:text="${m}"></div>
+			-->
+	
+		<input type="hidden" name="projectId" th:value="${project.id.id}" />
+		<div id="configurations">
+			<div id="infos">
+				<p>
+					New Project name: <input id="projectName" class="infoInput" name="projectName" type="text"
+						th:value="${project.name}" /> <b id="projectNameError"
+						th:if="${#fields.hasErrors('projectName')}"
+						th:errors="*{projectName}">Project name error</b>
+				</p>
+				<p>
+					New Description: <input id="description" class="infoInput" name="description" type="text"
+						th:value="${project.description}" />
+				</p>
+				<p>
+					New Member: <input id="newMember" class="infoInput" name="newMember" type="text"
+						th:value="*{newMember}" /> <b id="newMemberError"
+						th:if="${#fields.hasErrors('newMember')}" th:errors="*{newMember}">Member
+						error</b>
+				</p>
+			</div>
+			<div id="notifications">
+				<p>Project due date:
+				<input type="text" id="projectDueDate" name="projectDueDate" th:value="${project.dueDate}"/>
+				<b th:if="${#fields.hasErrors('projectDueDate')}" th:errors="*{projectDueDate}"></b></p>
+				<p>Notifications:</p>
+				<p><input type="checkbox" id="oneDayNotification" name="oneDayNotification"/>One day earlier</p>
+				<p><input type="checkbox" id="threeDayNotification" name="threeDayNotification"/>Three days earlier</p>
+				<p><input type="checkbox" id="sevenDayNotification" name="sevenDayNotification"/>Seven days earlier</p>
+			</div>
 		</div>
 		<p>
-			<button id="projectSettingSubmit" name="action" type="submit" value="submit">Submit</button>
+			<button class="configurationButton" id="projectSettingSubmit" name="action" type="submit" value="submit">Submit</button>
 		</p>
 
 	</form>
 	
 	<form action="#" th:action="@{/kanbanboard}" method="get">
-		<button name="action" type="submit" value="submit">Cancel</button>
+		<button class="configurationButton" name="action" type="submit" value="submit">Cancel</button>
 		<input type="hidden" name="projectId" th:value="${project.id.id}"/>
 	</form>
 </div>
