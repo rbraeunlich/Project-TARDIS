@@ -18,6 +18,11 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Set;
 
 @Controller
@@ -46,7 +51,21 @@ public class OverviewController {
 			t.setProjectName(projectService.findProjectById(t.getProjectId()).get().getName());
 		}
 
-		model.addAttribute("taskList", tasks);
+		
+		List<Task> taskList =new ArrayList<Task>(tasks);
+		Collections.sort(taskList, new Comparator<Task>() {
+		    public int compare(Task o1, Task o2) {
+		    	
+		        return o1.getDueDate().compareTo(o2.getDueDate());
+		    }
+		});
+		
+		
+		
+		model.addAttribute("taskList", taskList);
+		
+		
+		
 		model.addAttribute("notificationList", notificationService.getNotificationsForUser(user.getUsername()));
 	}
 

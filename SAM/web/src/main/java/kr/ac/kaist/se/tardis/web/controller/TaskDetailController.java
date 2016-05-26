@@ -46,16 +46,8 @@ public class TaskDetailController {
 	private TaskNoteFormValidator validator;
 
 	private void fillModel(Model model, UserDetails user, TaskId id) {
-		Task task = null;
-		Set<Task> tasks = taskService.findTasksForUser(String.valueOf(user.getUsername()));
-
-		for (Task t : tasks) {
-			if (t.equals(taskService.findTaskById(id).get())) {
-				t.setProjectName(projectService.findProjectById(t.getProjectId()).get().getName());
-				task = t;
-				break;
-			}
-		}
+		Task task = taskService.findTaskById(id).get();
+		task.setProjectName(projectService.findProjectById(task.getProjectId()).get().getName());
 		
 		Set<TaskNote> taskNotes = taskNoteService.findtaskNoteByTaskId(id);
 		List<TaskNote> tNs =new ArrayList<TaskNote>(taskNotes);
