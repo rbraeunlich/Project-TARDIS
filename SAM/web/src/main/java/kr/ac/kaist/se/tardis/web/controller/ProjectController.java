@@ -117,11 +117,7 @@ public class ProjectController {
 			} catch (ParseException e) {
 				throw new RuntimeException(e);
 			}
-			
-			Set<Task> tasks = taskService.findTaskByProjectId(changedProject.getId());
-			for (Task t : tasks) {
-				t.setProjectName(projectService.findProjectById(t.getProjectId()).get().getName());
-			}
+
 			
 			projectService.saveProject(changedProject);
 

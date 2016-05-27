@@ -9,10 +9,7 @@ import kr.ac.kaist.se.tardis.task.impl.state.TaskState;
 
 public interface Task extends JobOwner {
 	
-	//Temporarily for Personal ToDo List
-	String getProjectName();
-	void setProjectName(String projectName);
-	
+
 	String getName();
 	void setName(String name);
 

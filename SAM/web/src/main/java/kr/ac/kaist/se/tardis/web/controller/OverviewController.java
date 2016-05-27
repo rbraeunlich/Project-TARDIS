@@ -4,7 +4,7 @@ import javax.validation.Valid;
 
 import kr.ac.kaist.se.tardis.project.api.Project;
 import kr.ac.kaist.se.tardis.project.api.ProjectService;
-
+import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
 import kr.ac.kaist.se.tardis.task.api.Task;
 import kr.ac.kaist.se.tardis.task.api.TaskService;
 import kr.ac.kaist.se.tardis.notification.api.NotificationService;
@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 
@@ -42,12 +43,26 @@ public class OverviewController {
 	}
 
 	private void fillModel(Model model, UserDetails user) {
+		
+		
+		
 		model.addAttribute("username", String.valueOf(user.getUsername()));
 		model.addAttribute("allTaskList", taskService.getAllTasks());
 		model.addAttribute("projectList", projectService.findProjectsForUser(String.valueOf(user.getUsername())));
-
+		
 		Set<Task> tasks = taskService.findTasksForUser(String.valueOf(user.getUsername()));
 
+		HashMap<String,String> map = new HashMap<String,String>();
+		for(Task t : tasks){
+			ProjectId pid = t.getProjectId();
+			Project p = projectService.findProjectById(t.getProjectId()).get();
+			String pname = p.getName();
+			if(!map.containsKey(pid.getId()))
+				map.put(pid.getId(),pname);
+		}
+					
+		
+		model.addAttribute("map",map);	
 		
 		List<Task> taskList =new ArrayList<Task>(tasks);
 		Collections.sort(taskList, new Comparator<Task>() {
@@ -59,7 +74,11 @@ public class OverviewController {
 		
 		
 		
+		
 		model.addAttribute("taskList", taskList);
+		
+
+		
 		
 		
 		
