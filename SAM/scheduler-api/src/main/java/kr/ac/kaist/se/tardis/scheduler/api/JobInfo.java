@@ -19,6 +19,7 @@ public class JobInfo {
 	@Column(name = "projectid", nullable = true)
 	private String projectId;
 
+	@Id
 	@Enumerated(EnumType.STRING)
 	private JobType jobType;
 
@@ -68,7 +69,9 @@ public class JobInfo {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((projectId == null) ? 0 : projectId.hashCode());
+		result = prime * result + ((jobType == null) ? 0 : jobType.hashCode());
+		result = prime * result
+				+ ((projectId == null) ? 0 : projectId.hashCode());
 		result = prime * result + ((taskId == null) ? 0 : taskId.hashCode());
 		return result;
 	}
@@ -82,6 +85,8 @@ public class JobInfo {
 		if (getClass() != obj.getClass())
 			return false;
 		JobInfo other = (JobInfo) obj;
+		if (jobType != other.jobType)
+			return false;
 		if (projectId == null) {
 			if (other.projectId != null)
 				return false;

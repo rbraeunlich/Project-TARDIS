@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 @Embeddable
 public class JobInfoId implements Serializable{
@@ -15,10 +17,14 @@ public class JobInfoId implements Serializable{
 
 	@Column(name = "projectid", nullable = true)
 	private String projectId;
+	
+	@Enumerated(EnumType.STRING)
+	private JobType jobType;
 
-	public JobInfoId(String taskId, String projectId) {
+	public JobInfoId(String taskId, String projectId, JobType jobType) {
 		this.taskId = taskId;
 		this.projectId = projectId;
+		this.jobType = jobType;
 	}
 
 	public JobInfoId() {
@@ -40,11 +46,21 @@ public class JobInfoId implements Serializable{
 		this.projectId = projectId;
 	}
 
+	public JobType getJobType() {
+		return jobType;
+	}
+
+	public void setJobType(JobType jobType) {
+		this.jobType = jobType;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((projectId == null) ? 0 : projectId.hashCode());
+		result = prime * result + ((jobType == null) ? 0 : jobType.hashCode());
+		result = prime * result
+				+ ((projectId == null) ? 0 : projectId.hashCode());
 		result = prime * result + ((taskId == null) ? 0 : taskId.hashCode());
 		return result;
 	}
@@ -58,6 +74,8 @@ public class JobInfoId implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		JobInfoId other = (JobInfoId) obj;
+		if (jobType != other.jobType)
+			return false;
 		if (projectId == null) {
 			if (other.projectId != null)
 				return false;
