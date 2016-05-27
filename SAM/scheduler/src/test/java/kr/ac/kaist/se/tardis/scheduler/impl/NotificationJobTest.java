@@ -43,11 +43,9 @@ import kr.ac.kaist.se.tardis.task.impl.id.TaskIdFactory;
 @ContextConfiguration(classes = NotificationJobTest.TestConfig.class)
 public class NotificationJobTest {
 
-	private static final String TASK_ID = TaskIdFactory.generateTaskId()
-			.getId();
+	private static final String TASK_ID = TaskIdFactory.generateTaskId().getId();
 
-	private static final String PROJECT_ID = ProjectIdFactory
-			.generateProjectId().getId();
+	private static final String PROJECT_ID = ProjectIdFactory.generateProjectId().getId();
 
 	private static final String TASK_OWNER = "Johnny";
 
@@ -62,64 +60,56 @@ public class NotificationJobTest {
 	private static final String PROJECT_MEMBER_1 = "Bob";
 
 	private static final String PROJECT_MEMBER_2 = "Dave";
-	
+
 	@Autowired
 	private Scheduler scheduler;
-	
+
 	@Autowired
 	private NotificationJob notificationJob;
 
 	@Test
-	public void jobShouldCreateNotificationForTaskOwner()
-			throws JobExecutionException {
+	public void jobShouldCreateNotificationForTaskOwner() throws JobExecutionException {
 		JobExecutionContext jobExecutionContext = mock(JobExecutionContext.class);
-		when(jobExecutionContext.get(NotificationJob.KEY_ID)).thenReturn(
-				TASK_ID);
-		when(jobExecutionContext.get(NotificationJob.KEY_TYPE)).thenReturn(
-				NotificationJob.VALUE_TASK);
-		when(jobExecutionContext.get(NotificationJob.KEY_DUE_DATE)).thenReturn(
-				DUE_DATE.getTime());
 		when(jobExecutionContext.getScheduler()).thenReturn(scheduler);
+		notificationJob.setId(TASK_ID);
+		notificationJob.setType(NotificationJob.VALUE_TASK);
+		notificationJob.setDueDate(DUE_DATE.getTime());
 		notificationJob.execute(jobExecutionContext);
-		
+
 		verify(TestConfig.notificationService, atLeastOnce()).createNotification(TestConfig.usernameCaptor.capture(),
 				TestConfig.textCaptor.capture(), TestConfig.dateCaptor.capture());
 
 		assertThat(TestConfig.usernameCaptor.getValue(), is(TASK_OWNER));
-		assertThat(TestConfig.textCaptor.getValue(), is("Task " + TASK_NAME
-				+ " from project " + PROJECT_NAME + " is due on " + DUE_DATE));
+		assertThat(TestConfig.textCaptor.getValue(),
+				is("Task " + TASK_NAME + " from project " + PROJECT_NAME + " is due on " + DUE_DATE));
 		assertThat(TestConfig.dateCaptor.getValue(), is(notNullValue()));
 	}
 
 	@Test
-	public void jobShouldCreateNotificationForAllProjectMembers()
-			throws JobExecutionException {
+	public void jobShouldCreateNotificationForAllProjectMembers() throws JobExecutionException {
 		JobExecutionContext jobExecutionContext = mock(JobExecutionContext.class);
-		when(jobExecutionContext.get(NotificationJob.KEY_ID)).thenReturn(
-				PROJECT_ID);
-		when(jobExecutionContext.get(NotificationJob.KEY_TYPE)).thenReturn(
-				NotificationJob.VALUE_PROJECT);
-		when(jobExecutionContext.get(NotificationJob.KEY_DUE_DATE)).thenReturn(
-				DUE_DATE.getTime());
+		notificationJob.setId(PROJECT_ID);
+		notificationJob.setType(NotificationJob.VALUE_PROJECT);
+		notificationJob.setDueDate(DUE_DATE.getTime());
 		when(jobExecutionContext.getScheduler()).thenReturn(scheduler);
 		notificationJob.execute(jobExecutionContext);
 
 		verify(TestConfig.notificationService, atLeastOnce()).createNotification(TestConfig.usernameCaptor.capture(),
 				TestConfig.textCaptor.capture(), TestConfig.dateCaptor.capture());
-		
+
 		assertThat(TestConfig.usernameCaptor.getAllValues(),
 				hasItems(PROJECT_OWNER, PROJECT_MEMBER_1, PROJECT_MEMBER_2));
-		assertThat(TestConfig.textCaptor.getValue(), is("Project "
-				+ PROJECT_NAME + " is due on " + DUE_DATE));
+		assertThat(TestConfig.textCaptor.getValue(), is("Project " + PROJECT_NAME + " is due on " + DUE_DATE));
 		assertThat(TestConfig.dateCaptor.getValue(), is(notNullValue()));
 	}
 
 	@Configuration
-	@ComponentScan(excludeFilters=@Filter(type=FilterType.ASSIGNABLE_TYPE, classes={GitHubJob.class, StandardNotificationBuilderImplTest.TestConfig.class}))
+	@ComponentScan(excludeFilters = @Filter(type = FilterType.ASSIGNABLE_TYPE, classes = { GitHubJob.class,
+			StandardNotificationBuilderImplTest.TestConfig.class }))
 	public static class TestConfig {
 
 		private static NotificationService notificationService;
-		
+
 		private static ArgumentCaptor<String> usernameCaptor;
 
 		private static ArgumentCaptor<String> textCaptor;
@@ -130,14 +120,10 @@ public class NotificationJobTest {
 		public ProjectService createMockProjectService() {
 			ProjectService projectService = mock(ProjectService.class);
 			Project project = mock(Project.class);
-			when(
-					projectService.findProjectById(ProjectIdFactory
-							.valueOf(PROJECT_ID))).thenReturn(
-					Optional.of(project));
+			when(projectService.findProjectById(ProjectIdFactory.valueOf(PROJECT_ID))).thenReturn(Optional.of(project));
 			when(project.getProjectOwner()).thenReturn(PROJECT_OWNER);
-			when(project.getProjectMembers()).thenReturn(
-					new HashSet<>(Arrays.asList(PROJECT_MEMBER_1,
-							PROJECT_MEMBER_2)));
+			when(project.getProjectMembers())
+					.thenReturn(new HashSet<>(Arrays.asList(PROJECT_MEMBER_1, PROJECT_MEMBER_2)));
 			when(project.getName()).thenReturn(PROJECT_NAME);
 			return projectService;
 		}
@@ -149,8 +135,7 @@ public class NotificationJobTest {
 			when(taskMock.getOwner()).thenReturn(TASK_OWNER);
 			when(taskMock.getProjectId()).thenReturn(ProjectIdFactory.valueOf(PROJECT_ID));
 			when(taskMock.getName()).thenReturn(TASK_NAME);
-			when(taskService.findTaskById(TaskIdFactory.valueOf(TASK_ID)))
-					.thenReturn(Optional.of(taskMock));
+			when(taskService.findTaskById(TaskIdFactory.valueOf(TASK_ID))).thenReturn(Optional.of(taskMock));
 			return taskService;
 		}
 
@@ -162,9 +147,9 @@ public class NotificationJobTest {
 			dateCaptor = ArgumentCaptor.forClass(Date.class);
 			return notificationService;
 		}
-		
+
 		@Bean
-		public Scheduler createMockScheduler(){
+		public Scheduler createMockScheduler() {
 			Scheduler schedulerMock = mock(Scheduler.class);
 			try {
 				when(schedulerMock.getContext()).thenReturn(new SchedulerContext());

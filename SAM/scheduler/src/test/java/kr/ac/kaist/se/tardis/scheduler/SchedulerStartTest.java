@@ -2,6 +2,7 @@ package kr.ac.kaist.se.tardis.scheduler;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
+import static org.mockito.Mockito.mock;
 
 import javax.sql.DataSource;
 
@@ -18,6 +19,8 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import kr.ac.kaist.se.tardis.connector.github.api.GitHubService;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes={SchedulerConfig.class, SchedulerStartTest.TestDataSourceConfiguration.class})
 public class SchedulerStartTest {
@@ -32,6 +35,11 @@ public class SchedulerStartTest {
 	
 	@Configuration
 	public static class TestDataSourceConfiguration {
+		
+		@Bean
+		public GitHubService createMockGitHubService(){
+			return mock(GitHubService.class);
+		}
 		
 		@Bean
 		public DataSource createUsersDataSource() {
