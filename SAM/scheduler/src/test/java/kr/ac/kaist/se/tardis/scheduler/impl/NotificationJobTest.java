@@ -104,8 +104,7 @@ public class NotificationJobTest {
 	}
 
 	@Configuration
-	@ComponentScan(excludeFilters = @Filter(type = FilterType.ASSIGNABLE_TYPE, classes = { GitHubJob.class,
-			StandardNotificationBuilderImplTest.TestConfig.class }))
+	@ComponentScan(excludeFilters = {@Filter(type = FilterType.ASSIGNABLE_TYPE, classes = { GitHubJob.class }), @Filter(type=FilterType.ANNOTATION, value=Configuration.class)})
 	public static class TestConfig {
 
 		private static NotificationService notificationService;

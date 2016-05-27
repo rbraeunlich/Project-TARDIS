@@ -109,7 +109,7 @@ public class StandardNotificationBuilderImplTest {
 	}
 
 	@Configuration
-	@ComponentScan(excludeFilters=@Filter(type=FilterType.ASSIGNABLE_TYPE, classes={QuartzJobBean.class, NotificationJobTest.TestConfig.class}))
+	@ComponentScan(excludeFilters={@Filter(type=FilterType.ASSIGNABLE_TYPE, classes={QuartzJobBean.class}), @Filter(type=FilterType.ANNOTATION, value=Configuration.class)})
 	public static class TestConfig {
 
 		private Scheduler mockScheduler;
