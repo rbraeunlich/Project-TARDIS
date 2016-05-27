@@ -24,11 +24,11 @@ import kr.ac.kaist.se.tardis.task.impl.id.TaskIdFactory;
 @Component
 public class NotificationJob extends QuartzJobBean {
 
-	public static final String KEY_ID = "ID";
+	public static final String KEY_ID = "id";
 	public static final String VALUE_TASK = "task";
 	public static final String VALUE_PROJECT = "project";
-	public static final String KEY_TYPE = "TYPE";
-	public static final String KEY_DUE_DATE = "DUE_DATE";
+	public static final String KEY_TYPE = "type";
+	public static final String KEY_DUE_DATE = "dueDate";
 
 	@Autowired
 	private ProjectService projectService;
@@ -39,15 +39,18 @@ public class NotificationJob extends QuartzJobBean {
 	@Autowired
 	private TaskService taskService;
 	
+	private Long dueDate;
+	
+	private String id;
+	
+	private String type;
+	
 	@Override
 	protected void executeInternal(JobExecutionContext context) throws JobExecutionException {
-		String id = (String) context.get(KEY_ID);
-		String type = (String) context.get(KEY_TYPE);
-		Date dueDate = new Date((Long) context.get(KEY_DUE_DATE));
-		if (type.equals(VALUE_TASK)) {
-			addNotificationToTask(TaskIdFactory.valueOf(id), dueDate);
+		if (getType().equals(VALUE_TASK)) {
+			addNotificationToTask(TaskIdFactory.valueOf(getId()), new Date(dueDate));
 		} else {
-			addNotificationToProject(ProjectIdFactory.valueOf(id), dueDate);
+			addNotificationToProject(ProjectIdFactory.valueOf(getId()), new Date(dueDate));
 		}
 	}
 
@@ -83,4 +86,52 @@ public class NotificationJob extends QuartzJobBean {
 				"Task " + task.getName() + " from project " + project.getName() + " is due on " + dueDate, new Date());
 	}
 
+	public Long getDueDate() {
+		return dueDate;
+	}
+
+	public void setDueDate(Long dueDate) {
+		this.dueDate = dueDate;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public ProjectService getProjectService() {
+		return projectService;
+	}
+
+	public void setProjectService(ProjectService projectService) {
+		this.projectService = projectService;
+	}
+
+	public NotificationService getNotificationService() {
+		return notificationService;
+	}
+
+	public void setNotificationService(NotificationService notificationService) {
+		this.notificationService = notificationService;
+	}
+
+	public TaskService getTaskService() {
+		return taskService;
+	}
+
+	public void setTaskService(TaskService taskService) {
+		this.taskService = taskService;
+	}
+	
 }

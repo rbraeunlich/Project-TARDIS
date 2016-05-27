@@ -16,27 +16,45 @@ import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
 @Component
 public class GitHubJob extends QuartzJobBean {
 
-	public static final String KEY_PROJECT_ID = "ID";
-	public static final String KEY_GITHUB_URL = "URL";
+	public static final String KEY_PROJECT_ID = "id";
+	public static final String KEY_GITHUB_URL = "url";
 
 	@Autowired
 	private GitHubService githubService;
 
+	private String url;
+
+	private String id;
+
 	@Override
 	protected void executeInternal(JobExecutionContext context) throws JobExecutionException {
-		String id = (String) context.get(KEY_PROJECT_ID);
 		URL gitHubUrl;
 		try {
-			gitHubUrl = new URL((String) context.get(KEY_GITHUB_URL));
-			addNotificationToGitHub(ProjectIdFactory.valueOf(id), gitHubUrl);
+			gitHubUrl = new URL(getUrl());
+			addNotificationToGitHub(ProjectIdFactory.valueOf(getId()), gitHubUrl);
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new RuntimeException(e);
 		}
 	}
 
 	private void addNotificationToGitHub(ProjectId projectId, URL gitHubUrl) {
 		githubService.checkCommits(gitHubUrl, projectId);
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 }
