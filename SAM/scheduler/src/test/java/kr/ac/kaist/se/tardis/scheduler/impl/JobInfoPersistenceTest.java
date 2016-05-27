@@ -1,4 +1,4 @@
-package kr.ac.kaist.se.tardis.project.impl;
+package kr.ac.kaist.se.tardis.scheduler.impl;
 
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
@@ -6,6 +6,7 @@ import static org.junit.Assert.assertThat;
 
 import javax.sql.DataSource;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,31 +21,24 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import kr.ac.kaist.se.tardis.persistence.PrimaryDbConfig;
-import kr.ac.kaist.se.tardis.project.api.ProjectRepository;
-import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
-import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
-import kr.ac.kaist.se.tardis.users.copy.UserWithoutPassword;
-import kr.ac.kaist.se.tardis.users.copy.UserWithoutPasswordRepository;
+import kr.ac.kaist.se.tardis.scheduler.api.JobInfo;
+import kr.ac.kaist.se.tardis.scheduler.api.JobInfoRepository;
 
+@Ignore
 @RunWith(SpringJUnit4ClassRunner.class)
 @IntegrationTest
-@SpringApplicationConfiguration(value={ProjectPersistenceTest.TestDataSourceConfiguration.class, PrimaryDbConfig.class})
-public class ProjectPersistenceTest {
+@SpringApplicationConfiguration(value={JobInfoPersistenceTest.TestDataSourceConfiguration.class, PrimaryDbConfig.class})
+public class JobInfoPersistenceTest {
 	
 	@Autowired
-	private ProjectRepository repo;
-	@Autowired
-	private UserWithoutPasswordRepository userRepo;
+	private JobInfoRepository repo;
+	
 	
 	@Test
 	public void persistProject() {
-		UserWithoutPassword user = new UserWithoutPassword("owner");
-		userRepo.saveAndFlush(user);
-		
-		ProjectId id = ProjectIdFactory.generateProjectId();
-		ProjectImpl project = new ProjectImpl(id, user.getUsername());
-		repo.saveAndFlush(project);
-		ProjectImpl findOne = repo.findOne(id);
+		JobInfo info = new JobInfo();
+		repo.saveAndFlush(info);
+		JobInfo findOne = repo.findOne(info.getId());
 		assertThat(findOne, is(notNullValue()));
 	}
 
@@ -58,8 +52,7 @@ public class ProjectPersistenceTest {
 			EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
 			EmbeddedDatabase embeddedDatabase = builder.generateUniqueName(true).setType(EmbeddedDatabaseType.H2)
 					.setScriptEncoding("UTF-8")
-					.addScript("kr/ac/kaist/se/tardis/persistence/sql/h2.userwithoutpwd.sql.")
-					.addScript("kr/ac/kaist/se/tardis/persistence/sql/h2.project.sql.")
+					//.addScript("kr/ac/kaist/se/tardis/...")
 					.build();
 			return embeddedDatabase;
 		}

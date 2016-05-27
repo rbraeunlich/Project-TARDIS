@@ -21,6 +21,7 @@ public class PrimaryDataSourceConfig {
 				 .addScript("kr/ac/kaist/se/tardis/persistence/sql/h2.userwithoutpwd.sql")
 				 .addScript("kr/ac/kaist/se/tardis/persistence/sql/h2.quartz.sql")
 				 .addScript("kr/ac/kaist/se/tardis/persistence/sql/h2.notification.sql")
+				 .addScript("kr/ac/kaist/se/tardis/persistence/sql/h2.project.sql")
 				.build();
 		return embeddedDatabase;
 	}

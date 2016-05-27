@@ -6,4 +6,11 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>scheduler-api</artifactId>
+  <dependencies>
+  	<dependency>
+  		<groupId>kr.ac.kaist.se.tardis</groupId>
+  		<artifactId>persistence</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
 </project>

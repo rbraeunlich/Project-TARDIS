@@ -10,7 +10,7 @@ import kr.ac.kaist.se.tardis.task.api.Task;
 import kr.ac.kaist.se.tardis.task.impl.id.TaskId;
 import kr.ac.kaist.se.tardis.task.impl.state.TaskState;
 
-class TaskImpl implements Task {
+public class TaskImpl implements Task {
 
 	private final TaskId id;
 	private String name;
@@ -23,7 +23,7 @@ class TaskImpl implements Task {
 	private String projectName;
 	private Set<JobInfo> jobInfos = new HashSet<>();
 
-	public TaskImpl(TaskId id, ProjectId projectId, String taskOwner) {
+	TaskImpl(TaskId id, ProjectId projectId, String taskOwner) {
 		this.id = id;
 		this.owner = taskOwner;
 		this.projectId = projectId;

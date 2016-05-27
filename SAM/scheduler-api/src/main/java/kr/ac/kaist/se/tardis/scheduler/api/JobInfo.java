@@ -1,10 +1,27 @@
 package kr.ac.kaist.se.tardis.scheduler.api;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
+
+@Entity
+@IdClass(JobInfoId.class)
 public class JobInfo {
 
+	@Id
+	@Column(name = "taskid", nullable = true)
 	private String taskId;
+
+	@Id
+	@Column(name = "projectid", nullable = true)
 	private String projectId;
+
+	@Enumerated(EnumType.STRING)
 	private JobType jobType;
+
 	private String githubUrl;
 	/**
 	 * The id Quartz gave the trigger of this job this info represents;
@@ -14,7 +31,7 @@ public class JobInfo {
 	public String getId() {
 		return taskId == null ? projectId : taskId;
 	}
-
+	
 	public JobType getJobType() {
 		return jobType;
 	}
@@ -39,19 +56,18 @@ public class JobInfo {
 		this.githubUrl = githubUrl;
 	}
 
-	public void setTriggerId(String id){
+	public void setTriggerId(String id) {
 		this.triggerId = id;
 	}
-	
-	public String getTriggerId(){
+
+	public String getTriggerId() {
 		return triggerId;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((jobType == null) ? 0 : jobType.hashCode());
 		result = prime * result + ((projectId == null) ? 0 : projectId.hashCode());
 		result = prime * result + ((taskId == null) ? 0 : taskId.hashCode());
 		return result;
@@ -66,8 +82,6 @@ public class JobInfo {
 		if (getClass() != obj.getClass())
 			return false;
 		JobInfo other = (JobInfo) obj;
-		if (jobType != other.jobType)
-			return false;
 		if (projectId == null) {
 			if (other.projectId != null)
 				return false;
@@ -80,5 +94,5 @@ public class JobInfo {
 			return false;
 		return true;
 	}
-	
+
 }

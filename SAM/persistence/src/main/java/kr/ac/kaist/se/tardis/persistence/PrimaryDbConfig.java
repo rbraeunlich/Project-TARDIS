@@ -19,26 +19,25 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(
-		basePackages = "kr.ac.kaist.se.tardis", 
-		excludeFilters=@Filter(type=FilterType.ANNOTATION,value=NotPrimaryDataSource.class))
+@EnableJpaRepositories(basePackages = "kr.ac.kaist.se.tardis", excludeFilters = @Filter(type = FilterType.ANNOTATION, value = NotPrimaryDataSource.class))
 public class PrimaryDbConfig {
 
 	@Autowired
 	private DataSource primaryDataSource;
 
-	@PersistenceContext(name="primary")
+	@PersistenceContext(name = "primary")
 	@Bean
 	@Primary
 	public EntityManagerFactory entityManagerFactory() {
-	    HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+		HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 		LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
 		factory.setJpaVendorAdapter(vendorAdapter);
-		//FIXME extend when new entities get added
-		factory.setPackagesToScan("kr.ac.kaist.se.tardis.users.copy", "kr.ac.kaist.se.tardis.notification.impl");
+		// FIXME extend when new entities get added
+		factory.setPackagesToScan("kr.ac.kaist.se.tardis.users.copy", "kr.ac.kaist.se.tardis.notification.impl",
+				"kr.ac.kaist.se.tardis.project.impl", "kr.ac.kaist.se.tardis.project.impl.id", "kr.ac.kaist.se.tardis.scheduler.api");
 		factory.setDataSource(primaryDataSource);
 		factory.setPersistenceUnitName("primary");
-		
+
 		factory.afterPropertiesSet();
 		return factory.getObject();
 	}

@@ -4,22 +4,46 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CollectionTable;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 import kr.ac.kaist.se.tardis.project.api.Project;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
+import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
 import kr.ac.kaist.se.tardis.scheduler.api.JobInfo;
 
-class ProjectImpl implements Project {
+@Entity(name="project")
+@IdClass(ProjectId.class)
+public class ProjectImpl implements Project {
 
-	private final ProjectId id;
+	@Id
+	private String id;
 	private String name;
 	private String description;
-	private final String owner;
-	private final Set<String> members;
+	private String owner;
+	
+	@ElementCollection
+	@CollectionTable(name="projectmember", joinColumns=@JoinColumn(name="projectid"))
+	private Set<String> members;
+	
+	@Temporal(TemporalType.DATE)
 	private Date dueDate;
+	
+	@OneToMany(targetEntity=JobInfo.class)
+	@JoinColumn(name="projectid", referencedColumnName="id")
 	private Set<JobInfo> jobInfos = new HashSet<>();
 
-	public ProjectImpl(ProjectId id, String projectOwner) {
-		this.id = id;
+	ProjectImpl(){}
+	
+	ProjectImpl(ProjectId id, String projectOwner) {
+		this.id = id.toString();
 		this.owner = projectOwner;
 		this.members = new HashSet<>();
 		addProjectMember(owner);
@@ -47,7 +71,7 @@ class ProjectImpl implements Project {
 	
 	@Override
 	public ProjectId getId() {
-		return id;
+		return ProjectIdFactory.valueOf(id);
 	}
 
 	@Override

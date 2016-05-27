@@ -3,12 +3,6 @@ package kr.ac.kaist.se.tardis.scheduler.impl;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
-import kr.ac.kaist.se.tardis.scheduler.api.GitHubJobBuilder;
-import kr.ac.kaist.se.tardis.scheduler.api.JobInfo;
-import kr.ac.kaist.se.tardis.scheduler.api.JobType;
-import kr.ac.kaist.se.tardis.scheduler.api.SchedulerService;
-import kr.ac.kaist.se.tardis.scheduler.api.StandardNotificationBuilder;
-
 import org.quartz.JobBuilder;
 import org.quartz.JobDetail;
 import org.quartz.Scheduler;
@@ -19,6 +13,12 @@ import org.quartz.TriggerBuilder;
 import org.quartz.TriggerKey;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import kr.ac.kaist.se.tardis.scheduler.api.GitHubJobBuilder;
+import kr.ac.kaist.se.tardis.scheduler.api.JobInfo;
+import kr.ac.kaist.se.tardis.scheduler.api.JobType;
+import kr.ac.kaist.se.tardis.scheduler.api.SchedulerService;
+import kr.ac.kaist.se.tardis.scheduler.api.StandardNotificationBuilder;
 
 @Service
 public class SchedulerServiceImpl implements SchedulerService {
