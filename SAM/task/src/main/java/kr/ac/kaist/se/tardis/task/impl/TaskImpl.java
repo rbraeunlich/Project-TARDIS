@@ -20,7 +20,6 @@ public class TaskImpl implements Task {
 	private ProjectId projectId;
 	private TaskState taskState;
 	private int taskProgress;
-	private String projectName;
 	private Set<JobInfo> jobInfos = new HashSet<>();
 
 	TaskImpl(TaskId id, ProjectId projectId, String taskOwner) {
@@ -28,16 +27,8 @@ public class TaskImpl implements Task {
 		this.owner = taskOwner;
 		this.projectId = projectId;
 		this.taskState = TaskState.TODO;
-		projectName = "";
 	}
 
-	public String getProjectName() {
-		return projectName;
-	}
-
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-	}
 
 	@Override
 	public void setName(String name) {

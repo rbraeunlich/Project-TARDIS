@@ -72,7 +72,9 @@
 		<p class="boardName">My Tasks</p>
 			<div th:each="task : ${taskList}" class="entry" id="${task.name}">
 			<div class="textBlock">
-			<p class="projectName" th:text="${task.projectName}"/>			
+<!-- 			<p class="projectName" th:text="${task.projectName}"/>			 -->
+<!--  			<p class="projectName" th:text="${map['${task.projectId.id}']}"/>		 -->
+ 			<p class="projectName" th:text="${map['__${task.projectId.id}__']}"/>		
 				<p class="taskState" th:text="${task.taskState}"/>
 				<p class="taskNameText" th:text="${task.name}"/>
 				<p class="taskDescription" th:text="${task.description}"/>
