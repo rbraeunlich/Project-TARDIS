@@ -1,13 +1,16 @@
 package kr.ac.kaist.se.tardis.web.controller;
 
 import kr.ac.kaist.se.tardis.notification.api.NotificationService;
+import kr.ac.kaist.se.tardis.project.api.Project;
 import kr.ac.kaist.se.tardis.project.api.ProjectService;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
+import kr.ac.kaist.se.tardis.scheduler.api.SchedulerService;
 import kr.ac.kaist.se.tardis.task.api.Task;
 import kr.ac.kaist.se.tardis.task.api.TaskService;
 import kr.ac.kaist.se.tardis.task.impl.id.TaskId;
 import kr.ac.kaist.se.tardis.task.impl.id.TaskIdFactory;
 import kr.ac.kaist.se.tardis.web.form.CreateTaskForm;
+import kr.ac.kaist.se.tardis.web.form.FormWithNotification;
 import kr.ac.kaist.se.tardis.web.form.SetTaskForm;
 import kr.ac.kaist.se.tardis.web.validator.SetTaskFormValidator;
 
@@ -42,7 +45,9 @@ public class TaskController {
 	private SetTaskFormValidator validator;
 	@Autowired
 	private NotificationService notificationService;
-	
+	@Autowired
+	private SchedulerService schedulerService;
+
 	private void fillModel(Model model, UserDetails user, TaskId taskId, ProjectId projectId) {
 
 		model.addAttribute("username", String.valueOf(user.getUsername()));
@@ -73,8 +78,10 @@ public class TaskController {
 			@AuthenticationPrincipal UserDetails user, @Valid SetTaskForm setTaskForm, BindingResult bindingResult) {
 		// show task information on task setting page
 
-		if (setTaskForm.getTaskName() != null || setTaskForm.getOwner() != null || setTaskForm.getDueDate() != null)
-			validator.validate(setTaskForm, bindingResult);
+		validator.validate(setTaskForm, bindingResult);
+		if(bindingResult.hasErrors()){
+			return "tasksettingview";
+		}
 
 		TaskId id = TaskIdFactory.valueOf(taskId);
 		fillModel(model, user, id, taskService.findTaskById(id).get().getProjectId());
@@ -103,35 +110,55 @@ public class TaskController {
 		validator.validate(setTaskForm, bindingResult);
 
 		if (bindingResult.hasErrors()) {
-			return "forward:taskview";
+			return "taskview";
 		}
-			Optional<Task> optional = taskService.findTaskById(id);
+		Optional<Task> optional = taskService.findTaskById(id);
 
-			if (optional.isPresent()) {
-				Task changedTask = optional.get();
+		if (optional.isPresent()) {
+			Task changedTask = optional.get();
 
-				// TODO update features
+			// TODO update features
 
-				changedTask.setName(setTaskForm.getTaskName());
-				changedTask.setDescription(setTaskForm.getTaskDescription());
-				changedTask.setOwner(setTaskForm.getOwner());
-				Date tmp;
-				try {
-					SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-					tmp = format.parse(form.getDueDate());
-					changedTask.setDueDate(tmp);
-				} catch (ParseException e) {
+			changedTask.setName(setTaskForm.getTaskName());
+			changedTask.setDescription(setTaskForm.getTaskDescription());
+			changedTask.setOwner(setTaskForm.getOwner());
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+			Date projectDueDate = null;
+			try {
+				String dueDate = setTaskForm.getDueDate();
+				if (dueDate != null && !dueDate.trim().isEmpty()) {
+					projectDueDate = dateFormat.parse(dueDate);
+					changedTask.setDueDate(projectDueDate);
+					changedTask = createAndDeleteJobsForTask(changedTask, setTaskForm, projectDueDate);
 				}
-				taskService.saveTask(changedTask);
-
-				fillModel(model, user, id, taskService.findTaskById(id).get().getProjectId());
-
-			} else {
-				// TODO error case
+			} catch (ParseException e) {
+				throw new RuntimeException(e);
 			}
-			
+			taskService.saveTask(changedTask);
+
+			fillModel(model, user, id, taskService.findTaskById(id).get().getProjectId());
+
+		} else {
+			// TODO error case
+		}
+
 		redirectAttributes.addAttribute("taskId", taskId);
 		return "redirect:taskDetail";
+	}
+
+	/**
+	 * Depending on how the checkboxes were changed, the notifications for a
+	 * project must either be added or removed.
+	 * 
+	 * @param changedTask
+	 * @param setProjectForm
+	 * @param projectDueDate
+	 * @return
+	 */
+	private Task createAndDeleteJobsForTask(Task changedTask, FormWithNotification setProjectForm,
+			Date projectDueDate) {
+		return JobHelper.createAndDeleteJobsForTask(schedulerService, changedTask, setProjectForm,
+				projectDueDate);
 	}
 
 }

@@ -1,69 +1,92 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Task Setting</title>
-    <link rel="stylesheet" th:href="@{/css/settingview.css}" href="../static/css/settingview.css" />
-    <link rel="stylesheet" th:href="@{/css/base.css}" href="../static/css/base.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Task Setting</title>
+<link rel="stylesheet" th:href="@{/css/settingview.css}"
+	href="../static/css/settingview.css" />
+<link rel="stylesheet" th:href="@{/css/base.css}"
+	href="../static/css/base.css" />
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script type="text/javascript">
+ 	$(function() {
+    	$( "#dueDate" ).datepicker({ dateFormat: "yy-mm-dd" }).val();
+  	});
+</script>
 </head>
 <body>
 
-<div th:replace="overview :: bar"></div>
+	<div th:replace="overview :: bar"></div>
 
-<div th:replace="overview :: heading"></div>
-	
-<div id="board" class="box">
-    <H1>Task Setting</H1>
-	
-    <form class="settingForm" action="#" th:action="@{/taskchange}" th:object="${setTaskForm}" method="post">
+	<div th:replace="overview :: heading"></div>
 
-		<input type="hidden" name="taskId" th:value ="${task.id.id}"/>
-		<input type="hidden" name="projectId" th:value="${task.projectId.id}"/>
-		<p>
-				Task name: <input id="taskName" name="taskName" type="text"
-					th:value="${task.name}" /> <b
-					th:if="${#fields.hasErrors('taskName')}"
-					th:errors="*{taskName}">Task name error</b>
-		</p>
-		<p>
-			Task Assignee: <input id="owner" name="owner" type="text"
-				th:value="${task.owner}" /> <b
-				th:if="${#fields.hasErrors('owner')}" th:errors="*{owner}">Member
-				error</b>
-		</p>
-		<p>
-			Task Due Date: <input id="dueDate" name="dueDate" type="text"
-				th:value="${#dates.format(task.dueDate,'yyyy-MM-dd')}" /> <b
-				th:if="${#fields.hasErrors('dueDate')}" th:errors="*{dueDate}">Due Date
-				error</b>
-		</p>
+	<div id="board" class="box">
+		<H1>Task Setting</H1>
+
+		<form class="settingForm" action="#" th:action="@{/taskchange}"
+			th:object="${setTaskForm}" method="post">
+			<div id="configurations">
+				<input type="hidden" name="taskId" th:value="${task.id.id}" /> <input
+					type="hidden" name="projectId" th:value="${task.projectId.id}" />
+				<p>
+					Task name: <input id="taskName" name="taskName" type="text"
+						th:value="${task.name}" /> <b
+						th:if="${#fields.hasErrors('taskName')}" th:errors="*{taskName}">Task
+						name error</b>
+				</p>
+				<p>
+					Task Assignee: <input id="owner" name="owner" type="text"
+						th:value="${task.owner}" /> <b
+						th:if="${#fields.hasErrors('owner')}" th:errors="*{owner}">Member
+						error</b>
+				</p>
+				<p>
+					Task Due Date: <input id="dueDate" name="dueDate" type="text"
+						th:value="${#dates.format(task.dueDate,'yyyy-MM-dd')}" /> <b
+						th:if="${#fields.hasErrors('dueDate')}" th:errors="*{dueDate}">Due
+						Date error</b>
+				</p>
+				<p>
+					Description: <input id="taskDescription" name="taskDescription"
+						type="text" th:value="${task.description}" />
+				</p>
+			</div>
+			<div id="notifications">
+				<p>Notifications:</p>
+				<p>
+					<input type="checkbox" id="oneDayNotification"
+						name="oneDayNotification" />One day earlier
+				</p>
+				<p>
+					<input type="checkbox" id="threeDayNotification"
+						name="threeDayNotification" />Three days earlier
+				</p>
+				<p>
+					<input type="checkbox" id="sevenDayNotification"
+						name="sevenDayNotification" />Seven days earlier
+				</p>
+			</div>
+
 			<p>
-				Description: <input id="taskDescription" name="taskDescription" type="text"
-					th:value="${task.description}" />
-			</p>		
-		
-        <!--<p>Due Date: <input id="duedate" type="text" th:field="${task.dueDate}"/></p>-->
-        <!--There is an error on Date-->
-        
-        
-        <p>
-            <button name="action" type="submit" value="submit">Submit</button>
-            <!--<button name="action" type="reset" value="reset">Reset</button>-->
-            <!--<button name="action" type="submit" value="cancel">Cancel</button>-->
-        </p>
-    </form>
-    
-    
-			<form action="#" th:action="@{/taskDetail}" method="get">
-				<button name="action" type="submit" value="submit">Cancel</button>
-				<input type="hidden" name="taskId" th:value="${task.id.id}"/>
-			</form>
-    
-</div>
+				<button name="action" type="submit" value="submit">Submit</button>
+				<!--<button name="action" type="reset" value="reset">Reset</button>-->
+				<!--<button name="action" type="submit" value="cancel">Cancel</button>-->
+			</p>
+		</form>
 
-<div th:replace="overview :: footer"></div>
-    
-<script th:inline="javascript" th:src="@{js/base.js}"></script>    
 
+		<form action="#" th:action="@{/taskDetail}" method="get">
+			<button name="action" type="submit" value="submit">Cancel</button>
+			<input type="hidden" name="taskId" th:value="${task.id.id}" />
+		</form>
+
+	</div>
+
+	<div th:replace="overview :: footer"></div>
+
+	<script th:inline="javascript" th:src="@{js/base.js}"></script>
 </body>
 </html>
