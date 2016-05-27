@@ -58,8 +58,8 @@ public class ProjectPersistenceTest {
 			EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
 			EmbeddedDatabase embeddedDatabase = builder.generateUniqueName(true).setType(EmbeddedDatabaseType.H2)
 					.setScriptEncoding("UTF-8")
-					.addScript("kr/ac/kaist/se/tardis/persistence/sql/h2.userwithoutpwd.sql.")
-					.addScript("kr/ac/kaist/se/tardis/persistence/sql/h2.project.sql.")
+					.addScript("kr/ac/kaist/se/tardis/persistence/sql/h2.userwithoutpwd.sql")
+					.addScript("kr/ac/kaist/se/tardis/persistence/sql/h2.project.sql")
 					.build();
 			return embeddedDatabase;
 		}
