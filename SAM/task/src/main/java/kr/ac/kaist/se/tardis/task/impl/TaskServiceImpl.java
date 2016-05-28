@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
+import kr.ac.kaist.se.tardis.project.api.Project;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
 import kr.ac.kaist.se.tardis.task.api.Task;
 import kr.ac.kaist.se.tardis.task.api.TaskService;
@@ -20,9 +21,9 @@ public class TaskServiceImpl implements TaskService {
 	private Set<Task> tasks = new HashSet<>();
 
 	@Override
-	public Task createTask(String owner,ProjectId projectId) {
+	public Task createTask(String owner,Project project) {
 		TaskId taskId = TaskIdFactory.generateTaskId();
-		Task t = new TaskImpl(taskId, projectId, owner);
+		Task t = new TaskImpl(taskId, project, owner);
 		return t;
 	}
 

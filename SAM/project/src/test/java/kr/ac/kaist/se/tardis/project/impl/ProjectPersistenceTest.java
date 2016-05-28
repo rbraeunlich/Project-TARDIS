@@ -24,8 +24,8 @@ import kr.ac.kaist.se.tardis.persistence.PrimaryDbConfig;
 import kr.ac.kaist.se.tardis.project.api.ProjectRepository;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
-import kr.ac.kaist.se.tardis.scheduler.api.JobInfo;
 import kr.ac.kaist.se.tardis.scheduler.api.JobType;
+import kr.ac.kaist.se.tardis.scheduler.api.ProjectJobInfo;
 import kr.ac.kaist.se.tardis.users.copy.UserWithoutPassword;
 import kr.ac.kaist.se.tardis.users.copy.UserWithoutPasswordRepository;
 
@@ -58,12 +58,11 @@ public class ProjectPersistenceTest {
 
 		ProjectId id = ProjectIdFactory.generateProjectId();
 		
-		JobInfo info = new JobInfo();
+		ProjectJobInfo info = new ProjectJobInfo();
 		info.setGithubUrl("https://github.com/rbraeunlich/Project-TARDIS");
 		info.setJobType(JobType.GITHUB);
 		info.setTriggerId("123");
-		info.setProjectId(id.getId());
-		info.setTaskId("");
+		info.setId(id.getId());
 		
 		ProjectImpl project = new ProjectImpl(id, user.getUsername());
 		
@@ -89,6 +88,7 @@ public class ProjectPersistenceTest {
 					.setScriptEncoding("UTF-8")
 					.addScript("kr/ac/kaist/se/tardis/persistence/sql/h2.userwithoutpwd.sql")
 					.addScript("kr/ac/kaist/se/tardis/persistence/sql/h2.project.sql")
+					.addScript("kr/ac/kaist/se/tardis/persistence/sql/h2.task.sql")
 					.addScript("kr/ac/kaist/se/tardis/persistence/sql/h2.jobinfo.sql")
 					.build();
 			return embeddedDatabase;

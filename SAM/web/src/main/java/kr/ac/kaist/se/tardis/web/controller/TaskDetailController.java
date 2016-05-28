@@ -1,8 +1,12 @@
 package kr.ac.kaist.se.tardis.web.controller;
 
-import kr.ac.kaist.se.tardis.notification.api.NotificationService;
-import kr.ac.kaist.se.tardis.project.api.ProjectService;
-import kr.ac.kaist.se.tardis.task.api.Task;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.List;
+import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import kr.ac.kaist.se.tardis.notification.api.NotificationService;
+import kr.ac.kaist.se.tardis.task.api.Task;
 import kr.ac.kaist.se.tardis.task.api.TaskService;
 import kr.ac.kaist.se.tardis.task.impl.id.TaskId;
 import kr.ac.kaist.se.tardis.task.impl.id.TaskIdFactory;
@@ -21,23 +27,13 @@ import kr.ac.kaist.se.tardis.taskNote.api.TaskNote;
 import kr.ac.kaist.se.tardis.taskNote.api.TaskNoteService;
 import kr.ac.kaist.se.tardis.web.form.CreateTaskForm;
 import kr.ac.kaist.se.tardis.web.form.CreateTaskNoteForm;
-import kr.ac.kaist.se.tardis.web.validator.SetTaskFormValidator;
 import kr.ac.kaist.se.tardis.web.validator.TaskNoteFormValidator;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Date;
-import java.util.List;
-import java.util.Set;
 
 @Controller
 public class TaskDetailController {
 
 	@Autowired
 	private TaskService taskService;
-	@Autowired
-	private ProjectService projectService;
 	@Autowired
 	private NotificationService notificationService;
 	@Autowired
@@ -57,7 +53,7 @@ public class TaskDetailController {
 		    }
 		});
 		
-		model.addAttribute("projectname",projectService.findProjectById(task.getProjectId()).get().getName());
+		model.addAttribute("projectname",task.getProject().getName());
 		
 		model.addAttribute("username", String.valueOf(user.getUsername()));
 		model.addAttribute("task", task);

@@ -4,7 +4,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Optional;
-import java.util.Set;
 
 import javax.validation.Valid;
 
@@ -25,7 +24,6 @@ import kr.ac.kaist.se.tardis.project.api.ProjectService;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
 import kr.ac.kaist.se.tardis.scheduler.api.SchedulerService;
-import kr.ac.kaist.se.tardis.task.api.Task;
 import kr.ac.kaist.se.tardis.task.api.TaskService;
 import kr.ac.kaist.se.tardis.web.form.CreateTaskForm;
 import kr.ac.kaist.se.tardis.web.form.FormWithNotification;

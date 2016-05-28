@@ -43,45 +43,34 @@ public class OverviewController {
 	}
 
 	private void fillModel(Model model, UserDetails user) {
-		
-		
-		
+
 		model.addAttribute("username", String.valueOf(user.getUsername()));
 		model.addAttribute("allTaskList", taskService.getAllTasks());
 		model.addAttribute("projectList", projectService.findProjectsForUser(String.valueOf(user.getUsername())));
-		
+
 		Set<Task> tasks = taskService.findTasksForUser(String.valueOf(user.getUsername()));
 
-		HashMap<String,String> map = new HashMap<String,String>();
-		for(Task t : tasks){
+		HashMap<String, String> map = new HashMap<String, String>();
+		for (Task t : tasks) {
 			ProjectId pid = t.getProjectId();
-			Project p = projectService.findProjectById(t.getProjectId()).get();
+			Project p = t.getProject();
 			String pname = p.getName();
-			if(!map.containsKey(pid.getId()))
-				map.put(pid.getId(),pname);
+			if (!map.containsKey(pid.getId()))
+				map.put(pid.getId(), pname);
 		}
-					
-		
-		model.addAttribute("map",map);	
-		
-		List<Task> taskList =new ArrayList<Task>(tasks);
-		Collections.sort(taskList, new Comparator<Task>() {
-		    public int compare(Task o1, Task o2) {
-		    	
-		        return o1.getDueDate().compareTo(o2.getDueDate());
-		    }
-		});
-		
-		
-		
-		
-		model.addAttribute("taskList", taskList);
-		
 
-		
-		
-		
-		
+		model.addAttribute("map", map);
+
+		List<Task> taskList = new ArrayList<Task>(tasks);
+		Collections.sort(taskList, new Comparator<Task>() {
+			public int compare(Task o1, Task o2) {
+
+				return o1.getDueDate().compareTo(o2.getDueDate());
+			}
+		});
+
+		model.addAttribute("taskList", taskList);
+
 		model.addAttribute("notificationList", notificationService.getNotificationsForUser(user.getUsername()));
 	}
 

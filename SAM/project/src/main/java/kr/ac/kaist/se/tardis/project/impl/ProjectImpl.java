@@ -7,10 +7,9 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.CollectionTable;
 import javax.persistence.ElementCollection;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
@@ -18,15 +17,14 @@ import javax.persistence.TemporalType;
 
 import kr.ac.kaist.se.tardis.project.api.Project;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
-import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
 import kr.ac.kaist.se.tardis.scheduler.api.JobInfo;
+import kr.ac.kaist.se.tardis.scheduler.api.ProjectJobInfo;
 
 @Entity(name="project")
-@IdClass(ProjectId.class)
 public class ProjectImpl implements Project {
 
-	@Id
-	private String id;
+	@EmbeddedId
+	private ProjectId id;
 	private String name;
 	private String description;
 	private String owner;
@@ -38,14 +36,14 @@ public class ProjectImpl implements Project {
 	@Temporal(TemporalType.DATE)
 	private Date dueDate;
 	
-	@OneToMany(targetEntity=JobInfo.class, cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	@OneToMany(targetEntity=ProjectJobInfo.class, cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	@JoinColumn(name="projectid", referencedColumnName="id")
 	private Set<JobInfo> jobInfos;
 
 	ProjectImpl(){}
 	
-	ProjectImpl(ProjectId id, String projectOwner) {
-		this.id = id.toString();
+	public ProjectImpl(ProjectId id, String projectOwner) {
+		this.id = id;
 		this.owner = projectOwner;
 		this.members = new HashSet<>();
 		this.jobInfos = new HashSet<>();
@@ -74,7 +72,7 @@ public class ProjectImpl implements Project {
 	
 	@Override
 	public ProjectId getId() {
-		return ProjectIdFactory.valueOf(id);
+		return id;
 	}
 
 	@Override

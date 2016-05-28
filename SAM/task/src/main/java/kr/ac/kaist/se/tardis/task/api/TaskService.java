@@ -2,19 +2,12 @@ package kr.ac.kaist.se.tardis.task.api;
 
 import java.util.Optional;
 import java.util.Set;
+
+import kr.ac.kaist.se.tardis.project.api.Project;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
 import kr.ac.kaist.se.tardis.task.impl.id.TaskId;
 
 public interface TaskService {
-
-	/**
-	 * Creates a new Task, which has no values set except the id. This
-	 * {@link Task} is NOT persisted yet. So make sure to call
-	 * {@link #saveTask(Task)} later.
-	 * 
-	 * @return
-	 */
-	Task createTask(String owner,ProjectId projectId);
 
 	/**
 	 * Returns a set of Tasks for the specified user. If the user has no
@@ -62,5 +55,14 @@ public interface TaskService {
 	void deleteTask(Task p);
 
 	Set<Task> getAllTasks();
+	
+	/**
+	 * Creates a new Task, which has no values set except the id. This
+	 * {@link Task} is NOT persisted yet. So make sure to call
+	 * {@link #saveTask(Task)} later.
+	 * 
+	 * @return
+	 */
+	Task createTask(String owner, Project project);
 	
 }

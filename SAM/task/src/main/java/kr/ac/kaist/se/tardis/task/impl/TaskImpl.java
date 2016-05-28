@@ -4,31 +4,62 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
+
+import kr.ac.kaist.se.tardis.project.api.Project;
+import kr.ac.kaist.se.tardis.project.impl.ProjectImpl;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
 import kr.ac.kaist.se.tardis.scheduler.api.JobInfo;
+import kr.ac.kaist.se.tardis.scheduler.api.TaskJobInfo;
 import kr.ac.kaist.se.tardis.task.api.Task;
 import kr.ac.kaist.se.tardis.task.impl.id.TaskId;
 import kr.ac.kaist.se.tardis.task.impl.state.TaskState;
 
+@Entity(name = "task")
 public class TaskImpl implements Task {
 
-	private final TaskId id;
+	@EmbeddedId
+	private TaskId id;
 	private String name;
 	private String description;
 	private String owner;
+	@Temporal(TemporalType.DATE)
 	private Date dueDate;
-	private ProjectId projectId;
+
+	@ManyToOne(targetEntity = ProjectImpl.class)
+	@JoinColumn(name = "projectid", referencedColumnName="id")
+	private Project project;
+
+	@Enumerated(EnumType.STRING)
 	private TaskState taskState;
+
+	@Transient
 	private int taskProgress;
+
+	@OneToMany(targetEntity = TaskJobInfo.class, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "taskid", referencedColumnName = "id")
 	private Set<JobInfo> jobInfos = new HashSet<>();
 
-	TaskImpl(TaskId id, ProjectId projectId, String taskOwner) {
-		this.id = id;
-		this.owner = taskOwner;
-		this.projectId = projectId;
-		this.taskState = TaskState.TODO;
+	TaskImpl() {
 	}
 
+	public TaskImpl(TaskId id, Project project, String taskOwner) {
+		this.id = id;
+		this.owner = taskOwner;
+		this.project = project;
+		this.taskState = TaskState.TODO;
+	}
 
 	@Override
 	public void setName(String name) {
@@ -66,8 +97,13 @@ public class TaskImpl implements Task {
 	}
 
 	@Override
+	public Project getProject() {
+		return project;
+	}
+	
+	@Override
 	public ProjectId getProjectId() {
-		return projectId;
+		return project.getId();
 	}
 
 	@Override
@@ -143,7 +179,7 @@ public class TaskImpl implements Task {
 
 	@Override
 	public String toString() {
-		return "TaskImpl [id=" + id + ",project id=" + projectId + ", name=" + name + ", owner=" + owner + ", dueDate="
+		return "TaskImpl [id=" + id + ",project id=" + project + ", name=" + name + ", owner=" + owner + ", dueDate="
 				+ dueDate + ", state=" + taskState + "]";
 	}
 }
