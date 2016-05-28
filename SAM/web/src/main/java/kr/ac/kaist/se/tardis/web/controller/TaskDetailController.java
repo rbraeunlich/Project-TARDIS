@@ -109,14 +109,14 @@ public class TaskDetailController {
 		}
 		TaskId taskid = TaskIdFactory.valueOf(taskId);
 		if (createTaskNoteForm.getComment() != null &&!createTaskNoteForm.getComment().trim().isEmpty()) {
-			TaskNote newTaskNote = taskNoteService.createComment(taskid, String.valueOf(user.getUsername()), new Date(),
+			TaskNote newTaskNote = taskNoteService.createComment(taskService.findTaskById(taskid).get(), String.valueOf(user.getUsername()), new Date(),
 					createTaskNoteForm.getComment());
 			taskNoteService.saveTaskNote(newTaskNote);
 		}
 
 		if (createTaskNoteForm.getContribution() != null || createTaskNoteForm.getProgress() != null) {
 			if (!createTaskNoteForm.getContribution().trim().isEmpty() || !createTaskNoteForm.getProgress().trim().isEmpty()) {
-				TaskNote newTaskNote = taskNoteService.createContribution(taskid, String.valueOf(user.getUsername()),
+				TaskNote newTaskNote = taskNoteService.createContribution(taskService.findTaskById(taskid).get(), String.valueOf(user.getUsername()),
 						new Date(), Integer.parseInt(createTaskNoteForm.getProgress()),
 						Integer.parseInt(createTaskNoteForm.getContribution()));
 				taskNoteService.saveTaskNote(newTaskNote);
