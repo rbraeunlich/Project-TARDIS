@@ -55,7 +55,8 @@
 				</p>
 				<p>
 					Key: <input id="key" name="key"
-						type="text" th:value="${task.key}" />
+						type="number" th:value="${task.key}" /><b
+						th:if="${#fields.hasErrors('key')}" th:errors="*{key}">error</b>
 				</p>
 			</div>
 			<div id="notifications">

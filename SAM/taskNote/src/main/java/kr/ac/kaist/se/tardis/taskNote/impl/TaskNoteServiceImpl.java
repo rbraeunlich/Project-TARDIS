@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.ac.kaist.se.tardis.task.api.Task;
+import kr.ac.kaist.se.tardis.task.api.TaskService;
+import kr.ac.kaist.se.tardis.task.impl.TaskImpl;
 import kr.ac.kaist.se.tardis.task.impl.id.TaskId;
 import kr.ac.kaist.se.tardis.taskNote.api.TaskNote;
 import kr.ac.kaist.se.tardis.taskNote.api.TaskNoteRepository;
@@ -20,6 +22,9 @@ public class TaskNoteServiceImpl implements TaskNoteService {
 
 	@Autowired
 	private TaskNoteRepository repo;
+	
+	@Autowired
+	private TaskService taskService;
 
 	@Override
 	public TaskNote createComment(Task task, String author, Date writeDate, String comment) {
@@ -43,7 +48,8 @@ public class TaskNoteServiceImpl implements TaskNoteService {
 
 	@Override
 	public Set<TaskNote> findTaskNotesByTaskId(TaskId id) {
-		return repo.findTaskNotesByTask(id);
+		Task task = taskService.findTaskById(id).get();
+		return repo.findTaskNotesByTask((TaskImpl) task);
 	}
 
 	@Override

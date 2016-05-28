@@ -109,7 +109,9 @@ public class TaskController {
 		validator.validate(setTaskForm, bindingResult);
 
 		if (bindingResult.hasErrors()) {
-			return "taskview";
+			fillModel(model, user, id, taskService.findTaskById(id).get().getProjectId());
+			redirectAttributes.addAttribute("taskId", taskId);
+			return "tasksettingview";
 		}
 		Optional<Task> optional = taskService.findTaskById(id);
 
