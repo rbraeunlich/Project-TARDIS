@@ -4,6 +4,7 @@ import static org.hamcrest.Matchers.hasItem;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.junit.Assert.assertThat;
+import static org.mockito.Mockito.mock;
 
 import javax.sql.DataSource;
 
@@ -23,6 +24,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import kr.ac.kaist.se.tardis.persistence.PrimaryDbConfig;
 import kr.ac.kaist.se.tardis.project.api.ProjectRepository;
+import kr.ac.kaist.se.tardis.project.api.ProjectService;
 import kr.ac.kaist.se.tardis.project.impl.ProjectImpl;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
@@ -97,6 +99,11 @@ public class TaskPersistenceTest {
 	@Configuration
 	@ComponentScan
 	public static class TestDataSourceConfiguration {
+		
+		@Bean
+		public ProjectService createMockProjectService(){
+			return mock(ProjectService.class);
+		}
 
 		@Bean
 		public DataSource createUsersDataSource() {
