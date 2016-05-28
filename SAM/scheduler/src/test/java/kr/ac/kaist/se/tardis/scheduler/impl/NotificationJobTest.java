@@ -9,6 +9,8 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.HashSet;
@@ -61,6 +63,8 @@ public class NotificationJobTest {
 
 	private static final String PROJECT_MEMBER_2 = "Dave";
 
+	private static final DateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
+
 	@Autowired
 	private Scheduler scheduler;
 
@@ -80,8 +84,8 @@ public class NotificationJobTest {
 				TestConfig.textCaptor.capture(), TestConfig.dateCaptor.capture());
 
 		assertThat(TestConfig.usernameCaptor.getValue(), is(TASK_OWNER));
-		assertThat(TestConfig.textCaptor.getValue(),
-				is("Task " + TASK_NAME + " from project " + PROJECT_NAME + " is due on " + DUE_DATE));
+		assertThat(TestConfig.textCaptor.getValue(), is(
+				"Task " + TASK_NAME + " from project " + PROJECT_NAME + " is due on " + DATE_FORMAT.format(DUE_DATE)));
 		assertThat(TestConfig.dateCaptor.getValue(), is(notNullValue()));
 	}
 
@@ -99,12 +103,14 @@ public class NotificationJobTest {
 
 		assertThat(TestConfig.usernameCaptor.getAllValues(),
 				hasItems(PROJECT_OWNER, PROJECT_MEMBER_1, PROJECT_MEMBER_2));
-		assertThat(TestConfig.textCaptor.getValue(), is("Project " + PROJECT_NAME + " is due on " + DUE_DATE));
+		assertThat(TestConfig.textCaptor.getValue(),
+				is("Project " + PROJECT_NAME + " is due on " + DATE_FORMAT.format(DUE_DATE)));
 		assertThat(TestConfig.dateCaptor.getValue(), is(notNullValue()));
 	}
 
 	@Configuration
-	@ComponentScan(excludeFilters = {@Filter(type = FilterType.ASSIGNABLE_TYPE, classes = { GitHubJob.class }), @Filter(type=FilterType.ANNOTATION, value=Configuration.class)})
+	@ComponentScan(excludeFilters = { @Filter(type = FilterType.ASSIGNABLE_TYPE, classes = { GitHubJob.class }),
+			@Filter(type = FilterType.ANNOTATION, value = Configuration.class) })
 	public static class TestConfig {
 
 		private static NotificationService notificationService;
