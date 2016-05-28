@@ -14,6 +14,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
+import kr.ac.kaist.se.tardis.project.impl.ProjectImpl;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
 import kr.ac.kaist.se.tardis.task.api.Task;
 import kr.ac.kaist.se.tardis.task.api.TaskRepository;
@@ -152,8 +153,8 @@ public class TestConfig {
 			}
 
 			@Override
-			public Set<Task> findTaskByProject(ProjectId id) {
-				return tasks.stream().filter(p -> id.equals(p.getProjectId())).collect(Collectors.toSet());
+			public Set<Task> findTaskByProject(ProjectImpl project) {
+				return tasks.stream().filter(p -> project.equals(p)).collect(Collectors.toSet());
 			}
 		};
 	}

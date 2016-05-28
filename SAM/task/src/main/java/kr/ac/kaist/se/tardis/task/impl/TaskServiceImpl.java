@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.ac.kaist.se.tardis.project.api.Project;
+import kr.ac.kaist.se.tardis.project.api.ProjectService;
+import kr.ac.kaist.se.tardis.project.impl.ProjectImpl;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
 import kr.ac.kaist.se.tardis.task.api.Task;
 import kr.ac.kaist.se.tardis.task.api.TaskRepository;
@@ -21,6 +23,9 @@ public class TaskServiceImpl implements TaskService {
 	@Autowired
 	private TaskRepository repo;
 
+	@Autowired
+	private ProjectService projectService;
+	
 	@Override
 	public Task createTask(String owner, Project project) {
 		TaskId taskId = TaskIdFactory.generateTaskId();
@@ -45,7 +50,8 @@ public class TaskServiceImpl implements TaskService {
 
 	@Override
 	public Set<Task> findTaskByProjectId(ProjectId id) {
-		return repo.findTaskByProject(id);
+		Project project = projectService.findProjectById(id).get();
+		return repo.findTaskByProject((ProjectImpl) project);
 	}
 
 	@Override
