@@ -35,7 +35,8 @@ public class PrimaryDbConfig {
 		// FIXME extend when new entities get added
 		factory.setPackagesToScan("kr.ac.kaist.se.tardis.users.copy", "kr.ac.kaist.se.tardis.notification.impl",
 				"kr.ac.kaist.se.tardis.project.impl", "kr.ac.kaist.se.tardis.project.impl.id",
-				"kr.ac.kaist.se.tardis.scheduler.api", "kr.ac.kaist.se.tardis.task.impl");
+				"kr.ac.kaist.se.tardis.scheduler.api", "kr.ac.kaist.se.tardis.task.impl",
+				"kr.ac.kaist.se.tardis.taskNote.impl", "kr.ac.kaist.se.tardis.taskNote.impl.id", "kr.ac.kaist.se.tardis.taskNote.api");
 		factory.setDataSource(primaryDataSource);
 		factory.setPersistenceUnitName("primary");
 

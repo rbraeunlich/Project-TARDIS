@@ -4,7 +4,7 @@ CREATE TABLE projectjobinfo (
 	githuburl varchar(255),
 	triggerid varchar(255),
 	disc varchar(255),
-	FOREIGN KEY (projectid) REFERENCES project(id)
+	FOREIGN KEY (projectid) REFERENCES project(id) ON DELETE CASCADE
 );
 
 CREATE TABLE taskjobinfo (
@@ -13,5 +13,5 @@ CREATE TABLE taskjobinfo (
 	githuburl varchar(255),
 	triggerid varchar(255),
 	disc varchar(255),
-	FOREIGN KEY (taskid) REFERENCES task(id)
+	FOREIGN KEY (taskid) REFERENCES task(id) ON DELETE CASCADE
 );

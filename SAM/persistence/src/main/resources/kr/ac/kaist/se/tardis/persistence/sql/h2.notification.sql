@@ -6,5 +6,5 @@ CREATE TABLE notification (
 	notificationText text,
 	notificationDate date,
 	primary key(id),
-	FOREIGN KEY (username) REFERENCES userWithoutPassword(username)
+	FOREIGN KEY (username) REFERENCES userWithoutPassword(username) ON DELETE CASCADE
 );

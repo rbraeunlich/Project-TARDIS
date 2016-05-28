@@ -8,5 +8,5 @@ CREATE TABLE task (
   taskState VARCHAR(255),
   PRIMARY KEY(id),
   FOREIGN KEY(owner) REFERENCES userWithoutPassword(username),
-  FOREIGN KEY (projectId) REFERENCES project(id)
+  FOREIGN KEY (projectId) REFERENCES project(id) ON DELETE CASCADE
 );

@@ -2,10 +2,15 @@ package kr.ac.kaist.se.tardis.taskNote.impl.id;
 
 import java.io.Serializable;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class TaskNoteId implements Comparable<TaskNoteId>, Serializable{
 
 	private static final long serialVersionUID = 1L;
-	private final String id;
+	private String id;
+	
+	TaskNoteId(){}
 	
 	TaskNoteId(String id){
 		this.id = id;

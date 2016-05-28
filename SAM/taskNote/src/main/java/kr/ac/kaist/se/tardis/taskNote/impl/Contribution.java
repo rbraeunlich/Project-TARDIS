@@ -2,26 +2,36 @@ package kr.ac.kaist.se.tardis.taskNote.impl;
 
 import java.util.Date;
 
-import kr.ac.kaist.se.tardis.task.impl.id.TaskId;
+import javax.persistence.Entity;
+
+import kr.ac.kaist.se.tardis.task.api.Task;
 import kr.ac.kaist.se.tardis.taskNote.api.TaskNote;
 import kr.ac.kaist.se.tardis.taskNote.impl.id.TaskNoteId;
 
+@Entity
 public class Contribution extends TaskNote {
 	int progress;
 	int contribution;
+	
+	Contribution(){
+		super();
+	}
 
-	public Contribution(TaskNoteId id, TaskId taskId, String author, Date writeDate,int progress, int contributioin) {
-		super(id, taskId, author, writeDate);
-		this.progress=progress;
-		this.contribution=contributioin;
+	public Contribution(TaskNoteId id, Task task, String author, Date writeDate, int progress, int contributioin) {
+		super(id, task, author, writeDate);
+		this.progress = progress;
+		this.contribution = contributioin;
 	}
-	public String getContent(){
-		return "Progress: " + progress + ", Contribution: "+contribution;
+
+	public String getContent() {
+		return "Progress: " + progress + ", Contribution: " + contribution;
 	}
-	public void setContribution(int contribution){
+
+	public void setContribution(int contribution) {
 		this.contribution = contribution;
 	}
-	public void setProgress(int progress){
+
+	public void setProgress(int progress) {
 		this.progress = progress;
 	}
 }

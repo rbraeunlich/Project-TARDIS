@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
+import kr.ac.kaist.se.tardis.task.api.Task;
 import kr.ac.kaist.se.tardis.task.impl.id.TaskId;
 import kr.ac.kaist.se.tardis.taskNote.api.TaskNote;
 import kr.ac.kaist.se.tardis.taskNote.api.TaskNoteService;
@@ -20,17 +21,17 @@ public class TaskNoteServiceImpl implements TaskNoteService {
 	private Set<TaskNote> taskNotes = new HashSet<>();
 	
 	@Override
-	public TaskNote createComment(TaskId taskId, String author, Date writeDate, String comment) {
+	public TaskNote createComment(Task task, String author, Date writeDate, String comment) {
 		TaskNoteId taskNoteId = TaskNoteIdFactory.generateTaskNoteId();
-		TaskNote t = new Comment(taskNoteId, taskId, author, writeDate, comment);
+		TaskNote t = new Comment(taskNoteId, task, author, writeDate, comment);
 		return t;
 	}
 
 	@Override
-	public TaskNote createContribution(TaskId taskId, String author, Date writeDate, int progress,
+	public TaskNote createContribution(Task task, String author, Date writeDate, int progress,
 			int contributioin) {
 		TaskNoteId taskNoteId = TaskNoteIdFactory.generateTaskNoteId();
-		TaskNote t = new Contribution(taskNoteId, taskId, author, writeDate, progress, contributioin);
+		TaskNote t = new Contribution(taskNoteId, task, author, writeDate, progress, contributioin);
 		return t;
 	}
 

@@ -2,21 +2,41 @@ package kr.ac.kaist.se.tardis.taskNote.api;
 
 import java.util.Date;
 
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import kr.ac.kaist.se.tardis.task.api.Task;
+import kr.ac.kaist.se.tardis.task.impl.TaskImpl;
 import kr.ac.kaist.se.tardis.task.impl.id.TaskId;
 import kr.ac.kaist.se.tardis.taskNote.impl.Comment;
 import kr.ac.kaist.se.tardis.taskNote.impl.Contribution;
 import kr.ac.kaist.se.tardis.taskNote.impl.id.TaskNoteId;
 
+@Entity(name="tasknote")
+@Inheritance(strategy=InheritanceType.JOINED)
 public abstract class TaskNote {
 	
+	@EmbeddedId
 	private TaskNoteId id;
-	private TaskId taskId;
+	
+	@ManyToOne(targetEntity=TaskImpl.class)
+	@JoinColumn(name = "taskid", referencedColumnName="id")
+	private Task task;
 	private String author;
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date writeDate;
 	
-	protected TaskNote(TaskNoteId id,TaskId taskId, String author, Date writeDate){
+	protected TaskNote(){}
+	
+	protected TaskNote(TaskNoteId id, Task task, String author, Date writeDate){
 		this.id =id;
-		this.taskId = taskId;
+		this.task = task;
 		this.author = author;
 		this.writeDate = writeDate;
 	}
@@ -29,7 +49,7 @@ public abstract class TaskNote {
 	}
 			
 	public TaskId getTaskId() {
-		return taskId;
+		return task.getId();
 	}
 
 
@@ -40,6 +60,15 @@ public abstract class TaskNote {
 	public Date getWriteDate() {
 		return writeDate;
 	}
+	
+	public Task getTask() {
+		return task;
+	}
+
+	public void setTask(Task task) {
+		this.task = task;
+	}
+
 
 	@Override
 	public int hashCode() {
@@ -74,7 +103,7 @@ public abstract class TaskNote {
 		else if(this instanceof Contribution)
 			type = "Contribution";
 		
-		return "TaskNote [id=" + id + ",type=" + type +",task id=" + taskId +  ", owner=" + author + ", writeDate="
+		return "TaskNote [id=" + id + ",type=" + type +",task id=" + task.getId() +  ", owner=" + author + ", writeDate="
 				+ writeDate + ", content=" + getContent() + "]";
 	}
 
