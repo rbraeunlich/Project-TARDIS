@@ -11,8 +11,8 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.test.context.ActiveProfiles;
 
 @Configuration
-@ActiveProfiles("default")
-public class PrimaryDataSourceConfig {
+@ActiveProfiles("dev")
+public class PrimaryDevDataSourceConfig {
 
 	@Primary
 	@Bean
@@ -27,6 +27,7 @@ public class PrimaryDataSourceConfig {
 				 .addScript("kr/ac/kaist/se/tardis/persistence/sql/h2.task.sql")
 				 .addScript("kr/ac/kaist/se/tardis/persistence/sql/h2.jobinfo.sql")
 				 .addScript("kr/ac/kaist/se/tardis/persistence/sql/h2.tasknote.sql")
+				 .addScript("kr/ac/kaist/se/tardis/persistence/sql/h2.addmockuser.sql")
 				.build();
 		return embeddedDatabase;
 	}
