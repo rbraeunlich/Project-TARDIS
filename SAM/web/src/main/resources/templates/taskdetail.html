@@ -65,7 +65,7 @@
 			<p><b th:if="${#fields.hasErrors('contribution')}" th:errors="*{contribution}"></b></p>
 			</div>			
 		</form>
-			<form action="#" th:action="@{/kanbanboard}" method="get">
+			<form style="text-align:center;" action="#" th:action="@{/kanbanboard}" method="get">
 				<button name="action" type="submit" value="submit">Back to KanbanBoard</button>
 				<input type="hidden" name="projectId" th:value="${task.projectId.id}"/>
 			</form>

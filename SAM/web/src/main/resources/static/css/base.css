@@ -41,6 +41,7 @@ p {
 
 .box {
 	width: 80%;
+	min-width: 1000px;
 	margin: auto;
 }
 
@@ -98,6 +99,7 @@ p {
 #heading{
 	margin-top: 10px;
 	height: 150px;
+	position: relative;
 }
 
 #notificationBox {
@@ -116,15 +118,15 @@ p {
 	min-height: 300px;
 	background-color: #b3e4ff;
 	position: absolute;
+	left: -150px;
 	z-index: 3;
 	display:none;
 }
 
 #board {
-	width: 78%;
-	padding: 1%;
 	display: table;
 	border: 1px solid grey;
+	margin: auto;
 }
 
 #footer {
