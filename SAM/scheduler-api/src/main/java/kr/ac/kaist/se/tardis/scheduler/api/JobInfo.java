@@ -100,4 +100,10 @@ public class JobInfo {
 		return true;
 	}
 
+	@Override
+	public String toString() {
+		return "JobInfo [taskId=" + taskId + ", projectId=" + projectId + ", jobType=" + jobType + ", githubUrl="
+				+ githubUrl + ", triggerId=" + triggerId + "]";
+	}
+	
 }

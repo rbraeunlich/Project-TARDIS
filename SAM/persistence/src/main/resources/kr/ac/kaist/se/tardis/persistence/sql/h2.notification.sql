@@ -6,5 +6,5 @@ CREATE TABLE notification (
 	notificationText text,
 	notificationDate date,
 	primary key(id),
-	foreign key (username) references userWithoutPassword(username)
+	FOREIGN KEY (username) REFERENCES userWithoutPassword(username)
 );

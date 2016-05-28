@@ -126,6 +126,8 @@ public class SchedulerServiceImpl implements SchedulerService {
 				throw new IllegalArgumentException(EXCEPTION_TEXT_IDS);
 			}
 			jobInfo.setTaskId(id);
+			//in the database, the column is not allowed to be null
+			jobInfo.setProjectId("");
 			this.taskId = id;
 			return this;
 		}
@@ -136,6 +138,8 @@ public class SchedulerServiceImpl implements SchedulerService {
 				throw new IllegalArgumentException(EXCEPTION_TEXT_IDS);
 			}
 			jobInfo.setProjectId(id);
+			//in the database, the column is not allowed to be null
+			jobInfo.setTaskId("");
 			this.projectId = id;
 			return this;
 		}

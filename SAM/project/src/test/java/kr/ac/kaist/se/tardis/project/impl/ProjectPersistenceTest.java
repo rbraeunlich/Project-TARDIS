@@ -1,5 +1,6 @@
 package kr.ac.kaist.se.tardis.project.impl;
 
+import static org.hamcrest.Matchers.hasItem;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.junit.Assert.assertThat;
@@ -23,6 +24,8 @@ import kr.ac.kaist.se.tardis.persistence.PrimaryDbConfig;
 import kr.ac.kaist.se.tardis.project.api.ProjectRepository;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
+import kr.ac.kaist.se.tardis.scheduler.api.JobInfo;
+import kr.ac.kaist.se.tardis.scheduler.api.JobType;
 import kr.ac.kaist.se.tardis.users.copy.UserWithoutPassword;
 import kr.ac.kaist.se.tardis.users.copy.UserWithoutPasswordRepository;
 
@@ -47,6 +50,32 @@ public class ProjectPersistenceTest {
 		ProjectImpl findOne = repo.findOne(id);
 		assertThat(findOne, is(notNullValue()));
 	}
+	
+	@Test
+	public void persistProjectWithJobInfo() {
+		UserWithoutPassword user = new UserWithoutPassword("owner");
+		userRepo.saveAndFlush(user);
+
+		ProjectId id = ProjectIdFactory.generateProjectId();
+		
+		JobInfo info = new JobInfo();
+		info.setGithubUrl("https://github.com/rbraeunlich/Project-TARDIS");
+		info.setJobType(JobType.GITHUB);
+		info.setTriggerId("123");
+		info.setProjectId(id.getId());
+		info.setTaskId("");
+		
+		ProjectImpl project = new ProjectImpl(id, user.getUsername());
+		
+		project = repo.saveAndFlush(project);
+		
+		project.addJobInfo(info);
+		repo.saveAndFlush(project);
+		
+		ProjectImpl findOne = repo.findOne(id);
+		assertThat(findOne, is(notNullValue()));
+		assertThat(findOne.getAllJobInfos(), hasItem(info));
+	}
 
 
 	@Configuration
@@ -60,6 +89,7 @@ public class ProjectPersistenceTest {
 					.setScriptEncoding("UTF-8")
 					.addScript("kr/ac/kaist/se/tardis/persistence/sql/h2.userwithoutpwd.sql")
 					.addScript("kr/ac/kaist/se/tardis/persistence/sql/h2.project.sql")
+					.addScript("kr/ac/kaist/se/tardis/persistence/sql/h2.jobinfo.sql")
 					.build();
 			return embeddedDatabase;
 		}

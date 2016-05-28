@@ -4,9 +4,11 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.CollectionTable;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
@@ -36,9 +38,9 @@ public class ProjectImpl implements Project {
 	@Temporal(TemporalType.DATE)
 	private Date dueDate;
 	
-	@OneToMany(targetEntity=JobInfo.class)
+	@OneToMany(targetEntity=JobInfo.class, cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	@JoinColumn(name="projectid", referencedColumnName="id")
-	private Set<JobInfo> jobInfos = new HashSet<>();
+	private Set<JobInfo> jobInfos;
 
 	ProjectImpl(){}
 	
@@ -46,6 +48,7 @@ public class ProjectImpl implements Project {
 		this.id = id.toString();
 		this.owner = projectOwner;
 		this.members = new HashSet<>();
+		this.jobInfos = new HashSet<>();
 		addProjectMember(owner);
 	}
 
