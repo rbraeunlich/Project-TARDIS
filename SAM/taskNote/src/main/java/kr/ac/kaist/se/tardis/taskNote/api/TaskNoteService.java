@@ -19,7 +19,7 @@ public interface TaskNoteService {
 	 */
 	TaskNote createComment(Task task, String taskNoteOwner, Date writeDate, String comment);
 
-	TaskNote createContribution(Task task, String taskNoteOwner, Date writeDate, int progress, int contributioin);
+	TaskNote createContribution(Task task, String taskNoteOwner, Date writeDate, Integer progress, Integer contribution);
 
 	/**
 	 * Returns a set of taskNotes for the specified user. If the user has no
@@ -29,7 +29,7 @@ public interface TaskNoteService {
 	 * @return
 	 */
 
-	Optional<TaskNote> findtaskNoteById(TaskNoteId id);
+	Optional<TaskNote> findTaskNoteById(TaskNoteId id);
 
 	/**
 	 * Returns the taskNote that has the given TaskId
@@ -37,7 +37,7 @@ public interface TaskNoteService {
 	 * @param id
 	 * @return
 	 */
-	Set<TaskNote> findtaskNoteByTaskId(TaskId id);
+	Set<TaskNote> findTaskNotesByTaskId(TaskId id);
 
 	/**
 	 * Persists the TaskNote and saves all changes made.

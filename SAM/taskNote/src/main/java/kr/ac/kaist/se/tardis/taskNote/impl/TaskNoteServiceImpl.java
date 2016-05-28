@@ -1,25 +1,26 @@
 package kr.ac.kaist.se.tardis.taskNote.impl;
 
 import java.util.Date;
-import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
-import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.ac.kaist.se.tardis.task.api.Task;
 import kr.ac.kaist.se.tardis.task.impl.id.TaskId;
 import kr.ac.kaist.se.tardis.taskNote.api.TaskNote;
+import kr.ac.kaist.se.tardis.taskNote.api.TaskNoteRepository;
 import kr.ac.kaist.se.tardis.taskNote.api.TaskNoteService;
 import kr.ac.kaist.se.tardis.taskNote.impl.id.TaskNoteId;
 import kr.ac.kaist.se.tardis.taskNote.impl.id.TaskNoteIdFactory;
+
 @Service
 public class TaskNoteServiceImpl implements TaskNoteService {
-	
-	// FIXME replace this set with a DTO later
-	private Set<TaskNote> taskNotes = new HashSet<>();
-	
+
+	@Autowired
+	private TaskNoteRepository repo;
+
 	@Override
 	public TaskNote createComment(Task task, String author, Date writeDate, String comment) {
 		TaskNoteId taskNoteId = TaskNoteIdFactory.generateTaskNoteId();
@@ -28,34 +29,31 @@ public class TaskNoteServiceImpl implements TaskNoteService {
 	}
 
 	@Override
-	public TaskNote createContribution(Task task, String author, Date writeDate, int progress,
-			int contributioin) {
+	public TaskNote createContribution(Task task, String author, Date writeDate, Integer progress,
+			Integer contribution) {
 		TaskNoteId taskNoteId = TaskNoteIdFactory.generateTaskNoteId();
-		TaskNote t = new Contribution(taskNoteId, task, author, writeDate, progress, contributioin);
+		TaskNote t = new Contribution(taskNoteId, task, author, writeDate, progress, contribution);
 		return t;
 	}
 
 	@Override
-	public Optional<TaskNote> findtaskNoteById(TaskNoteId id) {
-		return taskNotes.stream().filter(p -> p.getId().equals(id)).findFirst();
+	public Optional<TaskNote> findTaskNoteById(TaskNoteId id) {
+		return Optional.of(repo.findOne(id));
 	}
 
 	@Override
-	public Set<TaskNote> findtaskNoteByTaskId(TaskId id) {
-		return taskNotes.stream().filter(p -> id.equals(p.getTaskId()))
-				.collect(Collectors.toSet());
+	public Set<TaskNote> findTaskNotesByTaskId(TaskId id) {
+		return repo.findTaskNotesByTask(id);
 	}
 
 	@Override
 	public void saveTaskNote(TaskNote t) {
-		// TODO Auto-generated method stub
-		taskNotes.add(t);
+		repo.save(t);
 	}
 
 	@Override
 	public void deleteTaskNote(TaskNote t) {
-		// TODO Auto-generated method stub
-		taskNotes.remove(t);
+		repo.delete(t);
 	}
 
 }

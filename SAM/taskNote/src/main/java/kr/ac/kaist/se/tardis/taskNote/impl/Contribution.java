@@ -10,21 +10,29 @@ import kr.ac.kaist.se.tardis.taskNote.impl.id.TaskNoteId;
 
 @Entity
 public class Contribution extends TaskNote {
-	int progress;
-	int contribution;
-	
-	Contribution(){
+	private Integer progress;
+	private Integer contribution;
+
+	Contribution() {
 		super();
 	}
 
-	public Contribution(TaskNoteId id, Task task, String author, Date writeDate, int progress, int contributioin) {
+	public Contribution(TaskNoteId id, Task task, String author, Date writeDate, Integer progress, Integer contribution) {
 		super(id, task, author, writeDate);
 		this.progress = progress;
-		this.contribution = contributioin;
+		this.contribution = contribution;
 	}
 
 	public String getContent() {
-		return "Progress: " + progress + ", Contribution: " + contribution;
+		if (progress != null && contribution != null) {
+			return "Progress: " + progress + ", Contribution: " + contribution + " from " + getAuthor();
+		} else if( progress != null){
+			return "Progress: " + progress + " from " + getAuthor();
+		} else if (contribution != null){
+			return "Contribution: " + contribution + " from " + getAuthor();
+		} else{
+			return "Commit from" + getAuthor();
+		}
 	}
 
 	public void setContribution(int contribution) {

@@ -116,8 +116,6 @@ public class TaskController {
 		if (optional.isPresent()) {
 			Task changedTask = optional.get();
 
-			// TODO update features
-
 			changedTask.setName(setTaskForm.getTaskName());
 			changedTask.setDescription(setTaskForm.getTaskDescription());
 			changedTask.setOwner(setTaskForm.getOwner());
@@ -132,6 +130,9 @@ public class TaskController {
 				}
 			} catch (ParseException e) {
 				throw new RuntimeException(e);
+			}
+			if(setTaskForm.getKey() != null){
+				changedTask.setKey(setTaskForm.getKey());
 			}
 			taskService.saveTask(changedTask);
 

@@ -50,6 +50,7 @@ public class TaskImpl implements Task {
 	@OneToMany(targetEntity = TaskJobInfo.class, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "taskid", referencedColumnName = "id")
 	private Set<JobInfo> jobInfos = new HashSet<>();
+	private Integer key;
 
 	TaskImpl() {
 	}
@@ -151,6 +152,16 @@ public class TaskImpl implements Task {
 	public void addJobInfo(JobInfo jobInfo) {
 		jobInfos.add(jobInfo);
 	}
+	
+	@Override
+	public Integer getKey() {
+		return key;
+	}
+
+	@Override
+	public void setKey(Integer key) {
+		this.key = key;
+	}
 
 	@Override
 	public int hashCode() {
@@ -182,4 +193,5 @@ public class TaskImpl implements Task {
 		return "TaskImpl [id=" + id + ",project id=" + project + ", name=" + name + ", owner=" + owner + ", dueDate="
 				+ dueDate + ", state=" + taskState + "]";
 	}
+
 }

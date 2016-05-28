@@ -40,4 +40,10 @@ public interface Task extends JobOwner {
 
 	ProjectId getProjectId();
 
+	/**
+	 * A key given by the user to identify tasks in commit messages.
+	 */
+	Integer getKey();
+
+	void setKey(Integer key);
 }

@@ -5,9 +5,11 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.ac.kaist.se.tardis.project.api.Project;
+import kr.ac.kaist.se.tardis.project.api.ProjectRepository;
 import kr.ac.kaist.se.tardis.project.api.ProjectService;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
@@ -15,8 +17,8 @@ import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
 @Service
 public class ProjectServiceImpl implements ProjectService {
 
-	// FIXME replace this set with a DTO later
-	private Set<Project> projects = new HashSet<>();
+	@Autowired
+	private ProjectRepository repo;
 
 	@Override
 	public Project createProject(String owner) {
@@ -27,35 +29,34 @@ public class ProjectServiceImpl implements ProjectService {
 
 	@Override
 	public Set<Project> findProjectsForUser(String username) {
-		return projects
-				.stream()
-				.filter(p -> (p.getProjectOwner().equals(username) || p
-						.getProjectMembers().contains(username)))
+		return repo.findAll().stream()
+				.filter(p -> (p.getProjectOwner().equals(username) || p.getProjectMembers().contains(username)))
 				.collect(Collectors.toSet());
 	}
 
 	@Override
 	public Set<Project> findProjectByName(String name) {
-		return projects.stream().filter(p -> name.equals(p.getName()))
-				.collect(Collectors.toSet());
+		return repo.findProjectsByName(name);
 	}
 
 	@Override
 	public Optional<Project> findProjectById(ProjectId id) {
-		return projects.stream().filter(p -> p.getId().equals(id)).findFirst();
+		return Optional.ofNullable(repo.findOne(id));
 	}
 
 	@Override
 	public void saveProject(Project p) {
-		projects.add(p);
+		repo.save((ProjectImpl) p);
 	}
 
 	@Override
 	public void deleteProject(Project p) {
-		projects.remove(p);
+		repo.delete((ProjectImpl) p);
 	}
 
 	@Override
-	public Set<Project> getAllProjects() { return new HashSet<>(projects); }
+	public Set<Project> getAllProjects() {
+		return new HashSet<>(repo.findAll());
+	}
 
 }

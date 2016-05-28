@@ -29,7 +29,7 @@ public class ProjectImpl implements Project {
 	private String description;
 	private String owner;
 	
-	@ElementCollection
+	@ElementCollection(fetch=FetchType.EAGER)
 	@CollectionTable(name="projectmember", joinColumns=@JoinColumn(name="projectid"))
 	private Set<String> members;
 	

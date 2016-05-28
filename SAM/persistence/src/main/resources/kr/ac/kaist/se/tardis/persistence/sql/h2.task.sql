@@ -6,6 +6,7 @@ CREATE TABLE task (
   dueDate DATE,
   projectId VARCHAR(255),
   taskState VARCHAR(255),
+  key INTEGER UNIQUE,
   PRIMARY KEY(id),
   FOREIGN KEY(owner) REFERENCES userWithoutPassword(username),
   FOREIGN KEY (projectId) REFERENCES project(id) ON DELETE CASCADE

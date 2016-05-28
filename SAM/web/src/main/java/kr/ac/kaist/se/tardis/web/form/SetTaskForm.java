@@ -1,6 +1,7 @@
 package kr.ac.kaist.se.tardis.web.form;
 
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 public class SetTaskForm extends FormWithNotification{
@@ -19,6 +20,9 @@ public class SetTaskForm extends FormWithNotification{
 	private String taskName;
 
 	private String taskDescription;
+	
+	@Pattern(regexp=".*[0-9].*")
+	private Integer key;
 
 	@NotNull
 	private String owner;
@@ -55,4 +59,12 @@ public class SetTaskForm extends FormWithNotification{
 		this.projectId = projectId;
 	}
 
+	public Integer getKey() {
+		return key;
+	}
+
+	public void setKey(Integer key) {
+		this.key = key;
+	}
+	
 }

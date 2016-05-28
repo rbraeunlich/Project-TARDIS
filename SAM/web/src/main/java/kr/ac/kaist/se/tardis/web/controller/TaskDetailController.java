@@ -44,7 +44,7 @@ public class TaskDetailController {
 	private void fillModel(Model model, UserDetails user, TaskId id) {
 		Task task = taskService.findTaskById(id).get();
 				
-		Set<TaskNote> taskNotes = taskNoteService.findtaskNoteByTaskId(id);
+		Set<TaskNote> taskNotes = taskNoteService.findTaskNotesByTaskId(id);
 		List<TaskNote> tNs =new ArrayList<TaskNote>(taskNotes);
 		Collections.sort(tNs, new Comparator<TaskNote>() {
 		    public int compare(TaskNote o1, TaskNote o2) {

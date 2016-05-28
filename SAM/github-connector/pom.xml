@@ -23,5 +23,10 @@
 			<artifactId>org.eclipse.egit.github.core</artifactId>
 			<version>2.1.5</version>
 		</dependency>
+		<dependency>
+			<groupId>kr.ac.kaist.se.tardis</groupId>
+			<artifactId>taskNote</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 </project>
