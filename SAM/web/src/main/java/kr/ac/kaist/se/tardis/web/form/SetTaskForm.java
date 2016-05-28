@@ -1,9 +1,11 @@
 package kr.ac.kaist.se.tardis.web.form;
 
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-public class SetTaskForm extends FormWithNotification{
+public class SetTaskForm extends FormWithNotification {
 	public static final String SHORT_TASK_NAME_ERROR = "Task name must contain at least three characters";
 	public static final String NO_TASK_NAME_ERROR = "Task must have a name";
 	public static final String DUP_TASK_NAME_ERROR = "Task must have a unique name";
@@ -19,6 +21,10 @@ public class SetTaskForm extends FormWithNotification{
 	private String taskName;
 
 	private String taskDescription;
+
+	@Min(0)
+	@Digits(integer = 10, fraction = 0)
+	private Integer key;
 
 	@NotNull
 	private String owner;
@@ -53,6 +59,14 @@ public class SetTaskForm extends FormWithNotification{
 
 	public void setProjectId(String projectId) {
 		this.projectId = projectId;
+	}
+
+	public Integer getKey() {
+		return key;
+	}
+
+	public void setKey(Integer key) {
+		this.key = key;
 	}
 
 }

@@ -12,9 +12,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import java.util.Set;
 
 import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.test.context.support.WithMockUser;
+import org.springframework.security.test.context.support.WithUserDetails;
 
 import kr.ac.kaist.se.tardis.project.api.Project;
 import kr.ac.kaist.se.tardis.project.api.ProjectService;
@@ -25,6 +27,16 @@ public class OverviewControllerIntegrationTest extends AbstractControllerIntegra
 	@Autowired
 	private ProjectService projectService;
 	
+	@Before
+	public void setUp() throws Exception{
+		mockMvc
+		.perform(post("/registration")
+					.param("username", "admin")
+					.param("password", "admin")
+					.param("usernameRepeated", "admin")
+					.param("passwordRepeated", "admin"));
+	}
+	
 	@After
 	public void tearDown(){
 		Set<Project> allProjects = projectService.getAllProjects();
@@ -33,7 +45,7 @@ public class OverviewControllerIntegrationTest extends AbstractControllerIntegra
 		}
 	}
 
-	@WithMockUser
+	@WithUserDetails("admin")
 	@Test
 	public void createNewProject() throws Exception{
 		mockMvc
@@ -66,7 +78,7 @@ public class OverviewControllerIntegrationTest extends AbstractControllerIntegra
 		assertThat(projectService.findProjectByName("ABC"), is(empty()));
 	}
 	
-	@WithMockUser
+	@WithUserDetails("admin")
 	@Test
 	public void createProjectWithoutDescription() throws Exception{
 		mockMvc

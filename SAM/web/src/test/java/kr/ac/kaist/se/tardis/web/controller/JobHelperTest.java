@@ -22,6 +22,7 @@ import kr.ac.kaist.se.tardis.project.api.Project;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
 import kr.ac.kaist.se.tardis.scheduler.api.JobInfo;
 import kr.ac.kaist.se.tardis.scheduler.api.JobType;
+import kr.ac.kaist.se.tardis.scheduler.api.ProjectJobInfo;
 import kr.ac.kaist.se.tardis.scheduler.api.SchedulerService;
 import kr.ac.kaist.se.tardis.scheduler.api.StandardNotificationBuilder;
 import kr.ac.kaist.se.tardis.web.form.FormWithNotification;
@@ -37,11 +38,11 @@ public class JobHelperTest {
 		when(notificationBuilderMock.oneDay(any(Date.class))).thenReturn(notificationBuilderMock);
 		when(notificationBuilderMock.threeDays(any(Date.class))).thenReturn(notificationBuilderMock);
 		when(notificationBuilderMock.sevenDays(any(Date.class))).thenReturn(notificationBuilderMock);
-		JobInfo jobInfo = new JobInfo();
+		JobInfo jobInfo = new ProjectJobInfo();
 		jobInfo.setJobType(JobType.ONE_DAY);
-		JobInfo jobInfo2 = new JobInfo();
+		JobInfo jobInfo2 = new ProjectJobInfo();
 		jobInfo2.setJobType(JobType.THREE_DAYS);
-		JobInfo jobInfo3 = new JobInfo();
+		JobInfo jobInfo3 = new ProjectJobInfo();
 		jobInfo3.setJobType(JobType.SEVEN_DAYS);
 		when(notificationBuilderMock.submit()).thenReturn(jobInfo, jobInfo2, jobInfo3);
 		FormWithNotification formWithNotification = new FormWithNotification();
@@ -69,11 +70,11 @@ public class JobHelperTest {
 		FormWithNotification form = new FormWithNotification();
 		Project projectMock = mock(Project.class);
 		when(projectMock.getId()).thenReturn(ProjectIdFactory.generateProjectId());
-		JobInfo jobInfo = new JobInfo();
+		JobInfo jobInfo = new ProjectJobInfo();
 		jobInfo.setJobType(JobType.ONE_DAY);
-		JobInfo jobInfo2 = new JobInfo();
+		JobInfo jobInfo2 = new ProjectJobInfo();
 		jobInfo2.setJobType(JobType.THREE_DAYS);
-		JobInfo jobInfo3 = new JobInfo();
+		JobInfo jobInfo3 = new ProjectJobInfo();
 		jobInfo3.setJobType(JobType.SEVEN_DAYS);
 		when(projectMock.getAllJobInfos()).thenReturn(new HashSet<>(Arrays.asList(jobInfo, jobInfo2, jobInfo3)));
 		
@@ -91,7 +92,7 @@ public class JobHelperTest {
 		form.setOneDayNotification(true);
 		Project projectMock = mock(Project.class);
 		when(projectMock.getId()).thenReturn(ProjectIdFactory.generateProjectId());
-		JobInfo jobInfo = new JobInfo();
+		JobInfo jobInfo = new ProjectJobInfo();
 		jobInfo.setJobType(JobType.ONE_DAY);
 		when(projectMock.getAllJobInfos()).thenReturn(Collections.singleton(jobInfo));
 		

@@ -3,14 +3,12 @@ package kr.ac.kaist.se.tardis.project.impl.id;
 import java.io.Serializable;
 
 import javax.persistence.Embeddable;
-import javax.persistence.Id;
 
 @Embeddable
 public class ProjectId implements Comparable<ProjectId>, Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	@Id
 	private String id;
 	
 	ProjectId(){}

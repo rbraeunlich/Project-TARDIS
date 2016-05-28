@@ -3,12 +3,16 @@ package kr.ac.kaist.se.tardis.task.impl;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
-import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import kr.ac.kaist.se.tardis.project.api.Project;
+import kr.ac.kaist.se.tardis.project.api.ProjectService;
+import kr.ac.kaist.se.tardis.project.impl.ProjectImpl;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
 import kr.ac.kaist.se.tardis.task.api.Task;
+import kr.ac.kaist.se.tardis.task.api.TaskRepository;
 import kr.ac.kaist.se.tardis.task.api.TaskService;
 import kr.ac.kaist.se.tardis.task.impl.id.TaskId;
 import kr.ac.kaist.se.tardis.task.impl.id.TaskIdFactory;
@@ -16,61 +20,53 @@ import kr.ac.kaist.se.tardis.task.impl.id.TaskIdFactory;
 @Service
 public class TaskServiceImpl implements TaskService {
 
-	// FIXME replace this set with a DTO later
-	private Set<Task> tasks = new HashSet<>();
+	@Autowired
+	private TaskRepository repo;
 
+	@Autowired
+	private ProjectService projectService;
+	
 	@Override
-	public Task createTask(String owner,ProjectId projectId) {
+	public Task createTask(String owner, Project project) {
 		TaskId taskId = TaskIdFactory.generateTaskId();
-		Task t = new TaskImpl(taskId, projectId, owner);
+		Task t = new TaskImpl(taskId, project, owner);
 		return t;
 	}
 
-
-	
 	@Override
-	public Set<Task> findTasksForUser(String userId) {
-		return tasks
-				.stream()
-				.filter(p -> ( p.getOwner().equals(userId) )  )
-				.collect(Collectors.toSet());
+	public Set<Task> findTasksForUser(String username) {
+		return repo.findTasksByOwner(username);
 	}
 
 	@Override
 	public Set<Task> findTaskByName(String name) {
-		return tasks.stream().filter(p -> name.equals(p.getName()))
-				.collect(Collectors.toSet());
+		return repo.findTasksByName(name);
 	}
 
 	@Override
 	public Optional<Task> findTaskById(TaskId id) {
-		return tasks.stream().filter(p -> p.getId().equals(id)).findFirst();
+		return Optional.ofNullable(repo.findOne(id));
 	}
 
 	@Override
 	public Set<Task> findTaskByProjectId(ProjectId id) {
-		return tasks.stream().filter(p -> id.equals(p.getProjectId()))
-				.collect(Collectors.toSet());
+		Project project = projectService.findProjectById(id).get();
+		return repo.findTaskByProject((ProjectImpl) project);
 	}
 
 	@Override
-	public void saveTask(Task p) {
-		tasks.add(p);
+	public void saveTask(Task t) {
+		repo.save((TaskImpl) t);
 	}
 
 	@Override
-	public void deleteTask(Task p) {
-		tasks.remove(p);
-		
+	public void deleteTask(Task t) {
+		repo.delete((TaskImpl) t);
 	}
 
 	@Override
 	public Set<Task> getAllTasks() {
-		return new HashSet<>(tasks);
+		return new HashSet<>(repo.findAll());
 	}
-
-
-
-
 
 }

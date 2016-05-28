@@ -1,18 +1,11 @@
 package kr.ac.kaist.se.tardis.web.controller;
 
-import kr.ac.kaist.se.tardis.notification.api.NotificationService;
-import kr.ac.kaist.se.tardis.project.api.Project;
-import kr.ac.kaist.se.tardis.project.api.ProjectService;
-import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
-import kr.ac.kaist.se.tardis.scheduler.api.SchedulerService;
-import kr.ac.kaist.se.tardis.task.api.Task;
-import kr.ac.kaist.se.tardis.task.api.TaskService;
-import kr.ac.kaist.se.tardis.task.impl.id.TaskId;
-import kr.ac.kaist.se.tardis.task.impl.id.TaskIdFactory;
-import kr.ac.kaist.se.tardis.web.form.CreateTaskForm;
-import kr.ac.kaist.se.tardis.web.form.FormWithNotification;
-import kr.ac.kaist.se.tardis.web.form.SetTaskForm;
-import kr.ac.kaist.se.tardis.web.validator.SetTaskFormValidator;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Optional;
+
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -25,12 +18,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.validation.Valid;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Optional;
+import kr.ac.kaist.se.tardis.notification.api.NotificationService;
+import kr.ac.kaist.se.tardis.project.api.ProjectService;
+import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
+import kr.ac.kaist.se.tardis.scheduler.api.SchedulerService;
+import kr.ac.kaist.se.tardis.task.api.Task;
+import kr.ac.kaist.se.tardis.task.api.TaskService;
+import kr.ac.kaist.se.tardis.task.impl.id.TaskId;
+import kr.ac.kaist.se.tardis.task.impl.id.TaskIdFactory;
+import kr.ac.kaist.se.tardis.web.form.CreateTaskForm;
+import kr.ac.kaist.se.tardis.web.form.FormWithNotification;
+import kr.ac.kaist.se.tardis.web.form.SetTaskForm;
+import kr.ac.kaist.se.tardis.web.validator.SetTaskFormValidator;
 
 /**
  * Created by insanebear on 5/16/16.
@@ -110,14 +109,14 @@ public class TaskController {
 		validator.validate(setTaskForm, bindingResult);
 
 		if (bindingResult.hasErrors()) {
-			return "taskview";
+			fillModel(model, user, id, taskService.findTaskById(id).get().getProjectId());
+			redirectAttributes.addAttribute("taskId", taskId);
+			return "tasksettingview";
 		}
 		Optional<Task> optional = taskService.findTaskById(id);
 
 		if (optional.isPresent()) {
 			Task changedTask = optional.get();
-
-			// TODO update features
 
 			changedTask.setName(setTaskForm.getTaskName());
 			changedTask.setDescription(setTaskForm.getTaskDescription());
@@ -133,6 +132,9 @@ public class TaskController {
 				}
 			} catch (ParseException e) {
 				throw new RuntimeException(e);
+			}
+			if(setTaskForm.getKey() != null){
+				changedTask.setKey(setTaskForm.getKey());
 			}
 			taskService.saveTask(changedTask);
 

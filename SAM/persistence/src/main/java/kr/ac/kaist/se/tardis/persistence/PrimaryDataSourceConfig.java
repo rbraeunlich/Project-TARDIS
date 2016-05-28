@@ -22,6 +22,9 @@ public class PrimaryDataSourceConfig {
 				 .addScript("kr/ac/kaist/se/tardis/persistence/sql/h2.quartz.sql")
 				 .addScript("kr/ac/kaist/se/tardis/persistence/sql/h2.notification.sql")
 				 .addScript("kr/ac/kaist/se/tardis/persistence/sql/h2.project.sql")
+				 .addScript("kr/ac/kaist/se/tardis/persistence/sql/h2.task.sql")
+				 .addScript("kr/ac/kaist/se/tardis/persistence/sql/h2.jobinfo.sql")
+				 .addScript("kr/ac/kaist/se/tardis/persistence/sql/h2.tasknote.sql")
 				.build();
 		return embeddedDatabase;
 	}
