@@ -53,7 +53,8 @@ public class ProjectController {
 		model.addAttribute("username", String.valueOf(user.getUsername()));
 		model.addAttribute("taskList", taskService.findTaskByProjectId(projectId));
 		model.addAttribute("project", projectService.findProjectById(projectId).get());
-		model.addAttribute("notificationList", notificationService.getNotificationsForUser(user.getUsername()));
+		model.addAttribute("notificationList",
+				notificationService.getNotificationsForUser(String.valueOf(user.getUsername())));
 	}
 
 	@RequestMapping(value = { "/projectsettingview" }, method = RequestMethod.POST)

@@ -13,7 +13,7 @@ public class SetProjectForm extends FormWithNotification {
 	private String description;
 	private String newMember;
 
-	@Pattern(regexp = "(https):\\/\\/[\\w\\-_]+(\\.[\\w\\-_]+)+([\\w\\-\\.,@?^=%&amp;:/~\\+#]*[\\w\\-\\@?^=%&amp;/~\\+#])?", message = WRONG_URL)
+	@Pattern(regexp = "^((https):\\/\\/[\\w\\-_]+(\\.[\\w\\-_]+)+([\\w\\-\\.,@?^=%&amp;:/~\\+#]*[\\w\\-\\@?^=%&amp;/~\\+#])?)?$", message = WRONG_URL)
 	private String gitHubUrl;
 
 	public String getNewMember() {

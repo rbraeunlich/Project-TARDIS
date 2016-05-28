@@ -1,5 +1,7 @@
 package kr.ac.kaist.se.tardis.scheduler.impl;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Optional;
@@ -32,19 +34,19 @@ public class NotificationJob extends QuartzJobBean {
 
 	@Autowired
 	private ProjectService projectService;
-	
+
 	@Autowired
 	private NotificationService notificationService;
-	
+
 	@Autowired
 	private TaskService taskService;
-	
+
 	private Long dueDate;
-	
+
 	private String id;
-	
+
 	private String type;
-	
+
 	@Override
 	protected void executeInternal(JobExecutionContext context) throws JobExecutionException {
 		if (getType().equals(VALUE_TASK)) {
@@ -64,8 +66,9 @@ public class NotificationJob extends QuartzJobBean {
 		HashSet<String> peopleToNotify = new HashSet<>(project.getProjectMembers());
 		peopleToNotify.add(project.getProjectOwner());
 		for (String person : peopleToNotify) {
-			notificationService.createNotification(person, "Project " + project.getName() + " is due on " + dueDate,
-					new Date());
+			DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+			notificationService.createNotification(person,
+					"Project " + project.getName() + " is due on " + format.format(dueDate), new Date());
 		}
 	}
 
@@ -82,8 +85,9 @@ public class NotificationJob extends QuartzJobBean {
 			LoggerFactory.getLogger(getClass()).warn("Task " + task.getId().getId() + " has no project anymore.");
 		}
 		Project project = optionalProject.get();
-		notificationService.createNotification(task.getOwner(),
-				"Task " + task.getName() + " from project " + project.getName() + " is due on " + dueDate, new Date());
+		DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		notificationService.createNotification(task.getOwner(), "Task " + task.getName() + " from project "
+				+ project.getName() + " is due on " + format.format(dueDate), new Date());
 	}
 
 	public Long getDueDate() {
@@ -133,5 +137,5 @@ public class NotificationJob extends QuartzJobBean {
 	public void setTaskService(TaskService taskService) {
 		this.taskService = taskService;
 	}
-	
+
 }
