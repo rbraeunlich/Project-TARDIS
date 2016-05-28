@@ -58,8 +58,9 @@ public class GitHubServiceImpl implements GitHubService {
 						Date dateOfLatestContribution = getLatestAutomaticContribution(entry.getKey());
 						CommitUser author = commit.getAuthor();
 						if (dateOfLatestContribution == null || author.getDate().after(dateOfLatestContribution)) {
-							taskNoteService.createContribution(entry.getKey(),
-									repositoryCommit.getCommitter().getName(), author.getDate(), null, null);
+							TaskNote contribution = taskNoteService.createContribution(entry.getKey(),
+									repositoryCommit.getCommitter().getLogin(), author.getDate(), null, null);
+							taskNoteService.saveTaskNote(contribution);
 						}
 					}
 				}

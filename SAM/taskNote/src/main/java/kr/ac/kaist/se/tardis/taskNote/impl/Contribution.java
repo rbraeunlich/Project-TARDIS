@@ -31,7 +31,7 @@ public class Contribution extends TaskNote {
 		} else if (contribution != null){
 			return "Contribution: " + contribution + " from " + getAuthor();
 		} else{
-			return "Commit from" + getAuthor();
+			return "Commit from " + getAuthor();
 		}
 	}
 

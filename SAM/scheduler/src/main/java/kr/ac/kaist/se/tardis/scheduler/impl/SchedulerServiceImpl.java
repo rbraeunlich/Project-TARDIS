@@ -98,18 +98,21 @@ public class SchedulerServiceImpl implements SchedulerService {
 				jobInfo.setJobType(JobType.ONE_DAY);
 				Trigger trigger = TriggerBuilder.newTrigger().forJob(jobDetail)
 						.startAt(new Date(oneDay.getTime() - TimeUnit.DAYS.toMillis(1L))).build();
+				jobInfo.setTriggerId(trigger.getKey().toString());
 				SchedulerServiceImpl.this.submitJob(jobDetail, trigger);
 			}
 			if (threeDays != null) {
 				jobInfo.setJobType(JobType.THREE_DAYS);
 				Trigger trigger = TriggerBuilder.newTrigger().forJob(jobDetail)
 						.startAt(new Date(threeDays.getTime() - TimeUnit.DAYS.toMillis(3L))).build();
+				jobInfo.setTriggerId(trigger.getKey().toString());
 				SchedulerServiceImpl.this.submitJob(jobDetail, trigger);
 			}
 			if (sevenDays != null) {
 				jobInfo.setJobType(JobType.SEVEN_DAYS);
 				Trigger trigger = TriggerBuilder.newTrigger().forJob(jobDetail)
 						.startAt(new Date(sevenDays.getTime() - TimeUnit.DAYS.toMillis(7L))).build();
+				jobInfo.setTriggerId(trigger.getKey().toString());
 				SchedulerServiceImpl.this.submitJob(jobDetail, trigger);
 			}
 			return jobInfo;
@@ -181,6 +184,7 @@ public class SchedulerServiceImpl implements SchedulerService {
 		@Override
 		public GitHubJobBuilder forProject(String id) {
 			jobInfo.setJobType(JobType.GITHUB);
+			jobInfo.setId(id);
 			this.projectId = id;
 			return this;
 		}
@@ -195,7 +199,7 @@ public class SchedulerServiceImpl implements SchedulerService {
 					.withSchedule(SimpleScheduleBuilder.simpleSchedule().withIntervalInHours(2).repeatForever())
 					.build();
 			SchedulerServiceImpl.this.submitJob(jobDetail, trigger);
-
+			jobInfo.setTriggerId(trigger.getKey().toString());
 			return jobInfo;
 		}
 
