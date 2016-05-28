@@ -1,5 +1,6 @@
 package kr.ac.kaist.se.tardis.task.impl;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
@@ -50,8 +51,11 @@ public class TaskServiceImpl implements TaskService {
 
 	@Override
 	public Set<Task> findTaskByProjectId(ProjectId id) {
-		Project project = projectService.findProjectById(id).get();
-		return repo.findTaskByProject((ProjectImpl) project);
+		Optional<Project> project = projectService.findProjectById(id);
+		if(!project.isPresent()){
+			return Collections.emptySet();
+		}
+		return repo.findTaskByProject((ProjectImpl) project.get());
 	}
 
 	@Override

@@ -13,6 +13,8 @@ import java.util.Optional;
 import java.util.Set;
 
 import kr.ac.kaist.se.tardis.project.api.Project;
+import kr.ac.kaist.se.tardis.project.api.ProjectService;
+import kr.ac.kaist.se.tardis.project.impl.ProjectImpl;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
 import kr.ac.kaist.se.tardis.task.TestConfig;
@@ -34,6 +36,9 @@ public class TaskServiceImplTest {
 	@Autowired
 	private TaskService taskService;
 
+	@Autowired
+	private ProjectService projectService;
+	
 	@After
 	public void tearDown() {
 		Set<Task> allTasks = taskService.getAllTasks();
@@ -143,8 +148,9 @@ public class TaskServiceImplTest {
 	@Test
 	public void findExistingTaskByProjectId() {
 		ProjectId pid = ProjectIdFactory.generateProjectId();
-		Project project = mock(Project.class);
+		Project project = mock(ProjectImpl.class);
 		when(project.getId()).thenReturn(pid);
+		projectService.saveProject(project);
 		Task task = taskService.createTask("me", project);
 		taskService.saveTask(task);
 		Set<Task> tasksByProjectId = taskService.findTaskByProjectId(pid);
