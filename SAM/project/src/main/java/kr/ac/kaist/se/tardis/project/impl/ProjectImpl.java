@@ -1,5 +1,6 @@
 package kr.ac.kaist.se.tardis.project.impl;
 
+import java.net.URL;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -20,7 +21,7 @@ import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
 import kr.ac.kaist.se.tardis.scheduler.api.JobInfo;
 import kr.ac.kaist.se.tardis.scheduler.api.ProjectJobInfo;
 
-@Entity(name="project")
+@Entity(name = "project")
 public class ProjectImpl implements Project {
 
 	@EmbeddedId
@@ -28,20 +29,23 @@ public class ProjectImpl implements Project {
 	private String name;
 	private String description;
 	private String owner;
-	
-	@ElementCollection(fetch=FetchType.EAGER)
-	@CollectionTable(name="projectmember", joinColumns=@JoinColumn(name="projectid"))
+
+	@ElementCollection(fetch = FetchType.EAGER)
+	@CollectionTable(name = "projectmember", joinColumns = @JoinColumn(name = "projectid"))
 	private Set<String> members;
-	
+
 	@Temporal(TemporalType.DATE)
 	private Date dueDate;
-	
-	@OneToMany(targetEntity=ProjectJobInfo.class, cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-	@JoinColumn(name="projectid", referencedColumnName="id")
+
+	@OneToMany(targetEntity = ProjectJobInfo.class, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "projectid", referencedColumnName = "id")
 	private Set<JobInfo> jobInfos;
 
-	ProjectImpl(){}
-	
+	private String gitHubUrl;
+
+	ProjectImpl() {
+	}
+
 	public ProjectImpl(ProjectId id, String projectOwner) {
 		this.id = id;
 		this.owner = projectOwner;
@@ -64,12 +68,12 @@ public class ProjectImpl implements Project {
 	public void setDescription(String des) {
 		this.description = des;
 	}
-	
+
 	@Override
 	public String getDescription() {
 		return description;
 	}
-	
+
 	@Override
 	public ProjectId getId() {
 		return id;
@@ -119,7 +123,17 @@ public class ProjectImpl implements Project {
 	public void addJobInfo(JobInfo jobInfo) {
 		jobInfos.add(jobInfo);
 	}
-	
+
+	@Override
+	public void setGitHubUrL(URL url) {
+		this.gitHubUrl = url.toString();
+	}
+
+	@Override
+	public String getGitHubUrl() {
+		return gitHubUrl;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -150,5 +164,5 @@ public class ProjectImpl implements Project {
 		return "ProjectImpl [id=" + id + ", name=" + name + ", owner=" + owner + ", members=" + members + ", dueDate="
 				+ dueDate + "]";
 	}
-	
+
 }

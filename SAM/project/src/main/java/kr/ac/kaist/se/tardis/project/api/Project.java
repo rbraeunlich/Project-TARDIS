@@ -1,5 +1,6 @@
 package kr.ac.kaist.se.tardis.project.api;
 
+import java.net.URL;
 import java.util.Date;
 import java.util.Set;
 
@@ -29,5 +30,9 @@ public interface Project extends JobOwner {
 	Set<String> getProjectMembers();
 	
 	String getProjectOwner();
+
+	void setGitHubUrL(URL url);
+
+	String getGitHubUrl();
 
 }

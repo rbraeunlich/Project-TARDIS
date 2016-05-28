@@ -1,5 +1,7 @@
 package kr.ac.kaist.se.tardis.web.controller;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -23,6 +25,7 @@ import kr.ac.kaist.se.tardis.project.api.Project;
 import kr.ac.kaist.se.tardis.project.api.ProjectService;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectId;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
+import kr.ac.kaist.se.tardis.scheduler.api.JobInfo;
 import kr.ac.kaist.se.tardis.scheduler.api.SchedulerService;
 import kr.ac.kaist.se.tardis.task.api.TaskService;
 import kr.ac.kaist.se.tardis.web.form.CreateTaskForm;
@@ -112,11 +115,14 @@ public class ProjectController {
 					changedProject.setDueDate(projectDueDate);
 					changedProject = createAndDeleteJobsForProject(changedProject, setProjectForm, projectDueDate);
 				}
-			} catch (ParseException e) {
+				if (setProjectForm.getGitHubUrl() != null && !setProjectForm.getGitHubUrl().trim().isEmpty()) {
+					changedProject.setGitHubUrL(new URL(setProjectForm.getGitHubUrl()));
+					createGitHubJob(changedProject);
+				}
+			} catch (ParseException | MalformedURLException e) {
 				throw new RuntimeException(e);
 			}
 
-			
 			projectService.saveProject(changedProject);
 
 			fillModel(model, user, id);
@@ -125,6 +131,12 @@ public class ProjectController {
 		}
 		redirectAttributes.addAttribute("projectId", form.getProjectId());
 		return "redirect:kanbanboard";
+	}
+
+	private void createGitHubJob(Project project) {
+		JobInfo jobInfo = schedulerService.createGitHubJobBuilder().forProject(project.getId().getId())
+				.forRepository(project.getGitHubUrl().toString()).submit();
+		project.addJobInfo(jobInfo);
 	}
 
 	/**

@@ -4,6 +4,7 @@ CREATE TABLE project (
 	description text,
 	owner varchar(255),
 	dueDate date,
+	gitHubUrl VARCHAR(255),
 	PRIMARY KEY(id),
 	FOREIGN KEY(owner) REFERENCES userWithoutPassword(username)
 );

@@ -49,6 +49,12 @@
 						th:if="${#fields.hasErrors('newMember')}" th:errors="*{newMember}">Member
 						error</b>
 				</p>
+				<p>
+					GitHub URL: <input id="gitHubUrl" class="infoInput" name="gitHubUrl" type="url"
+						th:value="${project.gitHubUrl}" /> <b id="urlError"
+						th:if="${#fields.hasErrors('gitHubUrl')}" th:errors="*{gitHubUrl}">URL
+						error</b>
+				</p>
 			</div>
 			<div id="notifications">
 				<p>Project due date:
