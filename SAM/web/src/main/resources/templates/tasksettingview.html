@@ -59,10 +59,6 @@
 						Date error</b>
 				</p>
 				<p>
-					Description: <input id="taskDescription" name="taskDescription"
-						type="text" th:value="${task.description}" />
-				</p>
-				<p>
 					Key: <input id="key" name="key"
 						type="number" th:value="${task.key}" /><b
 						th:if="${#fields.hasErrors('key')}" th:errors="*{key}">error</b>
