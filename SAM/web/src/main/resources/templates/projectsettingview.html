@@ -66,14 +66,14 @@
 				<p><input type="checkbox" id="sevenDayNotification" name="sevenDayNotification"/>Seven days earlier</p>
 			</div>
 		</div>
-		<p>
-			<button class="configurationButton" id="projectSettingSubmit" name="action" type="submit" value="submit">Submit</button>
-		</p>
+		
+			<button class="configurationButton" id="projectSettingSubmit" name="action" type="submit" value="submit" style="margin-left:43%;float:left">Submit</button>
+		
 
 	</form>
 	
 	<form action="#" th:action="@{/kanbanboard}" method="get">
-		<button class="configurationButton" name="action" type="submit" value="submit">Cancel</button>
+		<button class="configurationButton" name="action" type="submit" value="submit" style="margin-right:43%;float:right;">Cancel</button>
 		<input type="hidden" name="projectId" th:value="${project.id.id}"/>
 	</form>
 </div>
