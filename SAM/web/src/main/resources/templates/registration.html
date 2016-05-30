@@ -7,9 +7,9 @@
 </head>
 <body>
 	<div th:replace="index :: indexheading"></div>
-	
-	<p style="text-align:center;font-size:20px;">Welcome!</p>
+		
 	<div id="registrationBox">
+	<p style="text-align:center;font-size:20px;">Welcome!</p>
 		<form id="registrationForm" action="#" th:action="@{/registration}" th:object="${registrationForm}"
 			method="post">
 			<p>

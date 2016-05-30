@@ -9,7 +9,7 @@
 <body onresize="resizeWindow()" onpageshow="resizeWindow()">
 
 <div th:fragment="bar" id="bar" class="box">	
-	<form th:action="@{/mypage}" method="post">
+	<form th:action="@{/mypage}" method="get">
 		<input id="mypage" class="button" type="submit" value="My Page" style="float:right;"/>
 	</form>
 	<form th:action="@{/logout}" method="post">
