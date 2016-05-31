@@ -81,16 +81,16 @@
 			</div>
 			</div>
 
-			<p>
-				<button name="action" type="submit" value="submit">Submit</button>
+			
+				<button name="action" type="submit" value="submit" style="margin-left:43%;float:left">Submit</button>
 				<!--<button name="action" type="reset" value="reset">Reset</button>-->
 				<!--<button name="action" type="submit" value="cancel">Cancel</button>-->
-			</p>
+			
 		</form>
 
 
 		<form action="#" th:action="@{/taskDetail}" method="get">
-			<button name="action" type="submit" value="submit">Cancel</button>
+			<button name="action" type="submit" value="submit" style="margin-right:43%;float:right">Cancel</button>
 			<input type="hidden" name="taskId" th:value="${task.id.id}" />
 		</form>
 

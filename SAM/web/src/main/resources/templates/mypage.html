@@ -3,7 +3,6 @@
 <head>
     <title>My Page</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link rel="stylesheet" th:href="@{/css/mypage.css}" href="../static/css/mypage.css" />
 	<link rel="stylesheet" th:href="@{/css/settingview.css}" href="../static/css/settingview.css" />
 	<link rel="stylesheet" th:href="@{/css/base.css}" href="../static/css/base.css" />
 </head>
@@ -12,9 +11,31 @@
 <div th:replace="overview :: bar"></div>
 
 <div th:replace="overview :: heading"></div>
-
+	
 <div id="board" class="box">
 
+	<div id="userSettingBox">
+		<p th:text="'Hello! ' + ${username}" style="text-align:center;font-size:20px;"/>
+		<form id="passwordForm" action="#" th:action="@{/mypage}" th:object="${userForm}" method="post">
+			<p>
+				Password:<input class="textBox" id="password" name="password" type="password"
+					th:field="*{password}" /> <b
+					th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password
+					Error</b>
+			</p>
+			<p>
+				Repeat Password:<input class="textBox" id="passwordRepeated" name="passwordRepeated" type="password"
+					th:field="*{passwordRepeated}" /> <b
+					th:if="${#fields.hasErrors('passwordRepeated')}" th:errors="*{passwordRepeated}">Password
+					Error</b>
+			</p>
+			<p style="text-align:center;">
+				<input id="changeButton" class="button" type="submit"
+					value="Change User Password" />
+			</p>
+		</form>
+	</div>
+	
 </div>
 
 <div th:replace="overview :: footer"></div>
