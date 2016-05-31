@@ -77,7 +77,8 @@ public class KanbanBoardController {
 
 		if (!bindingResult.hasErrors()) {
 
-			Task task = taskService.createTask(String.valueOf(user.getUsername()), projectService.findProjectById(id).get());
+			Task task = taskService.createTask(String.valueOf(user.getUsername()),
+					projectService.findProjectById(id).get());
 			task.setDescription(form.getTaskDescription());
 			task.setName(form.getTaskName());
 			task.setOwner(form.getOwner());
@@ -105,19 +106,21 @@ public class KanbanBoardController {
 	public String updateTaskStatus(Model model, CreateTaskForm form,
 			@RequestParam(name = "projectId", required = true) String projectId,
 			@RequestParam(name = "taskId", required = true) String taskId,
-			@RequestParam(name = "status", required = true) String status, 
-			@AuthenticationPrincipal UserDetails user,
+			@RequestParam(name = "status", required = true) String status, @AuthenticationPrincipal UserDetails user,
 			RedirectAttributes redirectAttributes) {
 		Optional<Task> optional = taskService.findTaskById(TaskIdFactory.valueOf(taskId));
 		if (!optional.isPresent()) {
-			// TODO error case
+			model.addAttribute("generalerror", "The task you tried to modify has been deleted.");
+			fillModel(model, user, ProjectIdFactory.valueOf(projectId));
+			return "kanbanboard";
+		} else {
+			TaskState newState = TaskState.valueOf(status);
+			Task task = optional.get();
+			task.setTaskState(newState);
+			taskService.saveTask(task);
+			fillModel(model, user, ProjectIdFactory.valueOf(projectId));
+			redirectAttributes.addAttribute("projectId", projectId);
+			return "redirect:kanbanboard";
 		}
-		TaskState newState = TaskState.valueOf(status);
-		Task task = optional.get();
-		task.setTaskState(newState);
-		taskService.saveTask(task);
-		fillModel(model, user, ProjectIdFactory.valueOf(projectId));
-		redirectAttributes.addAttribute("projectId", projectId);
-		return "redirect:kanbanboard";
 	}
 }

@@ -29,6 +29,7 @@
 		</form>
 
 		<p th:text="${project.description}" id="projectDescription" style="font-size:25px;word-break:break-all;margin:30px;text-align:center;"/>
+		<p th:text="${generalerror}" th:if="${generalerror} != null" id="generalerror" style="text-align:center;color: red"/>
 	</div>
 	<div id="ToDo" class="kanban" style="float:left;"  ondrop="dropInToDo(event)" ondragover="allowDrop(event)">
 		<p class="boardName">ToDo</p>		

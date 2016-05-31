@@ -28,6 +28,7 @@ import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
 import kr.ac.kaist.se.tardis.scheduler.api.JobInfo;
 import kr.ac.kaist.se.tardis.scheduler.api.SchedulerService;
 import kr.ac.kaist.se.tardis.task.api.TaskService;
+import kr.ac.kaist.se.tardis.web.exception.ProjectNotFoundException;
 import kr.ac.kaist.se.tardis.web.form.CreateTaskForm;
 import kr.ac.kaist.se.tardis.web.form.FormWithNotification;
 import kr.ac.kaist.se.tardis.web.form.SetProjectForm;
@@ -75,8 +76,7 @@ public class ProjectController {
 			Project thisProject = optional.get();
 			model.addAttribute("project", thisProject);
 		} else {
-			// TODO error case
-
+			throw new ProjectNotFoundException(id);
 		}
 		return "projectsettingview";
 	}
