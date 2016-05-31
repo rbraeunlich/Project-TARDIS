@@ -38,6 +38,9 @@ public class TaskNoteServiceImpl implements TaskNoteService {
 			Integer contribution) {
 		TaskNoteId taskNoteId = TaskNoteIdFactory.generateTaskNoteId();
 		TaskNote t = new Contribution(taskNoteId, task, author, writeDate, progress, contribution);
+		if(progress != null){
+			task.setTaskProgress(progress);
+		}
 		return t;
 	}
 

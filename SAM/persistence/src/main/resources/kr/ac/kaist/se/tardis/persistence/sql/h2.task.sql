@@ -6,6 +6,7 @@ CREATE TABLE task (
   dueDate DATE,
   projectId VARCHAR(255),
   taskState VARCHAR(255),
+  taskProgress INTEGER,
   key INTEGER UNIQUE,
   PRIMARY KEY(id),
   FOREIGN KEY(owner) REFERENCES userWithoutPassword(username),

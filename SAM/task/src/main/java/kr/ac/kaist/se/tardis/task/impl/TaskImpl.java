@@ -15,7 +15,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Transient;
 
 import kr.ac.kaist.se.tardis.project.api.Project;
 import kr.ac.kaist.se.tardis.project.impl.ProjectImpl;
@@ -44,7 +43,6 @@ public class TaskImpl implements Task {
 	@Enumerated(EnumType.STRING)
 	private TaskState taskState;
 
-	@Transient
 	private int taskProgress;
 
 	@OneToMany(targetEntity = TaskJobInfo.class, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
