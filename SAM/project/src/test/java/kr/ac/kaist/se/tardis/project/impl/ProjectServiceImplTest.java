@@ -92,8 +92,6 @@ public class ProjectServiceImplTest {
 	public void safeProject() {
 		Project project = projectService.createProject("me");
 		projectService.saveProject(project);
-		// FIXME we should look into the database here, so we should modify the
-		// test after persistence is complete
 		Optional<Project> projectById = projectService.findProjectById(project
 				.getId());
 		assertThat(projectById.get(), is(project));

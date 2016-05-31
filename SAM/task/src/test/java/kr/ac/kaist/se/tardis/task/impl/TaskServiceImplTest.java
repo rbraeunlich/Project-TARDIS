@@ -100,8 +100,6 @@ public class TaskServiceImplTest {
 	public void safeTask() {
 		Task task = taskService.createTask("me", mock(Project.class));
 		taskService.saveTask(task);
-		// FIXME we should look into the database here, so we should modify the
-		// test after persistence is complete
 		Optional<Task> projectById = taskService.findTaskById(task.getId());
 		assertThat(projectById.get(), is(task));
 	}

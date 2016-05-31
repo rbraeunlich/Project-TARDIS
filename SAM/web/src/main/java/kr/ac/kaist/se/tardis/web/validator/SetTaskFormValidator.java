@@ -27,13 +27,11 @@ public class SetTaskFormValidator implements Validator {
 
 	@Override
 	public boolean supports(Class<?> clazz) {
-		// TODO Auto-generated method stub
 		return SetTaskForm.class.isAssignableFrom(clazz);
 	}
 
 	@Override
 	public void validate(Object target, Errors errors) {
-		// TODO Auto-generated method stub
 		SetTaskForm setTaskForm = (SetTaskForm) target;
 		if (setTaskForm.getOwner() != null) {
 			ProjectId id = ProjectIdFactory.valueOf(setTaskForm.getProjectId());

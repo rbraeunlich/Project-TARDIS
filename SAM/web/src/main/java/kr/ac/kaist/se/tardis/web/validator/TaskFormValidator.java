@@ -19,13 +19,11 @@ public class TaskFormValidator implements Validator {
 
 	@Override
 	public boolean supports(Class<?> clazz) {
-		// TODO Auto-generated method stub
 		return CreateTaskForm.class.isAssignableFrom(clazz);
 	}
 
 	@Override
 	public void validate(Object target, Errors errors) {
-		// TODO Auto-generated method stub
 		CreateTaskForm taskForm = (CreateTaskForm) target;
 		if (userService.findUserByName(taskForm.getOwner()) == null) {
 			errors.rejectValue("owner", "error.owner.empty", CreateTaskForm.OWNER_NOT_EXIST_ERROR);

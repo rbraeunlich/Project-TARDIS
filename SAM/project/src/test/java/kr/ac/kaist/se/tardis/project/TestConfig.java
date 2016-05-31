@@ -72,13 +72,11 @@ public class TestConfig {
 
 			@Override
 			public long count() {
-				// TODO Auto-generated method stub
 				return 0;
 			}
 
 			@Override
 			public Page<ProjectImpl> findAll(Pageable pageable) {
-				// TODO Auto-generated method stub
 				return null;
 			}
 
@@ -95,25 +93,21 @@ public class TestConfig {
 
 			@Override
 			public ProjectImpl getOne(ProjectId id) {
-				// TODO Auto-generated method stub
 				return null;
 			}
 
 			@Override
 			public void flush() {
-				// TODO Auto-generated method stub
 
 			}
 
 			@Override
 			public List<ProjectImpl> findAll(Iterable<ProjectId> ids) {
-				// TODO Auto-generated method stub
 				return null;
 			}
 
 			@Override
 			public List<ProjectImpl> findAll(Sort sort) {
-				// TODO Auto-generated method stub
 				return null;
 			}
 
@@ -124,13 +118,11 @@ public class TestConfig {
 
 			@Override
 			public void deleteInBatch(Iterable<ProjectImpl> entities) {
-				// TODO Auto-generated method stub
 
 			}
 
 			@Override
 			public void deleteAllInBatch() {
-				// TODO Auto-generated method stub
 
 			}
 

@@ -39,19 +39,16 @@ public class TestConfig {
 			
 			@Override
 			public Set<Project> getAllProjects() {
-				// TODO Auto-generated method stub
 				return null;
 			}
 			
 			@Override
 			public Set<Project> findProjectsForUser(String username) {
-				// TODO Auto-generated method stub
 				return null;
 			}
 			
 			@Override
 			public Set<Project> findProjectByName(String name) {
-				// TODO Auto-generated method stub
 				return null;
 			}
 			
@@ -62,13 +59,11 @@ public class TestConfig {
 			
 			@Override
 			public void deleteProject(Project p) {
-				// TODO Auto-generated method stub
 				
 			}
 			
 			@Override
 			public Project createProject(String owner) {
-				// TODO Auto-generated method stub
 				return null;
 			}
 		};
@@ -97,7 +92,6 @@ public class TestConfig {
 
 			@Override
 			public boolean exists(TaskId id) {
-				// TODO Auto-generated method stub
 				return false;
 			}
 
@@ -108,7 +102,6 @@ public class TestConfig {
 
 			@Override
 			public void delete(Iterable<? extends TaskImpl> entities) {
-				// TODO Auto-generated method stub
 
 			}
 
@@ -119,31 +112,26 @@ public class TestConfig {
 
 			@Override
 			public void delete(TaskId id) {
-				// TODO Auto-generated method stub
 
 			}
 
 			@Override
 			public long count() {
-				// TODO Auto-generated method stub
 				return 0;
 			}
 
 			@Override
 			public Page<TaskImpl> findAll(Pageable pageable) {
-				// TODO Auto-generated method stub
 				return null;
 			}
 
 			@Override
 			public <S extends TaskImpl> S saveAndFlush(S entity) {
-				// TODO Auto-generated method stub
 				return null;
 			}
 
 			@Override
 			public <S extends TaskImpl> List<S> save(Iterable<S> entities) {
-				// TODO Auto-generated method stub
 				return null;
 			}
 
@@ -158,19 +146,16 @@ public class TestConfig {
 
 			@Override
 			public void flush() {
-				// TODO Auto-generated method stub
 
 			}
 
 			@Override
 			public List<TaskImpl> findAll(Iterable<TaskId> ids) {
-				// TODO Auto-generated method stub
 				return null;
 			}
 
 			@Override
 			public List<TaskImpl> findAll(Sort sort) {
-				// TODO Auto-generated method stub
 				return null;
 			}
 
@@ -181,13 +166,11 @@ public class TestConfig {
 
 			@Override
 			public void deleteInBatch(Iterable<TaskImpl> entities) {
-				// TODO Auto-generated method stub
 
 			}
 
 			@Override
 			public void deleteAllInBatch() {
-				// TODO Auto-generated method stub
 
 			}
 

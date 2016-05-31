@@ -13,7 +13,6 @@ public class TaskNoteFormValidator implements Validator {
 	
 	@Override
 	public boolean supports(Class<?> clazz) {
-		// TODO Auto-generated method stub
 		return CreateTaskNoteForm.class.isAssignableFrom(clazz);
 	}
 	public static final String SHORT_COMMENT = "Comment must contain at least two characters";
@@ -22,7 +21,6 @@ public class TaskNoteFormValidator implements Validator {
 	
 	@Override
 	public void validate(Object target, Errors errors) {
-		// TODO Auto-generated method stub
 		CreateTaskNoteForm taskForm = (CreateTaskNoteForm) target;
 		boolean emptyComment =(taskForm.getComment()==null || taskForm.getComment().length() == 0);
 		boolean emptyContribution = (taskForm.getContribution()==null || taskForm.getContribution().length() == 0);

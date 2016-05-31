@@ -32,7 +32,6 @@ public class PrimaryDbConfig {
 		HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 		LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
 		factory.setJpaVendorAdapter(vendorAdapter);
-		// FIXME extend when new entities get added
 		factory.setPackagesToScan("kr.ac.kaist.se.tardis.users.copy", "kr.ac.kaist.se.tardis.notification.impl",
 				"kr.ac.kaist.se.tardis.project.impl", "kr.ac.kaist.se.tardis.project.impl.id",
 				"kr.ac.kaist.se.tardis.scheduler.api", "kr.ac.kaist.se.tardis.task.impl",
