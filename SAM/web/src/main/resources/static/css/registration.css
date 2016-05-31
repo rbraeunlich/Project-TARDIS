@@ -5,6 +5,9 @@ div {
 	-o-animation: fadein 0.3s;
 	animation: fadein 0.3s;
 }
+body{
+	text-align: center;
+}
 
 p {
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
@@ -46,13 +49,12 @@ p {
 
 
 #registrationBox {
-	width: 80%;
-	margin: auto;
+	display: inline-block;
+	text-align: left;
 }
 
 #registrationForm {
-	margin: auto;
-	width: 30%;
+	
 }
 
 #createButton {

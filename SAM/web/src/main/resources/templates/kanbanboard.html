@@ -1,161 +1,216 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Kanban Board</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link rel="stylesheet" th:href="@{/css/KanbanBoard.css}" href="../static/css/KanbanBoard.css" />
-	<link rel="stylesheet" th:href="@{/css/base.css}" href="../static/css/base.css" />	
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"/>
-  	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
- 	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
- 	<script type="text/javascript">
+<title>Kanban Board</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<link rel="stylesheet" th:href="@{/css/KanbanBoard.css}"
+	href="../static/css/KanbanBoard.css" />
+<link rel="stylesheet" th:href="@{/css/base.css}"
+	href="../static/css/base.css" />
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script type="text/javascript">
  	$(function() {
     	$( "#dueDate" ).datepicker({ dateFormat: "yy-mm-dd" }).val();
   	});
  	</script>
 </head>
-<body onresize="resizeWindow()" onpageshow="resizeWindow()">
+<body >
 
-<div th:replace="overview :: bar"></div>
+	<div th:replace="overview :: bar"></div>
 
-<div th:replace="overview :: heading"></div>
+	<div th:replace="overview :: heading"></div>
 
-<div id="board" class="box">
-	<div id="projectBox" class="box">
-		<form action="#" th:action="@{/projectsettingview}" th:object="${project}" method="post" style="margin:25px;height:60px;">
-			<div th:text="'Project '+ ${project.name}" id="projectName" style="font-size:40px;margin:15px;width:80%;float:left;position:relative;left:10%;"></div>
-			<input id="projectSetting" class = "settingButton" type="image" src = "../image/setting.png" style="float:right;"/>
-			<input type = "hidden" name = "projectId" th:value ="${project.id.id}"/>
-		</form>
-
-		<p th:text="${project.description}" id="projectDescription" style="font-size:25px;word-break:break-all;margin:30px;text-align:center;"/>
-		<p th:text="${generalerror}" th:if="${generalerror} != null" id="generalerror" style="text-align:center;color: red"/>
-	</div>
-	<div id="ToDo" class="kanban" style="float:left;"  ondrop="dropInToDo(event)" ondragover="allowDrop(event)">
-		<p class="boardName">ToDo</p>		
-		<div class="entry" th:each="task : ${todoTasks}" th:id="${task.id}" draggable="true" ondragstart="drag(event)">
-			<form th:id="'form'+${task.id}" class="textBlock" th:action="@{/updatestaskstatus}" method="post">
-			<div class="textBlock">
-					<p class="nameText" th:text="${task.name}" />
-					<p class="descriptionText" th:text="${task.description}" />				
-				</div>
-				<input type="hidden" name="taskId" th:value="${task.id}"/>
-				<input type="hidden" th:id="'status'+${task.id}" name="status" th:value="${task.taskState}"/>
-				<input type="hidden" name="projectId" th:value="${task.projectId}"/>
+	<div id="board" class="box">
+		<div id="projectBox" class="box">
+			<form action="#" th:action="@{/projectsettingview}"
+				th:object="${project}" method="post"
+				style="margin: 25px; height: 60px;">
+				<div th:text="'Project '+ ${project.name}" id="projectName"
+					style="font-size: 40px; margin: 15px; width: 80%; float: left; position: relative; left: 10%;"></div>
+				<input id="projectSetting" class="settingButton" type="image"
+					src="../image/setting.png" style="float: right;" /> <input
+					type="hidden" name="projectId" th:value="${project.id.id}" />
 			</form>
-			<form class="settingForm" action="#" th:action="@{/taskDetail}" th:object="${task}" method="post">
-					<input class="settingButton" type="image" id="${task.id} + Detail" src="../image/detail.png" />
-					<input type = "hidden" name="taskId" th:value="${task.id.id}" />
-			</form>
+
+			<p th:text="${project.description}" id="projectDescription"
+				style="font-size: 25px; word-break: break-all; margin: 30px; text-align: center;" />
+			<p th:text="${generalerror}" th:if="${generalerror} != null"
+				id="generalerror" style="text-align: center; color: red" />
 		</div>
-		
-		<form id="createTask" action="#" th:action="@{/kanbanboard}" th:object="${createTaskForm}" method="post">
-			<img id="createTaskIcon" alt="Create icon" src="../image/create.png" onclick="showCreateTaskForm()"/>
-			<input type="hidden" th:field="*{projectId}" th:value="${project.id.id}"/>
-			<div id="createTaskFormWrapper">				
-				<p> 
-					Task Name:        	<input id="taskName" class="createTaskInput" th:field="*{taskName}"/>
-					
-				</p>
-				<p>
-					Description: 	<input id="taskDescription" class="createTaskInput" th:field="*{taskDescription}"/>
-					
-				</p>
-				<p>
-					Task Due(yyyy-mm-dd):			<input id="dueDate" class="createTaskInput" th:field="*{dueDate}" />
-					
-				</p>
-				<p>
-					Task Owner:			
-					<select class="createTaskInput" th:field="*{owner}">
-                		<option th:each="member : ${project.projectMembers}"
-                        		th:value="${member}"
-                        		th:text="${member}"></option>
-            		</select>
-					
-				</p>
-				<input id="createTaskButton" class="button" type="submit" value="Create Task" />
+
+		<div id="ToDo" class="kanban" ondrop="dropInToDo(event)"
+			ondragover="allowDrop(event)">
+			<p class="boardName">ToDo</p>
+			<div class="entry" th:each="task : ${todoTasks}" th:id="${task.id}"
+				draggable="true" ondragstart="drag(event)">
+				<form th:id="'form'+${task.id}" class="textBlock"
+					th:action="@{/updatestaskstatus}" method="post">
+					<div class="textBlock">
+						<p class="nameText" th:text="${task.name}" />
+						<p class="descriptionText" th:text="${task.description}" />
+					</div>
+					<input type="hidden" name="taskId" th:value="${task.id}" /> <input
+						type="hidden" th:id="'status'+${task.id}" name="status"
+						th:value="${task.taskState}" /> <input type="hidden"
+						name="projectId" th:value="${task.projectId}" />
+				</form>
+				<form class="settingForm" action="#" th:action="@{/taskDetail}"
+					th:object="${task}" method="post">
+					<input class="settingButton" type="image" id="${task.id} + Detail"
+						src="../image/detail.png" /> <input type="hidden" name="taskId"
+						th:value="${task.id.id}" />
+				</form>
 			</div>
-			<div id="errorwrapper">
-			<p><b th:if="${#fields.hasErrors('taskName')}" th:errors="*{taskName}"></b></p>
-			<p><b th:if="${#fields.hasErrors('taskDescription')}" th:errors="*{taskDescription}"></b></p>  
-			<p><b th:if="${#fields.hasErrors('dueDate')}" th:errors="*{dueDate}"></b></p>
-			<p><b th:if="${#fields.hasErrors('owner')}" th:errors="*{owner}"></b></p>
-			</div>			
-		</form>
-		
-	</div>
-	<div id="In-Progress" class="kanban" style="float:left;" ondrop="dropInProgress(event)" ondragover="allowDrop(event)">
-		<p class="boardName">In-Progress</p>
-		<div class="entry" th:each="task : ${inProgressTasks}" th:id="${task.id}" draggable="true" ondragstart="drag(event)">
-			<form th:id="'form'+${task.id}" class="textBlock" th:action="@{/updatestaskstatus}" method="post">
-			<div class="textBlock">
-					<p class="nameText" th:text="${task.name}" />
-					<p class="descriptionText" th:text="${task.description}" />				
-				</div>
-				<input type="hidden" name="taskId" th:value="${task.id}"/>
-				<input type="hidden" th:id="'status'+${task.id}" name="status" th:value="${task.taskState}"/>
-				<input type="hidden" name="projectId" th:value="${task.projectId}"/>
-			</form>
-			<form class="settingForm" action="#" th:action="@{/taskDetail}" th:object="${task}" method="post">
-					<input class="settingButton" type="image" id="${task.id} + Detail" src="../image/detail.png" />
-					<input type = "hidden" name="taskId" th:value="${task.id.id}" />
-			</form>
-		</div>
-	</div>
-	<div id="Done" class="kanban" style="float:right;" ondrop="dropDone(event)" ondragover="allowDrop(event)">
-		<p class="boardName">Done</p>
-		<div class="entry" th:each="task : ${doneTasks}" th:id="${task.id}" draggable="true" ondragstart="drag(event)">
-			<form th:id="'form'+${task.id}" class="textBlock" th:action="@{/updatestaskstatus}" method="post">
-			<div class="textBlock">
-					<p class="nameText" th:text="${task.name}" />
-					<p class="descriptionText" th:text="${task.description}" />				
-				</div>
-				<input type="hidden" name="taskId" th:value="${task.id}"/>
-				<input type="hidden" th:id="'status'+${task.id}" name="status" th:value="${task.taskState}"/>
-				<input type="hidden" name="projectId" th:value="${task.projectId}"/>
-			</form>
-			<form class="settingForm" action="#" th:action="@{/taskDetail}" th:object="${task}" method="post">
-					<input class="settingButton" type="image" id="${task.id} + Detail" src="../image/detail.png" />
-					<input type = "hidden" name="taskId" th:value="${task.id.id}" />
-			</form>
-		</div>	
-	</div>	
-	<div id="Review" class="kanban" style="float:right;" ondrop="dropReview(event)" ondragover="allowDrop(event)">
-		<p class="boardName">Review</p>
-		<div class="entry" th:each="task : ${reviewTasks}" th:id="${task.id}" draggable="true" ondragstart="drag(event)">
-			<form th:id="'form'+${task.id}" class="textBlock" th:action="@{/updatestaskstatus}" method="post">
-			<div class="textBlock">
-					<p class="nameText" th:text="${task.name}" />
-					<p class="descriptionText" th:text="${task.description}" />				
-				</div>
-				<input type="hidden" name="taskId" th:value="${task.id}"/>
-				<input type="hidden" th:id="'status'+${task.id}" name="status" th:value="${task.taskState}"/>
-				<input type="hidden" name="projectId" th:value="${task.projectId}"/>
-			</form>
-			<form class="settingForm" action="#" th:action="@{/taskDetail}" th:object="${task}" method="post">
-					<input class="settingButton" type="image" id="${task.id} + Detail" src="../image/detail.png" />
-					<input type = "hidden" name="taskId" th:value="${task.id.id}" />		
-			</form>
-		</div>
-	</div>	
-</div>
 
-<div th:replace="overview :: footer"></div>
+			<form id="createTask" action="#" th:action="@{/kanbanboard}"
+				th:object="${createTaskForm}" method="post">
+				<img id="createTaskIcon" alt="Create icon" src="../image/create.png"
+					onclick="showCreateTaskForm()" /> <input type="hidden"
+					th:field="*{projectId}" th:value="${project.id.id}" />
+				<div id="createTaskFormWrapper">
+					<p>
+						Task Name: <input id="taskName" class="createTaskInput"
+							th:field="*{taskName}" />
 
-<script th:inline="javascript" th:src="@{js/base.js}"></script>
-<script th:inline="javascript">
+					</p>
+					<p>
+						Description: <input id="taskDescription" class="createTaskInput"
+							th:field="*{taskDescription}" />
+
+					</p>
+					<p>
+						Task Due(yyyy-mm-dd): <input id="dueDate" class="createTaskInput"
+							th:field="*{dueDate}" />
+
+					</p>
+					<p>
+						Task Owner: <select class="createTaskInput" th:field="*{owner}">
+							<option th:each="member : ${project.projectMembers}"
+								th:value="${member}" th:text="${member}"></option>
+						</select>
+
+					</p>
+					<input id="createTaskButton" class="button" type="submit"
+						value="Create Task" />
+				</div>
+				<div id="errorwrapper">
+					<p>
+						<b th:if="${#fields.hasErrors('taskName')}"
+							th:errors="*{taskName}"></b>
+					</p>
+					<p>
+						<b th:if="${#fields.hasErrors('taskDescription')}"
+							th:errors="*{taskDescription}"></b>
+					</p>
+					<p>
+						<b th:if="${#fields.hasErrors('dueDate')}" th:errors="*{dueDate}"></b>
+					</p>
+					<p>
+						<b th:if="${#fields.hasErrors('owner')}" th:errors="*{owner}"></b>
+					</p>
+				</div>
+			</form>
+
+		</div>
+
+		<div id="In-Progress" class="kanban" ondrop="dropInProgress(event)"
+			ondragover="allowDrop(event)">
+			<p class="boardName">In-Progress</p>
+			<div class="entry" th:each="task : ${inProgressTasks}"
+				th:id="${task.id}" draggable="true" ondragstart="drag(event)">
+				<form th:id="'form'+${task.id}" class="textBlock"
+					th:action="@{/updatestaskstatus}" method="post">
+					<div class="textBlock">
+						<p class="nameText" th:text="${task.name}" />
+						<p class="descriptionText" th:text="${task.description}" />
+					</div>
+					<input type="hidden" name="taskId" th:value="${task.id}" /> <input
+						type="hidden" th:id="'status'+${task.id}" name="status"
+						th:value="${task.taskState}" /> <input type="hidden"
+						name="projectId" th:value="${task.projectId}" />
+				</form>
+				<form class="settingForm" action="#" th:action="@{/taskDetail}"
+					th:object="${task}" method="post">
+					<input class="settingButton" type="image" id="${task.id} + Detail"
+						src="../image/detail.png" /> <input type="hidden" name="taskId"
+						th:value="${task.id.id}" />
+				</form>
+			</div>
+		</div>
+
+		<div id="Review" class="kanban" ondrop="dropReview(event)"
+			ondragover="allowDrop(event)">
+			<p class="boardName">Review</p>
+			<div class="entry" th:each="task : ${reviewTasks}" th:id="${task.id}"
+				draggable="true" ondragstart="drag(event)">
+				<form th:id="'form'+${task.id}" class="textBlock"
+					th:action="@{/updatestaskstatus}" method="post">
+					<div class="textBlock">
+						<p class="nameText" th:text="${task.name}" />
+						<p class="descriptionText" th:text="${task.description}" />
+					</div>
+					<input type="hidden" name="taskId" th:value="${task.id}" /> <input
+						type="hidden" th:id="'status'+${task.id}" name="status"
+						th:value="${task.taskState}" /> <input type="hidden"
+						name="projectId" th:value="${task.projectId}" />
+				</form>
+				<form class="settingForm" action="#" th:action="@{/taskDetail}"
+					th:object="${task}" method="post">
+					<input class="settingButton" type="image" id="${task.id} + Detail"
+						src="../image/detail.png" /> <input type="hidden" name="taskId"
+						th:value="${task.id.id}" />
+				</form>
+			</div>
+		</div>
+
+		<div id="Done" class="kanban" ondrop="dropDone(event)"
+			ondragover="allowDrop(event)">
+			<p class="boardName">Done</p>
+			<div class="entry" th:each="task : ${doneTasks}" th:id="${task.id}"
+				draggable="true" ondragstart="drag(event)">
+				<form th:id="'form'+${task.id}" class="textBlock"
+					th:action="@{/updatestaskstatus}" method="post">
+					<div class="textBlock">
+						<p class="nameText" th:text="${task.name}" />
+						<p class="descriptionText" th:text="${task.description}" />
+					</div>
+					<input type="hidden" name="taskId" th:value="${task.id}" /> <input
+						type="hidden" th:id="'status'+${task.id}" name="status"
+						th:value="${task.taskState}" /> <input type="hidden"
+						name="projectId" th:value="${task.projectId}" />
+				</form>
+				<form class="settingForm" action="#" th:action="@{/taskDetail}"
+					th:object="${task}" method="post">
+					<input class="settingButton" type="image" id="${task.id} + Detail"
+						src="../image/detail.png" /> <input type="hidden" name="taskId"
+						th:value="${task.id.id}" />
+				</form>
+			</div>
+		</div>
+
+	</div>
+
+	<div th:replace="overview :: footer"></div>
+
+	<script th:inline="javascript" th:src="@{js/base.js}"></script>
+	<script th:inline="javascript">
  
 <!-- event handler on resize of window -->
 function resizeWindow() {
 	var size = document.getElementById("board").clientWidth;
 	
 	// Incase enough width, two column of project and personal to-do list
-	if (size>600) {
+	if (size>480) {
 		document.getElementById("ToDo").style = "float:left;";
 		document.getElementById("In-Progress").style = "float:left;";
-		document.getElementById("Review").style = "float:right;";
 		document.getElementById("Done").style = "float:right;";
+		document.getElementById("Review").style = "float:right;";
 	} else {
 		document.getElementById("ToDo").style = "float:left;width:48%;";
 		document.getElementById("In-Progress").style = "float:right;width:48%;";

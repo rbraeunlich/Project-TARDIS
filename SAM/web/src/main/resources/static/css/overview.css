@@ -17,7 +17,7 @@
 	height: 140px;
 	float: left;
 	padding: 0px;
-	word-break:break-all;
+	word-break: break-all;
 	display: table;
 }
 
@@ -27,16 +27,6 @@
 	float: left;
 	position: relative;
 	top: 30px;
-}
-
-.projectTaskBlock {
-	margin: 1%;
-	max-width: 75px;
-	width:30%;
-	max-height: 75px;
-	background-color: lightgrey;
-	float: left;
-	text-align: center;
 }
 
 .taskName {
@@ -51,9 +41,44 @@
 	width: 50%;
 }
 
-#project {
-	float: left;
-	margin-right: 5px;
+@media screen and (max-device-width:480px) {
+	#project {
+		margin: free;
+		width: 95%;
+	}
+	#toDoList {
+		margin: free;
+		width: 95%;
+	}
+	.projectTaskBlock {
+		margin: 1%;
+		max-width: 75px;
+		width: 45%;
+		max-height: 75px;
+		background-color: lightgrey;
+		float: left;
+		text-align: center;
+	}
+}
+
+@media screen and (min-device-width:481px) {
+	#project {
+		float: left;
+		margin-right: 5px;
+	}
+	#toDoList {
+		float: right;
+		margin-left: 5px;
+	}
+	.projectTaskBlock {
+		margin: 1%;
+		max-width: 75px;
+		width: 30%;
+		max-height: 75px;
+		background-color: lightgrey;
+		float: left;
+		text-align: center;
+	}
 }
 
 #createProject {
@@ -73,11 +98,6 @@
 #createProjectIcon {
 	width: 30px;
 	height: 30px;
-}
-
-#toDoList {
-	float: right;
-	margin-left: 5px;
 }
 
 #errorwrapper {
