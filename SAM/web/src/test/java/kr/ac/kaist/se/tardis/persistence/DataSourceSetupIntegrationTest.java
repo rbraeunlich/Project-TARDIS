@@ -10,18 +10,18 @@ import java.sql.SQLException;
 
 import javax.sql.DataSource;
 
+import kr.ac.kaist.se.tardis.SamApplication;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.boot.test.IntegrationTest;
 import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.boot.test.WebIntegrationTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import kr.ac.kaist.se.tardis.SamApplication;
-
 @RunWith(SpringJUnit4ClassRunner.class)
-@IntegrationTest
+@WebIntegrationTest
 @SpringApplicationConfiguration(classes = SamApplication.class)
 public class DataSourceSetupIntegrationTest {
 	
