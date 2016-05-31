@@ -27,6 +27,7 @@ import kr.ac.kaist.se.tardis.task.api.Task;
 import kr.ac.kaist.se.tardis.task.api.TaskService;
 import kr.ac.kaist.se.tardis.taskNote.api.TaskNote;
 import kr.ac.kaist.se.tardis.taskNote.api.TaskNoteService;
+import kr.ac.kaist.se.tardis.taskNote.impl.Contribution;
 
 @Service
 public class GitHubServiceImpl implements GitHubService {
@@ -50,7 +51,7 @@ public class GitHubServiceImpl implements GitHubService {
 			List<RepositoryCommit> commits = commitService.getCommits(repository);
 			Set<Task> taskByProjectId = taskService.findTaskByProjectId(projectId);
 			Map<Task, String> taskKeywords = taskByProjectId.stream()
-					.collect(Collectors.toMap(t -> t, t -> PREFIX + t.getKey()));
+					.collect(Collectors.toMap(t -> t, t -> PREFIX + String.valueOf(t.getKey())));
 			for (Entry<Task, String> entry : taskKeywords.entrySet()) {
 				for (RepositoryCommit repositoryCommit : commits) {
 					Commit commit = repositoryCommit.getCommit();
@@ -72,8 +73,11 @@ public class GitHubServiceImpl implements GitHubService {
 
 	private Date getLatestAutomaticContribution(Task task) {
 		Set<TaskNote> taskNotesByTaskId = taskNoteService.findTaskNotesByTaskId(task.getId());
-		Optional<Date> first = taskNotesByTaskId.stream().map(tn -> tn.getWriteDate())
-				.sorted((d1, d2) -> -d1.compareTo(d2)).findFirst();
+		Optional<Date> first = taskNotesByTaskId.stream()
+				.filter(tn -> tn.getContent().startsWith(Contribution.COMMIT_TEXT))
+				.map(tn -> tn.getWriteDate())
+				.sorted((d1, d2) -> -d1.compareTo(d2))
+				.findFirst();
 		if (first.isPresent()) {
 			return first.get();
 		}

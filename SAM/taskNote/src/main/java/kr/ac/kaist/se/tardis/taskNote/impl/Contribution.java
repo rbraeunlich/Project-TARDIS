@@ -10,6 +10,7 @@ import kr.ac.kaist.se.tardis.taskNote.impl.id.TaskNoteId;
 
 @Entity
 public class Contribution extends TaskNote {
+	public static final String COMMIT_TEXT = "Commit from ";
 	private Integer progress;
 	private Integer contribution;
 
@@ -31,7 +32,7 @@ public class Contribution extends TaskNote {
 		} else if (contribution != null){
 			return "Contribution: " + contribution + " from " + getAuthor();
 		} else{
-			return "Commit from " + getAuthor();
+			return COMMIT_TEXT + getAuthor();
 		}
 	}
 
