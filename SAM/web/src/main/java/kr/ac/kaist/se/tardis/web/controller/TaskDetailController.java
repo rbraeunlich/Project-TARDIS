@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,7 @@ import kr.ac.kaist.se.tardis.task.impl.id.TaskId;
 import kr.ac.kaist.se.tardis.task.impl.id.TaskIdFactory;
 import kr.ac.kaist.se.tardis.taskNote.api.TaskNote;
 import kr.ac.kaist.se.tardis.taskNote.api.TaskNoteService;
+import kr.ac.kaist.se.tardis.web.exception.TaskNotFoundException;
 import kr.ac.kaist.se.tardis.web.form.CreateTaskForm;
 import kr.ac.kaist.se.tardis.web.form.CreateTaskNoteForm;
 import kr.ac.kaist.se.tardis.web.validator.TaskNoteFormValidator;
@@ -42,8 +44,11 @@ public class TaskDetailController {
 	private TaskNoteFormValidator validator;
 
 	private void fillModel(Model model, UserDetails user, TaskId id) {
-		Task task = taskService.findTaskById(id).get();
-				
+		Optional<Task> findTaskById = taskService.findTaskById(id);
+		if(!findTaskById.isPresent()){
+			throw new TaskNotFoundException(id);
+		}
+		Task task = findTaskById.get();
 		Set<TaskNote> taskNotes = taskNoteService.findTaskNotesByTaskId(id);
 		List<TaskNote> tNs =new ArrayList<TaskNote>(taskNotes);
 		Collections.sort(tNs, new Comparator<TaskNote>() {

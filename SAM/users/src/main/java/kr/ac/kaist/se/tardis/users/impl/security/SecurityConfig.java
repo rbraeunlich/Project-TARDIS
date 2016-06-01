@@ -30,7 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 				.regexMatchers("/projectsettingview", "/projectsettingview\\?.*").access("@samUserDetailsService.isUserProjectOwner(authentication,request)")
 				.regexMatchers("/updatestaskstatus", "/updatestaskstatus\\?.*").access("@samUserDetailsService.isUserAllowedToChangeTask(authentication,request)")
 				.regexMatchers("/tasksettingview", "/tasksettingview\\?.*").access("@samUserDetailsService.isUserAllowedToChangeTask(authentication,request)")
-				.regexMatchers("/taskDetail", "/taskDetail\\?.*").access("@samUserDetailsService.isUserAllowedToSeeTask(authentication,request)")
+				.regexMatchers("/taskdetail", "/taskdetail\\?.*").access("@samUserDetailsService.isUserAllowedToSeeTask(authentication,request)")
 				.regexMatchers("/addtask", "/addtask\\?.*").access("@samUserDetailsService.isUserAllowedToSeeTask(authentication,request)")
 				.anyRequest().authenticated()
 			.and()

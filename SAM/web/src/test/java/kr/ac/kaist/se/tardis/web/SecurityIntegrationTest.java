@@ -30,6 +30,7 @@ import org.springframework.web.context.WebApplicationContext;
 import kr.ac.kaist.se.tardis.SamApplication;
 import kr.ac.kaist.se.tardis.project.impl.id.ProjectIdFactory;
 import kr.ac.kaist.se.tardis.task.impl.id.TaskIdFactory;
+import kr.ac.kaist.se.tardis.task.impl.state.TaskState;
 import kr.ac.kaist.se.tardis.users.api.UserRepository;
 import kr.ac.kaist.se.tardis.users.impl.UserImpl;
 
@@ -87,7 +88,7 @@ public class SecurityIntegrationTest {
 	@Test
 	public void notAllowedToSeeTask() throws Exception{
 		mvc
-		.perform(get("/taskview?taskId=" + TaskIdFactory.generateTaskId()).with(user(USERNAME).password(PASSWORD)).with(csrf()))
+		.perform(get("/tasksettingview?taskId=" + TaskIdFactory.generateTaskId()).with(user(USERNAME).password(PASSWORD)).with(csrf()))
 		.andExpect(status().isForbidden());
 	}
 	
@@ -109,6 +110,38 @@ public class SecurityIntegrationTest {
 	public void notAllowedToViewProjectSettings() throws Exception{
 		mvc
 		.perform(get("/projectsettingview?projectId=" + ProjectIdFactory.generateProjectId()).with(user(USERNAME).password(PASSWORD)).with(csrf()))
+		.andExpect(status().isForbidden());
+	}
+	
+	@Test
+	public void notAllowedToChangeTaskStatus() throws Exception{
+		mvc
+		.perform(post("/updatestaskstatus")
+				.param("taskId", TaskIdFactory.generateTaskId().getId())
+				.param("projectId", ProjectIdFactory.generateProjectId().getId())
+				.param("status", TaskState.INPROGRESS.toString())
+				.with(user(USERNAME).password(PASSWORD)).with(csrf()))
+		.andExpect(status().isForbidden());
+	}
+	
+	@Test
+	public void allowedToSeePersonalPage() throws Exception{
+		mvc
+		.perform(get("/mypage").with(user(USERNAME).password(PASSWORD)).with(csrf()))
+		.andExpect(status().isOk());
+	}
+	
+	@Test
+	public void notAllowedToSeeTaskDetails() throws Exception{
+		mvc
+		.perform(get("/taskdetail?taskId=" + TaskIdFactory.generateTaskId()).with(user(USERNAME).password(PASSWORD)).with(csrf()))
+		.andExpect(status().isForbidden());
+	}
+	
+	@Test
+	public void notAllowedToAddTaskDetails() throws Exception{
+		mvc
+		.perform(post("/addtask").param("taskId",TaskIdFactory.generateTaskId().getId()).with(user(USERNAME).password(PASSWORD)).with(csrf()))
 		.andExpect(status().isForbidden());
 	}
 	
