@@ -99,7 +99,6 @@ public class ProjectController {
 		Optional<Project> optional = projectService.findProjectById(id);
 
 		if (optional.isPresent()) {
-			// TODO update features
 			Project changedProject = optional.get();
 			changedProject.setName(setProjectForm.getProjectName());
 			changedProject.setDescription(setProjectForm.getDescription());
@@ -128,7 +127,7 @@ public class ProjectController {
 
 			fillModel(model, user, id);
 		} else {
-			// TODO error case
+			throw new ProjectNotFoundException(id);
 		}
 		redirectAttributes.addAttribute("projectId", form.getProjectId());
 		return "redirect:kanbanboard";

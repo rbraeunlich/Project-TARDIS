@@ -34,7 +34,6 @@ public class DataSourceSetupIntegrationTest {
 	
 	@Test
 	public void dataSourcesSetUp() throws SQLException{
-		//TODO extend this test when the DB configuration progresses
 		assertThat(dataSource, is(notNullValue()));
 		assertThat(userDS, is(notNullValue()));
 		assertThat(dataSource.getConnection().getMetaData().getURL(), is(not(equalTo(userDS.getConnection().getMetaData().getURL()))));

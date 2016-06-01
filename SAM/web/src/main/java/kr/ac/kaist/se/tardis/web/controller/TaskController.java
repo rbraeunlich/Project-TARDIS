@@ -26,6 +26,7 @@ import kr.ac.kaist.se.tardis.task.api.Task;
 import kr.ac.kaist.se.tardis.task.api.TaskService;
 import kr.ac.kaist.se.tardis.task.impl.id.TaskId;
 import kr.ac.kaist.se.tardis.task.impl.id.TaskIdFactory;
+import kr.ac.kaist.se.tardis.web.exception.TaskNotFoundException;
 import kr.ac.kaist.se.tardis.web.form.CreateTaskForm;
 import kr.ac.kaist.se.tardis.web.form.FormWithNotification;
 import kr.ac.kaist.se.tardis.web.form.SetTaskForm;
@@ -62,10 +63,10 @@ public class TaskController {
 		TaskId id = TaskIdFactory.valueOf(taskId);
 		fillModel(model, user, id, taskService.findTaskById(id).get().getProjectId());
 		Optional<Task> optional = taskService.findTaskById(id);
-		if (optional.isPresent()) {// Task is present in optional
+		if (optional.isPresent()) {
 			model.addAttribute("task", optional.get());
 		} else {
-			// TODO error case
+			throw new TaskNotFoundException(id);
 		}
 		return "tasksettingview";
 
@@ -78,7 +79,7 @@ public class TaskController {
 		// show task information on task setting page
 
 		validator.validate(setTaskForm, bindingResult);
-		if(bindingResult.hasErrors()){
+		if (bindingResult.hasErrors()) {
 			return "tasksettingview";
 		}
 
@@ -90,10 +91,8 @@ public class TaskController {
 		if (optional.isPresent()) {// Task is present in optional
 			model.addAttribute("task", optional.get());
 		} else {
-			// TODO error case
-
+			throw new TaskNotFoundException(id);
 		}
-
 		return "tasksettingview";
 	}
 
@@ -133,7 +132,7 @@ public class TaskController {
 			} catch (ParseException e) {
 				throw new RuntimeException(e);
 			}
-			if(setTaskForm.getKey() != null){
+			if (setTaskForm.getKey() != null) {
 				changedTask.setKey(setTaskForm.getKey());
 			}
 			taskService.saveTask(changedTask);
@@ -141,9 +140,8 @@ public class TaskController {
 			fillModel(model, user, id, taskService.findTaskById(id).get().getProjectId());
 
 		} else {
-			// TODO error case
+			throw new TaskNotFoundException(id);
 		}
-
 		redirectAttributes.addAttribute("taskId", taskId);
 		return "redirect:taskDetail";
 	}
@@ -159,8 +157,7 @@ public class TaskController {
 	 */
 	private Task createAndDeleteJobsForTask(Task changedTask, FormWithNotification setProjectForm,
 			Date projectDueDate) {
-		return JobHelper.createAndDeleteJobsForTask(schedulerService, changedTask, setProjectForm,
-				projectDueDate);
+		return JobHelper.createAndDeleteJobsForTask(schedulerService, changedTask, setProjectForm, projectDueDate);
 	}
 
 }

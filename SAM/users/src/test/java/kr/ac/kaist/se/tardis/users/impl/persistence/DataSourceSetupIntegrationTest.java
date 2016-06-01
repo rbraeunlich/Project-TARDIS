@@ -29,7 +29,6 @@ public class DataSourceSetupIntegrationTest {
 	
 	@Test
 	public void dataSourcesSetUp() throws SQLException{
-		//TODO extend this test when the DB configuration progresses
 		assertThat(userDS, is(notNullValue()));
 	}
 
