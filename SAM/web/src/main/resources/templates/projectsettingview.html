@@ -74,7 +74,7 @@
 
 	</form>
 	
-	<form action="#" th:action="@{/kanbanboard}" method="get">
+	<form id="cancel" action="#" th:action="@{/kanbanboard}" method="get">
 		<button class="configurationButton" name="action" type="submit" value="submit" style="margin-right:43%;float:right;">Cancel</button>
 		<input type="hidden" name="projectId" th:value="${project.id.id}"/>
 	</form>

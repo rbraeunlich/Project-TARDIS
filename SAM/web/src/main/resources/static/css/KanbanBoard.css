@@ -7,6 +7,14 @@
 		margin: 1% 0.7% 2% 0.7%;
 		background-color: #b3e4ff;
 		padding-bottom: 2%;
+		
+	}
+	#projectName{
+		font-size: 20px;  width: 80%; float: left; position: relative; left: 10%;"
+
+	}
+	#ProjectNameContainer{
+	margin: 25px; height: 30px;
 	}
 }
 
@@ -20,7 +28,12 @@
 		padding-bottom: 2%;
 		float: left;
 	}
-	
+	#projectName{
+	font-size: 40px; margin: 15px; width: 80%; float: left; position: relative; left: 10%;"
+	}
+	#ProjectNameContainer{
+	margin: 25px; height: 60px;
+	}
 }
 
 .boardName {

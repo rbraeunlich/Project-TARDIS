@@ -91,7 +91,7 @@
 		</form>
 
 
-		<form action="#" th:action="@{/taskdetail}" method="get">
+		<form id = "cancel" action="#" th:action="@{/taskdetail}" method="get">
 			<button name="action" type="submit" value="submit" style="margin-right:43%;float:right">Cancel</button>
 			<input type="hidden" name="taskId" th:value="${task.id.id}" />
 		</form>

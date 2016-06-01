@@ -7,6 +7,7 @@
     
 	<link rel="stylesheet" th:href="@{/css/settingview.css}" href="../static/css/settingview.css" />
 	<link rel="stylesheet" th:href="@{/css/base.css}" href="../static/css/base.css" />
+	
 </head>
 <body>
 
@@ -18,7 +19,7 @@
 
 	<div id="userSettingBox">
 		<p th:text="'Hello! ' + ${username}" style="text-align:center;font-size:20px;"/>
-		<form id="passwordForm" action="#" th:action="@{/mypage}" th:object="${userForm}" method="post">
+		<form id="passwordForm" action="#" th:action="@{/mypage}" th:object="${userForm}" method="post" >
 			<p>
 				Password:<input class="textBox" id="password" name="password" type="password"
 					th:field="*{password}" /> <b

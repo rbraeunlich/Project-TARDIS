@@ -1,3 +1,52 @@
+@media screen and (max-device-width:480px) {
+	#TaskNameContainer {
+		margin: 25px;
+		height: 30px;
+	}
+	#taskNote {
+		font-size: 20px;
+		width: 80%;
+		float: left;
+		position: relative;
+		left: 10%;
+	}
+	.taskDeatailsettingButton {
+		max-width: 50px;
+		width: 15%;
+		height: width;
+		float: right;
+		position: relative;
+		top: 30%;
+	}
+	.taskNoteTextBlock {
+		width: 90%;
+		height: auto;
+		padding: 10px;
+		border: 1px solid lightgray;
+	}
+}
+
+@media screen and (min-device-width:481px) {
+	#TaskNameContainer {
+		margin: 25px;
+		height: 60px;
+	}
+	#taskNote {
+		font-size: 40px;
+		margin: 15px;
+		width: 80%;
+		float: left;
+		position: relative;
+		left: 10%;
+	}
+	.taskNoteTextBlock {
+		width: 98%;
+		height: auto;
+		padding: 10px;
+		border: 1px solid lightgray;
+	}
+}
+
 .commentbox {
 	width: 90%;
 	margin: auto;
@@ -8,7 +57,6 @@
 	padding: 1%;
 	text-align: left;
 }
-
 
 #taskBox {
 	height: auto;
@@ -29,8 +77,6 @@
 	width: 50%;
 }
 
-
-
 #createTaskNote {
 	width: 80%;
 	height: auto;
@@ -48,11 +94,4 @@
 #createTaskNoteIcon {
 	width: 30px;
 	height: 30px;
-}
-
-.taskNoteTextBlock {
-	width: 98%;
-	height: auto;
-	padding: 10px;
-	border: 1px solid lightgray;
 }

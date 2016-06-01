@@ -1,3 +1,45 @@
+@media screen and (max-device-width:480px) {
+	#configurations {
+		width: 80%;
+		overflow: hidden;
+		height: auto;
+		margin: 2% auto 1% auto;
+	}
+	#infos {
+		width: 95%;
+		float: left;
+	}
+	#notifications {
+		float: left;
+		width: 95%;
+	}
+	#cancel {
+		margin-top: 10%;
+		margin-left: 17%;
+	}
+	#passwordForm {
+		width: 80%;
+		margin-left: 10%
+	}
+}
+
+@media screen and (min-device-width:481px) {
+	#configurations {
+		width: 70%;
+		overflow: hidden;
+		height: auto;
+		margin: 2% auto 1% auto;
+	}
+	#infos {
+		width: 49%;
+		float: left;
+	}
+	#notifications {
+		float: right;
+		width: 49%;
+	}
+}
+
 .settingForm {
 	width: auto;
 	margin: auto;
@@ -18,21 +60,4 @@
 	display: table;
 	border: 1px solid grey;
 	text-align: center;
-}
-
-#configurations {
-	width: 70%;
-	overflow: hidden;
-	height: auto;
-	margin: 2% auto 1% auto;
-}
-
-#infos {
-	width: 49%;
-	float: left;
-}
-
-#notifications {
-	float: right;
-	width: 49%;
 }
