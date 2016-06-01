@@ -22,11 +22,12 @@
 }
 
 .projectTaskList {
-	height: 80px;
+	height: 79px;
 	width: 40%;
 	float: left;
 	position: relative;
 	top: 30px;
+	overflow: hidden;
 }
 
 .taskName {
