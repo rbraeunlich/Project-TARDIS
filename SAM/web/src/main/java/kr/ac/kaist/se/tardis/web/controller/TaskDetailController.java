@@ -78,14 +78,14 @@ public class TaskDetailController {
 		return "taskdetail";
 	}
 	
-	@RequestMapping(value = { "/taskDetail" }, method = RequestMethod.POST)
+	@RequestMapping(value = { "/taskdetail" }, method = RequestMethod.POST)
 	public String taskNotePagePostmethod(Model model, CreateTaskForm form,
 			@RequestParam(name = "taskId", required = true) String taskId, @AuthenticationPrincipal UserDetails user,
 			CreateTaskNoteForm createTaskNoteForm, BindingResult bindingResult) {
 		return taskNotePage(model,form,taskId,user,createTaskNoteForm,bindingResult);
 	}
 
-	@RequestMapping(value = { "/taskDetail" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/taskdetail" }, method = RequestMethod.GET)
 	public String taskNotePageGetmethod(Model model, CreateTaskForm form,
 			@RequestParam(name = "taskId", required = true) String taskId, @AuthenticationPrincipal UserDetails user,
 			CreateTaskNoteForm createTaskNoteForm, BindingResult bindingResult) {
@@ -104,8 +104,7 @@ public class TaskDetailController {
 		fillModel(model, user, id);
 
 		if (bindingResult.hasErrors()) {
-			//return "forward:taskDetail";
-			return "taskDetail";
+			return "taskdetail";
 		}
 		TaskId taskid = TaskIdFactory.valueOf(taskId);
 		if (createTaskNoteForm.getComment() != null &&!createTaskNoteForm.getComment().trim().isEmpty()) {
@@ -123,6 +122,6 @@ public class TaskDetailController {
 			}
 		}
 		redirectAttributes.addAttribute("taskId", createTaskNoteForm.getTaskId());
-		return "redirect:taskDetail";
+		return "redirect:taskdetail";
 	}
 }

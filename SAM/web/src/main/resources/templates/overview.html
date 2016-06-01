@@ -83,7 +83,7 @@
 				<p class="taskDescription" th:text="${task.description}"/>
 				
 			</div>
-			<form class="settingForm" action="#" th:action="@{/taskDetail}" th:object="${task}" method="post">
+			<form class="settingForm" action="#" th:action="@{/taskdetail}" th:object="${task}" method="post">
 				<input class="settingButton" type="image" th:id="${task.name}+Task" src = "../image/detail.png"/>
 				<input type="hidden" name="taskId" th:value="${task.id.id}"/>
 			</form>

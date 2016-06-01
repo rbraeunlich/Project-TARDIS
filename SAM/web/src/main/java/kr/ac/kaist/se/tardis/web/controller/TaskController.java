@@ -57,7 +57,7 @@ public class TaskController {
 		model.addAttribute("notificationList", notificationService.getNotificationsForUser(user.getUsername()));
 	}
 
-	@RequestMapping(value = { "/taskview" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/tasksettingview" }, method = RequestMethod.GET)
 	public String showTaskInfoView(Model model, @RequestParam(name = "taskId", required = true) String taskId,
 			SetTaskForm form, @AuthenticationPrincipal UserDetails user) {
 		TaskId id = TaskIdFactory.valueOf(taskId);
@@ -72,8 +72,7 @@ public class TaskController {
 
 	}
 
-	@RequestMapping(value = { "/taskview" }, method = RequestMethod.POST)
-
+	@RequestMapping(value = { "/tasksettingview" }, method = RequestMethod.POST)
 	public String taskInfoView(Model model, @RequestParam(name = "taskId", required = true) String taskId,
 			@AuthenticationPrincipal UserDetails user, @Valid SetTaskForm setTaskForm, BindingResult bindingResult) {
 		// show task information on task setting page
@@ -93,7 +92,7 @@ public class TaskController {
 		} else {
 			throw new TaskNotFoundException(id);
 		}
-		return "tasksettingview";
+		return "redirect:tasksettingview";
 	}
 
 	@RequestMapping(value = { "/taskchange" }, method = RequestMethod.POST)
@@ -143,7 +142,7 @@ public class TaskController {
 			throw new TaskNotFoundException(id);
 		}
 		redirectAttributes.addAttribute("taskId", taskId);
-		return "redirect:taskDetail";
+		return "redirect:taskdetail";
 	}
 
 	/**

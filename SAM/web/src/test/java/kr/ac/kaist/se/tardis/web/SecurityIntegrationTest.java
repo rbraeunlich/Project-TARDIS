@@ -108,7 +108,7 @@ public class SecurityIntegrationTest {
 	@Test
 	public void notAllowedToViewProjectSettings() throws Exception{
 		mvc
-		.perform(get("/projectview?projectId=" + ProjectIdFactory.generateProjectId()).with(user(USERNAME).password(PASSWORD)).with(csrf()))
+		.perform(get("/projectsettingview?projectId=" + ProjectIdFactory.generateProjectId()).with(user(USERNAME).password(PASSWORD)).with(csrf()))
 		.andExpect(status().isForbidden());
 	}
 	

@@ -19,7 +19,7 @@
 	<div id="board" class="box">
 	
 	<div id="taskBox" class="box">
-		<form action="#" th:action="@{/taskview}" th:object="${task}" method="get" style="margin:25px;height:60px;">
+		<form action="#" th:action="@{/tasksettingview}" th:object="${task}" method="get" style="margin:25px;height:60px;">
 			<div th:text="'Task ' + ${task.name}" id="taskNote" style="font-size:40px;margin:15px;width:80%;float:left;position:relative;left:10%;"></div>
 			<input id="taskSetting" class = "settingButton" type="image" src = "../image/setting.png" style="float:right;"/>
 			<input type = "hidden" name = "taskId" th:value ="${task.id.id}"/>
