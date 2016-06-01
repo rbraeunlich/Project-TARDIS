@@ -42,10 +42,10 @@ public class MyPageController {
 	public String changePassword(Model model, @Valid SetUserForm userForm, BindingResult bindingResult, 
 				@AuthenticationPrincipal UserDetails user) {
 		validator.validate(userForm, bindingResult);
-		fillModel(model, user, userForm);
 		if (bindingResult.hasErrors()) {
 			return "mypage";
 		}		
-		return "mypage";
+		userService.changePassword(userService.findUserByName(user.getUsername()), userForm.getPassword());
+		return "forward:overview";
 	}
 }

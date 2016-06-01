@@ -42,4 +42,10 @@ public class DevUserServiceImpl implements UserService {
 		userWOPasswordRepo.delete((UserWithoutPassword) u);
 	}
 
+	@Override
+	public void changePassword(User u, String pwd) {
+		u.setPassword(pwd);
+		userRepo.save((UserImpl) u);
+	}
+
 }

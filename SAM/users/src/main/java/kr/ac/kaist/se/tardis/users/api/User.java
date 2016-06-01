@@ -7,5 +7,7 @@ public interface User {
 	public boolean isPasswordCorrect(String password);
 
 	String getPassword();
+
+	void setPassword(String pwd);
 	
 }

@@ -40,6 +40,11 @@ public class UserImpl implements User {
 	public String getPassword() {
 		return password;
 	}
+	
+	@Override
+	public void setPassword(String pwd) {
+		password = pwd;
+	}
 
 	@Override
 	public boolean isPasswordCorrect(String password){

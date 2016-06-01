@@ -38,7 +38,7 @@
 		<div class="commentbox">
 			<div th:each="taskNote : ${taskNoteList}" class="taskNoteTextBlock" id="${taskNote.name}">
 				<p class="taskNoteDate" th:text="${#dates.format(taskNote.writeDate,'yyyy-MM-dd hh:mm:ss')}"/>
-				<p><span class="author" th:text="${taskNote.author}"/> <i><b>said&nbsp;&nbsp;&nbsp;&nbsp;</b></i><span class="taskNoteContent" th:text="${taskNote.content}"/></p>
+				<p><span class="author" th:text="${taskNote.author}"></span> <i><b>said&nbsp;&nbsp;&nbsp;&nbsp;</b></i><span class="taskNoteContent" th:text="${taskNote.content}"></span></p>
 
 			</div>
 				<form id="createTaskNote" action="#" th:action="@{/addtask}" th:object="${createTaskNoteForm}" method="post">

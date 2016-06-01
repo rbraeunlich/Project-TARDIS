@@ -12,5 +12,7 @@ public interface UserService {
 	User findUserByName(String name);
 	
 	void deleterUser(User u);
+
+	void changePassword(User u, String pwd);
 	
 }

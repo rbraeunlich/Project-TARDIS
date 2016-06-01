@@ -4,7 +4,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
-import kr.ac.kaist.se.tardis.web.form.RegistrationForm;
 import kr.ac.kaist.se.tardis.web.form.SetUserForm;
 
 @Component
