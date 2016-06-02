@@ -40,6 +40,7 @@ public class TaskNoteServiceImpl implements TaskNoteService {
 		TaskNote t = new Contribution(taskNoteId, task, author, writeDate, progress, contribution);
 		if(progress != null){
 			task.setTaskProgress(progress);
+			taskService.saveTask(task);
 		}
 		return t;
 	}
