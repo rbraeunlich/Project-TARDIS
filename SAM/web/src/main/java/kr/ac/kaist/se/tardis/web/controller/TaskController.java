@@ -159,4 +159,19 @@ public class TaskController {
 		return JobHelper.createAndDeleteJobsForTask(schedulerService, changedTask, setProjectForm, projectDueDate);
 	}
 
+	@RequestMapping(value = { "/taskdelete" }, method = RequestMethod.POST)
+	public String deleteTask(Model model, @RequestParam(name = "taskId", required = true) String taskId,
+			@RequestParam(name = "projectId", required = true) String projectId,
+			@AuthenticationPrincipal UserDetails user, RedirectAttributes redirectAttributes) {
+		TaskId id = TaskIdFactory.valueOf(taskId);
+		Optional<Task> optional = taskService.findTaskById(id);
+		if (optional.isPresent()) {
+			taskService.deleteTask(optional.get());
+		} else {
+			throw new TaskNotFoundException(id);
+		}
+		redirectAttributes.addAttribute("projectId", projectId);
+		return "redirect:kanbanboard";
+
+	}
 }

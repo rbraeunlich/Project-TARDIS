@@ -26,7 +26,7 @@
 	<div th:replace="overview :: heading"></div>
 
 	<div id="board" class="box">
-
+	<!-- /taskchange is mapped in the TaskController not TaskDetailController -->
 		<form class="settingForm" action="#" th:action="@{/taskchange}"
 			th:object="${setTaskForm}" method="post">
 			<div style="text-align:center;">
@@ -85,15 +85,19 @@
 
 			
 				<button name="action" type="submit" value="submit" style="margin-left:43%;float:left">Submit</button>
-				<!--<button name="action" type="reset" value="reset">Reset</button>-->
-				<!--<button name="action" type="submit" value="cancel">Cancel</button>-->
 			
 		</form>
-
 
 		<form id = "cancel" action="#" th:action="@{/taskdetail}" method="get">
 			<button name="action" type="submit" value="submit" style="margin-right:43%;float:right">Cancel</button>
 			<input type="hidden" name="taskId" th:value="${task.id.id}" />
+		</form>
+		
+		<!-- /taskdelete is mapped in the TaskController not TaskDetailController -->
+		<form id = "delete" action="#" th:action="@{/taskdelete}" method="post">
+			<button name="action" type="submit" value="submit" style="margin-right:43%;float:right">Delete</button>
+			<input type="hidden" name="taskId" th:value="${task.id.id}" />
+			<input type="hidden" name="projectId" th:value="${task.projectId.id}" />
 		</form>
 
 	</div>

@@ -125,6 +125,16 @@ public class SecurityIntegrationTest {
 	}
 	
 	@Test
+	public void notAllowedToDeleteTask() throws Exception{
+		mvc
+		.perform(post("/taskdelete")
+				.param("taskId", TaskIdFactory.generateTaskId().getId())
+				.param("projectId", ProjectIdFactory.generateProjectId().getId())
+				.with(user(USERNAME).password(PASSWORD)).with(csrf()))
+		.andExpect(status().isForbidden());
+	}
+	
+	@Test
 	public void allowedToSeePersonalPage() throws Exception{
 		mvc
 		.perform(get("/mypage").with(user(USERNAME).password(PASSWORD)).with(csrf()))
