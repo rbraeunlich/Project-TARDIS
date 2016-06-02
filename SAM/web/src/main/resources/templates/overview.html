@@ -47,17 +47,18 @@
 <div id="board" class="box">
 	<div id="project" class="overview">	
 		<p class="boardName">My Projects</p>
-		<div th:each="project : ${#lists.sort(projectList)}" class="entry" id="${project.name}" onload="countSet()">
+		<div th:each="project : ${#lists.sort(projectList)}" class="entry" id="${project.name}" th:value="${counter.reset()}">
 			<div class="projectTextBlock">
 				<p class="projectNameText" th:text="${project.name}"/>
 				<p class="projectDescription" th:text="${project.description}"/>
 			</div>
 			<div class="projectTaskList" th:id="${project.name}+TaskList" >
-				<div th:each="task : ${allTaskList}" th:if="${task.projectId} == ${project.id} and ${count} &lt; 4" onload="countOne()" class="projectTaskBlock">
+				<div th:each="task : ${allTaskList}" th:if="${task.projectId} == ${project.id} and ${counter.increment()} &lt; 4" class="projectTaskBlock">
 					<p class="taskName" th:text="${task.name} + ${count}"/>
 					<progress class="taskProgress" max="100" th:value="${task.taskProgress}"></progress>
 				</div>
-			</div>
+				<img class="dot" src="../image/dotdotdot.png" th:if="${counter.getValue()} == 4"/>
+			</div>			
 			
 			<form class="settingForm" action="#" th:action="@{/kanbanboard}" method="get">
 				<input class="settingButton" type="image" th:id="${project.name}+Kanban" src = "../image/detail.png"/>
@@ -126,14 +127,6 @@ function resizeWindow() {
 function showCreateProjectForm() {
 	document.getElementById("createProjectFormWrapper").style.display = "block";
 	document.getElementById("createProjectIcon").style.display = "none";
-}
-
-function countSet() {
-	var count = /*[[$(count)]]*/ = 0;
-}
-
-function countOne() {
-	var count = /*[[$(count)]]*/ [[$(count)]] + 1;
 }
 
 /*]]>*/

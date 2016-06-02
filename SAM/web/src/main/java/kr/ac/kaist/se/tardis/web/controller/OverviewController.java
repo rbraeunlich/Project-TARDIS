@@ -10,6 +10,8 @@ import kr.ac.kaist.se.tardis.task.api.TaskService;
 import kr.ac.kaist.se.tardis.notification.api.NotificationService;
 
 import kr.ac.kaist.se.tardis.web.form.CreateProjectForm;
+import kr.ac.kaist.se.tardis.web.tool.SimpleCounter;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -47,6 +49,7 @@ public class OverviewController {
 		model.addAttribute("username", String.valueOf(user.getUsername()));
 		model.addAttribute("allTaskList", taskService.getAllTasks());
 		model.addAttribute("projectList", projectService.findProjectsForUser(String.valueOf(user.getUsername())));
+		model.addAttribute("counter", new SimpleCounter(0));
 		
 		Set<Task> tasks = taskService.findTasksForUser(String.valueOf(user.getUsername()));
 
