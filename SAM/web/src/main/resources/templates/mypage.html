@@ -19,9 +19,10 @@
 
 	<div id="userSettingBox">
 		<p th:text="'Hello! ' + ${username}" style="text-align:center;font-size:20px;"/>
-		<form id="passwordForm" action="#" th:action="@{/mypage}" th:object="${userForm}" method="post" >
+		<form id="passwordForm" action="#" th:action="@{/mypage}" th:object="${setUserForm}" method="post" >
+			Change your password.
 			<p>
-				Password:<input class="textBox" id="password" name="password" type="password"
+				New Password:<input class="textBox" id="password" name="password" type="password"
 					th:field="*{password}" /> <b
 					th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password
 					Error</b>

@@ -29,7 +29,6 @@ public class MyPageController {
 	private void fillModel(Model model, UserDetails user, SetUserForm userForm) {
 		model.addAttribute("username", String.valueOf(user.getUsername()));
 		model.addAttribute("notificationList", notificationService.getNotificationsForUser(user.getUsername()));
-		model.addAttribute("userForm", userForm);
 	}
 	
 	@RequestMapping(value = { "/mypage" }, method = RequestMethod.GET)
@@ -43,9 +42,10 @@ public class MyPageController {
 				@AuthenticationPrincipal UserDetails user) {
 		validator.validate(userForm, bindingResult);
 		if (bindingResult.hasErrors()) {
+			fillModel(model, user, userForm);
 			return "mypage";
 		}		
 		userService.changePassword(userService.findUserByName(user.getUsername()), userForm.getPassword());
-		return "forward:overview";
+		return "redirect:overview";
 	}
 }
