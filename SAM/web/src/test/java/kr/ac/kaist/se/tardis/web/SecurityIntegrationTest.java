@@ -155,6 +155,15 @@ public class SecurityIntegrationTest {
 		.andExpect(status().isForbidden());
 	}
 	
+	@Test
+	public void notAllowedToDeleteNotification() throws Exception{
+		mvc
+		.perform(post("/deletenotification")
+				.param("notificationId", "123")
+				.param("currentUrl", "http://localhost"))
+		.andExpect(status().isForbidden());
+	}
+	
 	@Configuration
 	@Profile("testSecurity")
 	public static class TestUserServiceConfig{

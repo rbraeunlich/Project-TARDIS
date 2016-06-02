@@ -29,7 +29,17 @@
 	<div id="notificationBox" onclick="showNotification(event)" onmouseleave="closeNotification()">
 		<img alt="Alarm icon" src="../image/bell.png" style="width:50px;height:50px;"/>
 		<div id="notification" style="display:none;">
-			<ul><li th:each="notice : ${notificationList}" th:text="${notice.text}"></li></ul>
+			<ul>
+				<li th:each="notice : ${notificationList}" >
+					<form th:action="@{/deletenotification}" method="post">
+					<small th:text="${notice.text}"></small>
+						<input type="hidden" name="notificationId" th:value="${notice.id}"/>
+						<input th:if="${#httpServletRequest.queryString != null}" type="hidden" name="currentUrl" th:value="${#httpServletRequest.requestURL.toString() + '?' + #httpServletRequest.queryString}"/>
+						<input th:if="${#httpServletRequest.queryString == null}" type="hidden" name="currentUrl" th:value="${#httpServletRequest.requestURL.toString()}"/>
+						<input type="image" src="../image/DeleteIcon.png"/>
+					</form>
+				</li>
+			</ul>
 		</div>
 	</div>	
 </div>

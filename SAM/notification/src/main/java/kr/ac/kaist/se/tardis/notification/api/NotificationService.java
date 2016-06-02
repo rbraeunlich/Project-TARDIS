@@ -8,4 +8,6 @@ public interface NotificationService {
 	void createNotification(String username, String text, Date notificationDate);
 
 	Set<Notification> getNotificationsForUser(String username);
+
+	void deleteNotification(String notificationId);
 }

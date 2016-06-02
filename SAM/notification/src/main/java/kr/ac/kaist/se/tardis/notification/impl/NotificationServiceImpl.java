@@ -31,4 +31,9 @@ public class NotificationServiceImpl implements NotificationService {
 		return repo.findNotificationsByUsername(username);
 	}
 
+	@Override
+	public void deleteNotification(String notificationId) {
+		repo.delete(Long.valueOf(notificationId));
+	}
+
 }
