@@ -1,0 +1,115 @@
+src/main/java/kr/ac/kaist/se/tardis/notification/api/Notification.java:5:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/notification/api/Notification.java:7:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/notification/api/Notification.java:9:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/notification/api/Notification.java:11:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/notification/api/Notification.java:13:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/notification/api/NotificationService.java:6:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/notification/api/NotificationService.java:8:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/notification/api/NotificationService.java:10:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/notification/api/NotificationService.java:12:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:17:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:22:	Avoid variables with short names like id
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:22:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:24:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:27:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:30:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:32:	Avoid unnecessary constructors - the compiler will generate these for you
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:32:	Document empty constructor
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:32:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:36:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:40:	Avoid variables with short names like id
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:40:	Parameter 'id' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:40:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:45:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:49:	Parameter 'username' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:49:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:54:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:58:	Parameter 'text' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:58:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:63:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:67:	Parameter 'notificationDate' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:67:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:72:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:73:	Avoid using final local variables, turn them into fields
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:74:	Found 'DD'-anomaly for variable 'result' (lines '74'-'75').
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:80:	Parameter 'obj' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:80:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:81:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:81:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:82:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:83:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:83:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:84:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:85:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:85:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:86:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:87:	Local variable 'other' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:89:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:89:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:90:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:91:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:91:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImpl.java:92:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationServiceImpl.java:14:	Each class should declare at least one constructor
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationServiceImpl.java:14:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationServiceImpl.java:17:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationServiceImpl.java:17:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationServiceImpl.java:20:	Parameter 'text' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationServiceImpl.java:20:	Parameter 'username' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationServiceImpl.java:20:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationServiceImpl.java:21:	Parameter 'notificationDate' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationServiceImpl.java:22:	Local variable 'notification' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationServiceImpl.java:30:	Parameter 'username' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationServiceImpl.java:30:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationServiceImpl.java:35:	Parameter 'notificationId' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/NotificationServiceImpl.java:35:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/persistence/NotificationRepository.java:10:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/notification/impl/persistence/NotificationRepository.java:12:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImplPersistenceTest.java:35:	Each class should declare at least one constructor
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImplPersistenceTest.java:35:	headerCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImplPersistenceTest.java:38:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImplPersistenceTest.java:38:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImplPersistenceTest.java:41:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImplPersistenceTest.java:41:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImplPersistenceTest.java:44:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImplPersistenceTest.java:45:	Local variable 'username' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImplPersistenceTest.java:46:	Local variable 'user' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImplPersistenceTest.java:51:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImplPersistenceTest.java:52:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImplPersistenceTest.java:56:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImplPersistenceTest.java:57:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImplPersistenceTest.java:61:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImplPersistenceTest.java:62:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImplPersistenceTest.java:68:	Avoid excessively long variable names like notificationsByUsername
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImplPersistenceTest.java:68:	Local variable 'notificationsByUsername' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImplPersistenceTest.java:76:	headerCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImplPersistenceTest.java:79:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImplPersistenceTest.java:80:	Local variable 'builder' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImplPersistenceTest.java:81:	Local variable 'embeddedDatabase' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImplPersistenceTest.java:81:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImplPersistenceTest.java:81:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImplPersistenceTest.java:81:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImplPersistenceTest.java:81:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationImplPersistenceTest.java:81:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationRepositoryPersistenceTest.java:34:	Each class should declare at least one constructor
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationRepositoryPersistenceTest.java:34:	headerCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationRepositoryPersistenceTest.java:37:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationRepositoryPersistenceTest.java:37:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationRepositoryPersistenceTest.java:40:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationRepositoryPersistenceTest.java:40:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationRepositoryPersistenceTest.java:43:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationRepositoryPersistenceTest.java:44:	Local variable 'username' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationRepositoryPersistenceTest.java:45:	Local variable 'user' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationRepositoryPersistenceTest.java:50:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationRepositoryPersistenceTest.java:51:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationRepositoryPersistenceTest.java:55:	Local variable 'findOne' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationRepositoryPersistenceTest.java:55:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationRepositoryPersistenceTest.java:61:	headerCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationRepositoryPersistenceTest.java:64:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationRepositoryPersistenceTest.java:65:	Local variable 'builder' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationRepositoryPersistenceTest.java:66:	Local variable 'embeddedDatabase' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationRepositoryPersistenceTest.java:66:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationRepositoryPersistenceTest.java:66:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationRepositoryPersistenceTest.java:66:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationRepositoryPersistenceTest.java:66:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/notification/impl/NotificationRepositoryPersistenceTest.java:66:	Potential violation of Law of Demeter (method chain calls)

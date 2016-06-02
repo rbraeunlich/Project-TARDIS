@@ -1,0 +1,347 @@
+src/main/java/kr/ac/kaist/se/tardis/project/api/Project.java:10:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/api/Project.java:12:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/api/Project.java:14:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/api/Project.java:16:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/api/Project.java:18:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/api/Project.java:20:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/api/Project.java:22:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/api/Project.java:24:	Avoid variables with short names like d
+src/main/java/kr/ac/kaist/se/tardis/project/api/Project.java:24:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/api/Project.java:26:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/api/Project.java:28:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/api/Project.java:30:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/api/Project.java:32:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/api/Project.java:34:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/api/Project.java:36:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/api/ProjectRepository.java:10:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/api/ProjectRepository.java:12:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/api/ProjectService.java:8:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/api/ProjectService.java:38:	Comment is too large: Line too long
+src/main/java/kr/ac/kaist/se/tardis/project/api/ProjectService.java:42:	Avoid variables with short names like id
+src/main/java/kr/ac/kaist/se/tardis/project/api/ProjectService.java:48:	Avoid variables with short names like p
+src/main/java/kr/ac/kaist/se/tardis/project/api/ProjectService.java:54:	Avoid variables with short names like p
+src/main/java/kr/ac/kaist/se/tardis/project/api/ProjectService.java:56:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:25:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:28:	Avoid variables with short names like id
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:28:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:28:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:29:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:30:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:31:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:31:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:35:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:35:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:38:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:42:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:42:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:44:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:44:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:46:	Document empty constructor
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:49:	Avoid variables with short names like id
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:49:	Parameter 'id' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:49:	Parameter 'projectOwner' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:49:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:54:	Overridable method 'addProjectMember' called during object construction
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:58:	Parameter 'name' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:58:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:63:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:68:	Parameter 'des' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:68:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:73:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:78:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:83:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:88:	Avoid variables with short names like d
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:88:	Parameter 'd' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:88:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:93:	Parameter 'member' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:93:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:98:	Parameter 'member' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:98:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:103:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:108:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:113:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:118:	Parameter 'jobInfo' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:118:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:123:	Parameter 'jobInfo' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:123:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:128:	Parameter 'url' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:128:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:133:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:138:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:139:	Avoid using final local variables, turn them into fields
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:140:	Found 'DD'-anomaly for variable 'result' (lines '140'-'141').
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:146:	Parameter 'obj' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:146:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:147:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:147:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:148:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:149:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:149:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:150:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:151:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:151:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:152:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:153:	Local variable 'other' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:155:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:155:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:156:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:157:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:157:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:158:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:163:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:169:	Avoid variables with short names like o
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:169:	Parameter 'o' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:169:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectImpl.java:170:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:18:	Each class should declare at least one constructor
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:18:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:21:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:21:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:24:	Parameter 'owner' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:24:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:25:	Local variable 'projectId' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:26:	Avoid variables with short names like p
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:26:	Local variable 'p' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:27:	Consider simply returning the value vs storing it in local variable 'p'
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:31:	Parameter 'username' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:31:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:32:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:32:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:32:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:32:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:32:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:33:	Avoid variables with short names like p
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:33:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:33:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:33:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:33:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:33:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:33:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:33:	Useless parentheses.
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:33:	Useless parentheses.
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:38:	Parameter 'name' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:38:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:43:	Avoid variables with short names like id
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:43:	Parameter 'id' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:43:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:48:	Avoid variables with short names like p
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:48:	Parameter 'p' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:48:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:53:	Avoid variables with short names like p
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:53:	Parameter 'p' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:53:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImpl.java:58:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectId.java:8:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectId.java:12:	Avoid variables with short names like id
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectId.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectId.java:12:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectId.java:14:	Document empty constructor
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectId.java:16:	Avoid variables with short names like id
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectId.java:16:	Parameter 'id' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectId.java:20:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectId.java:25:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectId.java:30:	Avoid variables with short names like o
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectId.java:30:	Parameter 'o' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectId.java:30:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectId.java:35:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectId.java:36:	Avoid using final local variables, turn them into fields
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectId.java:37:	Found 'DD'-anomaly for variable 'result' (lines '37'-'38').
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectId.java:43:	Parameter 'obj' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectId.java:43:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectId.java:44:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectId.java:44:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectId.java:45:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectId.java:46:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectId.java:46:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectId.java:47:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectId.java:48:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectId.java:48:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectId.java:49:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectId.java:50:	Local variable 'other' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectId.java:52:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectId.java:52:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectId.java:53:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectId.java:54:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectId.java:54:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectId.java:55:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectIdFactory.java:5:	All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectIdFactory.java:5:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectIdFactory.java:7:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectIdFactory.java:8:	Local variable 'randomUUID' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectIdFactory.java:9:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectIdFactory.java:12:	Avoid excessively long variable names like projectIdParameter
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectIdFactory.java:12:	Parameter 'projectIdParameter' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectIdFactory.java:12:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:24:	Each class should declare at least one constructor
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:24:	The class 'TestConfig' has a Cyclomatic Complexity of 22 (Highest = 21).
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:24:	The class 'TestConfig' has a Cyclomatic Complexity of 22 (Highest = 21).
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:24:	The class 'TestConfig' has a Modified Cyclomatic Complexity of 22 (Highest = 21).
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:24:	The class 'TestConfig' has a Standard Cyclomatic Complexity of 22 (Highest = 21).
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:24:	This class has too many methods, consider refactoring it.
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:24:	This class has too many methods, consider refactoring it.
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:24:	headerCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:27:	Avoid really long methods.
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:27:	Avoid really long methods.
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:27:	The method 'createProjectRepository' has a Cyclomatic Complexity of 21.
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:27:	The method 'createProjectRepository' has a Cyclomatic Complexity of 21.
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:27:	The method 'createProjectRepository' has a Modified Cyclomatic Complexity of 21.
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:27:	The method 'createProjectRepository' has a Standard Cyclomatic Complexity of 21.
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:27:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:30:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:33:	Parameter 'entity' is not assigned and could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:33:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:39:	Avoid variables with short names like id
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:39:	Parameter 'id' is not assigned and could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:39:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:40:	Avoid variables with short names like p
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:40:	Local variable 'findAny' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:40:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:40:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:41:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:42:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:49:	Avoid variables with short names like id
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:49:	Parameter 'id' is not assigned and could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:49:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:50:	Avoid variables with short names like i
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:50:	Avoid variables with short names like p
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:50:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:50:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:50:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:50:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:54:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:59:	Document empty method body
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:59:	Parameter 'entities' is not assigned and could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:59:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:64:	Parameter 'entity' is not assigned and could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:64:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:69:	Avoid variables with short names like id
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:69:	Document empty method body
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:69:	Parameter 'id' is not assigned and could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:69:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:74:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:79:	Parameter 'pageable' is not assigned and could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:79:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:84:	Parameter 'entity' is not assigned and could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:84:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:90:	Parameter 'entities' is not assigned and could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:90:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:95:	Avoid variables with short names like id
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:95:	Parameter 'id' is not assigned and could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:95:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:100:	Document empty method body
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:100:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:105:	Parameter 'ids' is not assigned and could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:105:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:110:	Parameter 'sort' is not assigned and could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:110:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:115:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:120:	Document empty method body
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:120:	Parameter 'entities' is not assigned and could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:120:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:125:	Document empty method body
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:125:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:130:	Parameter 'name' is not assigned and could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:130:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:131:	Avoid variables with short names like p
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:131:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/project/TestConfig.java:131:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:35:	Each class should declare at least one constructor
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:35:	headerCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:38:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:38:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:40:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:40:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:43:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:44:	Local variable 'user' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:47:	Avoid variables with short names like id
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:47:	Local variable 'id' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:48:	Local variable 'project' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:50:	Local variable 'findOne' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:55:	JUnit tests should not contain more than 1 assert(s).
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:55:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:56:	Local variable 'user' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:59:	Avoid variables with short names like id
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:59:	Local variable 'id' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:61:	Local variable 'info' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:62:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:63:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:64:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:65:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:65:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:67:	Found 'DD'-anomaly for variable 'project' (lines '67'-'69').
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:67:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:71:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:74:	Local variable 'findOne' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:76:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:82:	headerCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:85:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:86:	Local variable 'builder' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:87:	Local variable 'embeddedDatabase' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:87:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:87:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:87:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:87:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:87:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:87:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectPersistenceTest.java:87:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:1:	Too many static imports may lead to messy code
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:27:	Each class should declare at least one constructor
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:27:	This class has too many methods, consider refactoring it.
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:27:	This class has too many methods, consider refactoring it.
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:27:	headerCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:30:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:30:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:33:	Found 'UR'-anomaly for variable 'project' (lines '33'-'36').
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:33:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:34:	Local variable 'allProjects' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:35:	Local variable 'project' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:41:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:42:	Local variable 'project' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:47:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:48:	Local variable 'project' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:49:	Local variable 'name' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:50:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:52:	Local variable 'projectByName' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:57:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:58:	Local variable 'name' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:59:	Local variable 'project' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:60:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:62:	Local variable 'project2' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:63:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:65:	Local variable 'projectByName' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:70:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:71:	Local variable 'projectByName' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:76:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:77:	Local variable 'project' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:79:	Local variable 'projectById' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:79:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:81:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:85:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:86:	Local variable 'projectById' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:92:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:93:	Local variable 'project' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:95:	Local variable 'projectById' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:95:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:97:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:101:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:102:	Local variable 'user' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:103:	Local variable 'project' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:105:	Local variable 'projectsForUser' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:110:	JUnit tests should not contain more than 1 assert(s).
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:110:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:111:	Local variable 'user' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:112:	Local variable 'user2' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:113:	Local variable 'project' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:115:	Local variable 'project2' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:123:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:124:	Local variable 'project' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:127:	Local variable 'projectById' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:127:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:129:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:133:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/impl/ProjectServiceImplTest.java:134:	Local variable 'project' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectIdFactoryTest.java:8:	Each class should declare at least one constructor
+src/test/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectIdFactoryTest.java:8:	headerCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectIdFactoryTest.java:11:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectIdFactoryTest.java:12:	Local variable 'projectId' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/project/impl/id/ProjectIdFactoryTest.java:13:	Local variable 'projectId2' could be declared final

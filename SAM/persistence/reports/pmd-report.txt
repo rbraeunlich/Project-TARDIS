@@ -1,0 +1,53 @@
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDataSourceConfig.java:15:	Each class should declare at least one constructor
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDataSourceConfig.java:15:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDataSourceConfig.java:19:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDataSourceConfig.java:20:	Local variable 'builder' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDataSourceConfig.java:21:	Local variable 'embeddedDatabase' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDataSourceConfig.java:21:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDataSourceConfig.java:21:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDataSourceConfig.java:21:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDataSourceConfig.java:21:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDataSourceConfig.java:21:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDataSourceConfig.java:21:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDataSourceConfig.java:21:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDataSourceConfig.java:21:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDataSourceConfig.java:21:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDataSourceConfig.java:21:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDbConfig.java:23:	Each class should declare at least one constructor
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDbConfig.java:23:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDbConfig.java:26:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDbConfig.java:26:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDbConfig.java:31:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDbConfig.java:32:	Local variable 'vendorAdapter' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDbConfig.java:33:	Local variable 'factory' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDbConfig.java:48:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDbConfig.java:49:	Local variable 'txManager' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDevDataSourceConfig.java:15:	Each class should declare at least one constructor
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDevDataSourceConfig.java:15:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDevDataSourceConfig.java:19:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDevDataSourceConfig.java:20:	Local variable 'builder' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDevDataSourceConfig.java:21:	Local variable 'embeddedDatabase' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDevDataSourceConfig.java:21:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDevDataSourceConfig.java:21:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDevDataSourceConfig.java:21:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDevDataSourceConfig.java:21:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDevDataSourceConfig.java:21:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDevDataSourceConfig.java:21:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDevDataSourceConfig.java:21:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDevDataSourceConfig.java:21:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDevDataSourceConfig.java:21:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDevDataSourceConfig.java:21:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/persistence/PrimaryDevDataSourceConfig.java:21:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/copy/UserWithoutPassword.java:17:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/users/copy/UserWithoutPassword.java:17:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/copy/UserWithoutPassword.java:19:	Document empty constructor
+src/main/java/kr/ac/kaist/se/tardis/users/copy/UserWithoutPassword.java:19:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/copy/UserWithoutPassword.java:22:	Parameter 'username' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/copy/UserWithoutPassword.java:22:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/copy/UserWithoutPassword.java:26:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/copy/UserWithoutPasswordRepository.java:5:	headerCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/persistence/DataSourceSetupIntegrationTest.java:21:	Each class should declare at least one constructor
+src/test/java/kr/ac/kaist/se/tardis/persistence/DataSourceSetupIntegrationTest.java:21:	headerCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/persistence/DataSourceSetupIntegrationTest.java:24:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/kr/ac/kaist/se/tardis/persistence/DataSourceSetupIntegrationTest.java:24:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/persistence/DataSourceSetupIntegrationTest.java:27:	publicMethodCommentRequirement Required

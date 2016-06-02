@@ -1,0 +1,233 @@
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:1:	Package name contains upper case characters
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:23:	Abstract classes should be named AbstractXXX
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:23:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:26:	Avoid variables with short names like id
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:26:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:26:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:30:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:31:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:31:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:33:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:33:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:35:	Document empty constructor
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:35:	protectedMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:37:	Avoid variables with short names like id
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:37:	Parameter 'author' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:37:	Parameter 'id' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:37:	Parameter 'task' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:37:	Parameter 'writeDate' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:37:	protectedMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:45:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:47:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:51:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:56:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:60:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:64:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:68:	Parameter 'task' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:68:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:73:	Avoid variables with short names like o
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:73:	Parameter 'o' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:73:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:74:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:79:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:80:	Avoid using final local variables, turn them into fields
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:81:	Found 'DD'-anomaly for variable 'result' (lines '81'-'82').
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:87:	Parameter 'obj' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:87:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:88:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:88:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:89:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:90:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:90:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:91:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:92:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:92:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:93:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:94:	Local variable 'other' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:96:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:96:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:97:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:98:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:98:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:99:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:104:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:105:	Found 'DD'-anomaly for variable 'type' (lines '105'-'107').
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:105:	Found 'DD'-anomaly for variable 'type' (lines '105'-'109').
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:107:	Avoid using if...else statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:107:	Avoid using if...else statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:108:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNote.java:108:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNoteRepository.java:1:	Package name contains upper case characters
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNoteRepository.java:10:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNoteRepository.java:12:	Avoid variables with short names like id
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNoteRepository.java:12:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNoteService.java:1:	Package name contains upper case characters
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNoteService.java:11:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNoteService.java:22:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNoteService.java:32:	Avoid variables with short names like id
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNoteService.java:40:	Avoid variables with short names like id
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNoteService.java:47:	Avoid variables with short names like t
+src/main/java/kr/ac/kaist/se/tardis/taskNote/api/TaskNoteService.java:54:	Avoid variables with short names like t
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Comment.java:1:	Package name contains upper case characters
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Comment.java:12:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Comment.java:13:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Comment.java:13:	It is somewhat confusing to have a field name matching the declaring class name
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Comment.java:13:	Use explicit scoping instead of the default package private level
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Comment.java:13:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Comment.java:19:	Avoid variables with short names like id
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Comment.java:19:	Parameter 'author' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Comment.java:19:	Parameter 'comment' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Comment.java:19:	Parameter 'id' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Comment.java:19:	Parameter 'task' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Comment.java:19:	Parameter 'writeDate' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Comment.java:19:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Comment.java:24:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Comment.java:28:	Parameter 'comment' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Comment.java:28:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Contribution.java:1:	Package name contains upper case characters
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Contribution.java:12:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Contribution.java:13:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Contribution.java:14:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Contribution.java:14:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Contribution.java:15:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Contribution.java:15:	It is somewhat confusing to have a field name matching the declaring class name
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Contribution.java:15:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Contribution.java:21:	Avoid variables with short names like id
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Contribution.java:21:	Parameter 'author' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Contribution.java:21:	Parameter 'contribution' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Contribution.java:21:	Parameter 'id' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Contribution.java:21:	Parameter 'progress' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Contribution.java:21:	Parameter 'task' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Contribution.java:21:	Parameter 'writeDate' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Contribution.java:21:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Contribution.java:27:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Contribution.java:28:	Avoid if (x != y) ..; else ..;
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Contribution.java:29:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Contribution.java:30:	Avoid if (x != y) ..; else ..;
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Contribution.java:31:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Contribution.java:32:	Avoid if (x != y) ..; else ..;
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Contribution.java:33:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Contribution.java:39:	Parameter 'contribution' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Contribution.java:39:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Contribution.java:43:	Parameter 'progress' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/Contribution.java:43:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:1:	Package name contains upper case characters
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:21:	Each class should declare at least one constructor
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:21:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:24:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:24:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:27:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:27:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:30:	Parameter 'author' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:30:	Parameter 'comment' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:30:	Parameter 'task' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:30:	Parameter 'writeDate' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:30:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:31:	Local variable 'taskNoteId' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:32:	Avoid variables with short names like t
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:32:	Local variable 't' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:33:	Consider simply returning the value vs storing it in local variable 't'
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:37:	Parameter 'author' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:37:	Parameter 'progress' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:37:	Parameter 'task' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:37:	Parameter 'writeDate' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:37:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:38:	Parameter 'contribution' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:39:	Local variable 'taskNoteId' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:40:	Avoid variables with short names like t
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:40:	Local variable 't' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:49:	Avoid variables with short names like id
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:49:	Parameter 'id' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:49:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:54:	Avoid variables with short names like id
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:54:	Parameter 'id' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:54:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:55:	Local variable 'task' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:55:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:60:	Avoid variables with short names like t
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:60:	Parameter 't' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:60:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:65:	Avoid variables with short names like t
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:65:	Parameter 't' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNoteServiceImpl.java:65:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteId.java:1:	Package name contains upper case characters
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteId.java:8:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteId.java:11:	Avoid variables with short names like id
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteId.java:11:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteId.java:11:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteId.java:13:	Document empty constructor
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteId.java:15:	Avoid variables with short names like id
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteId.java:15:	Parameter 'id' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteId.java:19:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteId.java:24:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteId.java:29:	Avoid variables with short names like o
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteId.java:29:	Parameter 'o' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteId.java:29:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteId.java:34:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteId.java:35:	Avoid using final local variables, turn them into fields
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteId.java:36:	Found 'DD'-anomaly for variable 'result' (lines '36'-'37').
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteId.java:42:	Parameter 'obj' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteId.java:42:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteId.java:43:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteId.java:43:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteId.java:44:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteId.java:45:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteId.java:45:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteId.java:46:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteId.java:47:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteId.java:47:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteId.java:48:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteId.java:49:	Local variable 'other' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteId.java:51:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteId.java:51:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteId.java:52:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteId.java:53:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteId.java:53:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteId.java:54:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteIdFactory.java:1:	Package name contains upper case characters
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteIdFactory.java:5:	All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteIdFactory.java:5:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteIdFactory.java:7:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteIdFactory.java:8:	Local variable 'randomUUID' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteIdFactory.java:9:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteIdFactory.java:12:	Parameter 'taskNoteId' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/taskNote/impl/id/TaskNoteIdFactory.java:12:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:1:	A high number of imports can indicate a high degree of coupling within an object.
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:1:	Package name contains upper case characters
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:45:	Each class should declare at least one constructor
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:45:	headerCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:48:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:48:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:50:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:50:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:52:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:52:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:54:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:54:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:57:	JUnit tests should not contain more than 1 assert(s).
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:57:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:58:	Local variable 'username' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:59:	Local variable 'user' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:62:	Local variable 'project' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:65:	Avoid variables with short names like id
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:65:	Local variable 'id' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:66:	Found 'DD'-anomaly for variable 'task' (lines '66'-'67').
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:69:	Local variable 'commentId' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:70:	Local variable 'contributionId' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:71:	Local variable 'comment' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:72:	Local variable 'contribution' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:75:	Local variable 'findOne' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:77:	Local variable 'findOne2' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:83:	headerCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:85:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:90:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:91:	Local variable 'builder' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:92:	Local variable 'embeddedDatabase' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:92:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:92:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:92:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:92:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:92:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:92:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:92:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/taskNote/impl/TaskNotePersistenceTest.java:92:	Potential violation of Law of Demeter (method chain calls)

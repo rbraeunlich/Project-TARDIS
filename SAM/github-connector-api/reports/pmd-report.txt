@@ -1,0 +1,1 @@
+src/main/java/kr/ac/kaist/se/tardis/connector/github/api/GitHubService.java:7:	headerCommentRequirement Required

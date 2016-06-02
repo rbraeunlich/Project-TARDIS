@@ -1,0 +1,62 @@
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:33:	Each class should declare at least one constructor
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:33:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:35:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:38:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:38:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:41:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:41:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:44:	Found 'UR'-anomaly for variable 'entry' (lines '44'-'58').
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:44:	Found 'UR'-anomaly for variable 'repositoryCommit' (lines '44'-'57').
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:44:	Parameter 'projectId' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:44:	Parameter 'url' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:44:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:45:	Local variable 'client' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:46:	Local variable 'repositoryService' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:47:	Found 'DD'-anomaly for variable 'repository' (lines '47'-'49').
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:49:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:50:	Local variable 'commitService' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:51:	Found 'DU'-anomaly for variable 'commits' (lines '51'-'72').
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:51:	Local variable 'commits' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:52:	Local variable 'taskByProjectId' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:53:	Local variable 'taskKeywords' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:53:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:53:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:54:	Avoid variables with short names like t
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:54:	Avoid variables with short names like t
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:54:	No need to call String.valueOf to append to a string.
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:54:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:55:	Local variable 'entry' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:55:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:56:	Local variable 'repositoryCommit' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:57:	Local variable 'commit' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:58:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:58:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:59:	Avoid excessively long variable names like dateOfLatestContribution
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:59:	Local variable 'dateOfLatestContribution' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:60:	Local variable 'author' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:60:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:61:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:61:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:62:	Local variable 'contribution' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:62:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:63:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:63:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:70:	Avoid throwing raw exception types.
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:74:	Parameter 'task' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:75:	Local variable 'taskNotesByTaskId' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:76:	Local variable 'first' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:76:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:76:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:76:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:76:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:76:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:76:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:77:	Avoid variables with short names like tn
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:77:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:77:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:78:	Avoid variables with short names like tn
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:79:	Avoid variables with short names like d1
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:79:	Avoid variables with short names like d2
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:81:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:82:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/connector/github/impl/GitHubServiceImpl.java:82:	Potential violation of Law of Demeter (object not created locally)

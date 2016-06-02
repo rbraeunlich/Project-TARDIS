@@ -1,0 +1,424 @@
+src/main/java/kr/ac/kaist/se/tardis/scheduler/SchedulerConfig.java:15:	Each class should declare at least one constructor
+src/main/java/kr/ac/kaist/se/tardis/scheduler/SchedulerConfig.java:15:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/SchedulerConfig.java:18:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/scheduler/SchedulerConfig.java:18:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/SchedulerConfig.java:21:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/scheduler/SchedulerConfig.java:21:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/SchedulerConfig.java:24:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/SchedulerConfig.java:25:	Local variable 'factory' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/SchedulerConfig.java:27:	Local variable 'jobFactory' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/AutowiringSpringBeanJobFactory.java:11:	Each class should declare at least one constructor
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/AutowiringSpringBeanJobFactory.java:11:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/AutowiringSpringBeanJobFactory.java:12:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/AutowiringSpringBeanJobFactory.java:14:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/AutowiringSpringBeanJobFactory.java:19:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/AutowiringSpringBeanJobFactory.java:19:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/GitHubJob.java:17:	Each class should declare at least one constructor
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/GitHubJob.java:17:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/GitHubJob.java:19:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/GitHubJob.java:20:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/GitHubJob.java:23:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/GitHubJob.java:23:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/GitHubJob.java:25:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/GitHubJob.java:27:	Avoid variables with short names like id
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/GitHubJob.java:27:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/GitHubJob.java:30:	Parameter 'context' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/GitHubJob.java:30:	protectedMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/GitHubJob.java:36:	Avoid throwing raw exception types.
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/GitHubJob.java:40:	Parameter 'gitHubUrl' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/GitHubJob.java:40:	Parameter 'projectId' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/GitHubJob.java:44:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/GitHubJob.java:48:	Parameter 'url' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/GitHubJob.java:48:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/GitHubJob.java:52:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/GitHubJob.java:56:	Avoid variables with short names like id
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/GitHubJob.java:56:	Parameter 'id' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/GitHubJob.java:56:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:27:	Each class should declare at least one constructor
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:27:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:29:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:30:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:31:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:32:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:33:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:36:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:39:	Avoid excessively long variable names like notificationService
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:39:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:42:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:44:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:46:	Avoid variables with short names like id
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:46:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:48:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:51:	Parameter 'context' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:51:	protectedMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:52:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:59:	Found 'UR'-anomaly for variable 'person' (lines '59'-'70').
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:59:	Parameter 'dueDate' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:59:	Parameter 'projectId' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:60:	Local variable 'optional' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:61:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:65:	Local variable 'project' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:65:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:66:	Local variable 'peopleToNotify' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:66:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:67:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:68:	Local variable 'person' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:69:	Avoid instantiating new objects inside loops
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:69:	Local variable 'format' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:69:	When instantiating a SimpleDateFormat object, specify a Locale
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:71:	Avoid instantiating new objects inside loops
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:71:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:75:	Avoid variables with short names like id
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:75:	Parameter 'dueDate' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:75:	Parameter 'id' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:76:	Local variable 'optional' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:77:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:81:	Local variable 'task' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:81:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:82:	Local variable 'projectId' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:82:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:83:	Local variable 'optionalProject' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:84:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:85:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:85:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:85:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:85:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:87:	Local variable 'project' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:87:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:88:	Local variable 'format' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:88:	When instantiating a SimpleDateFormat object, specify a Locale
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:89:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:89:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:90:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:93:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:97:	Parameter 'dueDate' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:97:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:101:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:105:	Avoid variables with short names like id
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:105:	Parameter 'id' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:105:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:109:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:113:	Parameter 'type' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:113:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:117:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:121:	Parameter 'projectService' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:121:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:125:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:129:	Avoid excessively long variable names like notificationService
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:129:	Parameter 'notificationService' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:129:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:133:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:137:	Parameter 'taskService' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJob.java:137:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:26:	Each class should declare at least one constructor
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:26:	This class has too many methods, consider refactoring it.
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:26:	This class has too many methods, consider refactoring it.
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:26:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:29:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:29:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:32:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:37:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:41:	Parameter 'jobDetail' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:41:	Parameter 'trigger' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:45:	Avoid throwing raw exception types.
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:50:	Parameter 'jobInfo' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:50:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:51:	Local variable 'split' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:51:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:52:	Local variable 'group' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:53:	Local variable 'name' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:57:	Avoid throwing raw exception types.
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:61:	The class 'StandardNotificationBuilderImpl' has a Cyclomatic Complexity of 4 (Highest = 10).
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:61:	The class 'StandardNotificationBuilderImpl' has a Cyclomatic Complexity of 4 (Highest = 10).
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:61:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:63:	Avoid excessively long variable names like EXCEPTION_TEXT_IDS
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:63:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:64:	Avoid excessively long variable names like EXCEPTION_TEXT_DAYS
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:64:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:65:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:65:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:66:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:66:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:67:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:67:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:68:	Field oneDay has the same name as a method
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:68:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:68:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:69:	Field threeDays has the same name as a method
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:69:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:69:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:70:	Field sevenDays has the same name as a method
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:70:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:70:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:72:	Avoid unnecessary constructors - the compiler will generate these for you
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:72:	Document empty constructor
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:72:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:76:	The method 'submit' has a Cyclomatic Complexity of 10.
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:76:	The method 'submit' has a Cyclomatic Complexity of 10.
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:76:	The method submit() has an NPath complexity of 1600
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:76:	The method submit() has an NPath complexity of 1600
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:76:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:77:	Avoid if (x != y) ..; else ..;
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:85:	Found 'DD'-anomaly for variable 'dateForJob' (lines '85'-'87').
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:85:	Found 'DD'-anomaly for variable 'dateForJob' (lines '85'-'89').
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:91:	Found 'DU'-anomaly for variable 'jobDetail' (lines '91'-'119').
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:91:	Local variable 'jobDetail' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:91:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:91:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:91:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:91:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:93:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:99:	Local variable 'trigger' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:100:	Potential violation of Law of Demeter (static property access)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:101:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:101:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:102:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:102:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:106:	Local variable 'trigger' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:107:	Potential violation of Law of Demeter (static property access)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:108:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:108:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:109:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:109:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:113:	Local variable 'trigger' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:114:	Potential violation of Law of Demeter (static property access)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:115:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:115:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:116:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:116:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:122:	Avoid variables with short names like id
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:122:	Parameter 'id' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:122:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:131:	Avoid variables with short names like id
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:131:	Parameter 'id' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:131:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:140:	Parameter 'endDate' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:140:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:149:	Parameter 'endDate' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:149:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:158:	Parameter 'endDate' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:158:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:167:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:169:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:169:	Private field 'jobInfo' could be made final; it is only initialized in the declaration or constructor.
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:169:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:170:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:170:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:171:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:171:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:173:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:178:	Parameter 'url' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:178:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:185:	Avoid variables with short names like id
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:185:	Parameter 'id' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:185:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:193:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:194:	Local variable 'jobDetail' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:194:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:194:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:194:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:194:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:194:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:198:	Local variable 'trigger' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:198:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:198:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:198:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:198:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:198:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:199:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:199:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:201:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:201:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:202:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:202:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/scheduler/impl/SchedulerServiceImpl.java:202:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/SchedulerStartTest.java:26:	Each class should declare at least one constructor
+src/test/java/kr/ac/kaist/se/tardis/scheduler/SchedulerStartTest.java:26:	headerCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/SchedulerStartTest.java:29:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/kr/ac/kaist/se/tardis/scheduler/SchedulerStartTest.java:29:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/SchedulerStartTest.java:32:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/SchedulerStartTest.java:37:	headerCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/SchedulerStartTest.java:40:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/SchedulerStartTest.java:45:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/SchedulerStartTest.java:46:	Local variable 'builder' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/scheduler/SchedulerStartTest.java:47:	Local variable 'embeddedDatabase' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/scheduler/SchedulerStartTest.java:47:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/SchedulerStartTest.java:47:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/SchedulerStartTest.java:47:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/SchedulerStartTest.java:47:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:1:	A high number of imports can indicate a high degree of coupling within an object.
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:1:	Too many static imports may lead to messy code
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:46:	Each class should declare at least one constructor
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:46:	headerCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:48:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:50:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:52:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:54:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:56:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:58:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:60:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:62:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:64:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:66:	When instantiating a SimpleDateFormat object, specify a Locale
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:66:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:69:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:69:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:72:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:72:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:75:	JUnit tests should not contain more than 1 assert(s).
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:75:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:76:	Avoid excessively long variable names like jobExecutionContext
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:76:	Local variable 'jobExecutionContext' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:77:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:77:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:83:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:83:	Potential violation of Law of Demeter (static property access)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:84:	Potential violation of Law of Demeter (static property access)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:84:	Potential violation of Law of Demeter (static property access)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:86:	Potential violation of Law of Demeter (static property access)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:87:	Potential violation of Law of Demeter (static property access)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:88:	Static DateFormatter objects should be accessed in a synchronized manner
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:89:	Potential violation of Law of Demeter (static property access)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:93:	JUnit tests should not contain more than 1 assert(s).
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:93:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:94:	Avoid excessively long variable names like jobExecutionContext
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:94:	Local variable 'jobExecutionContext' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:98:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:98:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:101:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:101:	Potential violation of Law of Demeter (static property access)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:102:	Potential violation of Law of Demeter (static property access)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:102:	Potential violation of Law of Demeter (static property access)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:104:	Potential violation of Law of Demeter (static property access)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:106:	Potential violation of Law of Demeter (static property access)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:107:	Static DateFormatter objects should be accessed in a synchronized manner
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:108:	Potential violation of Law of Demeter (static property access)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:114:	headerCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:116:	Avoid excessively long variable names like notificationService
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:116:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:118:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:120:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:122:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:125:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:126:	Local variable 'projectService' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:127:	Local variable 'project' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:128:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:128:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:129:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:129:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:130:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:132:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:132:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:137:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:138:	Local variable 'taskService' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:139:	Local variable 'taskMock' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:140:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:140:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:141:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:141:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:142:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:142:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:143:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:143:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:148:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:157:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:158:	Local variable 'schedulerMock' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:160:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/NotificationJobTest.java:162:	Avoid printStackTrace(); use a logger call instead.
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:1:	Too many static imports may lead to messy code
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:36:	Each class should declare at least one constructor
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:36:	headerCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:39:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:39:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:42:	JUnit tests should not contain more than 1 assert(s).
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:42:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:43:	Local variable 'now' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:44:	Local variable 'threeDaysAgo' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:44:	Potential violation of Law of Demeter (static property access)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:45:	Avoid variables with short names like id
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:45:	Local variable 'id' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:45:	The String literal "123" appears 4 times in this file; the first occurrence is on line 45
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:46:	Local variable 'jobInfo' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:46:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:46:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:46:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:48:	Local variable 'job' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:48:	Potential violation of Law of Demeter (static property access)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:50:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:50:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:50:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:51:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:51:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:51:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:52:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:52:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:52:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:53:	Local variable 'trigger' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:53:	Potential violation of Law of Demeter (static property access)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:55:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:57:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:58:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:62:	JUnit tests should not contain more than 1 assert(s).
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:62:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:63:	Local variable 'now' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:64:	Local variable 'sevenDaysAgo' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:64:	Potential violation of Law of Demeter (static property access)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:65:	Avoid variables with short names like id
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:65:	Local variable 'id' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:66:	Local variable 'jobInfo' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:66:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:66:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:66:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:68:	Local variable 'job' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:68:	Potential violation of Law of Demeter (static property access)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:70:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:70:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:70:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:71:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:71:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:71:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:72:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:72:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:72:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:73:	Local variable 'trigger' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:73:	Potential violation of Law of Demeter (static property access)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:75:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:77:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:78:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:82:	JUnit tests should not contain more than 1 assert(s).
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:82:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:83:	Local variable 'now' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:84:	Local variable 'oneDayAgo' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:84:	Potential violation of Law of Demeter (static property access)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:85:	Avoid variables with short names like id
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:85:	Local variable 'id' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:86:	Local variable 'jobInfo' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:86:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:86:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:86:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:88:	Local variable 'job' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:88:	Potential violation of Law of Demeter (static property access)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:90:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:90:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:90:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:91:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:91:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:91:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:92:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:92:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:92:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:93:	Local variable 'trigger' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:93:	Potential violation of Law of Demeter (static property access)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:95:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:97:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:98:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:102:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:103:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:103:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:107:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:113:	headerCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:115:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:115:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:117:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:119:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/scheduler/impl/StandardNotificationBuilderImplTest.java:122:	publicMethodCommentRequirement Required

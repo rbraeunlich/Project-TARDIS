@@ -1,0 +1,448 @@
+src/main/java/kr/ac/kaist/se/tardis/users/api/User.java:3:	Avoid short class names like User
+src/main/java/kr/ac/kaist/se/tardis/users/api/User.java:3:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/api/User.java:5:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/api/User.java:7:	Avoid modifiers which are implied by the context
+src/main/java/kr/ac/kaist/se/tardis/users/api/User.java:7:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/api/User.java:9:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/api/User.java:11:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/api/UserRepository.java:9:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/api/UserService.java:3:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/api/UserService.java:12:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/api/UserService.java:14:	Avoid variables with short names like u
+src/main/java/kr/ac/kaist/se/tardis/users/api/UserService.java:14:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/api/UserService.java:16:	Avoid variables with short names like u
+src/main/java/kr/ac/kaist/se/tardis/users/api/UserService.java:16:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/DevUserServiceImpl.java:15:	Each class should declare at least one constructor
+src/main/java/kr/ac/kaist/se/tardis/users/impl/DevUserServiceImpl.java:15:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/DevUserServiceImpl.java:18:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/users/impl/DevUserServiceImpl.java:18:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/DevUserServiceImpl.java:21:	Avoid excessively long variable names like userWOPasswordRepo
+src/main/java/kr/ac/kaist/se/tardis/users/impl/DevUserServiceImpl.java:21:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/users/impl/DevUserServiceImpl.java:21:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/DevUserServiceImpl.java:24:	Parameter 'name' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/DevUserServiceImpl.java:24:	Parameter 'password' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/DevUserServiceImpl.java:24:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/DevUserServiceImpl.java:25:	Local variable 'userImpl' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/DevUserServiceImpl.java:27:	Avoid excessively long variable names like userWithoutPassword
+src/main/java/kr/ac/kaist/se/tardis/users/impl/DevUserServiceImpl.java:27:	Local variable 'userWithoutPassword' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/DevUserServiceImpl.java:32:	Parameter 'name' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/DevUserServiceImpl.java:32:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/DevUserServiceImpl.java:34:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/users/impl/DevUserServiceImpl.java:40:	Avoid variables with short names like u
+src/main/java/kr/ac/kaist/se/tardis/users/impl/DevUserServiceImpl.java:40:	Parameter 'u' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/DevUserServiceImpl.java:40:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/DevUserServiceImpl.java:46:	Avoid variables with short names like u
+src/main/java/kr/ac/kaist/se/tardis/users/impl/DevUserServiceImpl.java:46:	Parameter 'pwd' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/DevUserServiceImpl.java:46:	Parameter 'u' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/DevUserServiceImpl.java:46:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserImpl.java:12:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserImpl.java:15:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserImpl.java:15:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserImpl.java:18:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserImpl.java:23:	Document empty constructor
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserImpl.java:25:	Parameter 'password' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserImpl.java:25:	Parameter 'username' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserImpl.java:25:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserImpl.java:31:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserImpl.java:45:	Parameter 'pwd' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserImpl.java:45:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserImpl.java:50:	Parameter 'password' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserImpl.java:50:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserImpl.java:55:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserImpl.java:56:	Avoid using final local variables, turn them into fields
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserImpl.java:57:	Found 'DD'-anomaly for variable 'result' (lines '57'-'58').
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserImpl.java:63:	Parameter 'obj' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserImpl.java:63:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserImpl.java:64:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserImpl.java:64:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserImpl.java:65:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserImpl.java:66:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserImpl.java:66:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserImpl.java:67:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserImpl.java:68:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserImpl.java:68:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserImpl.java:69:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserImpl.java:70:	Local variable 'other' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserImpl.java:72:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserImpl.java:72:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserImpl.java:73:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserImpl.java:74:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserImpl.java:74:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserImpl.java:75:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserServiceImpl.java:15:	Each class should declare at least one constructor
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserServiceImpl.java:15:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserServiceImpl.java:18:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserServiceImpl.java:18:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserServiceImpl.java:21:	Avoid excessively long variable names like userWOPasswordRepo
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserServiceImpl.java:21:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserServiceImpl.java:21:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserServiceImpl.java:24:	Parameter 'name' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserServiceImpl.java:24:	Parameter 'password' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserServiceImpl.java:24:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserServiceImpl.java:25:	Local variable 'userImpl' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserServiceImpl.java:27:	Avoid excessively long variable names like userWithoutPassword
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserServiceImpl.java:27:	Local variable 'userWithoutPassword' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserServiceImpl.java:32:	Parameter 'name' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserServiceImpl.java:32:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserServiceImpl.java:37:	Avoid variables with short names like u
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserServiceImpl.java:37:	Parameter 'u' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserServiceImpl.java:37:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserServiceImpl.java:43:	Avoid variables with short names like u
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserServiceImpl.java:43:	Parameter 'pwd' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserServiceImpl.java:43:	Parameter 'u' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/UserServiceImpl.java:43:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/persistence/UserDataSourceConfig.java:12:	Each class should declare at least one constructor
+src/main/java/kr/ac/kaist/se/tardis/users/impl/persistence/UserDataSourceConfig.java:12:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/persistence/UserDataSourceConfig.java:15:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/persistence/UserDataSourceConfig.java:16:	Local variable 'builder' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/persistence/UserDataSourceConfig.java:17:	Local variable 'embeddedDatabase' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/persistence/UserDataSourceConfig.java:17:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/persistence/UserDataSourceConfig.java:17:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/persistence/UserDataSourceConfig.java:17:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/persistence/UserDataSourceConfig.java:17:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/persistence/UserDbConfig.java:26:	Each class should declare at least one constructor
+src/main/java/kr/ac/kaist/se/tardis/users/impl/persistence/UserDbConfig.java:26:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/persistence/UserDbConfig.java:30:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/users/impl/persistence/UserDbConfig.java:30:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/persistence/UserDbConfig.java:34:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/persistence/UserDbConfig.java:35:	Local variable 'vendorAdapter' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/persistence/UserDbConfig.java:36:	Local variable 'factory' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/persistence/UserDbConfig.java:38:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/persistence/UserDbConfig.java:38:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/persistence/UserDbConfig.java:38:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/persistence/UserDbConfig.java:38:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/persistence/UserDbConfig.java:46:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/persistence/UserDbConfig.java:47:	Local variable 'txManager' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:26:	Each class should declare at least one constructor
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:26:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:29:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:29:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:32:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:32:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:35:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:35:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:38:	Parameter 'username' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:38:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:39:	Local variable 'foundUser' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:41:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:43:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:46:	Parameter 'authentication' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:46:	Parameter 'request' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:46:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:48:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:50:	Local variable 'project' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:51:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:52:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:54:	Local variable 'projectOwner' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:54:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:54:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:55:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:58:	Parameter 'authentication' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:58:	Parameter 'request' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:58:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:60:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:62:	Local variable 'project' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:63:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:64:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:66:	Local variable 'projectMembers' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:66:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:66:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:67:	Local variable 'projectOwner' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:67:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:67:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:68:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:68:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:71:	Parameter 'authentication' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:71:	Parameter 'request' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:71:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:73:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:75:	Local variable 'taskIdParameter' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:76:	Local variable 'task' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:78:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:80:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:80:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:83:	Parameter 'authentication' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:83:	Parameter 'request' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:83:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:85:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:87:	Local variable 'taskIdParameter' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:88:	Local variable 'task' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:90:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:92:	Local variable 'project' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:92:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:92:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:93:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:96:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:98:	Avoid excessively long variable names like isUserProjectOwner
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:98:	Local variable 'isUserProjectOwner' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:98:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:98:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:98:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:102:	Parameter 'authentication' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:102:	Parameter 'request' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:102:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:104:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:106:	Local variable 'taskIdParameter' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:107:	Local variable 'task' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:109:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:111:	Local variable 'project' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:111:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:111:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:112:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:115:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:117:	Local variable 'projectMembers' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:117:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:117:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:118:	Local variable 'projectOwner' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:118:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:118:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:119:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:119:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:122:	Parameter 'request' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:123:	Avoid excessively long variable names like projectIdParameter
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:123:	Local variable 'projectIdParameter' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:124:	Local variable 'project' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsService.java:125:	Consider simply returning the value vs storing it in local variable 'project'
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:16:	Each class should declare at least one constructor
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:16:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:19:	Avoid excessively long variable names like userDetailsService
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:19:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:19:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:22:	A method/constructor shouldnt explicitly throw java.lang.Exception
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:22:	Parameter 'http' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:22:	protectedMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:23:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:28:	The String literal "@samUserDetailsService.isUserAllowedToChangeTask(authentication,request)" appears 4 times in this file; the first occurrence is on line 28
+src/main/java/kr/ac/kaist/se/tardis/users/impl/security/SecurityConfig.java:53:	Local variable 'provider' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/UserTest.java:13:	Each class should declare at least one constructor
+src/test/java/kr/ac/kaist/se/tardis/users/UserTest.java:13:	headerCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/UserTest.java:16:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/UserTest.java:17:	Local variable 'password' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/UserTest.java:17:	The String literal "admin" appears 6 times in this file; the first occurrence is on line 17
+src/test/java/kr/ac/kaist/se/tardis/users/UserTest.java:18:	Local variable 'user' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/UserTest.java:23:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/UserTest.java:24:	Local variable 'password' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/UserTest.java:25:	Local variable 'user' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/UserTest.java:30:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/UserTest.java:31:	Local variable 'password' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/UserTest.java:32:	Local variable 'user' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/persistence/DataSourceSetupIntegrationTest.java:19:	No need to import a type that lives in the same package
+src/test/java/kr/ac/kaist/se/tardis/users/impl/persistence/DataSourceSetupIntegrationTest.java:24:	Each class should declare at least one constructor
+src/test/java/kr/ac/kaist/se/tardis/users/impl/persistence/DataSourceSetupIntegrationTest.java:24:	headerCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/persistence/DataSourceSetupIntegrationTest.java:28:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/kr/ac/kaist/se/tardis/users/impl/persistence/DataSourceSetupIntegrationTest.java:28:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/persistence/DataSourceSetupIntegrationTest.java:31:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/persistence/TestUserDataSourceConfig.java:12:	Each class should declare at least one constructor
+src/test/java/kr/ac/kaist/se/tardis/users/impl/persistence/TestUserDataSourceConfig.java:12:	headerCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/persistence/TestUserDataSourceConfig.java:15:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/persistence/TestUserDataSourceConfig.java:16:	Local variable 'builder' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/persistence/TestUserDataSourceConfig.java:17:	Local variable 'embeddedDatabase' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/persistence/TestUserDataSourceConfig.java:17:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/persistence/TestUserDataSourceConfig.java:17:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/persistence/TestUserDataSourceConfig.java:17:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/persistence/TestUserDataSourceConfig.java:17:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/persistence/UserPersistenceTest.java:17:	No need to import a type that lives in the same package
+src/test/java/kr/ac/kaist/se/tardis/users/impl/persistence/UserPersistenceTest.java:22:	Each class should declare at least one constructor
+src/test/java/kr/ac/kaist/se/tardis/users/impl/persistence/UserPersistenceTest.java:22:	headerCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/persistence/UserPersistenceTest.java:25:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/kr/ac/kaist/se/tardis/users/impl/persistence/UserPersistenceTest.java:25:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/persistence/UserPersistenceTest.java:28:	JUnit tests should not contain more than 1 assert(s).
+src/test/java/kr/ac/kaist/se/tardis/users/impl/persistence/UserPersistenceTest.java:28:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/persistence/UserPersistenceTest.java:29:	Local variable 'name' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/persistence/UserPersistenceTest.java:30:	Local variable 'user' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/persistence/UserPersistenceTest.java:32:	Local variable 'findOne' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/persistence/UserPersistenceTest.java:34:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:1:	A high number of imports can indicate a high degree of coupling within an object.
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:1:	Too many static imports may lead to messy code
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:40:	Each class should declare at least one constructor
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:40:	This class has too many methods, consider refactoring it.
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:40:	This class has too many methods, consider refactoring it.
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:40:	headerCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:42:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:44:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:46:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:48:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:50:	Avoid excessively long variable names like USERNAME_NO_PROJECT
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:50:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:52:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:54:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:57:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:57:	fieldCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:60:	JUnit tests should not contain more than 1 assert(s).
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:60:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:61:	Local variable 'userDetails' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:62:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:63:	Local variable 'password' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:63:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:65:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:66:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:67:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:68:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:69:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:73:	JUnit tests should not contain more than 1 assert(s).
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:73:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:74:	Local variable 'userDetails' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:75:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:76:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:77:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:78:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:79:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:80:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:81:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:85:	JUnit tests should not contain more than 1 assert(s).
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:85:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:86:	Local variable 'authentication' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:88:	Local variable 'request' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:89:	Local variable 'hasUserTask' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:91:	Avoid excessively long variable names like userAllowedToChangeTask
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:91:	Local variable 'userAllowedToChangeTask' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:93:	Local variable 'userProjectMember' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:95:	Local variable 'userProjectOwner' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:100:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:101:	Local variable 'authentication' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:103:	Local variable 'request' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:104:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:104:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:104:	The String literal "projectId" appears 5 times in this file; the first occurrence is on line 104
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:105:	Local variable 'userProjectOwner' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:110:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:111:	Local variable 'authentication' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:113:	Local variable 'request' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:114:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:114:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:115:	Local variable 'userProjectOwner' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:120:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:121:	Local variable 'authentication' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:123:	Local variable 'request' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:124:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:124:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:125:	Local variable 'userProjectMember' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:130:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:131:	Local variable 'authentication' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:133:	Local variable 'request' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:134:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:134:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:135:	Local variable 'userProjectMember' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:140:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:141:	Local variable 'authentication' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:143:	Local variable 'request' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:144:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:144:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:145:	Local variable 'userProjectMember' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:150:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:151:	Local variable 'authentication' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:153:	Local variable 'request' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:154:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:154:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:154:	The String literal "taskId" appears 8 times in this file; the first occurrence is on line 154
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:155:	Local variable 'hasUserTask' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:160:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:161:	Local variable 'authentication' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:163:	Local variable 'request' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:164:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:164:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:165:	Local variable 'hasUserTask' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:170:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:171:	Local variable 'authentication' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:173:	Local variable 'request' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:174:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:174:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:175:	Avoid excessively long variable names like userAllowedToChangeTask
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:175:	Local variable 'userAllowedToChangeTask' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:180:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:181:	Local variable 'authentication' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:183:	Local variable 'request' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:184:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:184:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:185:	Avoid excessively long variable names like userAllowedToChangeTask
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:185:	Local variable 'userAllowedToChangeTask' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:190:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:191:	Local variable 'authentication' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:193:	Local variable 'request' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:194:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:194:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:195:	Avoid excessively long variable names like userAllowedToChangeTask
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:195:	Local variable 'userAllowedToChangeTask' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:200:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:201:	Local variable 'authentication' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:203:	Local variable 'request' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:204:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:204:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:205:	Avoid excessively long variable names like userAllowedToSeeTask
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:205:	Local variable 'userAllowedToSeeTask' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:210:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:211:	Local variable 'authentication' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:213:	Local variable 'request' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:214:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:214:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:215:	Avoid excessively long variable names like userAllowedToSeeTask
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:215:	Local variable 'userAllowedToSeeTask' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:220:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:221:	Local variable 'authentication' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:223:	Local variable 'request' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:224:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:224:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:225:	Avoid excessively long variable names like userAllowedToSeeTask
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:225:	Local variable 'userAllowedToSeeTask' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:230:	headerCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:233:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:234:	Local variable 'taskService' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:235:	Local variable 'task' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:236:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:236:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:237:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:237:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:238:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:238:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:243:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:244:	Local variable 'service' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:245:	Local variable 'project' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:246:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:247:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:247:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:248:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:248:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:253:	publicMethodCommentRequirement Required
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:254:	Local variable 'mock' could be declared final
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:255:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:255:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:256:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:256:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:257:	Potential violation of Law of Demeter (method chain calls)
+src/test/java/kr/ac/kaist/se/tardis/users/impl/security/SamUserDetailsServiceTest.java:257:	Potential violation of Law of Demeter (object not created locally)

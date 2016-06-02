@@ -1,0 +1,195 @@
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/GitHubJobBuilder.java:3:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/GitHubJobBuilder.java:5:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/GitHubJobBuilder.java:7:	Avoid variables with short names like id
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/GitHubJobBuilder.java:7:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/GitHubJobBuilder.java:9:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/JobInfo.java:6:	Abstract classes should be named AbstractXXX
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/JobInfo.java:6:	Each class should declare at least one constructor
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/JobInfo.java:6:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/JobInfo.java:13:	Avoid variables with short names like id
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/JobInfo.java:13:	Parameter 'id' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/JobInfo.java:13:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/JobInfo.java:17:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/JobInfo.java:21:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/JobInfo.java:23:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/JobInfo.java:25:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/JobInfo.java:27:	Avoid variables with short names like id
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/JobInfo.java:27:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/JobOwner.java:5:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/JobOwner.java:7:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/JobOwner.java:9:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/JobOwner.java:11:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/JobType.java:3:	enumCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:12:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:16:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:16:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:20:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:22:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:24:	Avoid unnecessary constructors - the compiler will generate these for you
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:24:	Document empty constructor
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:24:	It is a good practice to call super() in a constructor
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:24:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:26:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:30:	Parameter 'jobType' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:30:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:34:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:38:	Parameter 'githubUrl' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:38:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:43:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:48:	Avoid variables with short names like id
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:48:	Parameter 'id' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:48:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:53:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:54:	Avoid using final local variables, turn them into fields
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:55:	Found 'DD'-anomaly for variable 'result' (lines '55'-'56').
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:62:	Parameter 'obj' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:62:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:63:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:63:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:64:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:65:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:65:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:66:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:67:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:67:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:68:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:69:	Local variable 'other' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:70:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:70:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:71:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:73:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:73:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:74:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:75:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:75:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfo.java:76:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:11:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:16:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:19:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:21:	Avoid unused constructor parameters such as 'taskId'.
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:21:	Parameter 'jobType' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:21:	Parameter 'projectId' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:21:	Parameter 'taskId' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:21:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:26:	Document empty constructor
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:26:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:29:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:33:	Parameter 'projectId' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:33:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:37:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:41:	Parameter 'jobType' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:41:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:46:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:47:	Avoid using final local variables, turn them into fields
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:48:	Found 'DD'-anomaly for variable 'result' (lines '48'-'49').
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:55:	Parameter 'obj' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:55:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:56:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:56:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:57:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:58:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:58:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:59:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:60:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:60:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:61:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:62:	Local variable 'other' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:63:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:63:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:64:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:66:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:66:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:67:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:68:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:68:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/ProjectJobInfoId.java:69:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/SchedulerService.java:3:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/SchedulerService.java:5:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/SchedulerService.java:7:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/SchedulerService.java:9:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/StandardNotificationBuilder.java:5:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/StandardNotificationBuilder.java:7:	Avoid variables with short names like id
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/StandardNotificationBuilder.java:7:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/StandardNotificationBuilder.java:9:	Avoid variables with short names like id
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/StandardNotificationBuilder.java:9:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/StandardNotificationBuilder.java:11:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/StandardNotificationBuilder.java:13:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/StandardNotificationBuilder.java:15:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/StandardNotificationBuilder.java:17:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:12:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:16:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:20:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:22:	Avoid unnecessary constructors - the compiler will generate these for you
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:22:	Document empty constructor
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:22:	It is a good practice to call super() in a constructor
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:22:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:25:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:29:	Parameter 'taskId' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:29:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:33:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:37:	Parameter 'jobType' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:37:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:42:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:47:	Avoid variables with short names like id
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:47:	Parameter 'id' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:47:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:52:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:53:	Avoid using final local variables, turn them into fields
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:54:	Found 'DD'-anomaly for variable 'result' (lines '54'-'55').
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:61:	Parameter 'obj' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:61:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:62:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:62:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:63:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:64:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:64:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:65:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:66:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:66:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:67:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:68:	Local variable 'other' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:69:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:69:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:70:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:72:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:72:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:73:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:74:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:74:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfo.java:75:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:11:	headerCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:16:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:19:	fieldCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:21:	Avoid unnecessary constructors - the compiler will generate these for you
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:21:	Document empty constructor
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:21:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:24:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:28:	Parameter 'taskId' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:28:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:32:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:36:	Parameter 'jobType' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:36:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:41:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:42:	Avoid using final local variables, turn them into fields
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:43:	Found 'DD'-anomaly for variable 'result' (lines '43'-'44').
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:50:	Parameter 'obj' is not assigned and could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:50:	publicMethodCommentRequirement Required
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:51:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:51:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:52:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:53:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:53:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:54:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:55:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:55:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:56:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:57:	Local variable 'other' could be declared final
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:58:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:58:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:59:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:61:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:61:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:62:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:63:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:63:	Avoid using if statements without curly braces
+src/main/java/kr/ac/kaist/se/tardis/scheduler/api/TaskJobInfoId.java:64:	A method should have only one exit point, and that should be the last statement in the method
