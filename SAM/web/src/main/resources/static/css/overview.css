@@ -3,24 +3,6 @@
 	font-size: 150%;
 }
 
-.overview {
-	width: 46%;
-	min-height: 400px;
-	margin: 1.5%;
-	background-color: #b3e4ff;
-	padding-bottom: 25px;
-}
-
-.projectTextBlock {
-	margin: 5px;
-	width: 40%;
-	height: 140px;
-	float: left;
-	padding: 0px;
-	word-break: break-all;
-	display: table;
-}
-
 .projectTaskList {
 	height: 75px;
 	width: 45%;
@@ -70,6 +52,22 @@
 		text-align: center;
 		overflow: hidden;
 	}
+	.overview {
+		min-width: 95%;
+		min-height: 400px;
+		margin: 1.5%;
+		background-color: #b3e4ff;
+		padding-bottom: 25px;
+	}
+	.projectTextBlock {
+		margin: 5px;
+		width: 30%;
+		height: 140px;
+		float: left;
+		padding: 0px;
+		word-break: break-all;
+		display: table;
+	}
 }
 
 @media screen and (min-device-width:481px) {
@@ -90,6 +88,22 @@
 		float: left;
 		text-align: center;
 		overflow: hidden;
+	}
+	.overview {
+		width: 46%;
+		min-height: 400px;
+		margin: 1.5%;
+		background-color: #b3e4ff;
+		padding-bottom: 25px;
+	}
+	.projectTextBlock {
+		margin: 5px;
+		width: 40%;
+		height: 140px;
+		float: left;
+		padding: 0px;
+		word-break: break-all;
+		display: table;
 	}
 }
 

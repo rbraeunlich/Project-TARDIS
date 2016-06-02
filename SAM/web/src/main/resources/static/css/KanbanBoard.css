@@ -16,6 +16,9 @@
 	#ProjectNameContainer{
 	margin: 25px; height: 30px;
 	}
+	.settingarea{
+			text-align: center; height: 150px; background-color: lightgrey;
+	}
 }
 
 @media screen and (min-device-width:481px) {
