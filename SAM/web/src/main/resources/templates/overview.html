@@ -47,17 +47,18 @@
 <div id="board" class="box">
 	<div id="project" class="overview">	
 		<p class="boardName">My Projects</p>
-		<div th:each="project : ${#lists.sort(projectList)}" class="entry" id="${project.name}">
+		<div th:each="project : ${#lists.sort(projectList)}" class="entry" id="${project.name}" onload="countSet()">
 			<div class="projectTextBlock">
 				<p class="projectNameText" th:text="${project.name}"/>
 				<p class="projectDescription" th:text="${project.description}"/>
 			</div>
-			<div class="projectTaskList" th:id="${project.name}+TaskList">
-				<div th:each="task : ${allTaskList}" th:if="${task.projectId} == ${project.id}" class="projectTaskBlock">
-					<p class="taskName" th:text="${task.name}" />
+			<div class="projectTaskList" th:id="${project.name}+TaskList" >
+				<div th:each="task : ${allTaskList}" th:if="${task.projectId} == ${project.id} and ${count} &lt; 4" onload="countOne()" class="projectTaskBlock">
+					<p class="taskName" th:text="${task.name} + ${count}"/>
 					<progress class="taskProgress" max="100" th:value="${task.taskProgress}"></progress>
 				</div>
 			</div>
+			
 			<form class="settingForm" action="#" th:action="@{/kanbanboard}" method="get">
 				<input class="settingButton" type="image" th:id="${project.name}+Kanban" src = "../image/detail.png"/>
 				<input type="hidden" name="projectId" th:value="${project.id.id}"/>
@@ -104,8 +105,8 @@
 <div th:fragment="footer" id="footer" class="box">2016 Project TARDIS</div>
 
 <script th:inline="javascript" th:src="@{js/base.js}"></script>
-<script>
-           
+<script th:inline="javascript">
+/*<![CDATA[*/           
 <!-- event handler on resize of window -->
 function resizeWindow() {
 	var size = document.getElementById("board").clientWidth;
@@ -126,6 +127,16 @@ function showCreateProjectForm() {
 	document.getElementById("createProjectFormWrapper").style.display = "block";
 	document.getElementById("createProjectIcon").style.display = "none";
 }
+
+function countSet() {
+	var count = /*[[$(count)]]*/ = 0;
+}
+
+function countOne() {
+	var count = /*[[$(count)]]*/ [[$(count)]] + 1;
+}
+
+/*]]>*/
 </script>
 
 </body>

@@ -47,7 +47,7 @@ public class OverviewController {
 		model.addAttribute("username", String.valueOf(user.getUsername()));
 		model.addAttribute("allTaskList", taskService.getAllTasks());
 		model.addAttribute("projectList", projectService.findProjectsForUser(String.valueOf(user.getUsername())));
-
+		
 		Set<Task> tasks = taskService.findTasksForUser(String.valueOf(user.getUsername()));
 
 		HashMap<String, String> map = new HashMap<String, String>();

@@ -46,6 +46,6 @@ public class MyPageController {
 			return "mypage";
 		}		
 		userService.changePassword(userService.findUserByName(user.getUsername()), userForm.getPassword());
-		return "redirect:overview";
+		return "forward:index";
 	}
 }
