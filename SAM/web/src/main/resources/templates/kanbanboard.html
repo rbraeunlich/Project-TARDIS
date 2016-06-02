@@ -12,24 +12,106 @@
 	href="../static/css/base.css" />
 <link rel="stylesheet"
 	href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
-<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+ <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
+
 <script type="text/javascript">
  	$(function() {
     	$( "#dueDate" ).datepicker({ dateFormat: "yy-mm-dd" }).val();
   	});
  	</script>
 </head>
-<body >
+<body>
 
 	<div th:replace="overview :: bar"></div>
 
 	<div th:replace="overview :: heading"></div>
 
 	<div id="board" class="box">
+
+		<script>
+		var nowid;
+    $(function() {
+        $( ".entry" ).draggable(
+         		{
+         			revert:   'invalid',
+         	drag: function (ev) {
+         		nowid=ev.target.id;
+			//	ev.originalEvent.dataTransfer.effectAllowed = 'move';
+         	//ev.originalEvent.dataTransfer.setData("text", ev.target.id);
+         	}
+         	
+         }
+        		);
+        $( "#ToDo" ).droppable({
+        	accept: '.entry',
+          drop: 
+        	  function (ev) {
+        	  ev.preventDefault();
+        	  var data = nowid;
+        	   
+        	    var elem = document.getElementById(data);
+        	    var formId = "form"+data;
+        	    var statusInputId = "status"+data;
+        	    document.getElementById(statusInputId).value="TODO";
+        	    ev.target.insertBefore(elem, ev.target.childNodes[0]);
+        	    document.forms[formId].submit();
+        	}
+
+        });
+        
+        $( "#In-Progress" ).droppable({
+        	accept: '.entry',
+            drop: function (ev) {
+        	    ev.preventDefault();
+        	    var data = nowid;
+        	    var elem = document.getElementById(data);
+        	    var formId = "form"+data;
+        	    var statusInputId = "status"+data;
+        	    document.getElementById(statusInputId).value="INPROGRESS";
+        	    
+        	    ev.target.appendChild(elem);
+        	    document.forms[formId].submit();
+        	}
+          });
+        $( "#Review" ).droppable({
+        	accept: '.entry',
+            drop: 
+            	function (ev) {
+                ev.preventDefault();
+                var data = nowid;
+                var elem = document.getElementById(data);
+                var formId = "form"+data;
+                var statusInputId = "status"+data;
+                document.getElementById(statusInputId).value="REVIEW";
+                ev.target.appendChild(elem);
+                document.forms[formId].submit();
+            }
+          });
+        $( "#Done" ).droppable({
+        	accept: '.entry',
+            drop: 
+            	function (ev) {
+                ev.preventDefault();
+                var data = nowid;
+                var elem = document.getElementById(data);
+                var formId = "form"+data;
+                var statusInputId = "status"+data;
+                document.getElementById(statusInputId).value="DONE";
+                ev.target.appendChild(elem);
+                document.forms[formId].submit();
+            }
+          });
+        
+      });	
+	
+	</script>
+
 		<div id="projectBox" class="box">
-			<form id="ProjectNameContainer" action="#" th:action="@{/projectsettingview}"
-				th:object="${project}" method="post">
+			<form id="ProjectNameContainer" action="#"
+				th:action="@{/projectsettingview}" th:object="${project}"
+				method="post">
 				<div th:text="'Project '+ ${project.name}" id="projectName"></div>
 				<input id="projectSetting" class="settingButton" type="image"
 					src="../image/setting.png" style="float: right;" /> <input
@@ -42,11 +124,10 @@
 				id="generalerror" style="text-align: center; color: red" />
 		</div>
 
-		<div id="ToDo" class="kanban" ondrop="dropInToDo(event)"
-			ondragover="allowDrop(event)">
+		<div id="ToDo" class="kanban" >
 			<p class="boardName">ToDo</p>
 			<div class="entry" th:each="task : ${todoTasks}" th:id="${task.id}"
-				draggable="true" ondragstart="drag(event)">
+				>
 				<form th:id="'form'+${task.id}" class="textBlock"
 					th:action="@{/updatestaskstatus}" method="post">
 					<div class="textBlock">
@@ -117,11 +198,10 @@
 
 		</div>
 
-		<div id="In-Progress" class="kanban" ondrop="dropInProgress(event)"
-			ondragover="allowDrop(event)">
+		<div id="In-Progress" class="kanban" >
 			<p class="boardName">In-Progress</p>
 			<div class="entry" th:each="task : ${inProgressTasks}"
-				th:id="${task.id}" draggable="true" ondragstart="drag(event)">
+				th:id="${task.id}" >
 				<form th:id="'form'+${task.id}" class="textBlock"
 					th:action="@{/updatestaskstatus}" method="post">
 					<div class="textBlock">
@@ -142,11 +222,10 @@
 			</div>
 		</div>
 
-		<div id="Review" class="kanban" ondrop="dropReview(event)"
-			ondragover="allowDrop(event)">
+		<div id="Review" class="kanban" >
 			<p class="boardName">Review</p>
 			<div class="entry" th:each="task : ${reviewTasks}" th:id="${task.id}"
-				draggable="true" ondragstart="drag(event)">
+				>
 				<form th:id="'form'+${task.id}" class="textBlock"
 					th:action="@{/updatestaskstatus}" method="post">
 					<div class="textBlock">
@@ -167,11 +246,10 @@
 			</div>
 		</div>
 
-		<div id="Done" class="kanban" ondrop="dropDone(event)"
-			ondragover="allowDrop(event)">
+		<div id="Done" class="kanban" >
 			<p class="boardName">Done</p>
 			<div class="entry" th:each="task : ${doneTasks}" th:id="${task.id}"
-				draggable="true" ondragstart="drag(event)">
+				>
 				<form th:id="'form'+${task.id}" class="textBlock"
 					th:action="@{/updatestaskstatus}" method="post">
 					<div class="textBlock">
@@ -222,58 +300,7 @@ function showCreateTaskForm() {
 	document.getElementById("createTaskIcon").style.display = "none";
 }
 
-<!-- drag and drop function -->
-function allowDrop(ev) {
-    ev.preventDefault();
-}
 
-function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-}
-
-function dropInToDo(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    var elem = document.getElementById(data);
-    var formId = "form"+data;
-    var statusInputId = "status"+data;
-    document.getElementById(statusInputId).value="TODO";
-    ev.target.insertBefore(elem, ev.target.childNodes[0]);
-    document.forms[formId].submit();
-}
-
-function dropInProgress(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    var elem = document.getElementById(data);
-    var formId = "form"+data;
-    var statusInputId = "status"+data;
-    document.getElementById(statusInputId).value="INPROGRESS";
-    ev.target.appendChild(elem);
-    document.forms[formId].submit();
-}
-
-function dropReview(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    var elem = document.getElementById(data);
-    var formId = "form"+data;
-    var statusInputId = "status"+data;
-    document.getElementById(statusInputId).value="REVIEW";
-    ev.target.appendChild(elem);
-    document.forms[formId].submit();
-}
-
-function dropDone(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    var elem = document.getElementById(data);
-    var formId = "form"+data;
-    var statusInputId = "status"+data;
-    document.getElementById(statusInputId).value="DONE";
-    ev.target.appendChild(elem);
-    document.forms[formId].submit();
-}
 
 </script>
 
