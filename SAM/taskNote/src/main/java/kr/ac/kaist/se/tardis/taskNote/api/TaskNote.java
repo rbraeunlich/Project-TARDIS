@@ -20,7 +20,7 @@ import kr.ac.kaist.se.tardis.taskNote.impl.id.TaskNoteId;
 
 @Entity(name="tasknote")
 @Inheritance(strategy=InheritanceType.JOINED)
-public abstract class TaskNote {
+public abstract class TaskNote implements Comparable<TaskNote>{
 	
 	@EmbeddedId
 	private TaskNoteId id;
@@ -67,6 +67,11 @@ public abstract class TaskNote {
 
 	public void setTask(Task task) {
 		this.task = task;
+	}
+	
+	@Override
+	public int compareTo(TaskNote o) {
+		return o.getWriteDate().compareTo(getWriteDate());
 	}
 
 
