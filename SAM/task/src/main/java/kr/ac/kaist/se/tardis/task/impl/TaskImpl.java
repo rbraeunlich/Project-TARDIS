@@ -192,4 +192,9 @@ public class TaskImpl implements Task {
 				+ dueDate + ", state=" + taskState + "]";
 	}
 
+	@Override
+	public int compareTo(Task o) {
+		return o.getDueDate().compareTo(getDueDate());
+	}
+
 }

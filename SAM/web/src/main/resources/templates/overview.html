@@ -37,7 +37,7 @@
 <div id="board" class="box">
 	<div id="project" class="overview">	
 		<p class="boardName">My Projects</p>
-		<div th:each="project : ${projectList}" class="entry" id="${project.name}">
+		<div th:each="project : ${#lists.sort(projectList)}" class="entry" id="${project.name}">
 			<div class="projectTextBlock">
 				<p class="projectNameText" th:text="${project.name}"/>
 				<p class="projectDescription" th:text="${project.description}"/>
@@ -74,15 +74,13 @@
 	</div>
 	<div id="toDoList" class="overview">
 		<p class="boardName">My Tasks</p>
-			<div th:each="task : ${taskList}" class="entry" id="${task.name}">
+			<div th:each="task : ${#lists.sort(taskList)}" class="entry" id="${task.name}">
 			<div class="textBlock">
-<!-- 			<p class="projectName" th:text="${task.projectName}"/>			 -->
-<!--  			<p class="projectName" th:text="${map['${task.projectId.id}']}"/>		 -->
- 			<p class="projectName" th:text="${map['__${task.projectId.id}__']}"/>		
-				<p class="taskState" th:text="${task.taskState}"/>
-				<p class="taskNameText" th:text="${task.name}"/>
-				<p class="taskDescription" th:text="${task.description}"/>
-				
+ 				<p class="projectName" th:text="'Project: ' + ${map['__${task.projectId.id}__']}"/>		
+				<p class="taskState" th:text="'State: ' + ${task.taskState}"/>
+				<p class="taskNameText" th:text="'Name: ' + ${task.name}"/>
+				<p class="taskDescription" th:text="'Description: ' + ${task.description}"/>
+				<p class="taskDueDate" th:text="'Due date: ' + ${#dates.format(task.dueDate,'yyyy-MM-dd')}"/>
 			</div>
 			<form class="settingForm" action="#" th:action="@{/taskdetail}" th:object="${task}" method="post">
 				<input class="settingButton" type="image" th:id="${task.name}+Task" src = "../image/detail.png"/>

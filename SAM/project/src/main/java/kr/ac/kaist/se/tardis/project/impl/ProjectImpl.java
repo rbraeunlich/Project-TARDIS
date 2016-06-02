@@ -165,4 +165,9 @@ public class ProjectImpl implements Project {
 				+ dueDate + "]";
 	}
 
+	@Override
+	public int compareTo(Project o) {
+		return getName().compareTo(o.getName());
+	}
+
 }
