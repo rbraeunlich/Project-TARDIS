@@ -14,12 +14,22 @@
 		width: 95%;
 	}
 	#cancel {
-		margin-top: 10%;
 		margin-left: 17%;
 	}
 	#passwordForm {
 		width: 80%;
 		margin-left: 10%
+	}
+	#tasksettingviewsubmit {
+		margin-left: 18%;
+		float: left;
+		margin-right: 3%
+	}
+	#tasksettingviewcancel {
+		margin-left: 17%;
+	}
+	#projectSettingSubmit{
+		margin-left:30%;float:left;margin-right:3%;
 	}
 }
 
@@ -37,6 +47,14 @@
 	#notifications {
 		float: right;
 		width: 49%;
+	}
+	#tasksettingviewsubmit {
+		margin-left: 40%;
+		float: left;
+		margin-right: 3%
+	}
+	#projectSettingSubmit{
+		margin-left:43%;float:left
 	}
 }
 

@@ -84,18 +84,18 @@
 			</div>
 
 			
-				<button name="action" type="submit" value="submit" style="margin-left:43%;float:left">Submit</button>
+				<button id="tasksettingviewsubmit" name="action" type="submit" value="submit" >Submit</button>
 			
 		</form>
 
-		<form id = "cancel" action="#" th:action="@{/taskdetail}" method="get">
-			<button name="action" type="submit" value="submit" style="margin-right:43%;float:right">Cancel</button>
+		<form id = "tasksettingviewcancel" action="#" th:action="@{/taskdetail}" method="get">
+			<button name="action" type="submit" value="submit" style="float:left;margin-right:3%">Cancel</button>
 			<input type="hidden" name="taskId" th:value="${task.id.id}" />
 		</form>
 		
 		<!-- /taskdelete is mapped in the TaskController not TaskDetailController -->
 		<form id = "delete" action="#" th:action="@{/taskdelete}" method="post">
-			<button name="action" type="submit" value="submit" style="margin-right:43%;float:right">Delete</button>
+			<button name="action" type="submit" value="submit" style="float:left;">Delete</button>
 			<input type="hidden" name="taskId" th:value="${task.id.id}" />
 			<input type="hidden" name="projectId" th:value="${task.projectId.id}" />
 		</form>

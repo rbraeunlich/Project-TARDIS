@@ -69,13 +69,13 @@
 			</div>
 		</div>
 		
-			<button class="configurationButton" id="projectSettingSubmit" name="action" type="submit" value="submit" style="margin-left:43%;float:left">Submit</button>
+			<button class="configurationButton" id="projectSettingSubmit" name="action" type="submit" value="submit" >Submit</button>
 		
 
 	</form>
 	
 	<form id="cancel" action="#" th:action="@{/kanbanboard}" method="get">
-		<button class="configurationButton" name="action" type="submit" value="submit" style="margin-right:43%;float:right;">Cancel</button>
+		<button class="configurationButton" name="action" type="submit" value="submit" style="float:left;">Cancel</button>
 		<input type="hidden" name="projectId" th:value="${project.id.id}"/>
 	</form>
 </div>
