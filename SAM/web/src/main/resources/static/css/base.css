@@ -100,6 +100,15 @@ p {
 	top: 30%;
 }
 
+.tasksettingButton {
+	max-width: 50px;
+	width: 15%;
+	height: width;
+	float: right;
+	position: relative;
+	top: 30%;
+}
+
 #bar {
 	margin-top: 30px;
 	height: 21px;
