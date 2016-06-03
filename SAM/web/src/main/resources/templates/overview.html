@@ -55,7 +55,7 @@
 			</div>
 			<div class="projectTaskList" th:id="${project.name}+TaskList" >
 				<div th:each="task : ${allTaskList}" th:if="${task.projectId} == ${project.id} and ${counter.increment()} &lt; 4" class="projectTaskBlock">
-					<p class="taskName" th:text="${task.name} + ${count}"/>
+					<p class="taskName" th:text="${task.name}"/>
 					<progress class="taskProgress" max="100" th:value="${task.taskProgress}"></progress>
 				</div>
 				<img class="dot" src="../image/dotdotdot.png" th:if="${counter.getValue()} == 4"/>
