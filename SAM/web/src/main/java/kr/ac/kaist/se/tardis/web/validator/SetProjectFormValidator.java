@@ -32,7 +32,7 @@ public class SetProjectFormValidator implements Validator {
 			errors.rejectValue("projectName", "error.newMember.short", SetProjectForm.SHORT_PROJECT_NAME_ERROR );
 		}
 		if(setProjectForm.getDueDate() == null || setProjectForm.getDueDate().isEmpty()){
-			if(setProjectForm.isOneDayNotification() || setProjectForm.isThreeDayNotification() || setProjectForm.isSevenDayNotificaion()){
+			if(setProjectForm.isOneDayNotification() || setProjectForm.isThreeDayNotification() || setProjectForm.isSevenDayNotification()){
 				errors.rejectValue("dueDate", "error.dueDate", SetProjectForm.NOTIFICATION_WITHOUT_DUE_DATE);
 			}
 		}
