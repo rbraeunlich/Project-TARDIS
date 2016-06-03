@@ -40,11 +40,11 @@ public class FormWithNotification {
 		this.threeDayNotification = threeDayNotification;
 	}
 
-	public boolean isSevenDayNotificaion() {
+	public boolean isSevenDayNotification() {
 		return sevenDayNotificaion;
 	}
 
-	public void setSevenDayNotificaion(boolean sevenDayNotificaion) {
+	public void setSevenDayNotification(boolean sevenDayNotificaion) {
 		this.sevenDayNotificaion = sevenDayNotificaion;
 	}
 

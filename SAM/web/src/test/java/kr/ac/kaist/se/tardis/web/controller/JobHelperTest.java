@@ -51,7 +51,7 @@ public class JobHelperTest {
 		formWithNotification.setDueDate(dueDate);
 		formWithNotification.setOneDayNotification(true);
 		formWithNotification.setThreeDayNotification(true);
-		formWithNotification.setSevenDayNotificaion(true);
+		formWithNotification.setSevenDayNotification(true);
 		Project project = mock(Project.class);
 		when(project.getId()).thenReturn(ProjectIdFactory.generateProjectId());
 		when(project.getAllJobInfos()).thenReturn(Collections.emptySet());

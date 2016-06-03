@@ -53,7 +53,7 @@ public class JobHelper {
 		if (!existingJobTypes.contains(JobType.THREE_DAYS) && form.isThreeDayNotification()) {
 			createThreeDaysJob = true;
 		}
-		if (!existingJobTypes.contains(JobType.SEVEN_DAYS) && form.isSevenDayNotificaion()) {
+		if (!existingJobTypes.contains(JobType.SEVEN_DAYS) && form.isSevenDayNotification()) {
 			createSevenDaysJob = true;
 		}
 		// second check if existing job has to be removed
@@ -64,7 +64,7 @@ public class JobHelper {
 			if (jobInfo.getJobType().equals(JobType.THREE_DAYS) && !form.isThreeDayNotification()) {
 				schedulerService.deleteJob(jobInfo);
 			}
-			if (jobInfo.getJobType().equals(JobType.SEVEN_DAYS) && !form.isSevenDayNotificaion()) {
+			if (jobInfo.getJobType().equals(JobType.SEVEN_DAYS) && !form.isSevenDayNotification()) {
 				schedulerService.deleteJob(jobInfo);
 			}
 		}
