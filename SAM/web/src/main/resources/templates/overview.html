@@ -27,7 +27,8 @@
 		<br/>Back to overview
 	</form>
 	<div id="notificationBox" onclick="showNotification(event)" onmouseleave="closeNotification()">
-		<img alt="Alarm icon" src="../image/bell.png" style="width:50px;height:50px;"/>
+		<img th:if="${notificationList.empty}" alt="Alarm icon" src="../image/bell.png" style="width:50px;height:50px;"/>
+		<img th:unless="${notificationList.empty}" alt="Alarm icon" src="../image/bell2.png" style="width:50px;height:50px;"/>
 		<div id="notification" style="display:none;">
 			<ul>
 				<li th:each="notice : ${notificationList}" >
