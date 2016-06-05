@@ -9,6 +9,7 @@ public class RegistrationForm {
 	public static final String PASSWORD_LENGTH_ERROR = "Password must be between 1 and 256 characters";
 	public static final String USERNAME_EQUAL_ERROR = "Usernames must be equal";
 	public static final String PASSWORD_EQUAL_ERROR = "Passwords must be equal";
+	public static final String USERNAME_DUP = "Username is duplicated";
 
 	@NotNull
 	@Size(min = 1, max = 256, message = USERNAME_LENGTH_ERROR)
