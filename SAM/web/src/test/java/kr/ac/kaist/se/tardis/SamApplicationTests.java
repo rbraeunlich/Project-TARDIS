@@ -3,7 +3,12 @@ package kr.ac.kaist.se.tardis;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.*;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -20,7 +25,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.boot.test.WebIntegrationTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
 
 /**
  * This test requires an installed Firefox browser on your PC!
@@ -128,7 +132,7 @@ public class SamApplicationTests {
 		// check url
 		currentUrl = webDriver.getCurrentUrl();
 		assertThat(currentUrl, containsString("kanbanboard"));
-		Thread.sleep(50); //give it a little time to load
+		Thread.sleep(50); // give it a little time to load
 		// check new project name
 		assertThat(webDriver.findElement(By.id("projectName")).getText(), containsString(newProjectName));
 		// project setting - 2. add new member
@@ -154,9 +158,9 @@ public class SamApplicationTests {
 		// try to create a task
 		webDriver.findElement(By.id("createTaskIcon")).click();
 		webDriver.findElement(By.id("createTaskButton")).click();
-		assertThat( webDriver.getCurrentUrl(), containsString("kanbanboard"));
+		assertThat(webDriver.getCurrentUrl(), containsString("kanbanboard"));
 		new WebDriverWait(webDriver, 10L).until(ExpectedConditions.presenceOfElementLocated(By.id("errorwrapper")));
-	    // check error
+		// check error
 		WebElement errorWrapper = webDriver.findElement(By.id("errorwrapper"));
 		assertThat(errorWrapper.getText(), containsString("Task name must contain at least three characters"));
 		assertThat(errorWrapper.getText(), containsString("Task must set due date"));
@@ -166,13 +170,95 @@ public class SamApplicationTests {
 		webDriver.findElement(By.id("taskName")).sendKeys(taskName);
 		String taskDescription = "task description";
 		webDriver.findElement(By.id("taskDescription")).sendKeys(taskDescription);
-		webDriver.findElement(By.id("dueDate")).sendKeys("2016-01-01");
+
+		Date dt = new Date();
+		Calendar c = Calendar.getInstance();
+		c.setTime(dt);
+		c.add(Calendar.DATE, 1);
+		dt = c.getTime();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+		// set Tomorrow
+		webDriver.findElement(By.id("dueDate")).sendKeys(sdf.format(dt).toString());
 		webDriver.findElement(By.id("createTaskButton")).click();
 		// check new task present
 		new WebDriverWait(webDriver, 10L).until(ExpectedConditions.presenceOfElementLocated(By.id("ToDo")));
 		assertThat(webDriver.findElement(By.id("ToDo")).getText(), containsString(taskName));
 		assertThat(webDriver.findElement(By.id("ToDo")).getText(), containsString(taskDescription));
 		// HTML 5 drag and drop cannot be tested by Selenium
+
+
+		// Go task setting
+		webDriver.findElement(By.className("tasksettingButton")).click();
+		assertThat(webDriver.getCurrentUrl(), containsString("taskdetail"));
+		webDriver.findElement(By.id("taskSetting")).click();
+		assertThat(webDriver.getCurrentUrl(), containsString("tasksettingview"));
+
+		// Wrong task Name
+		String newTaskName = "a";
+		webDriver.findElement(By.id("taskName")).clear();
+		webDriver.findElement(By.id("taskName")).sendKeys(newTaskName);
+		webDriver.findElement(By.id("tasksettingviewsubmit")).click();
+
+		new WebDriverWait(webDriver, 10L).until(ExpectedConditions.presenceOfElementLocated(By.id("taskNameError")));
+		assertThat(webDriver.findElement(By.id("taskNameError")).getText(),
+				containsString("Task name must contain at least three characters"));
+
+		// edit task Name 
+		newTaskName = "new task Name";
+		webDriver.findElement(By.id("taskName")).clear();
+		webDriver.findElement(By.id("taskName")).sendKeys(newTaskName);
+		webDriver.findElement(By.id("tasksettingviewsubmit")).click();
+		assertThat(webDriver.getCurrentUrl(), containsString("taskdetail"));
+
+		Thread.sleep(50); // give it a little time to load
+		// check new project name
+		assertThat(webDriver.findElement(By.id("currentTaskName")).getText(), containsString(newTaskName));
+		
+		
+		
+		// Check notification is not existing
+		webDriver.findElement(By.id("notificationBox")).click();
+		Thread.sleep(50);
+		List<WebElement> notilist = webDriver.findElements(By.className("notificationItem"));
+		assertTrue(notilist.isEmpty());
+
+		
+		
+		
+		//add notification
+		webDriver.findElement(By.id("taskSetting")).click();
+		assertThat(webDriver.getCurrentUrl(), containsString("tasksettingview"));
+		webDriver.findElement(By.id("oneDayNotification")).click();	
+		webDriver.findElement(By.id("tasksettingviewsubmit")).click();
+		assertThat(webDriver.getCurrentUrl(), containsString("taskdetail"));
+
+		Thread.sleep(50); // give it a little time to load
+		
+		
+		// login to user1 and Check notification is not existing
+		webDriver.findElement(By.id("logout")).click();	
+		
+		webDriver.findElement(By.id("username")).sendKeys("User1");
+		webDriver.findElement(By.id("password")).sendKeys("dummy");
+		webDriver.findElement(By.id("loginButton")).click();
+			
+		List<WebElement> notilist2= null;
+		for (int i = 0; i < 100; i++) {
+			Thread.sleep(10000);
+			webDriver.navigate().refresh();
+			System.out.println("["+i+"]"+new Date());
+			webDriver.findElement(By.id("notificationBox")).click();			
+			 notilist2 = webDriver.findElements(By.className("notificationItem"));
+			if(!notilist2.isEmpty()){
+				break;
+			}
+		}
+		if(notilist2 !=null){
+			assertFalse(notilist2.isEmpty());
+		}
+		
 	}
+
 
 }

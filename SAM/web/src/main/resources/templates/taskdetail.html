@@ -30,7 +30,7 @@
 				<div id="taskInfo">
 					<p th:text="'Project Name : ' + ${projectname}"/>
 					<p th:text="'Task State : ' + ${task.taskState}" />
-					<p th:text="'Task Name: ' + ${task.name}" />
+					<p id="currentTaskName" th:text="'Task Name: ' + ${task.name}" />
 					<p th:text="'Task Description : ' + ${task.description}" />
 				</div>
 			</div>
