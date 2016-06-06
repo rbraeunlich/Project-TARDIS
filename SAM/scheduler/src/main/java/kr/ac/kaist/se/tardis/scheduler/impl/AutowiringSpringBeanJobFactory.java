@@ -9,8 +9,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class AutowiringSpringBeanJobFactory extends SpringBeanJobFactory implements ApplicationContextAware {
-	private transient AutowireCapableBeanFactory beanFactory;
+	
+	private AutowireCapableBeanFactory beanFactory;
 
+	@Override
 	public void setApplicationContext(final ApplicationContext context) {
 		beanFactory = context.getAutowireCapableBeanFactory();
 	}

@@ -20,6 +20,7 @@ public class TaskJobInfo extends JobInfo {
 	private JobType jobType;
 
 	public TaskJobInfo() {
+		//default constructor for JPA
 	}
 
 	public String getTaskId() {
@@ -30,10 +31,12 @@ public class TaskJobInfo extends JobInfo {
 		this.taskId = taskId;
 	}
 
+	@Override
 	public JobType getJobType() {
 		return jobType;
 	}
 
+	@Override
 	public void setJobType(JobType jobType) {
 		this.jobType = jobType;
 	}

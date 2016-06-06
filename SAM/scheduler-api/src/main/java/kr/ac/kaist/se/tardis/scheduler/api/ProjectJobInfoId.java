@@ -18,7 +18,7 @@ public class ProjectJobInfoId implements Serializable{
 	@Enumerated(EnumType.STRING)
 	private JobType jobType;
 
-	public ProjectJobInfoId(String taskId, String projectId, JobType jobType) {
+	public ProjectJobInfoId(String projectId, JobType jobType) {
 		this.projectId = projectId;
 		this.jobType = jobType;
 	}

@@ -13,7 +13,8 @@ import org.springframework.context.ConfigurableApplicationContext;
 		HibernateJpaAutoConfiguration.class })
 public class SamApplication {
 
-	private SamApplication() {
+	public SamApplication() {
+		//Spring needs visible default constructor
 	}
 
 	public static void main(String[] args) {

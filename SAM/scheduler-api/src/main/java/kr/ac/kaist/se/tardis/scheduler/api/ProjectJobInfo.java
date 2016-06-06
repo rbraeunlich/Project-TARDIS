@@ -21,12 +21,16 @@ public class ProjectJobInfo extends JobInfo {
 	
 	private String githubUrl;
 	
-	public ProjectJobInfo(){}
+	public ProjectJobInfo(){
+		//default constructor for JPA
+	}
 
+	@Override
 	public JobType getJobType() {
 		return jobType;
 	}
 
+	@Override
 	public void setJobType(JobType jobType) {
 		this.jobType = jobType;
 	}

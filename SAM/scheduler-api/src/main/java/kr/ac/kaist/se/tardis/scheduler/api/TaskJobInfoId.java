@@ -19,6 +19,7 @@ public class TaskJobInfoId implements Serializable {
 	private JobType jobType;
 
 	public TaskJobInfoId() {
+		//default constructor for JPA
 	}
 
 	public String getTaskId() {
