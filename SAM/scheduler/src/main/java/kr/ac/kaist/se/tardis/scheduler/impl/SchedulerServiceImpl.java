@@ -69,9 +69,6 @@ public class SchedulerServiceImpl implements SchedulerService {
 		private Date threeDays;
 		private Date sevenDays;
 
-		public StandardNotificationBuilderImpl() {
-		}
-
 		@Override
 		public JobInfo submit() {
 			if (projectId != null) {
