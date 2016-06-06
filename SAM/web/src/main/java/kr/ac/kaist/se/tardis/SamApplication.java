@@ -6,25 +6,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.boot.devtools.autoconfigure.DevToolsDataSourceAutoConfiguration;
-import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
-@EnableAutoConfiguration(exclude = { DataSourceAutoConfiguration.class, DevToolsDataSourceAutoConfiguration.class,
-		HibernateJpaAutoConfiguration.class })
+@EnableAutoConfiguration(exclude={
+		DataSourceAutoConfiguration.class, 
+		DevToolsDataSourceAutoConfiguration.class, 
+		HibernateJpaAutoConfiguration.class})
 public class SamApplication {
 
-	public SamApplication() {
-		//Spring needs visible default constructor
-	}
-
 	public static void main(String[] args) {
-		ConfigurableApplicationContext applicationContext = null;
-		try {
-			applicationContext = SpringApplication.run(SamApplication.class, args);
-		} finally {
-			if (applicationContext != null) {
-				applicationContext.close();
-			}
-		}
+		SpringApplication.run(SamApplication.class, args);
 	}
 }
