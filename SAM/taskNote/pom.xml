@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>kr.ac.kaist.se.tardis</groupId>
 		<artifactId>parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>1.0.0</version>
 	</parent>
 	<dependencies>
 		<dependency>
@@ -34,7 +34,7 @@
 		<dependency>
 			<groupId>kr.ac.kaist.se.tardis</groupId>
 			<artifactId>task</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.data</groupId>
@@ -47,12 +47,12 @@
 		<dependency>
 			<groupId>kr.ac.kaist.se.tardis</groupId>
 			<artifactId>persistence</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>kr.ac.kaist.se.tardis</groupId>
 			<artifactId>scheduler-api</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.0</version>
 		</dependency>
 	</dependencies>
 </project>

@@ -4,14 +4,14 @@
 	<parent>
 		<groupId>kr.ac.kaist.se.tardis</groupId>
 		<artifactId>parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>1.0.0</version>
 	</parent>
 	<artifactId>github-connector</artifactId>
 	<dependencies>
 		<dependency>
 			<groupId>kr.ac.kaist.se.tardis</groupId>
 			<artifactId>github-connector-api</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>kr.ac.kaist.se.tardis</groupId>
@@ -26,7 +26,7 @@
 		<dependency>
 			<groupId>kr.ac.kaist.se.tardis</groupId>
 			<artifactId>taskNote</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.0</version>
 		</dependency>
 	</dependencies>
 </project>
