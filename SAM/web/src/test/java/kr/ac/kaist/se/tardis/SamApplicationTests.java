@@ -19,6 +19,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Value;
@@ -223,8 +224,8 @@ public class SamApplicationTests {
 		List<WebElement> notilist = webDriver.findElements(By.className("notificationItem"));
 		assertTrue(notilist.isEmpty());
 
-		
-		
+		//move mouse so task settings are not hidden
+		new Actions(webDriver).moveToElement(webDriver.findElement(By.id("backToOverview"))).perform();
 		
 		//add notification
 		webDriver.findElement(By.id("taskSetting")).click();
@@ -247,7 +248,6 @@ public class SamApplicationTests {
 		for (int i = 0; i < 100; i++) {
 			Thread.sleep(10000);
 			webDriver.navigate().refresh();
-			System.out.println("["+i+"]"+new Date());
 			webDriver.findElement(By.id("notificationBox")).click();			
 			 notilist2 = webDriver.findElements(By.className("notificationItem"));
 			if(!notilist2.isEmpty()){
